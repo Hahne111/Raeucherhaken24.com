@@ -1,0 +1,29 @@
+PRÜFBERICHT V102.1 – KONTRAST & KONSISTENZ
+
+GEFUNDENE URSACHEN
+1. Frühere Stylesheets enthielten hochspezifische Button-Farben. V102 überschieb teilweise nur den Hintergrund und nicht jede alte Textfarbe.
+2. Die dynamische Website-Navigation rh24Nav lief teilweise weiterhin mit dem alten dunklen V82-Design.
+3. Einige Orgaboard-Fachmodule besaßen eigene Hero-/Tab-Stile, die vom globalen V102-Layer nicht vollständig erfasst wurden.
+
+BEHOBEN
+PASS · Primärbuttons: weiße Schrift auf #a9561e
+PASS · Sekundärbuttons: #30363c / #343b42 auf Weiß
+PASS · aktive helle Navigation: #864316 auf #fff1e5
+PASS · Website-Hauptnavigation vollständig auf Light Professional umgestellt
+PASS · Orgaboard-Fachmodule farblich vereinheitlicht
+PASS · Etikett-/Bon-Druckvorschauen bleiben schwarz auf weiß
+PASS · Tabellen- und Formulartexte kontrastverstärkt
+
+KONTRASTWERTE (WCAG-Berechnung)
+- Weiß auf #a9561e: ca. 5,20:1
+- #30363c auf Weiß: ca. 12,22:1
+- #864316 auf #fff1e5: ca. 6,71:1
+- #444b52 auf Weiß: ca. 8,85:1
+
+TECHNIK
+PASS · 52 PHP-Dateien Syntax
+PASS · 60 JavaScript-Dateien Syntax
+PASS · public light-pro-v102.css: 89 Regeln, 0 Parserfehler
+PASS · Orgaboard light-pro-v102.css: 109 Regeln, 0 Parserfehler
+PASS · 39 öffentliche Seiten referenzieren Cache-Version 102.1
+PASS · 44 Dateien gegenüber V102 geändert

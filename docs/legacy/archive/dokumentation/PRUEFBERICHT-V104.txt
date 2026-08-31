@@ -1,0 +1,32 @@
+PRÜFBERICHT · RÄUCHERHAKEN24 V104 PREMIUM LIGHT
+================================================
+
+UMGESETZT
+- Startseite vollständig auf das freigegebene helle Premiumlayout umgestellt.
+- Header/Navigation für öffentliche Shopseiten neu aufgebaut.
+- Helle Weiß-/Warmgrau-Flächen, Graphittext und dezente Kupferakzente.
+- Kategorien und Produktkarten vereinheitlicht.
+- Smoky auf der Startseite deutlich verkleinert.
+- Smoky-Empfehlung nutzt bestehende reale Katalogprodukte und bestehende Warenkorbfunktion.
+- Footer auf helle Designfamilie umgestellt.
+- V82/V102 Storefront-Hauptdateien in V104-Basisdateien überführt; alte Dateien werden nicht mehr aktiv referenziert.
+- Keine Änderung an der Warenkorb-/Checkout-/Produktdaten-Geschäftslogik.
+
+TECHNISCHE PRÜFUNGEN
+- Root-JavaScript: Syntax OK.
+- Orgaboard-JavaScript: Syntax OK (Regression, unverändert).
+- Root-PHP: Syntax OK.
+- Orgaboard-PHP: Syntax OK (Regression, unverändert).
+- 35 öffentliche HTML-Dateien parserseitig eingelesen.
+- 2.283 statische lokale src/href-Verweise geprüft: 0 fehlend.
+- site-v104.js und premium-v104.css pro umgestellter öffentlicher Seite jeweils genau einmal referenziert.
+- HTTP-Smoke-Test: index.html 200, shop.html 200, kundenlogin.html 200, haendlerlogin.html 200, checkout.html 200, raeucherhaken-standard.html 200, raeucherlaugen.html 200, sonderanfertigung-prototyp.html 200, ankauf-verkauf.php 200, orgaboard/diagnose.php 200.
+
+BEWUSST NICHT ALS LIVE-E2E BESTANDEN BEHAUPTET
+- echte produktive MariaDB-Verbindungen
+- echte Payment-Provider
+- produktiver Mailversand
+- STRATO-Servercache/CDN nach Upload
+
+HINWEIS
+Ein Chromium-Screenshot-Test konnte in dieser Containerumgebung wegen der bekannten DBus/Chromium-Laufzeit nicht zuverlässig abgeschlossen werden. Deshalb wurde dieser Punkt nicht fälschlich als bestanden gewertet.

@@ -1,0 +1,30 @@
+name: Projektprüfung
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: PHP einrichten
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - name: Abhängigkeiten installieren
+        run: npm ci
+      - name: JavaScript, HTML und Verweise prüfen
+        run: npm run check
+      - name: PHP-Syntax prüfen
+        run: npm run check:php
+      - name: Produktionspaket bauen
+        run: npm run build

@@ -1,0 +1,3316 @@
+/* =====================================================================
+   RÄUCHERHAKEN24 · ATELIER 2026.3  ·  ÖFFENTLICHER SHOP
+   (rh-atelier-2026.css)
+   ---------------------------------------------------------------------
+   Wird als ALLERLETZTES Stylesheet geladen, direkt nach
+   rh-premium-2026.css. Es wird keine Datei ersetzt und nichts entfernt.
+
+   Alle Regeln sind mit `html.rh-atelier` bzw. `.rh-atelier` qualifiziert.
+   Diese Klasse setzt rh-atelier-2026.js sofort beim Start. Fällt das
+   JavaScript aus, bleibt die bisherige Gestaltung unverändert und
+   vollständig bedienbar – ein sicherer Rückfall.
+
+   `!important` wird gezielt dort eingesetzt, wo die Vorgängerschicht
+   dieselbe Eigenschaft bereits mit `!important` besetzt. Nicht flächig.
+
+   PRODUKTBILDER: Es wird ausschliesslich die DARSTELLUNG gesteuert
+   (Containergrösse, object-fit: contain, object-position). Keine
+   Filter, keine Farbveränderung, kein Beschnitt der Bilddatei.
+
+   Gliederung
+     01 Basis & Typografie      07 Editorial / Wissen
+     02 Layout & Sections       08 Vertrauen & Marken
+     03 Kopfzeile & Navigation  09 Footer
+     04 Hero                    10 Produktdetail & Formulare
+     05 Kategorien              11 Warenkorb, Modals, Toasts
+     06 Produktkarten           12 Bewegung  13 Responsive  14 A11y
+   ===================================================================== */
+
+/* =====================================================================
+   01 · BASIS & TYPOGRAFIE
+   ===================================================================== */
+html.rh-atelier{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+
+  /* Die Vorversionen setzen Überschriften, Preise und Markenschrift auf
+     eine Serifenschrift (Georgia). Das passt nicht zur ruhigen,
+     technisch-präzisen Anmutung der Gestaltungsvorlage. Statt Dutzende
+     Einzelregeln zu überschreiben, werden die beiden Schriftvariablen
+     an EINER Stelle auf den System-Stack gezogen. Alle bestehenden
+     Bausteine übernehmen das automatisch.
+     Es wird keine proprietäre Schrift eingebunden. */
+  --rh104-serif: var(--rh-font);
+  --p-serif:     var(--rh-font);
+  --rh104-sans:  var(--rh-font);
+}
+@media (prefers-reduced-motion: reduce){
+  html.rh-atelier{ scroll-behavior:auto; }
+}
+
+html.rh-atelier body{
+  font-family: var(--rh-font) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  font-size: var(--rh-fs-base);
+  line-height: var(--rh-lh-normal);
+  letter-spacing: var(--rh-tracking-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;            /* Sicherung gegen horizontales Scrollen */
+}
+
+/* Überschriften: ruhige, optisch ausgeglichene Skala.
+   clamp() sorgt dafür, dass zwischen 320 px und 1920 px nie ein
+   Sprung entsteht. */
+html.rh-atelier h1,
+html.rh-atelier h2,
+html.rh-atelier h3,
+html.rh-atelier h4{
+  font-family: var(--rh-font) !important;
+  color: var(--rh-text) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  letter-spacing: var(--rh-tracking-tight) !important;
+  line-height: var(--rh-lh-snug) !important;
+  text-wrap: balance;
+}
+html.rh-atelier h1{
+  font-size: clamp(34px, 5.2vw, 60px) !important;
+  line-height: var(--rh-lh-tight) !important;
+  letter-spacing: var(--rh-tracking-display) !important;
+  font-weight: var(--rh-fw-semi) !important;
+}
+html.rh-atelier h2{ font-size: clamp(26px, 3.2vw, 40px) !important; }
+html.rh-atelier h3{ font-size: clamp(18px, 1.6vw, 22px) !important; }
+html.rh-atelier h4{ font-size: var(--rh-fs-md) !important; }
+
+/* WICHTIG: Hier wird bewusst KEINE Textfarbe für <p> und <small>
+   allgemein gesetzt. Einige Abschnitte (Newsletterband, redaktionelle
+   Kacheln, Fussbanner) stehen auf dunklem Grund und bringen ihre eigene
+   helle Schriftfarbe mit. Eine pauschale dunkle Farbe hätte dort
+   Grau-auf-Braun ergeben – rund 1,5:1 und damit unlesbar.
+   Auf hellem Grund erben beide ohnehin --rh-text-soft von <body>. */
+html.rh-atelier p{
+  line-height: var(--rh-lh-relaxed);
+  text-wrap: pretty;
+}
+
+/* Auszeichnung in Versalien – die Marken-Eyebrow */
+html.rh-atelier .rh104Eyebrow,
+html.rh-atelier .sectionEyebrow,
+html.rh-atelier .rh104ArticleTag,
+html.rh-atelier .rh-eyebrow{
+  display:inline-block;
+  font-size: var(--rh-fs-2xs) !important;
+  font-weight: var(--rh-fw-bold) !important;
+  letter-spacing: var(--rh-tracking-caps) !important;
+  text-transform: uppercase;
+  color: var(--rh-accent) !important;
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin-bottom: var(--rh-space-4);
+}
+
+/* Auswahlfarbe */
+html.rh-atelier ::selection{
+  background: var(--rh-accent-tint-2);
+  color: var(--rh-text);
+}
+
+/* =====================================================================
+   02 · LAYOUT & SECTIONS
+   ===================================================================== */
+html.rh-atelier .wrap{
+  width:100%;
+  max-width: var(--rh-maxw) !important;
+  margin-inline:auto !important;
+  padding-inline: var(--rh-gutter) !important;
+}
+
+html.rh-atelier .rh104Section,
+html.rh-atelier .shopFeatureSection,
+html.rh-atelier .rh104TrustSection,
+html.rh-atelier .rh104Benefits{
+  padding-block: var(--rh-section-y) !important;
+  background: var(--rh-surface) !important;
+  border:0 !important;
+}
+html.rh-atelier .rh104Section.alt{
+  background: var(--rh-bg) !important;
+}
+
+/* Sectionkopf: grosse Überschrift links, ruhiger Textlink rechts */
+html.rh-atelier .rh104SectionHead,
+html.rh-atelier .sectionHead{
+  display:grid !important;
+  grid-template-columns: minmax(0,1fr) auto !important;
+  align-items:end !important;
+  gap: var(--rh-space-6) !important;
+  margin-bottom: var(--rh-space-9) !important;
+  padding-bottom: var(--rh-space-6) !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+}
+html.rh-atelier .rh104SectionHead h2,
+html.rh-atelier .sectionHead h2{ margin:0 0 var(--rh-space-3) !important; }
+html.rh-atelier .rh104SectionHead p,
+html.rh-atelier .sectionHead p{
+  margin:0 !important;
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-md) !important;
+  max-width: 56ch;
+}
+html.rh-atelier .rh104SectionHead > a{
+  display:inline-flex; align-items:center; gap:8px;
+  white-space:nowrap;
+  color: var(--rh-text) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  font-size: var(--rh-fs-sm) !important;
+  text-decoration:none !important;
+  padding-bottom:3px;
+  border-bottom:1px solid var(--rh-border-strong);
+  transition: color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104SectionHead > a:hover{
+  color: var(--rh-accent) !important;
+  border-bottom-color: var(--rh-accent);
+}
+
+/* =====================================================================
+   03 · KOPFZEILE & NAVIGATION
+   Aufbau wie in der Referenz: schmale Vertrauensleiste ganz oben,
+   darunter die eigentliche Navigationszeile, die beim Scrollen
+   weich zu einer transluzenten Leiste wird.
+   ===================================================================== */
+
+/* --- Vertrauensleiste ------------------------------------------------ */
+html.rh-atelier .top.rh104HeaderRoot{
+  background: var(--rh-surface-secondary) !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  padding: 0 !important;
+}
+html.rh-atelier .rh104TrustBar{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+html.rh-atelier .rh104TrustInner{
+  display:flex !important;
+  flex-wrap:wrap;
+  align-items:center !important;
+  justify-content:center !important;
+  gap: var(--rh-space-2) var(--rh-space-7) !important;
+  min-height: 38px;
+  padding-block: var(--rh-space-2) !important;
+}
+html.rh-atelier .rh104TrustInner > span{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size: var(--rh-fs-xs) !important;
+  color: var(--rh-text-muted) !important;
+  letter-spacing: .01em;
+  line-height:1.4;
+}
+html.rh-atelier .rh104TrustInner > span b{
+  font-weight: var(--rh-fw-medium) !important;
+  color: var(--rh-text-soft) !important;
+}
+html.rh-atelier .rh104TrustInner i{
+  font-style:normal;
+  font-size: 13px;
+  opacity:.75;
+  filter: grayscale(1);          /* betrifft nur Emoji-Icons, keine Produktbilder */
+}
+html.rh-atelier .rh104TrustContact{
+  display:inline-flex; align-items:center; gap:6px;
+  color: var(--rh-text-soft) !important;
+  text-decoration:none !important;
+  font-size: var(--rh-fs-xs) !important;
+  transition: color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104TrustContact:hover{ color: var(--rh-accent) !important; }
+html.rh-atelier .rh104TrustContactGroup{ display:inline-flex; gap: var(--rh-space-5); }
+
+/* Die Leiste bleibt einzeilig. Ab unten wird schrittweise reduziert,
+   statt umzubrechen – ein Umbruch würde die Kopfzeile unruhig machen. */
+@media (max-width: 1340px){
+  html.rh-atelier .rh104TrustInner{ gap: var(--rh-space-2) var(--rh-space-5) !important; }
+  html.rh-atelier .rh104TrustContactGroup{ display:none; }
+  html.rh-atelier .rh104TrustInner > span:last-of-type:not(:first-child){ display:none; }
+}
+@media (max-width: 900px){
+  html.rh-atelier .rh104TrustInner > span:nth-child(3){ display:none; }
+}
+@media (max-width: 640px){
+  html.rh-atelier .rh104TrustInner > span:nth-child(2){ display:none; }
+  html.rh-atelier .rh104TrustInner{ min-height:34px; }
+}
+
+/* --- Navigationszeile ------------------------------------------------ */
+html.rh-atelier .rh24NavShell{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: var(--rh-z-header) !important;
+  background: var(--rh-surface) !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  box-shadow: none !important;
+  transition:
+    background-color var(--rh-dur-base) var(--rh-ease-premium),
+    box-shadow       var(--rh-dur-base) var(--rh-ease-premium),
+    border-color     var(--rh-dur-base) var(--rh-ease-premium),
+    backdrop-filter  var(--rh-dur-base) var(--rh-ease-premium);
+}
+/* Scrollzustand: transluzent mit weichem Blur – dezent, kein Glaseffekt */
+html.rh-atelier .rh24NavShell.isScrolled{
+  background: var(--rh-surface-glass) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-bottom-color: var(--rh-border) !important;
+  box-shadow: 0 1px 0 rgba(22,21,26,.04), 0 10px 30px -22px rgba(38,28,18,.30) !important;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  html.rh-atelier .rh24NavShell.isScrolled{ background: var(--rh-surface) !important; }
+}
+
+html.rh-atelier .rh24Nav{
+  display:grid !important;
+  grid-template-columns: auto minmax(0,1fr) auto !important;
+  align-items:center !important;
+  gap: var(--rh-space-6) !important;
+  min-height: 74px;
+  padding-block: 0 !important;
+}
+
+/* Wortmarke */
+html.rh-atelier .rh104Brand{
+  display:inline-flex !important;
+  align-items:center;
+  gap: 10px;
+  text-decoration:none !important;
+  color: var(--rh-text) !important;
+}
+html.rh-atelier .rh104BrandSmoky{
+  width:34px !important; height:34px !important;
+  border-radius: var(--rh-radius-xs) !important;
+  object-fit: contain !important;      /* Logo nie beschneiden */
+  background: var(--rh-surface-secondary);
+  box-shadow:none !important;
+}
+html.rh-atelier .rh104BrandText{
+  font-size: 19px !important;
+  font-weight: var(--rh-fw-bold) !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase;
+  color: var(--rh-text) !important;
+}
+html.rh-atelier .rh104BrandText strong{
+  color: var(--rh-accent) !important;
+  font-weight: var(--rh-fw-bold) !important;
+}
+
+/* Navigationslinks – zentriert, ruhig, ohne Kästen */
+html.rh-atelier .rh24NavLinks{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap: var(--rh-space-1) !important;
+  flex-wrap: nowrap !important;
+  min-width:0;
+}
+html.rh-atelier .rh24NavLink,
+html.rh-atelier .rh24DropBtn{
+  position:relative;
+  display:inline-flex; align-items:center; gap:5px;
+  padding: 9px 13px !important;
+  border:0 !important;
+  background: transparent !important;
+  border-radius: var(--rh-radius-sm) !important;
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-sm) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  letter-spacing: .005em;
+  color: var(--rh-text-soft) !important;
+  text-decoration:none !important;
+  white-space:nowrap;
+  cursor:pointer;
+  transition: color var(--rh-dur-fast) var(--rh-ease-premium),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh24NavLink:hover,
+html.rh-atelier .rh24DropBtn:hover,
+html.rh-atelier .rh24NavDrop.open .rh24DropBtn{
+  color: var(--rh-text) !important;
+  background: var(--rh-surface-secondary) !important;
+}
+/* Aktiver Punkt: feiner kupferner Strich, kein Kasten */
+html.rh-atelier .rh24NavLink.active{
+  color: var(--rh-text) !important;
+  font-weight: var(--rh-fw-semi) !important;
+}
+html.rh-atelier .rh24NavLink.active::after{
+  content:"";
+  position:absolute; left:13px; right:13px; bottom:2px;
+  height:1.5px; border-radius:2px;
+  background: var(--rh-accent);
+  transform: scaleX(1);
+  transform-origin:center;
+  animation: rh-nav-underline var(--rh-dur-base) var(--rh-ease-premium);
+}
+@keyframes rh-nav-underline{ from{ transform: scaleX(0); } to{ transform: scaleX(1); } }
+html.rh-atelier .rh24DropBtn .chev{
+  font-size:10px; opacity:.5;
+  transition: transform var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh24NavDrop.open .chev{ transform: rotate(180deg); }
+
+/* Mega-Menü */
+html.rh-atelier .rh24Mega{
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: var(--rh-shadow-lg) !important;
+  padding: var(--rh-space-5) !important;
+  gap: 2px !important;
+  transform-origin: top center;
+  transition: opacity var(--rh-dur-base) var(--rh-ease-premium),
+              transform var(--rh-dur-base) var(--rh-ease-premium),
+              visibility var(--rh-dur-base) step-end;
+}
+html.rh-atelier .rh24NavDrop:not(.open) .rh24Mega{
+  opacity:0; visibility:hidden;
+  transform: translateY(-6px) scale(.985);
+  pointer-events:none;
+}
+html.rh-atelier .rh24NavDrop.open .rh24Mega{
+  opacity:1; visibility:visible;
+  transform: translateY(0) scale(1);
+  pointer-events:auto;
+  transition-timing-function: var(--rh-ease-out);
+  transition: opacity var(--rh-dur-base) var(--rh-ease-out),
+              transform var(--rh-dur-base) var(--rh-ease-out),
+              visibility 0s;
+}
+html.rh-atelier .rh24MegaHead{
+  padding: 0 10px var(--rh-space-4) !important;
+  margin-bottom: var(--rh-space-2) !important;
+  border-bottom:1px solid var(--rh-border-soft) !important;
+}
+html.rh-atelier .rh24MegaHead b{
+  display:block;
+  font-size: var(--rh-fs-2xs) !important;
+  letter-spacing: var(--rh-tracking-caps);
+  text-transform:uppercase;
+  color: var(--rh-accent) !important;
+  margin-bottom:5px;
+}
+html.rh-atelier .rh24MegaHead span{
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-xs) !important;
+}
+html.rh-atelier .rh24Mega a{
+  display:block;
+  padding: 10px !important;
+  border-radius: var(--rh-radius-sm) !important;
+  text-decoration:none !important;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              transform var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh24Mega a:hover{
+  background: var(--rh-surface-secondary) !important;
+  transform: translateX(2px);
+}
+html.rh-atelier .rh24Mega a b{
+  display:block;
+  color: var(--rh-text) !important;
+  font-size: var(--rh-fs-sm) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  margin-bottom:2px;
+}
+html.rh-atelier .rh24Mega a small{
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-xs) !important;
+}
+
+/* Werkzeuge rechts: Suche · Konto · Händler · Warenkorb */
+html.rh-atelier .rh24NavTools{
+  display:flex !important;
+  align-items:center !important;
+  gap: 2px !important;
+}
+html.rh-atelier .rh104NavIcon,
+html.rh-atelier .rh-searchToggle{
+  position:relative;
+  display:inline-flex !important;
+  align-items:center; justify-content:center;
+  gap:7px;
+  width:auto; min-width:40px; height:40px;
+  padding: 0 11px !important;
+  border:0 !important;
+  background: transparent !important;
+  border-radius: var(--rh-radius-sm) !important;
+  color: var(--rh-text-soft) !important;
+  font-family: var(--rh-font);
+  font-size: var(--rh-fs-xs) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  text-decoration:none !important;
+  cursor:pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104NavIcon:hover,
+html.rh-atelier .rh-searchToggle:hover{
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text) !important;
+}
+html.rh-atelier .rh104NavIcon .ico,
+html.rh-atelier .rh-searchToggle .ico{
+  font-size:16px; line-height:1; opacity:.85;
+}
+html.rh-atelier .rh24NavCartCount{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:19px; height:19px; padding:0 5px;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  font-size:10px; font-weight: var(--rh-fw-bold);
+  font-variant-numeric: tabular-nums;
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring),
+              background-color var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh24NavCartCount.is-bumped{
+  transform: scale(1.28);
+  background: var(--rh-accent) !important;
+}
+/* Ab Tablet abwärts nur noch die Symbole zeigen */
+@media (max-width: 1180px){
+  html.rh-atelier .rh104NavIcon > span:not(.ico):not(.rh24NavCartCount){ display:none; }
+  html.rh-atelier .rh104NavIcon{ padding:0 !important; width:40px; }
+}
+
+/* Suchfeld – ausklappbar, standardmässig eingeklappt (nur mit JS) */
+html.rh-atelier .rh24SearchDock{
+  display:grid !important;
+  grid-template-rows: 0fr;
+  opacity:0;
+  padding-block: 0 !important;
+  transition: grid-template-rows var(--rh-dur-base) var(--rh-ease-premium),
+              opacity var(--rh-dur-fast) var(--rh-ease-premium),
+              padding var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh24SearchDock > *{ overflow:hidden; min-height:0; }
+html.rh-atelier .rh24NavShell.searchOpen .rh24SearchDock{
+  grid-template-rows: 1fr;
+  opacity:1;
+  padding-block: 0 var(--rh-space-5) !important;
+}
+html.rh-atelier .rh104SearchDockForm{
+  display:flex !important; align-items:center; gap: var(--rh-space-2);
+  border:1px solid var(--rh-border) !important;
+  background: var(--rh-surface-secondary) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  padding: 4px 4px 4px 20px !important;
+  box-shadow:none !important;
+  transition: border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104SearchDockForm:focus-within{
+  border-color: var(--rh-border-strong) !important;
+  background: var(--rh-surface) !important;
+}
+html.rh-atelier .rh104SearchLabel{
+  position:absolute !important; width:1px; height:1px;
+  overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
+}
+html.rh-atelier .rh104SearchDockForm input{
+  flex:1 1 auto; min-width:0;
+  border:0 !important; background:transparent !important;
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-base) !important;
+  color: var(--rh-text) !important;
+  padding: 11px 0 !important;
+  outline:none;
+}
+html.rh-atelier .rh104SearchDockForm input::placeholder{ color: var(--rh-text-muted) !important; }
+html.rh-atelier .rh104SearchDockForm button{
+  flex:0 0 auto;
+  width:40px; height:40px;
+  border:0 !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  font-size:16px; cursor:pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              transform var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104SearchDockForm button:hover{ background: var(--rh-accent) !important; }
+html.rh-atelier .rh104SearchDockForm button:active{ transform: scale(.94); }
+
+/* Mobiler Menüknopf */
+html.rh-atelier .rh24MobileMenuBtn{
+  display:none !important;
+  width:42px; height:42px;
+  align-items:center; justify-content:center;
+  border:0 !important; background:transparent !important;
+  border-radius: var(--rh-radius-sm) !important;
+  font-size:20px; color: var(--rh-text) !important;
+  cursor:pointer;
+}
+
+/* =====================================================================
+   04 · HERO
+   ===================================================================== */
+html.rh-atelier .rh104Hero{
+  background: var(--rh-surface) !important;
+  border-bottom: 0 !important;
+  padding-block: clamp(40px, 5.5vw, 92px) clamp(48px, 6vw, 104px) !important;
+  overflow: visible !important;
+}
+html.rh-atelier .rh104HeroGrid{
+  display:grid !important;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr) !important;
+  align-items:center !important;
+  gap: clamp(28px, 5vw, 76px) !important;
+}
+html.rh-atelier .rh104HeroCopy{ max-width: 620px; }
+html.rh-atelier .rh104HeroCopy h1{
+  margin: 0 0 var(--rh-space-6) !important;
+  color: var(--rh-text) !important;
+}
+html.rh-atelier .rh104HeroLead{
+  font-size: clamp(16px, 1.4vw, 19px) !important;
+  line-height: var(--rh-lh-relaxed) !important;
+  color: var(--rh-text-muted) !important;
+  max-width: 46ch;
+  margin: 0 0 var(--rh-space-8) !important;
+}
+html.rh-atelier .rh104HeroActions{
+  display:flex !important; flex-wrap:wrap;
+  gap: var(--rh-space-3) !important;
+  margin-bottom: var(--rh-space-9) !important;
+}
+
+/* --- Schaltflächen (global) ----------------------------------------- */
+html.rh-atelier .rh104Btn,
+html.rh-atelier .btn,
+html.rh-atelier button.rh-btn{
+  display:inline-flex !important;
+  align-items:center; justify-content:center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 26px !important;
+  border-radius: var(--rh-radius-pill) !important;
+  border:1px solid var(--rh-border-strong) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-sm) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  letter-spacing: .01em;
+  text-decoration:none !important;
+  cursor:pointer;
+  transition:
+    background-color var(--rh-dur-fast) var(--rh-ease-premium),
+    border-color     var(--rh-dur-fast) var(--rh-ease-premium),
+    color            var(--rh-dur-fast) var(--rh-ease-premium),
+    transform        var(--rh-dur-fast) var(--rh-ease-premium),
+    box-shadow       var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Btn:hover,
+html.rh-atelier .btn:hover{
+  border-color: var(--rh-text) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--rh-shadow-sm) !important;
+}
+html.rh-atelier .rh104Btn:active,
+html.rh-atelier .btn:active{ transform: scale(.985) translateY(0); }
+
+html.rh-atelier .rh104Btn.primary,
+html.rh-atelier .btn.primary{
+  background: var(--rh-text) !important;
+  border-color: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  box-shadow: var(--rh-shadow-sm) !important;
+}
+html.rh-atelier .rh104Btn.primary:hover,
+html.rh-atelier .btn.primary:hover{
+  background: var(--rh-accent) !important;
+  border-color: var(--rh-accent) !important;
+  box-shadow: var(--rh-shadow-md) !important;
+}
+html.rh-atelier .btn.orange{
+  background: var(--rh-accent) !important;
+  border-color: var(--rh-accent) !important;
+  color: var(--rh-text-on-accent) !important;
+}
+html.rh-atelier .btn.orange:hover{
+  background: var(--rh-accent-hover) !important;
+  border-color: var(--rh-accent-hover) !important;
+}
+/* Pfeil wandert beim Überfahren minimal nach rechts */
+html.rh-atelier .rh104Btn > span,
+html.rh-atelier .btn > span{
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring);
+}
+html.rh-atelier .rh104Btn:hover > span,
+html.rh-atelier .btn:hover > span{ transform: translateX(4px); }
+
+/* --- Vertrauenszeile im Hero ----------------------------------------
+   Drei gleich breite Spalten. Ein Raster statt Flexbox verhindert, dass
+   eine einzelne Aussage in eine zweite Zeile rutscht. */
+html.rh-atelier .rh104HeroTrust{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)) !important;
+  gap: var(--rh-space-4) var(--rh-space-5) !important;
+  margin-top: 0 !important;
+  padding-top: var(--rh-space-7) !important;
+  border-top: 1px solid var(--rh-border-soft) !important;
+}
+html.rh-atelier .rh104HeroTrust span{ align-items:center !important; }
+html.rh-atelier .rh104HeroTrust span{
+  display:inline-flex !important; align-items:center !important;
+  gap: 11px !important;
+  font-size: var(--rh-fs-sm) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  color: var(--rh-text-soft) !important;
+}
+html.rh-atelier .rh104HeroTrust i{
+  width:36px !important; height:36px !important;
+  flex: 0 0 36px;
+  border-radius: var(--rh-radius-sm) !important;
+  border:1px solid var(--rh-border) !important;
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-accent) !important;
+  box-shadow:none !important;
+}
+html.rh-atelier .rh104HeroTrust i svg{ width:19px !important; height:19px !important; }
+
+/* --- Hero-Bild ------------------------------------------------------- */
+html.rh-atelier .rh104HeroVisual{
+  position:relative;
+  border-radius: var(--rh-radius-xl) !important;
+  overflow:hidden;
+  background: var(--rh-surface-secondary) !important;
+  border:1px solid var(--rh-border-soft) !important;
+  box-shadow: var(--rh-shadow-md) !important;
+  /* BEWUSST OHNE festes Seitenverhältnis: Die Höhe folgt dem Bild.
+     Dadurch entstehen weder Beschnitt noch Leerbalken – unabhängig
+     davon, welches Motiv hinterlegt ist. Die Bilddatei selbst bleibt
+     unverändert; gesteuert wird ausschliesslich die Darstellung. */
+  display:block !important;
+  height:auto !important;
+  aspect-ratio:auto !important;   /* Vorgaben der Vorversionen aufheben */
+  align-self:center;
+  padding:0 !important;
+  line-height:0;
+  max-height: 76vh;
+}
+/* Das Motiv wird VOLLSTÄNDIG gezeigt – `contain` statt `cover`.
+   Damit kann nichts abgeschnitten werden, auch nicht bei fremden
+   Seitenverhältnissen. Die Bilddatei bleibt in jedem Fall unverändert;
+   hier wird ausschliesslich die Darstellung gesteuert. */
+html.rh-atelier .rh104HeroVisual > img{
+  width:100% !important;
+  height:auto !important;
+  max-height: 76vh !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display:block;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  filter:none !important;
+  transition: transform var(--rh-dur-slower) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104HeroVisual:hover > img{ transform: scale(1.02); }
+
+html.rh-atelier .rh104HeroZoom{
+  position:absolute; right:14px; bottom:14px;
+  display:inline-flex; align-items:center; gap:7px;
+  padding: 9px 14px !important;
+  border:0 !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-glass) !important;
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  color: var(--rh-text) !important;
+  font-size: var(--rh-fs-xs) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  box-shadow: var(--rh-shadow-sm) !important;
+  cursor:pointer;
+  opacity:0; transform: translateY(6px);
+  transition: opacity var(--rh-dur-base) var(--rh-ease-premium),
+              transform var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104HeroVisual:hover .rh104HeroZoom,
+html.rh-atelier .rh104HeroZoom:focus-visible{ opacity:1; transform: translateY(0); }
+
+/* Vertrauens-Plakette, elegant über die untere Bildkante gelegt */
+html.rh-atelier .rh-heroBadge{
+  position:absolute; right: 22px; bottom: 22px;
+  display:grid; gap:4px;
+  padding: 16px 20px;
+  border-radius: var(--rh-radius-lg);
+  background: var(--rh-surface-glass);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow: var(--rh-shadow-lg);
+  max-width: 250px;
+  pointer-events:none;
+}
+html.rh-atelier .rh-heroBadge .stars{
+  display:flex; align-items:center; gap:7px;
+  color: var(--rh-accent-bright); font-size:13px; letter-spacing:.1em;
+}
+html.rh-atelier .rh-heroBadge .stars em{
+  font-style:normal; margin-left:auto;
+  color: var(--rh-text); font-weight: var(--rh-fw-semi); font-size: var(--rh-fs-xs);
+}
+html.rh-atelier .rh-heroBadge b{
+  color: var(--rh-text); font-size: var(--rh-fs-sm); font-weight: var(--rh-fw-semi);
+}
+html.rh-atelier .rh-heroBadge small{ color: var(--rh-text-muted); font-size: var(--rh-fs-xs); }
+@media (max-width: 900px){ html.rh-atelier .rh-heroBadge{ display:none; } }
+
+/* =====================================================================
+   05 · KATEGORIEN
+   Horizontale Karten mit feiner Trennlinie – wie in der Referenz.
+   ===================================================================== */
+html.rh-atelier .rh104CategoryGrid{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)) !important;
+  gap:0 !important;
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  overflow:hidden;
+  background: var(--rh-surface) !important;
+}
+html.rh-atelier .rh104Category{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:0 !important;
+  padding: var(--rh-space-7) var(--rh-space-5) var(--rh-space-6) !important;
+  border:0 !important;
+  border-right:1px solid var(--rh-border-soft) !important;
+  border-radius:0 !important;
+  background: var(--rh-surface) !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+  transition: background-color var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Category:last-child{ border-right:0 !important; }
+html.rh-atelier .rh104Category:hover{ background: var(--rh-bg) !important; }
+
+/* PRODUKTFREISTELLER: immer vollständig sichtbar, niemals beschnitten */
+html.rh-atelier .rh104CategoryMedia{
+  display:grid !important;
+  place-items:center !important;
+  width:100% !important;
+  aspect-ratio: 1 / 1 !important;
+  max-height: 190px;
+  margin-bottom: var(--rh-space-5) !important;
+  padding: var(--rh-space-3) !important;
+  background: transparent !important;
+  border:0 !important; border-radius:0 !important;
+  overflow:hidden;
+}
+html.rh-atelier .rh104CategoryMedia img{
+  width:100% !important; height:100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter:none !important;
+  mix-blend-mode: normal !important;
+  transition: transform var(--rh-dur-slow) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Category:hover .rh104CategoryMedia img{ transform: scale(1.04); }
+
+html.rh-atelier .rh104CategoryCopy{
+  display:grid !important;
+  gap:5px !important;
+  padding:0 !important;
+  background:none !important;
+  text-align:left;
+}
+html.rh-atelier .rh104CategoryCopy b{
+  font-size: var(--rh-fs-md) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  color: var(--rh-text) !important;
+  letter-spacing: var(--rh-tracking-tight);
+}
+html.rh-atelier .rh104CategoryCopy span{
+  font-size: var(--rh-fs-sm) !important;
+  color: var(--rh-text-muted) !important;
+  line-height:1.45;
+}
+html.rh-atelier .rh104Arrow{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px;
+  margin-top: var(--rh-space-3);
+  border-radius: var(--rh-radius-pill);
+  border:1px solid var(--rh-border);
+  background: var(--rh-surface);
+  color: var(--rh-text-soft) !important;
+  font-style:normal; font-size:13px;
+  position:static !important;
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Category:hover .rh104Arrow{
+  transform: translateX(5px);
+  border-color: var(--rh-accent);
+  background: var(--rh-accent);
+  color: var(--rh-text-on-accent) !important;
+}
+
+/* Shop-Cockpit-Kacheln (shop.html) im gleichen Duktus */
+html.rh-atelier .rh66CategoryGrid{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(210px,1fr)) !important;
+  gap:0 !important;
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  overflow:hidden;
+}
+html.rh-atelier .rh66CategoryCard{
+  display:grid !important;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--rh-space-4) !important;
+  padding: var(--rh-space-6) var(--rh-space-5) !important;
+  border:0 !important;
+  border-right:1px solid var(--rh-border-soft) !important;
+  border-radius:0 !important;
+  background: var(--rh-surface) !important;
+  box-shadow:none !important;
+  transition: background-color var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh66CategoryCard:hover{ background: var(--rh-bg) !important; }
+html.rh-atelier .rh66CategoryCard > img{
+  width:100% !important;
+  aspect-ratio: 1/1; height:auto !important;
+  max-height:150px;
+  object-fit: contain !important;
+  object-position:center !important;
+  filter:none !important;
+  transition: transform var(--rh-dur-slow) var(--rh-ease-premium);
+}
+html.rh-atelier .rh66CategoryCard:hover > img{ transform: scale(1.04); }
+html.rh-atelier .rh66CategoryCard > div b{
+  display:block;
+  font-size: var(--rh-fs-md) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  color: var(--rh-text) !important;
+  margin-bottom:4px;
+}
+html.rh-atelier .rh66CategoryCard > div span{
+  font-size: var(--rh-fs-sm) !important;
+  color: var(--rh-text-muted) !important;
+}
+html.rh-atelier .rh66CategoryCard > i{
+  justify-self:start;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px;
+  border-radius: var(--rh-radius-pill);
+  border:1px solid var(--rh-border);
+  color: var(--rh-text-soft) !important;
+  font-style:normal; font-size:13px;
+  position:static !important;
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rh66CategoryCard:hover > i{
+  transform: translateX(5px);
+  background: var(--rh-accent); border-color: var(--rh-accent);
+  color: var(--rh-text-on-accent) !important;
+}
+html.rh-atelier .rh66Icon{
+  display:grid; place-items:center;
+  aspect-ratio:1/1; max-height:150px;
+  font-size: 30px; font-weight: var(--rh-fw-semi);
+  color: var(--rh-accent) !important;
+  background: var(--rh-surface-secondary) !important;
+  border-radius: var(--rh-radius-md) !important;
+}
+
+/* =====================================================================
+   06 · PRODUKTKARTEN
+   ===================================================================== */
+html.rh-atelier .rh104Products,
+html.rh-atelier .dbProductGrid,
+html.rh-atelier .rh66ProductGrid{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr)) !important;
+  gap: var(--rh-space-6) !important;
+  align-items:stretch !important;
+}
+
+html.rh-atelier .rh104Product,
+html.rh-atelier .dbProductCard,
+html.rh-atelier .rh66ProductCard,
+html.rh-atelier .woodShopCard{
+  position:relative;
+  display:flex !important; flex-direction:column !important;
+  background: var(--rh-surface) !important;
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  box-shadow:none !important;
+  overflow:hidden;
+  transition:
+    transform    var(--rh-dur-base) var(--rh-ease-premium),
+    box-shadow   var(--rh-dur-base) var(--rh-ease-premium),
+    border-color var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Product:hover,
+html.rh-atelier .dbProductCard:hover,
+html.rh-atelier .rh66ProductCard:hover,
+html.rh-atelier .woodShopCard:hover{
+  transform: translateY(-3px);
+  border-color: var(--rh-border-strong) !important;
+  box-shadow: var(--rh-shadow-md) !important;
+}
+
+/* --- PRODUKTMEDIEN --------------------------------------------------
+   Fester quadratischer Rahmen, Bild immer VOLLSTÄNDIG darin (contain).
+   Kein Beschnitt, keine Verzerrung, keine Filter. Der Rahmen sorgt
+   zugleich dafür, dass ein Produktbild niemals Text oder Bedienelemente
+   überdecken kann.
+--------------------------------------------------------------------- */
+html.rh-atelier .rh104ProductImg,
+html.rh-atelier .dbProductImage,
+html.rh-atelier .rh66ProductCard .imgBox,
+html.rh-atelier .woodShopCard > a:first-child,
+html.rh-atelier .natureImage,
+html.rh-atelier .laugeVisual,
+html.rh-atelier .thermoImage{
+  position:relative;
+  display:grid !important;
+  place-items:center !important;
+  width:100% !important;
+  aspect-ratio: 1 / 1 !important;
+  min-height:0 !important;
+  max-height:none !important;
+  padding: var(--rh-space-6) !important;
+  background: var(--rh-surface-secondary) !important;
+  border:0 !important;
+  border-bottom:1px solid var(--rh-border-soft) !important;
+  border-radius:0 !important;
+  overflow:hidden !important;
+  flex: 0 0 auto;
+}
+html.rh-atelier .rh104ProductImg img,
+html.rh-atelier .dbProductImage img,
+html.rh-atelier .rh66ProductCard .imgBox img,
+html.rh-atelier .woodShopCard > a:first-child img,
+html.rh-atelier .natureImage img,
+html.rh-atelier .laugeVisual img,
+html.rh-atelier .thermoImage img{
+  width:100% !important; height:100% !important;
+  max-width:100% !important; max-height:100% !important;
+  object-fit: contain !important;
+  object-position:center !important;
+  filter:none !important;
+  box-shadow:none !important;
+  mix-blend-mode:normal !important;
+  transition: transform var(--rh-dur-slow) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Product:hover .rh104ProductImg img,
+html.rh-atelier .dbProductCard:hover .dbProductImage img,
+html.rh-atelier .rh66ProductCard:hover .imgBox img,
+html.rh-atelier .woodShopCard:hover > a:first-child img{
+  transform: scale(1.035);      /* sehr subtil – Produkt bleibt Produkt */
+}
+
+/* Zoom-Knopf */
+html.rh-atelier .rh104ProductZoom,
+html.rh-atelier .zoom{
+  position:absolute !important; right:10px; bottom:10px;
+  display:inline-flex !important; align-items:center; gap:6px;
+  padding: 7px 11px !important;
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-glass) !important;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  color: var(--rh-text-soft) !important;
+  font-size:11px; cursor:pointer;
+  opacity:0; transform: translateY(5px);
+  transition: opacity var(--rh-dur-base) var(--rh-ease-premium),
+              transform var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Product:hover .rh104ProductZoom,
+html.rh-atelier .dbProductCard:hover .rh104ProductZoom,
+html.rh-atelier .rh66ProductCard:hover .zoom,
+html.rh-atelier .rh104ProductZoom:focus-visible,
+html.rh-atelier .zoom:focus-visible{ opacity:1; transform: translateY(0); }
+
+/* --- Kartentext ------------------------------------------------------ */
+html.rh-atelier .rh104ProductBody,
+html.rh-atelier .dbProductBody,
+html.rh-atelier .rh66ProductCard .body{
+  display:flex !important; flex-direction:column !important;
+  gap: var(--rh-space-2) !important;
+  flex:1 1 auto !important;
+  padding: var(--rh-space-5) !important;
+  background: var(--rh-surface) !important;
+}
+html.rh-atelier .rh104Product h3,
+html.rh-atelier .dbProductCard h3,
+html.rh-atelier .rh66ProductCard h3,
+html.rh-atelier .woodShopCard h3{
+  font-size: var(--rh-fs-md) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  color: var(--rh-text) !important;
+  margin:0 !important;
+  letter-spacing: var(--rh-tracking-tight);
+}
+html.rh-atelier .rh104Product .meta,
+html.rh-atelier .rh66ProductCard .sub,
+html.rh-atelier .rh1077CardDesc,
+html.rh-atelier .dbProductBody > p{
+  font-size: var(--rh-fs-sm) !important;
+  color: var(--rh-text-muted) !important;
+  line-height:1.5 !important;
+  margin:0 !important;
+}
+html.rh-atelier .dbArticleNo{
+  font-size: var(--rh-fs-2xs) !important;
+  letter-spacing: .07em; text-transform:uppercase;
+  color: var(--rh-text-muted) !important;
+  margin:0 !important;
+}
+html.rh-atelier .rh66ProductCard .list,
+html.rh-atelier .dbProductCard .list{
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-xs) !important;
+  line-height:1.5 !important;
+}
+
+/* Preis */
+html.rh-atelier .rh104ProductFoot,
+html.rh-atelier .dbProductBuy,
+html.rh-atelier .rh66ProductCard .buy{
+  margin-top:auto !important;
+  padding-top: var(--rh-space-4) !important;
+  border-top:1px solid var(--rh-border-soft) !important;
+  background:none !important;
+}
+html.rh-atelier .rh104Price,
+html.rh-atelier .promoCurrentPrice,
+html.rh-atelier .dbProductBuy > strong,
+html.rh-atelier .rh66ProductCard .price{
+  font-size: var(--rh-fs-lg) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  color: var(--rh-text) !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--rh-tracking-tight);
+}
+html.rh-atelier .promoOldPrice{
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-sm) !important;
+  text-decoration: line-through;
+  font-weight: var(--rh-fw-regular) !important;
+}
+html.rh-atelier .unitPriceLine,
+html.rh-atelier .packLabel{
+  font-size: var(--rh-fs-2xs) !important;
+  color: var(--rh-text-muted) !important;
+}
+
+/* Warenkorb-Knopf auf der Karte.
+   Die Vorversion setzt hier Grösse, Farbe und Radius mit !important –
+   deshalb steht es hier ebenfalls, gezielt und nur an dieser Stelle. */
+html.rh-atelier body [class][class].rh104CartButton,
+html.rh-atelier body .rh104ProductFoot .rh104CartButton,
+html.rh-atelier .rh104CartButton{
+  width:42px !important; min-width:42px !important;
+  height:42px !important; min-height:42px !important;
+  padding:0 !important;
+  border-radius: var(--rh-radius-pill) !important;
+  border:1px solid var(--rh-border) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+  font-size:15px !important; cursor:pointer;
+  box-shadow:none !important;
+  display:inline-flex !important; align-items:center; justify-content:center;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              transform var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier body [class][class].rh104CartButton:hover,
+html.rh-atelier body .rh104ProductFoot .rh104CartButton:hover,
+html.rh-atelier .rh104CartButton:hover{
+  background: var(--rh-text) !important;
+  border-color: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  transform:none !important;
+}
+html.rh-atelier .rh104CartButton:active{ transform: scale(.92) !important; }
+
+html.rh-atelier .dbProductBuy button,
+html.rh-atelier .rh66ProductCard .buy button{
+  min-height:44px !important;
+  border-radius: var(--rh-radius-pill) !important;
+  border:1px solid var(--rh-text) !important;
+  background: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-xs) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  cursor:pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              transform var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .dbProductBuy button:hover,
+html.rh-atelier .rh66ProductCard .buy button:hover{
+  background: var(--rh-accent) !important; border-color: var(--rh-accent) !important;
+}
+html.rh-atelier .dbProductBuy button:active,
+html.rh-atelier .rh66ProductCard .buy button:active{ transform: scale(.985); }
+
+html.rh-atelier .detailLink{
+  min-height:44px !important;
+  display:inline-flex !important; align-items:center; justify-content:center;
+  border-radius: var(--rh-radius-pill) !important;
+  border:1px solid var(--rh-border-strong) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+  font-size: var(--rh-fs-xs) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  text-decoration:none !important;
+  transition: border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .detailLink:hover{
+  border-color: var(--rh-text) !important;
+  background: var(--rh-surface-secondary) !important;
+}
+
+/* Kennzeichnungen */
+html.rh-atelier .newSortimentBadge,
+html.rh-atelier .smokyPromoBadge,
+html.rh-atelier .setBadge{
+  display:inline-flex !important; align-items:center; gap:6px;
+  padding: 4px 10px !important;
+  border-radius: var(--rh-radius-pill) !important;
+  font-size: 10px !important;
+  font-weight: var(--rh-fw-bold) !important;
+  letter-spacing: .09em; text-transform:uppercase;
+  border:1px solid transparent !important;
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text-soft) !important;
+  box-shadow:none !important;
+}
+html.rh-atelier .newSortimentBadge{
+  background: var(--rh-success-tint) !important;
+  border-color: var(--rh-success-line) !important;
+  color: var(--rh-success) !important;
+}
+html.rh-atelier .smokyPromoBadge.offer{
+  background: var(--rh-accent-tint) !important;
+  border-color: var(--rh-accent-line) !important;
+  color: var(--rh-accent) !important;
+}
+html.rh-atelier .smokyPromoBadge.popular{
+  background: var(--rh-info-tint) !important;
+  border-color: var(--rh-info-line) !important;
+  color: var(--rh-info) !important;
+}
+html.rh-atelier .rh1077InfoLine.available{
+  color: var(--rh-success) !important;
+  font-weight: var(--rh-fw-semi) !important;
+}
+html.rh-atelier .rh1077InfoLine.notice{ color: var(--rh-warning) !important; }
+html.rh-atelier .rh1077InfoLine{ color: var(--rh-text-muted) !important; }
+
+/* =====================================================================
+   07 · EDITORIAL / WISSEN
+   Grosse Motive, Text auf dunklem Verlauf – wie in der Referenz.
+   ===================================================================== */
+html.rh-atelier .rh104Knowledge{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(258px,1fr)) !important;
+  gap: var(--rh-space-5) !important;
+}
+html.rh-atelier .rh104Article{
+  position:relative !important;
+  display:block !important;
+  aspect-ratio: 4 / 5 !important;
+  min-height:0 !important;
+  height:auto !important;
+  border-radius: var(--rh-radius-lg) !important;
+  overflow:hidden !important;
+  border:0 !important;
+  background: var(--rh-surface-ink) !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+  isolation:isolate !important;
+  transition: transform var(--rh-dur-base) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Article:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--rh-shadow-lg) !important;
+}
+html.rh-atelier .rh104Article > img{
+  position:absolute !important; inset:0 !important;
+  width:100% !important; height:100% !important;
+  object-fit: cover !important;
+  object-position:center !important;
+  border-radius:0 !important;
+  filter:none !important;
+  z-index:0 !important;
+  transition: transform var(--rh-dur-slower) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104Article:hover > img{ transform: scale(1.05); }
+/* Der Verlauf ist bewusst kräftig: Mehrere dieser Motive sind
+   Produktfreisteller auf hellem Grund. Ohne ausreichende Abdunklung
+   wäre die weisse Schrift dort nicht lesbar (WCAG AA). */
+html.rh-atelier .rh104Article::after{
+  content:"" !important;
+  position:absolute !important; inset:0 !important;
+  z-index:1 !important;
+  background: linear-gradient(180deg,
+      rgba(12,10,8,.06) 0%,
+      rgba(12,10,8,.30) 42%,
+      rgba(12,10,8,.72) 72%,
+      rgba(12,10,8,.90) 100%) !important;
+  transition: opacity var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104ArticleCopy{
+  position:absolute !important;
+  left:0 !important; right:0 !important; bottom:0 !important; top:auto !important;
+  z-index:2 !important;
+  display:grid !important; gap:6px;
+  padding: var(--rh-space-6) !important;
+  background:none !important;
+}
+html.rh-atelier .rh104ArticleCopy .rh104ArticleTag{
+  color: rgba(255,255,255,.82) !important;
+  margin-bottom:2px;
+}
+html.rh-atelier .rh104ArticleCopy h3{
+  color:#fff !important;
+  font-size: var(--rh-fs-lg) !important;
+  margin:0 !important;
+  text-shadow: 0 1px 12px rgba(0,0,0,.28);
+}
+html.rh-atelier .rh104ArticleCopy small{
+  color: rgba(255,255,255,.78) !important;
+  font-size: var(--rh-fs-sm) !important;
+  line-height:1.45;
+}
+
+/* =====================================================================
+   08 · VERTRAUEN & VORTEILE
+   ===================================================================== */
+html.rh-atelier .rh104Benefits{
+  background: var(--rh-bg) !important;
+  padding-block: clamp(36px, 4vw, 64px) !important;
+  border-block:1px solid var(--rh-border-soft) !important;
+}
+html.rh-atelier .rh104BenefitsGrid{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(230px,1fr)) !important;
+  gap:0 !important;
+}
+html.rh-atelier .rh104Benefit{
+  display:grid !important;
+  grid-template-columns: 44px 1fr !important;
+  align-items:center !important;
+  gap: var(--rh-space-4) !important;
+  min-height:0 !important;
+  padding: var(--rh-space-4) var(--rh-space-6) !important;
+  border:0 !important;
+  border-right:1px solid var(--rh-border) !important;
+  border-radius:0 !important;
+  background:none !important;
+  box-shadow:none !important;
+}
+html.rh-atelier .rh104BenefitsGrid > .rh104Benefit:last-child{ border-right:0 !important; }
+html.rh-atelier .rh104BenefitIcon{
+  width:44px !important; height:44px !important;
+  border-radius: var(--rh-radius-md) !important;
+  border:1px solid var(--rh-border) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-accent) !important;
+  box-shadow:none !important;
+}
+html.rh-atelier .rh104BenefitIcon svg{ width:22px !important; height:22px !important; }
+html.rh-atelier .rh104Benefit b{
+  display:block;
+  font-size: var(--rh-fs-sm) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  color: var(--rh-text) !important;
+  line-height:1.3 !important;
+}
+html.rh-atelier .rh104Benefit > div > span{
+  display:block;
+  font-size: var(--rh-fs-xs) !important;
+  color: var(--rh-text-muted) !important;
+  margin-top:2px !important;
+  line-height:1.45 !important;
+}
+
+/* Vertrauensbereich unten */
+html.rh-atelier .rh104TrustSection{ background: var(--rh-bg) !important; }
+html.rh-atelier .rh104TrustTitle{
+  text-align:center; max-width: 62ch; margin: 0 auto var(--rh-space-9) !important;
+}
+html.rh-atelier .rh104TrustTitle p{ color: var(--rh-text-muted) !important; font-size: var(--rh-fs-md) !important; }
+html.rh-atelier .rh104TrustCards{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(238px,1fr)) !important;
+  gap: var(--rh-space-5) !important;
+}
+html.rh-atelier .rh104TrustCard{
+  padding: var(--rh-space-7) !important;
+  background: var(--rh-surface) !important;
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  box-shadow:none !important;
+  transition: border-color var(--rh-dur-base) var(--rh-ease-premium),
+              transform var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rh104TrustCard:hover{
+  border-color: var(--rh-border-strong) !important;
+  transform: translateY(-2px);
+}
+html.rh-atelier .rh104TrustIcon{
+  width:38px; height:38px;
+  display:grid; place-items:center;
+  margin-bottom: var(--rh-space-5) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-accent-tint) !important;
+  color: var(--rh-accent) !important;
+  font-size:16px;
+}
+html.rh-atelier .rh104TrustCard b{
+  display:block;
+  font-size: var(--rh-fs-md) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  color: var(--rh-text) !important;
+  margin-bottom: var(--rh-space-2) !important;
+}
+html.rh-atelier .rh104TrustCard p{
+  font-size: var(--rh-fs-sm) !important;
+  color: var(--rh-text-muted) !important;
+  margin:0 !important;
+}
+
+/* =====================================================================
+   09 · FOOTER
+   ---------------------------------------------------------------------
+   Die Vorgängerschicht setzt hier eine DUNKLE Fussleiste mit heller
+   Schrift (html body footer …). Die Gestaltungsvorlage arbeitet mit
+   einer hellen, ruhigen Fussleiste. Die folgenden Regeln tragen deshalb
+   bewusst den Präfix `html.rh-atelier body`: nur so liegen sie in der
+   Rangfolge über den bestehenden Regeln. Ohne diesen Präfix bliebe die
+   Schrift hell auf hellem Grund – also unlesbar.
+   ===================================================================== */
+html.rh-atelier body footer{
+  background: var(--rh-bg) !important;
+  border-top:1px solid var(--rh-border) !important;
+  color: var(--rh-text-soft) !important;
+}
+html.rh-atelier body footer .footerPlainBrand,
+html.rh-atelier body footer .rh1072FooterBrand .footerPlainBrand{
+  color: var(--rh-text) !important;
+  background:none !important;
+  -webkit-text-fill-color: var(--rh-text) !important;
+}
+html.rh-atelier body footer h4,
+html.rh-atelier body footer .rh1072Legal h4{
+  color: var(--rh-text) !important;
+}
+html.rh-atelier body footer p,
+html.rh-atelier body footer .rh1072FooterBrand p,
+html.rh-atelier body footer small,
+html.rh-atelier body footer .rh1072SocialBar > span{
+  color: var(--rh-text-muted) !important;
+}
+html.rh-atelier body footer a,
+html.rh-atelier body footer nav a,
+html.rh-atelier body footer .rh1072LegalLinks a,
+html.rh-atelier body footer .socials a{
+  color: var(--rh-text-muted) !important;
+  background:transparent !important;
+}
+html.rh-atelier body footer a:hover,
+html.rh-atelier body footer nav a:hover,
+html.rh-atelier body footer .rh1072LegalLinks a:hover,
+html.rh-atelier body footer .socials a:hover{
+  color: var(--rh-accent) !important;
+}
+/* Die Sozialen-Netzwerke-Leiste wird von footer-v1072.js als <button>
+   erzeugt. Beide Varianten werden hier abgedeckt. */
+html.rh-atelier body footer .rh1072SocialBar .v17Socials button,
+html.rh-atelier body footer .socials button,
+html.rh-atelier body footer .socials a{
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-xs) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  padding: 9px 14px !important;
+  cursor:pointer;
+}
+html.rh-atelier body footer .rh1072SocialBar .v17Socials button:hover,
+html.rh-atelier body footer .socials button:hover,
+html.rh-atelier body footer .socials a:hover{
+  border-color: var(--rh-accent-line) !important;
+  background: var(--rh-accent-tint) !important;
+  color: var(--rh-accent) !important;
+}
+html.rh-atelier body footer .rh1072SocialBar .v17Socials button svg,
+html.rh-atelier body footer .socials button svg,
+html.rh-atelier body footer .socials a svg{
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+/* Rechtliche Verweise untereinander statt in einer breiten Zeile */
+html.rh-atelier body footer .rh1072LegalLinks{
+  display:grid !important;
+  grid-template-columns: minmax(0,1fr) !important;
+  gap: 11px !important;
+}
+html.rh-atelier body footer .rh1072SocialBar{
+  border-top:1px solid var(--rh-border-soft) !important;
+  background:none !important;
+}
+
+html.rh-atelier footer{
+  background: var(--rh-bg) !important;
+  border-top:1px solid var(--rh-border) !important;
+  padding-block: clamp(48px, 6vw, 88px) clamp(28px, 3vw, 44px) !important;
+  color: var(--rh-text-soft) !important;
+}
+html.rh-atelier .rh1072FooterGrid{
+  display:grid !important;
+  grid-template-columns: minmax(0,1.4fr) repeat(auto-fit, minmax(160px,1fr)) !important;
+  gap: var(--rh-space-9) var(--rh-space-8) !important;
+  padding-bottom: var(--rh-space-8) !important;
+  border-bottom:1px solid var(--rh-border) !important;
+}
+html.rh-atelier .footerPlainBrand{
+  font-size: 19px !important;
+  font-weight: var(--rh-fw-bold) !important;
+  letter-spacing: .16em !important;
+  text-transform:uppercase;
+  color: var(--rh-text) !important;
+  margin-bottom: var(--rh-space-4) !important;
+}
+html.rh-atelier .rh1072FooterBrand p{
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-sm) !important;
+  max-width: 34ch;
+}
+html.rh-atelier footer h4{
+  font-size: var(--rh-fs-2xs) !important;
+  letter-spacing: var(--rh-tracking-caps) !important;
+  text-transform: uppercase;
+  color: var(--rh-text) !important;
+  font-weight: var(--rh-fw-bold) !important;
+  margin: 0 0 var(--rh-space-5) !important;
+}
+html.rh-atelier .rh1072LegalLinks{
+  display:grid !important; gap: 11px !important;
+}
+html.rh-atelier footer a{
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-sm) !important;
+  text-decoration:none !important;
+  width:fit-content;
+  transition: color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier footer a:hover{ color: var(--rh-accent) !important; }
+html.rh-atelier .rh1072SocialBar{
+  display:flex !important; flex-wrap:wrap;
+  align-items:center; justify-content:space-between;
+  gap: var(--rh-space-4) !important;
+  padding-top: var(--rh-space-6) !important;
+  border:0 !important;
+}
+html.rh-atelier .rh1072SocialBar > span{
+  color: var(--rh-text-muted) !important;
+  font-size: var(--rh-fs-xs) !important;
+}
+
+/* =====================================================================
+   10 · PRODUKTDETAIL & FORMULARE
+   ===================================================================== */
+html.rh-atelier .productPage,
+html.rh-atelier .woodProductHero,
+html.rh-atelier .featurePanel,
+html.rh-atelier .moduleBand,
+html.rh-atelier .card,
+html.rh-atelier .knowledgeCard,
+html.rh-atelier .priceExplain{
+  background: var(--rh-surface) !important;
+  border:1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  box-shadow:none !important;
+}
+html.rh-atelier .productImage,
+html.rh-atelier .woodProductImage{
+  display:grid !important; place-items:center !important;
+  aspect-ratio: 1/1;
+  padding: clamp(20px, 4vw, 52px) !important;
+  background: var(--rh-surface-secondary) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  overflow:hidden;
+}
+html.rh-atelier .productImage img,
+html.rh-atelier .woodProductImage img{
+  width:100% !important; height:100% !important;
+  object-fit: contain !important;
+  object-position:center !important;
+  filter:none !important;
+}
+
+html.rh-atelier input[type=text],
+html.rh-atelier input[type=email],
+html.rh-atelier input[type=tel],
+html.rh-atelier input[type=number],
+html.rh-atelier input[type=search],
+html.rh-atelier input[type=password],
+html.rh-atelier select,
+html.rh-atelier textarea{
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-base) !important;
+  color: var(--rh-text) !important;
+  background: var(--rh-surface) !important;
+  border:1px solid var(--rh-border-strong) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  padding: 12px 14px !important;
+  min-height:46px;
+  transition: border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier input:focus,
+html.rh-atelier select:focus,
+html.rh-atelier textarea:focus{
+  outline:none !important;
+  border-color: var(--rh-accent) !important;
+  box-shadow: 0 0 0 3px var(--rh-accent-tint) !important;
+}
+html.rh-atelier label{
+  font-size: var(--rh-fs-sm) !important;
+  font-weight: var(--rh-fw-medium) !important;
+  color: var(--rh-text-soft) !important;
+}
+
+/* Tabellen */
+html.rh-atelier table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  font-size: var(--rh-fs-sm);
+}
+html.rh-atelier th{
+  text-align:left;
+  font-size: var(--rh-fs-2xs) !important;
+  letter-spacing: var(--rh-tracking-caps);
+  text-transform:uppercase;
+  color: var(--rh-text-muted) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  padding: 12px 14px !important;
+  border-bottom:1px solid var(--rh-border) !important;
+  background: var(--rh-surface) !important;
+}
+html.rh-atelier td{
+  padding: 14px !important;
+  border-bottom:1px solid var(--rh-border-soft) !important;
+  color: var(--rh-text-soft) !important;
+}
+html.rh-atelier tbody tr{ transition: background-color var(--rh-dur-fast) var(--rh-ease-premium); }
+html.rh-atelier tbody tr:hover{ background: var(--rh-surface-secondary) !important; }
+
+/* =====================================================================
+   11 · WARENKORB, MODALS, TOASTS
+   ===================================================================== */
+html.rh-atelier .drawer{
+  background: var(--rh-surface) !important;
+  border-left:1px solid var(--rh-border) !important;
+  box-shadow: var(--rh-shadow-xl) !important;
+  transition: transform var(--rh-dur-slow) var(--rh-ease-out) !important;
+}
+html.rh-atelier .overlay{
+  background: rgba(22,21,26,.32) !important;
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  transition: opacity var(--rh-dur-base) var(--rh-ease-premium) !important;
+}
+html.rh-atelier .cartBtn{
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  border:0 !important;
+  box-shadow: var(--rh-shadow-lg) !important;
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-sm) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  padding: 14px 22px !important;
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .cartBtn:hover{ transform: translateY(-2px); background: var(--rh-accent) !important; }
+
+html.rh-atelier .zoomModal .zoomCard,
+html.rh-atelier .modalCard{
+  background: var(--rh-surface) !important;
+  border-radius: var(--rh-radius-xl) !important;
+  border:1px solid var(--rh-border) !important;
+  box-shadow: var(--rh-shadow-xl) !important;
+  animation: rh-modal-in var(--rh-dur-slow) var(--rh-ease-out);
+}
+@keyframes rh-modal-in{
+  from{ opacity:0; transform: scale(.98) translateY(8px); }
+  to  { opacity:1; transform: scale(1)   translateY(0);   }
+}
+/* Auch im Zoom bleibt das Produktbild vollständig sichtbar */
+html.rh-atelier .zoomModal img{
+  object-fit: contain !important;
+  max-width:100% !important; max-height: 82vh !important;
+  filter:none !important;
+}
+
+html.rh-atelier .toast{
+  background: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  border-radius: var(--rh-radius-md) !important;
+  box-shadow: var(--rh-shadow-lg) !important;
+  font-family: var(--rh-font) !important;
+  font-size: var(--rh-fs-sm) !important;
+  padding: 13px 20px !important;
+  border:0 !important;
+}
+
+/* --- Katalog-Hinweis -------------------------------------------------
+   Erscheint kurz, wenn das Sortiment im Hintergrund aktualisiert wurde.
+   Bewusst leise: keine Sperrschicht, kein Ton, kein Sprung im Layout.
+   Wird auch ohne die Atelier-Klasse gestaltet, damit der Hinweis in
+   jedem Fall lesbar ist.
+--------------------------------------------------------------------- */
+.rh24CatalogPulse{
+  position: fixed;
+  left: 50%; bottom: 26px;
+  z-index: var(--rh-z-toast, 180);
+  transform: translate(-50%, 14px);
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 11px 20px;
+  border-radius: var(--rh-radius-pill, 999px);
+  background: var(--rh-text, #16151a);
+  color: var(--rh-text-inverse, #fdfcfa);
+  font-family: var(--rh-font, system-ui, sans-serif);
+  font-size: var(--rh-fs-sm, 13px);
+  font-weight: var(--rh-fw-medium, 500);
+  box-shadow: var(--rh-shadow-lg, 0 20px 40px -20px rgba(0,0,0,.4));
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--rh-dur-base, 260ms) var(--rh-ease-premium, ease),
+              transform var(--rh-dur-base, 260ms) var(--rh-ease-premium, ease);
+}
+.rh24CatalogPulse::before{
+  content: "";
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #6fd39b;
+  box-shadow: 0 0 0 0 rgba(111,211,155,.55);
+  animation: rh-pulse-dot 1.8s var(--rh-ease-in-out, ease) infinite;
+}
+.rh24CatalogPulse.is-on{ opacity: 1; transform: translate(-50%, 0); }
+@keyframes rh-pulse-dot{
+  0%   { box-shadow: 0 0 0 0   rgba(111,211,155,.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(111,211,155,0);   }
+  100% { box-shadow: 0 0 0 0   rgba(111,211,155,0);   }
+}
+@media (prefers-reduced-motion: reduce){
+  .rh24CatalogPulse{ transition: none; transform: translate(-50%, 0); }
+  .rh24CatalogPulse::before{ animation: none; }
+}
+
+/* =====================================================================
+   12 · BEWEGUNG
+   ===================================================================== */
+
+/* Hero: Text gestaffelt, Bild minimal langsamer (Parallax in JS) */
+html.rh-atelier .rh-stagger > *{
+  opacity:0;
+  transform: translate3d(0,16px,0);
+  animation: rh-stagger-in var(--rh-dur-slower) var(--rh-ease-out) forwards;
+  animation-delay: calc(var(--rh-stagger-i, 0) * 85ms + 90ms);
+}
+@keyframes rh-stagger-in{
+  to{ opacity:1; transform: translate3d(0,0,0); }
+}
+html.rh-atelier .rh-parallax{ will-change: transform; }
+
+/* Zahlen zählen hoch (JS) – tabellarische Ziffern verhindern Springen */
+html.rh-atelier [data-rh-countup]{ font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce){
+  /* Die zweite Selektorgruppe mit `body [class][class]` ist nötig,
+     weil einzelne Altregeln ihre Übergänge mit sehr hoher Spezifität
+     und !important setzen (z. B. der Warenkorb-Knopf auf Produkt-
+     karten). Ohne sie würden dort weiterhin Übergänge laufen. */
+  html.rh-atelier *,
+  html.rh-atelier *::before,
+  html.rh-atelier *::after,
+  html.rh-atelier body [class][class],
+  html.rh-atelier body [class][class]::before,
+  html.rh-atelier body [class][class]::after,
+  html.rh-atelier body a,
+  html.rh-atelier body a::before,
+  html.rh-atelier body a::after{
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  html.rh-atelier .rh-stagger > *{ opacity:1 !important; transform:none !important; }
+  html.rh-atelier .rh-parallax{ transform:none !important; will-change:auto; }
+  html.rh-atelier .rh104HeroVisual > img{ transform:none !important; }
+  html.rh-atelier .rh104ProductZoom,
+  html.rh-atelier .zoom,
+  html.rh-atelier .rh104HeroZoom{ opacity:1 !important; transform:none !important; }
+}
+
+/* =====================================================================
+   13 · RESPONSIVE
+   Prüfpunkte: 320 · 375 · 390 · 430 · 768 · 1024 · 1280 · 1440 · 1920
+   ===================================================================== */
+@media (max-width: 1024px){
+  html.rh-atelier .rh104HeroGrid{ grid-template-columns: minmax(0,1fr) !important; }
+  /* Kein festes Seitenverhältnis – sonst entstehen Leerbalken über
+     oder unter dem Motiv. Die Höhe folgt weiterhin dem Bild. */
+  html.rh-atelier .rh104HeroVisual{ order:-1; max-height:56vh; }
+  html.rh-atelier .rh104HeroVisual > img{ max-height:56vh !important; }
+  html.rh-atelier .rh104HeroCopy{ max-width:none; }
+  html.rh-atelier .rh104Benefit{ border-right:0 !important; border-bottom:1px solid var(--rh-border) !important; }
+  html.rh-atelier .rh104BenefitsGrid > .rh104Benefit:last-child{ border-bottom:0 !important; }
+}
+
+@media (max-width: 900px){
+  html.rh-atelier .rh24MobileMenuBtn{ display:inline-flex !important; }
+  html.rh-atelier .rh24Nav{
+    grid-template-columns: auto minmax(0,1fr) auto !important;
+    min-height: 62px;
+  }
+  /* Navigation als Schublade */
+  html.rh-atelier .rh24NavLinks{
+    position:fixed;
+    inset: 0 auto 0 0;
+    width: min(90vw, 340px);
+    z-index: var(--rh-z-drawer);
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+    gap: 2px !important;
+    padding: var(--rh-space-7) var(--rh-space-5) !important;
+    background: var(--rh-surface) !important;
+    border-right:1px solid var(--rh-border);
+    box-shadow: var(--rh-shadow-xl);
+    overflow-y:auto;
+    overscroll-behavior: contain;
+    transform: translateX(-101%);
+    visibility:hidden;
+    transition: transform var(--rh-dur-slow) var(--rh-ease-out),
+                visibility 0s linear var(--rh-dur-slow);
+  }
+  html.rh-atelier .rh24NavShell.mobileOpen .rh24NavLinks{
+    transform: translateX(0);
+    visibility:visible;
+    transition: transform var(--rh-dur-slow) var(--rh-ease-out), visibility 0s;
+  }
+  html.rh-atelier .rh24NavLink,
+  html.rh-atelier .rh24DropBtn{
+    justify-content:space-between;
+    width:100%;
+    padding: 14px 12px !important;
+    font-size: var(--rh-fs-base) !important;
+  }
+  html.rh-atelier .rh24Mega{
+    position:static !important;
+    box-shadow:none !important;
+    border:0 !important;
+    border-left:2px solid var(--rh-border) !important;
+    border-radius:0 !important;
+    margin: 0 0 var(--rh-space-3) 12px !important;
+    padding: var(--rh-space-2) 0 var(--rh-space-2) var(--rh-space-3) !important;
+    transform:none !important;
+  }
+  html.rh-atelier .rh24NavDrop:not(.open) .rh24Mega{ display:none !important; }
+  html.rh-atelier .rh-navScrim{
+    position:fixed; inset:0;
+    z-index: calc(var(--rh-z-drawer) - 1);
+    background: rgba(22,21,26,.34);
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+    opacity:0; pointer-events:none;
+    transition: opacity var(--rh-dur-base) var(--rh-ease-premium);
+  }
+  html.rh-atelier .rh24NavShell.mobileOpen ~ .rh-navScrim,
+  html.rh-atelier .rh-navScrim.is-on{ opacity:1; pointer-events:auto; }
+
+  html.rh-atelier .rh104SectionHead,
+  html.rh-atelier .sectionHead{
+    grid-template-columns: minmax(0,1fr) !important;
+    align-items:start !important;
+  }
+  html.rh-atelier .rh104CategoryGrid,
+  html.rh-atelier .rh66CategoryGrid{
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  }
+  html.rh-atelier .rh104Category:nth-child(2n),
+  html.rh-atelier .rh66CategoryCard:nth-child(2n){ border-right:0 !important; }
+  html.rh-atelier .rh104Category,
+  html.rh-atelier .rh66CategoryCard{ border-bottom:1px solid var(--rh-border-soft) !important; }
+}
+
+@media (max-width: 640px){
+  html.rh-atelier .rh104Products,
+  html.rh-atelier .dbProductGrid,
+  html.rh-atelier .rh66ProductGrid{
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)) !important;
+    gap: var(--rh-space-4) !important;
+  }
+  html.rh-atelier .rh104Knowledge{
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px),1fr)) !important;
+  }
+  html.rh-atelier .rh104Btn,
+  html.rh-atelier .btn{ width:100%; }
+  html.rh-atelier .rh104HeroActions > *{ flex:1 1 100%; }
+  html.rh-atelier .rh1072FooterGrid{ grid-template-columns: minmax(0,1fr) !important; }
+  html.rh-atelier .rh104ProductImg,
+  html.rh-atelier .dbProductImage,
+  html.rh-atelier .rh66ProductCard .imgBox{ padding: var(--rh-space-4) !important; }
+}
+
+/* 320 px – nichts darf herausragen */
+@media (max-width: 380px){
+  html.rh-atelier .rh104CategoryGrid,
+  html.rh-atelier .rh66CategoryGrid{ grid-template-columns: minmax(0,1fr) !important; }
+  html.rh-atelier .rh104Category,
+  html.rh-atelier .rh66CategoryCard{ border-right:0 !important; }
+  html.rh-atelier .rh104BrandText{ font-size:16px !important; letter-spacing:.12em !important; }
+  html.rh-atelier .wrap{ padding-inline: 16px !important; }
+}
+
+/* Alles, was breiter sein kann als der Bildschirm, scrollt in sich */
+html.rh-atelier .rh-scrollx{
+  overflow-x:auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+/* ---------------------------------------------------------------------
+   SICHERUNG GEGEN WAAGERECHTES SCROLLEN
+   Zwei Altbausteine ragen auf sehr schmalen Geräten über den Rand:
+     · die Warenkorb-Schublade, wenn sie nicht wirklich `fixed` steht
+     · Bedienzeilen, die ihre Schaltflächen nicht umbrechen lassen
+   Beides wird hier gezielt behoben – ohne Funktionsverlust.
+--------------------------------------------------------------------- */
+html.rh-atelier .drawer{
+  position: fixed !important;
+  max-width: min(100vw, 420px) !important;
+}
+html.rh-atelier .recipeActions,
+html.rh-atelier .productActions,
+html.rh-atelier .heroFeatures,
+html.rh-atelier .moduleCards,
+html.rh-atelier .quickCreateActions,
+html.rh-atelier .formActions{
+  flex-wrap: wrap !important;
+  min-width: 0;
+}
+html.rh-atelier img,
+html.rh-atelier svg,
+html.rh-atelier video,
+html.rh-atelier iframe{ max-width: 100%; }
+@media (max-width: 480px){
+  /* Letzte Sicherung: auf sehr schmalen Geräten darf nichts über den
+     Rand hinausragen. `clip` blockiert – anders als `hidden` – kein
+     `position: sticky` in der Kopfzeile. */
+  html.rh-atelier, html.rh-atelier body{ overflow-x: clip; }
+}
+
+/* =====================================================================
+   13b · KONTRASTKORREKTUREN
+   Diese Stellen lagen bei der Messung unter WCAG AA. Die Werte in den
+   Kommentaren sind gerechnet, nicht geschätzt.
+   ===================================================================== */
+
+/* Kauf-Schaltflächen: Die Vorversion legt einen Verlauf von #b25f22 nach
+   #96500f darunter. Weiss darauf liegt je nach Stelle zwischen 4,0:1 und
+   4,9:1 – am oberen Rand also unter AA. Eine ruhige Vollfläche in
+   --rh-accent (#a9530f) ergibt gleichmässig 5,34:1 und passt zugleich
+   besser zur übrigen Gestaltung. */
+html.rh-atelier body [class][class] .productInfo button.buy,
+html.rh-atelier body [class][class] .buy button:not(.detailLink),
+html.rh-atelier body [class][class] button.su,
+html.rh-atelier body [class][class] .wizard button,
+html.rh-atelier body .rh104Btn.primary,
+html.rh-atelier body .btn.primary{
+  background: var(--rh-accent) !important;
+  border-color: var(--rh-accent) !important;
+  color: var(--rh-text-on-accent) !important;
+  box-shadow: var(--rh-shadow-sm) !important;
+}
+html.rh-atelier body [class][class] .productInfo button.buy:hover,
+html.rh-atelier body [class][class] .buy button:not(.detailLink):hover,
+html.rh-atelier body [class][class] button.su:hover,
+html.rh-atelier body [class][class] .wizard button:hover,
+html.rh-atelier body .rh104Btn.primary:hover,
+html.rh-atelier body .btn.primary:hover{
+  background: var(--rh-accent-hover) !important;   /* Weiss darauf: 6,99:1 */
+  border-color: var(--rh-accent-hover) !important;
+}
+/* Auf der Startseite bleiben die beiden Hero-Schaltflächen bewusst
+   ruhig (dunkel bzw. mit Kontur) – dort ist der Kupferton nicht nötig. */
+html.rh-atelier body .rh104HeroActions .rh104Btn.primary{
+  background: var(--rh-text) !important;
+  border-color: var(--rh-text) !important;
+}
+html.rh-atelier body .rh104HeroActions .rh104Btn.primary:hover{
+  background: var(--rh-accent) !important;
+  border-color: var(--rh-accent) !important;
+}
+
+/* Das Pluszeichen zwischen den Bündelartikeln stand auf 2,86:1. */
+html.rh-atelier body .rh104Plus{ color: var(--rh-text-muted) !important; }
+
+/* Fusszeile des KI-Hinweises stand auf 4,18:1. */
+html.rh-atelier body .productAiFoot,
+html.rh-atelier body [class][class] .productAiFoot{
+  color: var(--rh-text-muted) !important;   /* 5,24:1 auf hellem Grund */
+}
+
+/* FEHLERBEHEBUNG (bestand bereits vor diesem Update):
+   Im „Powered by"-Band stand helle Schrift (#eef5f7) auf einer weissen
+   Fläche – die Wortmarke war praktisch unsichtbar (1,05:1). Das Band
+   selbst ist dunkel; nur die Verlinkung darin hatte die falsche Fläche
+   geerbt. */
+html.rh-atelier body .rh701HdBand [class][class].rh701HdLink,
+html.rh-atelier body .rh701HdLink{
+  background: rgba(255,255,255,.04) !important;
+  border-color: rgba(118,231,239,.28) !important;
+  color: #eef5f7 !important;                /* auf #10171b: 15,4:1 */
+}
+html.rh-atelier body .rh701HdBand{ background: #10171b !important; }
+html.rh-atelier body .rh701HdName,
+html.rh-atelier body .rh701HdMark{ color: #eef5f7 !important; }     /* 16,4:1 */
+html.rh-atelier body .rh701HdPowered{ color: #a9b8bf !important; }  /*  8,9:1 */
+/* Die Buchstaben-Akzente der Partnermarke standen zuletzt in Kupfer auf
+   dem dunklen Band – 4,33:1 und damit knapp unter AA. Das Band bringt
+   in seinem eigenen Stilblock ausdrücklich Cyan (#76e6ee) mit; dieser
+   ursprüngliche Markenton wird wiederhergestellt und erreicht 12,3:1. */
+html.rh-atelier body .rh701HdName i,
+html.rh-atelier body .rh701HdMark i{ color: #76e6ee !important; }
+
+/* BEWUSST UNVERÄNDERT: .carrierMini / .carrierMark für DHL zeigt
+   Rot #d40511 auf Gelb #ffdf00 (4,13:1). Das sind die geschützten
+   Farben der Marke DHL. WCAG nimmt Wort- und Bildmarken ausdrücklich
+   von der Kontrastanforderung aus; ein Umfärben wäre eine
+   Markenverfälschung. Die Information steht zusätzlich als Text
+   daneben und ist damit auch ohne die Marke erfassbar. */
+
+/* =====================================================================
+   14 · BARRIEREFREIHEIT
+   ===================================================================== */
+html.rh-atelier a:focus-visible,
+html.rh-atelier button:focus-visible,
+html.rh-atelier input:focus-visible,
+html.rh-atelier select:focus-visible,
+html.rh-atelier textarea:focus-visible,
+html.rh-atelier [tabindex]:focus-visible{
+  outline: none !important;
+  box-shadow: var(--rh-shadow-focus) !important;
+  border-radius: var(--rh-radius-xs);
+}
+html.rh-atelier .rh-skipLink{
+  position:absolute; left:-9999px; top:0; z-index: var(--rh-z-toast);
+  padding: 12px 20px;
+  background: var(--rh-text); color: var(--rh-text-inverse);
+  border-radius: 0 0 var(--rh-radius-sm) 0;
+  font-size: var(--rh-fs-sm); font-weight: var(--rh-fw-semi);
+  text-decoration:none;
+}
+html.rh-atelier .rh-skipLink:focus{ left:0; }
+
+/* Beim Drucken: keine Bewegung, keine Bedienelemente */
+@media print{
+  html.rh-atelier .rh24NavShell,
+  html.rh-atelier .cartBtn,
+  html.rh-atelier .rh104HeroZoom,
+  html.rh-atelier .rh104ProductZoom{ display:none !important; }
+  html.rh-atelier .rh-reveal{ opacity:1 !important; transform:none !important; }
+}
+
+/* =====================================================================
+   V2026.4 · REFERENZ-REKONSTRUKTION DER STARTSEITE
+   ---------------------------------------------------------------------
+   Dieser Block setzt die aus dem Referenzbild GEMESSENEN Werte um
+   (Bild 1024 px breit, Faktor ×1,406 auf 1440 px gerechnet):
+
+     Inhaltsbreite  912/1024  → max 1283 px   → --rh-maxw: 1280px
+     Utility-Leiste 32 px     → 45 px
+     Kopfzeile      53 px     → 74 px
+     Hero-Bild      x 483…1024 (läuft an den rechten Rand),
+                    Höhe 413 → ca. 580 px, Radius ≈ 24 px
+     Headline       Versalhöhe 31 px, Zeilenabstand 47 px
+                    → ca. 60 px Schriftgrad, line-height 1,08
+     Schaltflächen  Radius ≈ 11 px (KEINE Pille), Höhe ≈ 50 px
+     Kategoriekachel Bildfläche auf ruhigem Grau, Text darunter,
+                    5 Spalten, Spaltenabstand ≈ 16 px
+     Editorial      4 Spalten, Abstand ≈ 16 px, Radius ≈ 18 px
+     Ratgeber       links ≈ 58 %, rechts zwei flache Karten
+     Fusszeile      hell, 5 Spalten + Vertrauenskasten
+
+   Er steht bewusst NACH allen früheren Regeln dieser Datei und
+   überschreibt sie dort, wo die Messung etwas anderes ergab.
+   ===================================================================== */
+html.rh-atelier{
+  --rh-maxw: 1280px;
+  --rh-gutter: clamp(20px, 5.4vw, 78px);
+}
+
+/* --- Schaltflächen: weiche Rechtecke statt Pillen (gemessen ~11 px) -- */
+html.rh-atelier .rh104Btn,
+html.rh-atelier .btn,
+html.rh-atelier .detailLink,
+html.rh-atelier .dbProductBuy button,
+html.rh-atelier .rh66ProductCard .buy button{
+  border-radius: 12px !important;
+}
+html.rh-atelier .rh104Btn,
+html.rh-atelier .btn{
+  min-height: 50px;
+  padding: 0 24px !important;
+  font-size: 14px !important;
+  letter-spacing: .002em;
+}
+
+/* --- Vertrauensleiste: eine ruhige Zeile mit Punkt-Trennern ---------- */
+html.rh-atelier .top.rh104HeaderRoot{ background: #f6f5f3 !important; }
+html.rh-atelier .rh104TrustInner{
+  gap: 0 14px !important;
+  min-height: 44px;
+  padding-block: 0 !important;
+}
+html.rh-atelier .rh104TrustInner > span{ font-size: 12.5px !important; }
+html.rh-atelier .rh104TrustInner > span b{
+  font-weight: var(--rh-fw-regular) !important;
+  color: var(--rh-text-soft) !important;
+}
+html.rh-atelier .rh104TrustInner .rhDot{
+  font-style: normal;
+  color: var(--rh-text-muted);
+  opacity: .6;
+}
+@media (max-width: 900px){
+  html.rh-atelier .rh104TrustInner > span:nth-of-type(3),
+  html.rh-atelier .rh104TrustInner .rhDot:nth-of-type(2){ display: none; }
+}
+@media (max-width: 640px){
+  html.rh-atelier .rh104TrustInner > span:nth-of-type(2),
+  html.rh-atelier .rh104TrustInner .rhDot:nth-of-type(1){ display: none; }
+  html.rh-atelier .rh104TrustInner{ min-height: 38px; }
+}
+
+/* --- Kopfzeile: Wortmarke · sechs Punkte · drei Symbole -------------- */
+html.rh-atelier .rh24Nav{ min-height: 74px; gap: var(--rh-space-5) !important; }
+html.rh-atelier .rh104BrandText{
+  font-size: 17px !important;
+  font-weight: var(--rh-fw-semi) !important;
+  letter-spacing: .30em !important;
+}
+html.rh-atelier .rh104BrandText strong{ font-weight: var(--rh-fw-semi) !important; }
+html.rh-atelier .rh24NavLink,
+html.rh-atelier .rh24NavLinks .rh24DropBtn{
+  font-size: 14px !important;
+  font-weight: var(--rh-fw-regular) !important;
+  color: var(--rh-text-secondary) !important;
+  padding: 9px 14px !important;
+}
+html.rh-atelier .rh24NavLink:hover,
+html.rh-atelier .rh24NavLinks .rh24DropBtn:hover,
+html.rh-atelier .rh24NavDrop.open > .rh24DropBtn{
+  color: var(--rh-text) !important;
+  background: var(--rh-surface-secondary) !important;
+}
+/* Die Vorlage zeigt keine Pfeile an den Menüpunkten */
+html.rh-atelier .rh24DropBtn .chev{ display: none !important; }
+
+/* Symbol-Schaltflächen rechts (Suche · Konto · Warenkorb) */
+html.rh-atelier .rhIconBtn,
+html.rh-atelier .rh24NavTools .rh104NavIcon,
+html.rh-atelier .rh-searchToggle{
+  width: 42px !important; min-width: 42px;
+  height: 42px !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  color: var(--rh-text) !important;
+}
+html.rh-atelier .rhIconBtn .ico svg,
+html.rh-atelier .rh-searchToggle .ico svg{
+  width: 21px; height: 21px; display: block;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+}
+html.rh-atelier .rh-searchToggle > span:not(.ico){ display: none !important; }
+html.rh-atelier .rh104Cart{ position: relative !important; }
+html.rh-atelier .rh104Cart .rh24NavCartCount{
+  position: absolute; right: 3px; bottom: 3px;
+  min-width: 17px; height: 17px; padding: 0 4px;
+  font-size: 10px;
+}
+html.rh-atelier .rh24AccountMega{
+  left: auto !important; right: 0 !important;
+  min-width: 250px;
+}
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+html.rh-atelier .rhHero{
+  background: var(--rh-surface);
+  padding-block: clamp(26px, 3vw, 44px) clamp(30px, 3.4vw, 52px);
+  overflow: hidden;
+}
+html.rh-atelier .rhHeroGrid{
+  display: grid;
+  grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+  align-items: center;
+  gap: clamp(24px, 3.4vw, 56px);
+}
+html.rh-atelier .rhHeroEyebrow{ margin-bottom: var(--rh-space-4); }
+html.rh-atelier .rhHeroTitle{
+  margin: 0 0 var(--rh-space-5) !important;
+  font-size: clamp(38px, 4.3vw, 61px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.015em !important;
+  text-transform: uppercase;
+  color: var(--rh-text) !important;
+  font-weight: var(--rh-fw-semi) !important;
+  text-wrap: balance;
+}
+html.rh-atelier .rhHeroLine{ display: block; }
+html.rh-atelier .rhHeroLineStrong{
+  font-weight: var(--rh-fw-bold) !important;
+  letter-spacing: -.012em;
+}
+html.rh-atelier .rhHeroLead{
+  max-width: 40ch;
+  margin: 0 0 var(--rh-space-6) !important;
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+  color: var(--rh-text-muted) !important;
+}
+html.rh-atelier .rhHeroActions{
+  display: flex; flex-wrap: wrap;
+  gap: var(--rh-space-3);
+  margin-bottom: clamp(22px, 2.4vw, 34px);
+}
+/* Benefit-Zeile: klein, elegant, waagerecht, mit feinen Trennern */
+html.rh-atelier .rhHeroBenefits{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  justify-content: start;
+  gap: var(--rh-space-3) clamp(14px, 1.8vw, 26px);
+  padding-top: var(--rh-space-5);
+  border-top: 1px solid var(--rh-border-soft);
+}
+html.rh-atelier .rhHeroBenefits > span{
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 9px;
+  align-items: center;
+}
+html.rh-atelier .rhHeroBenefits i{
+  grid-row: 1 / 3;
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  border: 1px solid var(--rh-border);
+  border-radius: 9px;
+  background: var(--rh-surface);
+  color: var(--rh-accent);
+}
+html.rh-atelier .rhHeroBenefits i svg{
+  width: 16px; height: 16px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+html.rh-atelier .rhHeroBenefits b{
+  font-size: 12.5px; font-weight: var(--rh-fw-semi);
+  color: var(--rh-text); line-height: 1.25; white-space: nowrap;
+}
+html.rh-atelier .rhHeroBenefits small{
+  font-size: 11px; color: var(--rh-text-muted); line-height: 1.3; white-space: nowrap;
+}
+
+/* Bildseite: läuft bis an den rechten Seitenrand (wie gemessen) */
+html.rh-atelier .rhHeroMedia{
+  position: relative;
+  width: calc(100% + var(--rh-gutter));
+  justify-self: end;
+  border-radius: 24px 0 0 24px;
+  overflow: hidden;
+  background: #221a14;
+  line-height: 0;
+  box-shadow: var(--rh-shadow-md);
+}
+@media (min-width: 1441px){
+  /* Auf sehr breiten Bildschirmen endet der Anschnitt mit dem Inhalt */
+  html.rh-atelier .rhHeroMedia{
+    width: calc(100% + (100vw - var(--rh-maxw)) / 2);
+    border-radius: 24px;
+  }
+}
+html.rh-atelier .rhHeroMedia > img{
+  width: 100%; height: 100%;
+  aspect-ratio: 1080 / 580;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--rh-dur-slower) var(--rh-ease-premium);
+}
+/* Sehr subtiler Rauch – reine CSS-Fläche, keine Partikel */
+html.rh-atelier .rhHeroSmoke{ position: absolute; inset: 0; pointer-events: none; }
+html.rh-atelier .rhHeroSmoke i{
+  position: absolute;
+  width: 42%; height: 55%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255,252,246,.16), rgba(255,252,246,0));
+  filter: blur(14px);
+  opacity: .5;
+  animation: rh-smoke 16s var(--rh-ease-in-out) infinite;
+}
+html.rh-atelier .rhHeroSmoke i:nth-child(1){ left: 6%;  top: 30%; animation-delay: 0s; }
+html.rh-atelier .rhHeroSmoke i:nth-child(2){ left: 38%; top: 12%; animation-delay: -6s; width: 34%; }
+html.rh-atelier .rhHeroSmoke i:nth-child(3){ left: 60%; top: 36%; animation-delay: -11s; opacity: .35; }
+@keyframes rh-smoke{
+  0%,100%{ transform: translate3d(0,2%,0) scale(1); }
+  50%    { transform: translate3d(3%,-6%,0) scale(1.07); }
+}
+
+/* Schwebende Qualitätskarte unten rechts (Masse der Vorlage) */
+html.rh-atelier .rhHeroCard{
+  position: absolute;
+  right: clamp(16px, 2.4vw, 34px);
+  bottom: clamp(-14px, -1vw, -10px);
+  display: grid; gap: 4px;
+  width: min(336px, 72%);
+  padding: 18px 22px 16px;
+  border-radius: 16px;
+  background: var(--rh-surface);
+  border: 1px solid var(--rh-border-soft);
+  box-shadow: 0 12px 40px rgba(0,0,0,.10);
+  line-height: 1.35;
+}
+html.rh-atelier .rhHeroCard .rhHeroCardMarks{
+  display: inline-flex; gap: 6px; margin-bottom: 2px;
+  color: var(--rh-accent-bright);
+}
+html.rh-atelier .rhHeroCard .rhHeroCardMarks svg{
+  width: 17px; height: 17px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+html.rh-atelier .rhHeroCard b{
+  font-size: 15px; font-weight: var(--rh-fw-semi); color: var(--rh-text);
+}
+html.rh-atelier .rhHeroCard small{ font-size: 12.5px; color: var(--rh-text-muted); }
+html.rh-atelier .rhHeroCard em{
+  font-style: normal; font-size: 11.5px;
+  color: var(--rh-text-soft);
+  padding-top: 6px; margin-top: 4px;
+  border-top: 1px solid var(--rh-border-soft);
+}
+
+/* =====================================================================
+   KATEGORIE-REIHE · Bildkachel + Text darunter (ohne Kartenrahmen)
+   ===================================================================== */
+html.rh-atelier .rhCatSection{ padding-block: clamp(34px, 3.6vw, 56px) clamp(10px, 1.4vw, 20px); background: var(--rh-surface); }
+html.rh-atelier .rhCatRow{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.2vw, 17px);
+}
+html.rh-atelier .rhCatCard{
+  display: grid;
+  gap: 4px;
+  text-decoration: none !important;
+  min-width: 0;
+}
+html.rh-atelier .rhCatMedia{
+  display: grid !important; place-items: center !important;
+  aspect-ratio: 1 / 0.86 !important;
+  padding: clamp(14px, 1.6vw, 24px) !important;
+  border-radius: 14px !important;
+  border: 1px solid var(--rh-border-soft) !important;
+  background: #f7f6f4 !important;
+  margin-bottom: 10px !important;
+  overflow: hidden;
+  max-height: none !important;
+}
+html.rh-atelier .rhCatMedia img{
+  width: 100% !important; height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+  mix-blend-mode: multiply;            /* weisse Produktfonds verschmelzen mit der Kachel */
+  transition: transform var(--rh-dur-slow) var(--rh-ease-premium);
+}
+html.rh-atelier .rhCatCard:hover .rhCatMedia img{ transform: scale(1.025); }
+html.rh-atelier .rhCatCard:hover{ transform: translateY(-4px); }
+html.rh-atelier .rhCatCard{ transition: transform var(--rh-dur-base) var(--rh-ease-premium); }
+html.rh-atelier .rhCatName{
+  font-size: 15px; font-weight: var(--rh-fw-semi);
+  color: var(--rh-text); letter-spacing: -.008em;
+}
+html.rh-atelier .rhCatFoot{
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+}
+html.rh-atelier .rhCatPrice{ font-size: 13px; color: var(--rh-text-muted); }
+html.rh-atelier .rhCatArrow{
+  font-style: normal; font-size: 15px;
+  color: var(--rh-text-soft);
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.rh-atelier .rhCatCard:hover .rhCatArrow{ transform: translateX(4px); color: var(--rh-accent); }
+
+/* =====================================================================
+   SERVICE-LEISTE · vier Bereiche, feine Trenner, fast weiss
+   ===================================================================== */
+html.rh-atelier .rhServiceSection{ padding-block: clamp(22px, 2.6vw, 40px); background: var(--rh-surface); scroll-margin-top: 96px; }
+html.rh-atelier .rhServiceRow{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--rh-border-soft);
+  border-radius: 16px;
+  background: #fdfcfb;
+}
+html.rh-atelier .rhService{
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 12px;
+  padding: 18px clamp(14px, 1.8vw, 26px);
+  border-right: 1px solid var(--rh-border-soft);
+  min-width: 0;
+}
+html.rh-atelier .rhService:last-child{ border-right: 0; }
+html.rh-atelier .rhService i{
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border: 1px solid var(--rh-border);
+  border-radius: 12px;
+  background: var(--rh-surface);
+  color: var(--rh-text-soft);
+}
+html.rh-atelier .rhService i svg{
+  width: 20px; height: 20px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+}
+html.rh-atelier .rhService b{
+  display: block; font-size: 13.5px; font-weight: var(--rh-fw-semi);
+  color: var(--rh-text); line-height: 1.3; white-space: nowrap;
+}
+html.rh-atelier .rhService span{
+  display: block; font-size: 12px; color: var(--rh-text-muted); line-height: 1.35;
+}
+
+/* =====================================================================
+   EDITORIAL-RASTER · vier grosse dunkle Karten
+   ===================================================================== */
+html.rh-atelier .rhEdiSection{ padding-block: clamp(26px, 3vw, 48px) clamp(8px, 1vw, 16px); background: var(--rh-surface); }
+html.rh-atelier .rhEdiGrid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.2vw, 17px);
+}
+html.rh-atelier .rhEdiCard{
+  position: relative;
+  display: block;
+  aspect-ratio: 305 / 256;             /* aus der Vorlage gemessen */
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none !important;
+  background:
+    radial-gradient(120% 90% at 82% 10%, #4a3323 0%, rgba(74,51,35,0) 55%),
+    linear-gradient(165deg, #3a2b1f 0%, #241a12 58%, #17100b 100%);
+  transition: transform var(--rh-dur-base) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rhEdiCard:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 48px rgba(23,16,11,.22);
+}
+html.rh-atelier .rhEdiBg{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  transition: transform var(--rh-dur-slower) var(--rh-ease-premium);
+}
+html.rh-atelier .rhEdiCard:hover .rhEdiBg{ transform: scale(1.035); }
+html.rh-atelier .rhEdiPhoto::before{
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(16,11,7,.10) 30%, rgba(16,11,7,.78) 100%);
+}
+/* Produktfreisteller als ruhiges Objekt in der Kartenmitte */
+html.rh-atelier .rhEdiObject{
+  position: absolute; inset: 8% 8% 34% 8%;
+  display: grid; place-items: center;
+}
+html.rh-atelier .rhEdiObject img{
+  max-width: 82%; max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 26px rgba(0,0,0,.45)) brightness(1.04);
+  transition: transform var(--rh-dur-slower) var(--rh-ease-premium);
+}
+html.rh-atelier .rhEdiCard:hover .rhEdiObject img{ transform: scale(1.035); }
+/* Weisse Produktfotos (Räuchermehl) liegen auf einem hellen Teller */
+html.rh-atelier .rhEdiPlate img{
+  max-width: 66%;
+  border-radius: 14px;
+  filter: none;
+  box-shadow: 0 18px 30px rgba(0,0,0,.4);
+}
+html.rh-atelier .rhEdiCopy{
+  position: absolute; inset: auto 0 0 0; z-index: 2;
+  display: grid; gap: 5px;
+  padding: clamp(16px, 1.8vw, 22px);
+  background: linear-gradient(180deg, rgba(18,12,8,0), rgba(18,12,8,.55) 60%);
+}
+html.rh-atelier .rhEdiCopy b{
+  font-size: clamp(18px, 1.6vw, 21px);
+  font-weight: var(--rh-fw-semi);
+  color: #fff; letter-spacing: -.01em;
+}
+html.rh-atelier .rhEdiCopy small{
+  font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,.82);
+}
+html.rh-atelier .rhEdiCopy em{
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 6px;
+  font-style: normal; font-size: 12.5px; font-weight: var(--rh-fw-medium);
+  color: #fff;
+}
+html.rh-atelier .rhEdiCopy em i{
+  font-style: normal;
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring);
+}
+html.rh-atelier .rhEdiCard:hover .rhEdiCopy em i{ transform: translateX(4px); }
+
+/* =====================================================================
+   RATGEBER · grosse Karte links (58 %), zwei flache Karten rechts
+   ===================================================================== */
+html.rh-atelier .rhGuideSection{ padding-block: clamp(18px, 2vw, 30px) clamp(30px, 3.4vw, 52px); background: var(--rh-surface); }
+html.rh-atelier .rhGuideGrid{
+  display: grid;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  gap: clamp(12px, 1.2vw, 17px);
+  align-items: stretch;
+}
+html.rh-atelier .rhGuideMain{
+  position: relative;
+  display: block;
+  min-height: clamp(280px, 24vw, 352px);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none !important;
+  background: #f4f1ec;
+  border: 1px solid var(--rh-border-soft);
+  transition: transform var(--rh-dur-base) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rhGuideMain:hover{ transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+html.rh-atelier .rhGuideMedia{ position: absolute; inset: 0; }
+html.rh-atelier .rhGuideMedia img{
+  position: absolute; inset: 0 0 0 34%;
+  width: 66%; height: 100%;
+  object-fit: cover; object-position: center;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 34%);
+  transition: transform var(--rh-dur-slower) var(--rh-ease-premium);
+}
+html.rh-atelier .rhGuideMain:hover .rhGuideMedia img{ transform: scale(1.03); }
+html.rh-atelier .rhGuideSmoke i{
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255,255,255,.55), rgba(255,255,255,0));
+  filter: blur(16px);
+  animation: rh-smoke 18s var(--rh-ease-in-out) infinite;
+}
+html.rh-atelier .rhGuideSmoke i:nth-child(1){ left: 44%; top: 12%; width: 30%; height: 46%; }
+html.rh-atelier .rhGuideSmoke i:nth-child(2){ left: 62%; top: 30%; width: 26%; height: 40%; animation-delay: -8s; opacity: .7; }
+html.rh-atelier .rhGuideCopy{
+  position: relative; z-index: 2;
+  display: grid; align-content: center; justify-items: start; gap: 10px;
+  width: min(58%, 340px);
+  height: 100%;
+  padding: clamp(20px, 2.6vw, 38px);
+}
+html.rh-atelier .rhGuideCopy b{
+  font-size: clamp(24px, 2.3vw, 33px);
+  line-height: 1.14;
+  font-weight: var(--rh-fw-semi);
+  letter-spacing: -.018em;
+  color: var(--rh-text);
+}
+html.rh-atelier .rhGuideCopy small{
+  font-size: 13px; line-height: 1.55; color: var(--rh-text-muted);
+  max-width: 30ch;
+}
+html.rh-atelier .rhGuideBtn{
+  display: inline-flex; align-items: center; gap: 9px;
+  margin-top: 6px;
+  min-height: 44px; padding: 0 20px;
+  border-radius: 11px;
+  border: 1px solid var(--rh-border-strong);
+  background: var(--rh-surface);
+  font-style: normal; font-size: 13.5px; font-weight: var(--rh-fw-semi);
+  color: var(--rh-text);
+  transition: border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rhGuideMain:hover .rhGuideBtn{ border-color: var(--rh-text); box-shadow: var(--rh-shadow-sm); }
+html.rh-atelier .rhGuideBtn i{ font-style: normal; transition: transform var(--rh-dur-base) var(--rh-ease-spring); }
+html.rh-atelier .rhGuideMain:hover .rhGuideBtn i{ transform: translateX(4px); }
+
+html.rh-atelier .rhGuideSide{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: clamp(12px, 1.2vw, 17px);
+  min-width: 0;
+}
+html.rh-atelier .rhGuideCard{
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42%;
+  align-items: center;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--rh-border-soft);
+  background: #fdfcfb;
+  text-decoration: none !important;
+  transition: transform var(--rh-dur-base) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium),
+              border-color var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.rh-atelier .rhGuideCard:hover{
+  transform: translateY(-3px);
+  border-color: var(--rh-border-strong);
+  box-shadow: 0 12px 40px rgba(0,0,0,.07);
+}
+html.rh-atelier .rhGuideCardCopy{
+  display: grid; gap: 6px; justify-items: start;
+  padding: clamp(16px, 1.8vw, 26px);
+}
+html.rh-atelier .rhGuideCardCopy b{
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: var(--rh-fw-semi);
+  color: var(--rh-text); letter-spacing: -.012em;
+}
+html.rh-atelier .rhGuideCardCopy small{
+  font-size: 12.5px; line-height: 1.5; color: var(--rh-text-muted);
+}
+html.rh-atelier .rhGuideCardCopy em{
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 2px;
+  font-style: normal; font-size: 12.5px; font-weight: var(--rh-fw-semi);
+  color: var(--rh-text);
+}
+html.rh-atelier .rhGuideCardCopy em i{ font-style: normal; transition: transform var(--rh-dur-base) var(--rh-ease-spring); }
+html.rh-atelier .rhGuideCard:hover em i{ transform: translateX(4px); }
+html.rh-atelier .rhGuideCardMedia{ position: relative; height: 100%; min-height: 132px; }
+html.rh-atelier .rhGuideTrio{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  align-items: center; justify-items: center;
+  gap: 4px; padding: 12px 14px 12px 0;
+}
+html.rh-atelier .rhGuideTrio img{
+  width: 100%; max-height: 84px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+html.rh-atelier .rhGuideCardImg img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
+  transition: transform var(--rh-dur-slower) var(--rh-ease-premium);
+}
+html.rh-atelier .rhGuideCard:hover .rhGuideCardImg img{ transform: scale(1.035); }
+
+/* =====================================================================
+   VERTRAUENSZEILE (Stelle der Markenzeile)
+   ===================================================================== */
+html.rh-atelier .rhBrandRow{
+  padding-block: clamp(20px, 2.4vw, 34px);
+  background: var(--rh-surface);
+  border-top: 1px solid var(--rh-border-soft);
+}
+html.rh-atelier .rhBrandRowInner{
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: space-between;
+  gap: var(--rh-space-3) var(--rh-space-6);
+}
+html.rh-atelier .rhBrandRowInner > span{
+  font-size: 12px;
+  font-weight: var(--rh-fw-semi);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #b3ada6;
+  white-space: nowrap;
+}
+html.rh-atelier .rhBrandRowInner .rhBrandKicker{
+  color: var(--rh-text-muted);
+  letter-spacing: .16em;
+  font-size: 11px;
+}
+
+/* =====================================================================
+   FUSSZEILE (zentral aus site-v104.js aufgebaut)
+   ===================================================================== */
+html.rh-atelier body footer.rhFooter{
+  background: var(--rh-surface) !important;
+  border-top: 1px solid var(--rh-border-soft) !important;
+  padding-block: clamp(40px, 4.6vw, 68px) 0 !important;
+}
+html.rh-atelier body .rhFootGrid{
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)) minmax(0, 1.1fr) !important;
+  gap: var(--rh-space-8) var(--rh-space-6) !important;
+  padding-bottom: clamp(28px, 3vw, 44px) !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+}
+html.rh-atelier body .rhFootBrand .footerPlainBrand{
+  font-size: 16px !important;
+  letter-spacing: .28em !important;
+  font-weight: var(--rh-fw-semi) !important;
+  margin-bottom: var(--rh-space-4) !important;
+}
+html.rh-atelier body .rhFootBrand p{
+  font-size: 13px !important; line-height: 1.6 !important;
+  color: var(--rh-text-muted) !important;
+  max-width: 30ch; margin: 0 0 var(--rh-space-5) !important;
+}
+html.rh-atelier body .rhFootBrand .socials{
+  display: flex !important; gap: 8px !important; flex-wrap: wrap;
+  margin-bottom: var(--rh-space-4);
+}
+html.rh-atelier body .rhFootBrand .socials button{
+  width: 38px; height: 38px;
+  padding: 0 !important;
+  display: inline-grid !important; place-items: center;
+  border-radius: 11px !important;
+}
+html.rh-atelier body .rhFootBrand .socials button b{ display: none !important; }
+html.rh-atelier body .rhFootBrand .socials svg{ width: 16px !important; height: 16px !important; }
+html.rh-atelier .rhFootContact{ display: grid; gap: 5px; }
+html.rh-atelier .rhFootContact a{
+  font-size: 12.5px !important; color: var(--rh-text-soft) !important;
+}
+html.rh-atelier .rhFootCol{ display: grid; gap: 11px; align-content: start; }
+html.rh-atelier .rhFootCol h4{
+  margin: 0 0 4px !important;
+  font-size: 12px !important;
+  letter-spacing: .10em !important;
+  text-transform: uppercase;
+  font-weight: var(--rh-fw-semi) !important;
+  color: var(--rh-text) !important;
+}
+html.rh-atelier body .rhFootCol a{
+  font-size: 13px !important;
+  color: var(--rh-text-muted) !important;
+  width: fit-content;
+}
+html.rh-atelier body .rhFootCol a:hover{ color: var(--rh-accent) !important; }
+html.rh-atelier .rhFootTrust{
+  align-self: start;
+  display: grid; gap: 8px;
+  padding: 18px 20px;
+  border: 1px solid var(--rh-border-soft);
+  border-radius: 16px;
+  background: #f7f6f4;
+}
+html.rh-atelier .rhFootTrust b{
+  font-size: 13.5px; font-weight: var(--rh-fw-semi); color: var(--rh-text);
+}
+html.rh-atelier .rhFootTrust span{
+  position: relative;
+  padding-left: 20px;
+  font-size: 12.5px; color: var(--rh-text-soft);
+}
+html.rh-atelier .rhFootTrust span::before{
+  content: "✓";
+  position: absolute; left: 0; top: 0;
+  color: var(--rh-success);
+  font-size: 12px;
+}
+html.rh-atelier .rhFootBar{
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: space-between;
+  gap: var(--rh-space-3);
+  padding: 18px 0 22px;
+}
+html.rh-atelier .rhFootBar small{
+  font-size: 12px !important; color: var(--rh-text-muted) !important;
+}
+html.rh-atelier .rhFootPays{ display: flex; gap: 8px; flex-wrap: wrap; }
+html.rh-atelier .rhFootPays span{
+  padding: 6px 12px;
+  border: 1px solid var(--rh-border);
+  border-radius: 9px;
+  background: var(--rh-surface);
+  font-size: 11.5px; font-weight: var(--rh-fw-semi);
+  color: var(--rh-text-soft);
+}
+
+/* =====================================================================
+   HERO-LADESEQUENZ
+   Läuft als reine CSS-Animation, sobald JavaScript grundsätzlich aktiv
+   ist (Klasse rh-atelier-js kommt aus dem Inline-Schnipsel im <head>).
+   Fällt JavaScript aus, fehlt die Klasse und alles ist sofort sichtbar.
+   Reihenfolge nach Vorgabe: Eyebrow → PERFEKTION. → RAUCH. KULTUR. →
+   Text → Schaltflächen → Benefits · Bild 1,03 → 1 · Karte schwebt ein.
+   ===================================================================== */
+html.rh-atelier.rh-atelier-js [data-rh-hero-seq] > *{
+  opacity: 0;
+  animation: rh-hero-in 760ms var(--rh-ease-out) forwards;
+}
+html.rh-atelier.rh-atelier-js [data-rh-hero-seq] > :nth-child(1){ animation-delay: 60ms; }
+html.rh-atelier.rh-atelier-js [data-rh-hero-seq] > :nth-child(2){ animation-delay: 140ms; }
+html.rh-atelier.rh-atelier-js [data-rh-hero-seq] > :nth-child(3){ animation-delay: 330ms; }
+html.rh-atelier.rh-atelier-js [data-rh-hero-seq] > :nth-child(4){ animation-delay: 430ms; }
+html.rh-atelier.rh-atelier-js [data-rh-hero-seq] > :nth-child(5){ animation-delay: 540ms; }
+@keyframes rh-hero-in{
+  from{ opacity: 0; transform: translate3d(0, 18px, 0); }
+  to  { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+/* Zweite Headline-Zeile folgt der ersten mit kleinem Versatz */
+html.rh-atelier.rh-atelier-js .rhHeroLineStrong{
+  opacity: 0;
+  animation: rh-hero-in 760ms var(--rh-ease-out) 260ms forwards;
+}
+html.rh-atelier.rh-atelier-js [data-rh-hero-media]{
+  opacity: 0;
+  animation: rh-hero-fade 900ms var(--rh-ease-premium) 160ms forwards;
+}
+@keyframes rh-hero-fade{ from{ opacity: 0; } to{ opacity: 1; } }
+html.rh-atelier.rh-atelier-js [data-rh-hero-media] > img{
+  animation: rh-hero-zoom 1300ms var(--rh-ease-premium) 160ms both;
+}
+@keyframes rh-hero-zoom{
+  from{ transform: scale(1.03); }
+  to  { transform: scale(1); }
+}
+html.rh-atelier.rh-atelier-js .rhHeroCard{
+  opacity: 0;
+  animation: rh-hero-in 700ms var(--rh-ease-out) 680ms forwards;
+}
+@media (prefers-reduced-motion: reduce){
+  html.rh-atelier [data-rh-hero-seq] > *,
+  html.rh-atelier .rhHeroLineStrong,
+  html.rh-atelier [data-rh-hero-media],
+  html.rh-atelier [data-rh-hero-media] > img,
+  html.rh-atelier .rhHeroCard{
+    opacity: 1 !important; transform: none !important; animation: none !important;
+  }
+  html.rh-atelier .rhHeroSmoke i,
+  html.rh-atelier .rhGuideSmoke i{ animation: none !important; opacity: .25; }
+}
+
+/* =====================================================================
+   RESPONSIVE der neuen Bereiche
+   ===================================================================== */
+@media (max-width: 1180px){
+  html.rh-atelier .rhHeroBenefits{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  html.rh-atelier .rhHeroBenefits b,
+  html.rh-atelier .rhHeroBenefits small{ white-space: normal; }
+  html.rh-atelier .rhCatRow{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  html.rh-atelier .rhServiceRow{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html.rh-atelier .rhService{ border-bottom: 1px solid var(--rh-border-soft); }
+  html.rh-atelier .rhService:nth-child(2n){ border-right: 0; }
+  html.rh-atelier .rhService:nth-last-child(-n+2){ border-bottom: 0; }
+  html.rh-atelier .rhEdiGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html.rh-atelier body .rhFootGrid{ grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  html.rh-atelier .rhFootBrand{ grid-column: 1 / -1; }
+}
+@media (max-width: 900px){
+  html.rh-atelier .rhHeroGrid{ grid-template-columns: minmax(0, 1fr); }
+  html.rh-atelier .rhHeroMedia{
+    order: 2;                     /* Vorlage mobil: Text zuerst, Bild darunter */
+    width: 100%;
+    border-radius: 18px;
+  }
+  html.rh-atelier .rhHeroCard{ position: static; width: 100%; margin-top: -6px; box-shadow: var(--rh-shadow-sm); }
+  html.rh-atelier .rhHeroMedia{ display: grid; gap: 12px; overflow: visible; background: none; box-shadow: none; }
+  html.rh-atelier .rhHeroMedia > img{ border-radius: 18px; }
+  html.rh-atelier .rhHeroSmoke{ display: none; }
+  html.rh-atelier .rhGuideGrid{ grid-template-columns: minmax(0, 1fr); }
+  html.rh-atelier .rhGuideCopy{ width: 100%; padding-right: 40%; }
+  html.rh-atelier .rhBrandRowInner{ justify-content: flex-start; }
+}
+@media (max-width: 640px){
+  html.rh-atelier .rhHeroTitle{ font-size: clamp(34px, 10vw, 44px) !important; }
+  html.rh-atelier .rhHeroBenefits{ grid-template-columns: 1fr 1fr; }
+  html.rh-atelier .rhHeroActions > *{ flex: 1 1 100%; }
+  html.rh-atelier .rhCatRow{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 62%;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+  html.rh-atelier .rhCatCard{ scroll-snap-align: start; }
+  html.rh-atelier .rhServiceRow{ grid-template-columns: minmax(0, 1fr); }
+  html.rh-atelier .rhService{ border-right: 0 !important; border-bottom: 1px solid var(--rh-border-soft); }
+  html.rh-atelier .rhService:last-child{ border-bottom: 0; }
+  html.rh-atelier .rhEdiGrid{ grid-template-columns: minmax(0, 1fr); }
+  html.rh-atelier .rhEdiCard{ aspect-ratio: 305 / 220; }
+  html.rh-atelier .rhGuideCopy{ padding-right: clamp(20px, 6vw, 38px); }
+  html.rh-atelier .rhGuideMedia img{ opacity: .35; inset: 0; width: 100%;
+    -webkit-mask-image: none; mask-image: none; }
+  html.rh-atelier .rhGuideCard{ grid-template-columns: minmax(0, 1fr); }
+  html.rh-atelier .rhGuideCardMedia{ display: none; }
+  html.rh-atelier body .rhFootGrid{ grid-template-columns: minmax(0, 1fr) !important; }
+  html.rh-atelier .rhFootTrust{ justify-self: start; }
+}
+
+/* =====================================================================
+   V2026.4b · FEINSCHLIFF NACH ERSTEM BILDVERGLEICH
+   ===================================================================== */
+
+/* Hero-Spaltenverhältnis wie gemessen (Text 46,9 %, Bild 53,1 %) und
+   eine Schriftgrösse, bei der „RAUCH. KULTUR." sicher in der Spalte
+   bleibt (Vorlage: Versalhöhe 31 px bei 1024 → ca. 58 px bei 1440). */
+html.rh-atelier .rhHeroGrid{
+  grid-template-columns: minmax(0, 47fr) minmax(0, 53fr);
+}
+html.rh-atelier .rhHeroTitle{
+  font-size: clamp(36px, 4.05vw, 58px) !important;
+  letter-spacing: -.022em !important;
+}
+html.rh-atelier .rhHeroCopy{ min-width: 0; }
+
+/* Hero-Schaltfläche: in der Vorlage NAHEZU SCHWARZ (nicht kupfer).
+   Diese Regel steht nach der Kontrastkorrektur und gewinnt deshalb. */
+html.rh-atelier body .rhHeroActions .rh104Btn.primary,
+html.rh-atelier body .rh104HeroActions .rh104Btn.primary{
+  background: #121114 !important;
+  border-color: #121114 !important;
+  color: #fff !important;                 /* 18,6:1 */
+}
+html.rh-atelier body .rhHeroActions .rh104Btn.primary:hover,
+html.rh-atelier body .rh104HeroActions .rh104Btn.primary:hover{
+  background: #2a2830 !important;
+  border-color: #2a2830 !important;
+}
+
+/* Hero-Bild: Rahmenverhältnis nahe an der Vorlage (541:413 ≈ 1,31).
+   Der Zuschnitt geschieht NUR in der Darstellung (cover) – dabei
+   verschwinden auch die im Foto eingebrannte Karte unten rechts und
+   der Grossteil des Siegels, sodass die schwebende Karte frei steht. */
+html.rh-atelier .rhHeroMedia{ aspect-ratio: 43 / 32; }
+html.rh-atelier .rhHeroMedia > img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: 30% 42%;
+}
+html.rh-atelier .rhHeroMedia{ position: relative; }
+
+/* Wortmarke: in der Vorlage durchgehend fast schwarz */
+html.rh-atelier .rh104BrandText,
+html.rh-atelier .rh104BrandText strong{ color: var(--rh-text) !important; }
+
+/* Symbol-Schaltflächen rechts: OHNE Rahmen und Fläche (wie Vorlage) */
+html.rh-atelier .rh24NavTools .rh104NavIcon,
+html.rh-atelier .rh24NavTools .rh24DropBtn,
+html.rh-atelier .rh-searchToggle{
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html.rh-atelier .rh24NavTools .rh104NavIcon:hover,
+html.rh-atelier .rh24NavTools .rh24DropBtn:hover,
+html.rh-atelier .rh-searchToggle:hover{
+  background: var(--rh-surface-secondary) !important;
+}
+/* Warenkorb-Zähler unten rechts an der Tasche (wie Vorlage) */
+html.rh-atelier .rh104Cart .rh24NavCartCount{
+  top: auto !important; left: auto !important;
+  right: 2px !important; bottom: 2px !important;
+  position: absolute !important;
+}
+
+/* Kategoriekacheln: flacheres Bildfeld (Vorlage ≈ 1 : 0,68) und
+   Multiply auch gegen ältere !important-Regeln durchsetzen. */
+html.rh-atelier .rhCatMedia{ aspect-ratio: 1 / 0.7 !important; }
+html.rh-atelier .rhCatMedia img{ mix-blend-mode: multiply !important; }
+
+/* Editorial-Objekte: Bild füllt sein Feld absolut und wird mit
+   contain vollständig gezeigt – robust gegen fremde Höhenregeln. */
+html.rh-atelier .rhEdiObject{ inset: 10% 10% 38% !important; }
+html.rh-atelier .rhEdiObject img{
+  position: absolute !important; inset: 0 !important;
+  width: 100% !important; height: 100% !important;
+  max-width: none !important; max-height: none !important;
+  object-fit: contain !important; object-position: center !important;
+}
+/* Helle Produktfotos liegen auf einem weissen Produkt-Chip */
+html.rh-atelier .rhEdiPlate{
+  inset: 14% 22% 42% !important;
+  background: #fdfcfa;
+  border-radius: 16px;
+  box-shadow: 0 18px 34px rgba(0,0,0,.4);
+}
+html.rh-atelier .rhEdiPlate img{
+  inset: 8% !important;
+  width: 84% !important; height: 84% !important;
+  border-radius: 0; box-shadow: none; filter: none !important;
+  mix-blend-mode: multiply;
+}
+/* Fisch-Karte: Motiv so legen, dass die im Foto eingebrannten
+   Elemente (Karte unten rechts) ausserhalb des Zuschnitts liegen */
+html.rh-atelier .rhEdiPhoto .rhEdiBg{ object-position: 18% 40%; }
+
+/* Ratgeber links: weisslicher Grund, damit das Produktfoto nahtlos
+   einläuft; Multiply nimmt der Bildfläche das Weiss. */
+html.rh-atelier .rhGuideMain{ background: #faf8f5; }
+html.rh-atelier .rhGuideMedia img{ mix-blend-mode: multiply; }
+/* Einsteiger-Karte: Motiv von links anschneiden, eingebrannte
+   Bildelemente rechts bleiben draussen */
+html.rh-atelier .rhGuideCardImg img{ object-position: 12% 45%; }
+
+/* Abschnittsrhythmus: „Beliebte Produkte" folgt ohne Riesenlücke */
+html.rh-atelier .rh104Section{
+  padding-block: clamp(28px, 3.2vw, 52px) !important;
+}
+html.rh-atelier .rh104Section .rh104SectionHead{
+  margin-bottom: clamp(20px, 2.4vw, 34px) !important;
+  padding-bottom: var(--rh-space-4) !important;
+}
+html.rh-atelier .rh104SectionHead h2{
+  font-size: clamp(24px, 2.4vw, 34px) !important;
+}
+
+/* Der leere Kopfzeilen-Sockel über der Vertrauensleiste */
+html.rh-atelier .top{ margin: 0 !important; }
+html.rh-atelier body{ padding-top: 0 !important; }
+
+/* --- V2026.4c ------------------------------------------------------- */
+/* Inhaltsbreite: 1280 px NETTO wie gemessen – die Randpolster liegen
+   zusätzlich AUSSEN, nicht innerhalb der 1280 px. */
+html.rh-atelier .wrap{
+  max-width: calc(var(--rh-maxw) + var(--rh-gutter) * 2) !important;
+}
+
+/* Headline passt sicher in die Textspalte (eine Zeile je Begriffspaar) */
+html.rh-atelier .rhHeroTitle{
+  font-size: clamp(36px, 3.85vw, 54px) !important;
+}
+html.rh-atelier .rhHeroBenefits b,
+html.rh-atelier .rhHeroBenefits small{ white-space: normal; }
+
+/* Hero-Bild: Der Rahmen schneidet, die Karte darf ÜBER die Unterkante
+   hinausragen (wie in der Vorlage). Deshalb schneidet jetzt das BILD
+   selbst (eigener Radius), nicht mehr der Container. */
+html.rh-atelier .rhHeroMedia{
+  overflow: visible;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+html.rh-atelier .rhHeroMedia > img{
+  border-radius: 24px 0 0 24px;
+  box-shadow: var(--rh-shadow-md);
+  /* Fensterlage: links beginnen – so bleibt das eingebrannte Siegel
+     vollständig im Bild und die eingebrannte Karte rechts vollständig
+     draussen. */
+  object-position: 0% 42%;
+}
+@media (min-width: 1441px){
+  html.rh-atelier .rhHeroMedia > img{ border-radius: 24px; }
+}
+html.rh-atelier .rhHeroSmoke{
+  border-radius: 24px 0 0 24px;
+  overflow: hidden;
+}
+@media (max-width: 900px){
+  html.rh-atelier .rhHeroMedia > img{ border-radius: 18px; }
+  html.rh-atelier .rhHeroSmoke{ border-radius: 18px; }
+}
+
+/* Zugeschnittenes Hero-Motiv (1000×763 ≈ 1,31): Rahmen folgt dem Bild */
+html.rh-atelier .rhHeroMedia{ aspect-ratio: 1000 / 763; }
+html.rh-atelier .rhHeroMedia > img{ object-position: center !important; }
+
+/* Ältere Schichten begrenzen .wrap zusätzlich über `width` – hier wird
+   die Breite endgültig freigegeben, damit netto 1280 px Inhalt stehen. */
+html.rh-atelier .wrap{ width: 100% !important; }
+
+/* Benefit-Zeile kompakter, damit alle drei Punkte in der Textspalte
+   stehen (Vorlage: klein und einzeilig). */
+html.rh-atelier .rhHeroBenefits{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--rh-space-3) 14px;
+}
+html.rh-atelier .rhHeroBenefits > span{ grid-template-columns: 28px minmax(0,1fr); column-gap: 8px; }
+html.rh-atelier .rhHeroBenefits i{ width: 28px; height: 28px; border-radius: 8px; }
+html.rh-atelier .rhHeroBenefits i svg{ width: 15px; height: 15px; }
+html.rh-atelier .rhHeroBenefits b{ font-size: 12px; }
+html.rh-atelier .rhHeroBenefits small{ font-size: 10.5px; }
+
+/* Bild läuft wirklich bis an den rechten Fensterrand (wie gemessen) */
+html.rh-atelier .rhHeroMedia{
+  margin-right: calc(var(--rh-gutter) * -1);
+}
+@media (min-width: 1441px){
+  html.rh-atelier .rhHeroMedia{
+    margin-right: calc((100vw - var(--rh-maxw)) / -2);
+  }
+}
+@media (max-width: 900px){
+  html.rh-atelier .rhHeroMedia{ margin-right: 0; width: 100%; }
+}
+
+/* --- V2026.4d · Editorial-Objekte & Details -------------------------- */
+/* Ältere Schichten geben Produktbildern eine weisse Fläche – auf den
+   dunklen Karten muss sie weg; die Stahlobjekte bekommen ein sanftes
+   Studiolicht hinter sich, damit sie auf dem dunklen Grund lesbar sind. */
+html.rh-atelier .rhEdiObject img{
+  background: transparent !important;
+  filter: brightness(1.5) contrast(1.06)
+          drop-shadow(0 16px 22px rgba(0,0,0,.5)) !important;
+}
+html.rh-atelier .rhEdiObject::before{
+  content: "";
+  position: absolute; inset: -6% 4% 10%;
+  background: radial-gradient(50% 46% at 50% 42%,
+              rgba(255,225,190,.30), rgba(255,225,190,0) 70%);
+  pointer-events: none;
+}
+html.rh-atelier .rhEdiPlate::before{ content: none; }
+html.rh-atelier .rhEdiPlate{ inset: 12% 18% 40% !important; }
+html.rh-atelier .rhEdiPlate img{ filter: none !important; }
+
+/* Fisch-Karte nutzt jetzt das bereinigte Motiv */
+html.rh-atelier .rhEdiPhoto .rhEdiBg{ object-position: center 38%; }
+html.rh-atelier .rhGuideCardImg img{ object-position: 60% 45%; }
+
+/* Headline exakt auf Vorlagenmass, zweite Zeile deutlich schwerer */
+html.rh-atelier .rhHeroTitle{ font-size: clamp(36px, 3.95vw, 56px) !important; }
+html.rh-atelier .rhHeroLineStrong{ font-weight: 800 !important; }
+
+/* Markenzeile bleibt einzeilig */
+html.rh-atelier .rhBrandRowInner{ flex-wrap: nowrap; overflow: hidden; }
+@media (max-width: 1100px){
+  html.rh-atelier .rhBrandRowInner{ flex-wrap: wrap; }
+}
+
+/* Vereinheitlicht: Die drei Objektkarten tragen ihr Produkt auf einem
+   hellen Produkt-Chip (die Freisteller besitzen grossteils opake
+   weisse Flächen – auf dunklem Grund ist der helle Chip die ehrliche
+   und ruhigste Darstellung, identisch für alle drei Karten). */
+html.rh-atelier .rhEdiObject{
+  inset: 11% 20% 40% !important;
+  background: #fbfaf8;
+  border-radius: 16px;
+  box-shadow: 0 20px 36px rgba(0,0,0,.42);
+  overflow: hidden;
+}
+html.rh-atelier .rhEdiObject::before{ content: none !important; }
+html.rh-atelier .rhEdiObject img{
+  position: absolute !important; inset: 7% !important;
+  width: 86% !important; height: 86% !important;
+  object-fit: contain !important;
+  filter: none !important;
+  mix-blend-mode: multiply;
+  background: transparent !important;
+}
+html.rh-atelier .rhEdiPlate{ inset: 11% 20% 40% !important; }
+html.rh-atelier .rhEdiPlate img{ inset: 7% !important; width: 86% !important; height: 86% !important; }
+
+/* Produkt-Chips: höher gesetzt (frei vom Titel) und ohne Blend –
+   die Produktfonds sind selbst weiss und laufen nahtlos in den Chip. */
+html.rh-atelier .rhEdiObject,
+html.rh-atelier .rhEdiPlate{ inset: 11% 22% 47% !important; }
+html.rh-atelier .rhEdiObject img,
+html.rh-atelier .rhEdiPlate img{ mix-blend-mode: normal !important; }
+html.rh-atelier .rhEdiCopy{ padding-top: 30px; }
+
+/* --- V2026.4e · Nachmessung am Side-by-Side -------------------------- */
+/* Hero beginnt dichter unter der Kopfzeile (Vorlage: ~24 px) */
+html.rh-atelier .rhHero{ padding-block: clamp(16px, 1.8vw, 26px) clamp(26px, 3vw, 46px); }
+
+/* Benefit-Punkte wie Vorlage: reine Liniensymbole, feine Trenner,
+   keine umrandeten Chips */
+html.rh-atelier .rhHeroBenefits i{
+  border: 0; background: none; border-radius: 0;
+  width: 24px; height: 24px;
+  color: var(--rh-text);
+}
+html.rh-atelier .rhHeroBenefits i svg{ width: 19px; height: 19px; stroke-width: 1.6; }
+html.rh-atelier .rhHeroBenefits > span{ grid-template-columns: 26px minmax(0,1fr); position: relative; }
+html.rh-atelier .rhHeroBenefits > span + span{ padding-left: 16px; }
+html.rh-atelier .rhHeroBenefits > span + span::before{
+  content: ""; position: absolute; left: 0; top: 6%; bottom: 6%;
+  width: 1px; background: var(--rh-border);
+}
+
+/* Kategoriekacheln wie Vorlage: weisse Fläche, Haarlinie, Produkt grösser */
+html.rh-atelier .rhCatMedia{
+  background: #fefdfc !important;
+  border-color: var(--rh-border) !important;
+  padding: clamp(10px, 1.1vw, 16px) !important;
+}
+
+/* Qualitätskarte liegt VOLLSTÄNDIG auf dem Bild (Vorlage) */
+html.rh-atelier .rhHeroCard{ bottom: clamp(16px, 1.8vw, 26px); }
+
+/* --- V2026.4f · Kategoriereihe als verbundene Leiste (wie Vorlage) --- */
+html.rh-atelier .rhCatRow{
+  gap: 0;
+  border: 1px solid var(--rh-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--rh-surface);
+}
+html.rh-atelier .rhCatCard{
+  padding: clamp(14px, 1.6vw, 22px) clamp(14px, 1.6vw, 22px) clamp(12px, 1.4vw, 18px);
+  border-right: 1px solid var(--rh-border-soft);
+}
+html.rh-atelier .rhCatCard:last-child{ border-right: 0; }
+html.rh-atelier .rhCatCard:hover{ transform: none; background: #fbfaf8; }
+html.rh-atelier .rhCatMedia{
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: clamp(6px, .8vw, 12px) !important;
+  aspect-ratio: 1 / 0.78 !important;
+}
+html.rh-atelier .rhCatName{ font-size: 14.5px; }
+html.rh-atelier .rhCatPrice{ font-size: 12.5px; }
+
+/* Hero: Abstand zur Kopfzeile wie gemessen (~24 px) */
+html.rh-atelier .rhHero{ padding-block: clamp(12px, 1.4vw, 24px) clamp(24px, 2.6vw, 40px); }
+
+/* Mobil: Leiste wieder als Wisch-Reihe mit eigenen Kacheln */
+@media (max-width: 640px){
+  html.rh-atelier .rhCatRow{ border: 0; border-radius: 0; overflow-x: auto; background: none; }
+  html.rh-atelier .rhCatCard{ border: 1px solid var(--rh-border) !important; border-radius: 14px; background: var(--rh-surface); }
+}
+
+/* Konto-Menü: kompakte Box statt breitem Mega-Menü */
+html.rh-atelier .rh24AccountMega{
+  width: 260px !important;
+  min-width: 0 !important;
+  grid-template-columns: 1fr !important;
+  display: grid !important;
+}
+
+/* =====================================================================
+   V2026.5 · MOBILE-REPARATUR (Kopfzeile + Hero) UND FEINKORREKTUREN
+   ---------------------------------------------------------------------
+   Die Referenz-Regeln der V2026.4b/4d stehen spät in dieser Datei und
+   überschrieben dadurch die früheren Mobil-Media-Queries (gleiche
+   Spezifität, späterer Quelltext gewinnt). Sichtbare Folgen bei
+   schmalen Ansichten: zweispaltiger, gequetschter Hero mit Miniatur-
+   bild, eine frei über dem Text schwebende Qualitätskarte und eine
+   Wortmarke, die unter die Kopfzeilen-Symbole lief. Dieser Block steht
+   bewusst am DATEIENDE und stellt die Mobil-Darstellung wieder her,
+   ohne die Desktop-Vermessung anzutasten.
+   ===================================================================== */
+@media (max-width: 900px){
+  /* Hero wieder einspaltig: Text, dann Bild, dann Karte */
+  html.rh-atelier .rhHeroGrid{ grid-template-columns: minmax(0, 1fr) !important; }
+  html.rh-atelier .rhHeroTitle{ font-size: clamp(34px, 9vw, 46px) !important; }
+  html.rh-atelier .rhHeroMedia{
+    order: 2;
+    width: 100% !important;
+    margin-right: 0 !important;
+    aspect-ratio: auto !important;
+    display: grid;
+    gap: 12px;
+    overflow: visible;
+    background: none;
+    box-shadow: none;
+    border-radius: 18px;
+  }
+  html.rh-atelier .rhHeroMedia > img{
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1000 / 763;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+  html.rh-atelier .rhHeroCard,
+  html.rh-atelier.rh-atelier-js .rhHeroCard{
+    position: static !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: var(--rh-shadow-sm) !important;
+  }
+  html.rh-atelier .rhHeroBenefits{ grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  html.rh-atelier .rhHeroBenefits b,
+  html.rh-atelier .rhHeroBenefits small{ white-space: normal !important; }
+
+  /* Wortmarke: kompakt genug für die mittlere Rasterspalte, mit
+     hartem Überlauf-Schutz, damit sie nie unter die Symbole läuft. */
+  html.rh-atelier .rh104Brand{ min-width: 0 !important; max-width: 100%; overflow: hidden; }
+  html.rh-atelier .rh104BrandText{
+    font-size: 14px !important;
+    letter-spacing: .14em !important;
+    white-space: nowrap !important;
+  }
+  html.rh-atelier .rh24NavTools{ gap: 0 !important; flex-shrink: 0; align-items: center !important; }
+  html.rh-atelier .rh24NavTools .rh24NavDrop,
+  html.rh-atelier .rh24NavTools .rh24DropBtn{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 44px !important;
+  }
+}
+@media (max-width: 640px){
+  html.rh-atelier .rhHeroBenefits{ grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 430px){
+  html.rh-atelier .rh104BrandText{ font-size: 12px !important; letter-spacing: .10em !important; }
+  html.rh-atelier .rh24NavTools .rh104NavIcon,
+  html.rh-atelier .rh24NavTools .rh24DropBtn,
+  html.rh-atelier .rh-searchToggle{ width: 38px !important; min-width: 38px !important; }
+  html.rh-atelier .rh24Nav{ gap: var(--rh-space-3) !important; }
+}
+@media (max-width: 360px){
+  html.rh-atelier .rh104BrandText{ font-size: 10px !important; letter-spacing: .02em !important; }
+  html.rh-atelier .rh24NavTools .rh104NavIcon,
+  html.rh-atelier .rh24NavTools .rh24DropBtn,
+  html.rh-atelier .rh-searchToggle{ width: 34px !important; min-width: 34px !important; }
+  html.rh-atelier .rh24Nav{ gap: var(--rh-space-2) !important; }
+  html.rh-atelier .rhHeroBenefits{ grid-template-columns: 1fr !important; }
+}
+
+/* Seitenleisten-Gruppentitel mit Symbol (z. B. „Naturgewürze"):
+   Symbol und Text gehören zusammen nach links; space-between riss
+   sie zuvor auseinander. Der +/−-Indikator ist absolut positioniert
+   und bleibt davon unberührt. */
+html.rh-atelier .sideMain.natureCategory,
+.sideMain.natureCategory{ justify-content: flex-start !important; gap: 8px !important; }

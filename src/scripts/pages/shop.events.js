@@ -1,0 +1,26 @@
+(() => {
+  const handlers = window.RH24EventHandlers = window.RH24EventHandlers || {};
+  handlers["shop-click-001"] = function (event) { zoom('assets/standard.png','Räucherhaken Standard') };
+  handlers["shop-click-002"] = function (event) { addToCart('std') };
+  handlers["shop-click-003"] = function (event) { zoom('assets/standard-aal-weiss.png','Räucherhaken Standard Aal') };
+  handlers["shop-click-004"] = function (event) { addToCart('aal') };
+  handlers["shop-click-005"] = function (event) { zoom('assets/ultra-original-korrekt.png','Räucherhaken Ultra') };
+  handlers["shop-click-006"] = function (event) { addToCart('ultra') };
+  handlers["shop-click-007"] = function (event) { zoom('assets/kralle.png','Räucherhaken Kralle') };
+  handlers["shop-click-008"] = function (event) { addToCart('kralle') };
+  handlers["shop-click-009"] = function (event) { zoom('assets/filet.png','Räucherhaken Filet') };
+  handlers["shop-click-010"] = function (event) { addToCart('filet') };
+  handlers["shop-click-011"] = function (event) { zoom('assets/doppeldorn.png','Räucherhaken Doppeldorn') };
+  handlers["shop-click-012"] = function (event) { addToCart('doppel') };
+  handlers["shop-click-013"] = function (event) { zoom('assets/fleischer.jpeg','Fleischerhaken S-Form 5 mm') };
+  handlers["shop-click-014"] = function (event) { addToCart('fleisch') };
+  handlers["shop-click-015"] = function (event) { document.getElementById('wFood').value='Forelle';wizard() };
+  handlers["shop-click-016"] = function (event) { document.getElementById('wFood').value='Lachs';wizard() };
+  handlers["shop-click-017"] = function (event) { document.getElementById('wFood').value='Schinken';wizard() };
+  handlers["shop-click-018"] = function (event) { wizard() };
+  handlers["shop-click-019"] = function (event) { openCart() };
+  handlers["shop-click-020"] = function (event) { closeCart() };
+  handlers["shop-click-021"] = function (event) { closeCart() };
+  handlers["shop-click-022"] = function (event) { checkout() };
+  handlers["shop-click-023"] = function (event) { closeZoom() };
+})();

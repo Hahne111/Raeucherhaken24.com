@@ -1,0 +1,509 @@
+{
+  "version": "2026.1",
+  "hinweis": "Wissensbasis des Räucherberaters. Erweiterbar: neue Einträge einfach im passenden Bereich ergänzen. Zeitangaben und Temperaturen sind in der Räucherpraxis übliche Bereiche und keine Garantiewerte. Bei Fertigmischungen (Lauge, Pökelsalz, Gewürze) gilt immer die Packungsangabe des Herstellers.",
+
+  "grundsaetze": {
+    "kerntemperatur_fisch": "Beim Heißräuchern soll Fisch durchgaren. In der Praxis wird eine Kerntemperatur von mindestens 63 °C angestrebt und kurz gehalten. Ein Einstichthermometer an der dicksten Stelle ist der zuverlässigste Weg.",
+    "kerntemperatur_gefluegel": "Geflügel muss immer vollständig durchgegart werden. Üblich ist eine Kerntemperatur von mindestens 72 °C, gemessen an der dicksten Stelle ohne Knochenkontakt. Geflügel wird nicht kaltgeräuchert.",
+    "kerntemperatur_hack": "Hackfleisch und Bratwurst müssen durchgegart werden – üblich sind mindestens 70 °C Kerntemperatur, kurz gehalten.",
+    "zeit_abhaengigkeit": "Räucher- und Pökelzeiten hängen immer von Gewicht, Dicke, Fettgehalt, Temperatur und Verfahren ab. Eine pauschale Zeit für alle Lebensmittel gibt es nicht. Dicke ist wichtiger als Gewicht: ein flaches Filet ist schneller fertig als ein kompaktes Stück gleichen Gewichts.",
+    "hygiene": "Kühlkette einhalten, sauber arbeiten, Rohes und Fertiges trennen, Haken und Roste vor und nach jedem Einsatz gründlich reinigen und vollständig trocknen lassen."
+  },
+
+  "methoden": {
+    "heiss": {
+      "name": "Heißräuchern",
+      "temperatur": "Ofentemperatur üblicherweise 50–85 °C; in der Garphase wird häufig kurz auf 90–110 °C gegangen, danach zum Räuchern auf 70–80 °C zurückgeregelt.",
+      "wirkung": "Das Räuchergut wird dabei gegart. Es ist danach ein verzehrfertiges Produkt mit begrenzter Haltbarkeit.",
+      "eignung": "Forelle, Makrele, Aal, Saibling, Hering, Karpfen, Rippchen, Geflügel, Würste.",
+      "haltbarkeit": "Gekühlt üblicherweise wenige Tage. Heißgeräuchertes ist kein Dauerprodukt.",
+      "ablauf": ["Vorbereiten und salzen bzw. einlegen", "Abspülen", "Trocknen bis die Oberfläche griffig-trocken ist", "Ofen vorheizen", "Garphase", "Räucherphase", "Auskühlen", "Kühl lagern"]
+    },
+    "warm": {
+      "name": "Warmräuchern",
+      "temperatur": "Üblicherweise etwa 25–50 °C.",
+      "wirkung": "Zwischenform: das Räuchergut gart nur teilweise durch und bleibt saftiger als beim Heißräuchern, ist aber weniger lange haltbar als kaltgeräuchertes.",
+      "eignung": "Brühwürste, Fischspezialitäten, manche Schinkenarten – oft als Zwischenschritt.",
+      "hinweis": "Der Bereich zwischen etwa 20 und 60 °C ist für Keime günstig. Warmräuchern setzt daher sauberes Arbeiten, gepökeltes bzw. gesalzenes Räuchergut und begrenzte Zeiten voraus."
+    },
+    "kalt": {
+      "name": "Kalträuchern",
+      "temperatur": "Dauerhaft unter 25 °C, angestrebt werden meist 15–22 °C. Höhere Temperaturen sind beim Kalträuchern ein Fehler.",
+      "wirkung": "Konserviert und aromatisiert, gart aber nicht. Das Räuchergut bleibt roh.",
+      "voraussetzung": "Kalträuchern setzt vorheriges Pökeln zwingend voraus. Ungepökeltes Fleisch darf nicht kaltgeräuchert werden.",
+      "ablauf": "Meist in mehreren Durchgängen von etwa 8–12 Stunden mit Ruhephasen von mindestens gleicher Länge dazwischen. Die Zahl der Durchgänge bestimmt Farbe und Rauchintensität.",
+      "eignung": "Rohschinken, Speck, Lachsschinken, Lachs, Rohwurst.",
+      "warnung": "Geflügel und Hackfleisch werden nicht kaltgeräuchert. Bei Fisch ist Kalträuchern anspruchsvoll: Rohware, Kühlung und Hygiene müssen einwandfrei sein.",
+      "jahreszeit": "Klassisch die kalte Jahreszeit. Im Sommer ist die Temperaturgrenze ohne Kühlung kaum zu halten."
+    }
+  },
+
+  "poekeln": {
+    "zweck": "Pökeln entzieht Wasser, würzt, macht haltbarer und ist die Voraussetzung fürs Kalträuchern.",
+    "trocken": {
+      "name": "Trockenpökeln",
+      "ablauf": "Das Fleisch wird rundum mit der Pökelmischung eingerieben und in einem Behälter oder Vakuumbeutel kühl gelagert. Austretende Lake bleibt in der Regel am Fleisch.",
+      "zeit": "Die Dauer richtet sich nach der Dicke des Stücks, nicht nach dem Gesamtgewicht. In der Praxis wird pro Zentimeter Fleischdicke etwa ein Tag gerechnet, häufig plus einige Tage Sicherheit. Ein flaches Stück ist deutlich schneller durch als ein kompaktes.",
+      "temperatur": "Kühl bei etwa 2–7 °C.",
+      "vorteil": "Kräftigeres Aroma, festere Struktur, weniger Platzbedarf."
+    },
+    "nass": {
+      "name": "Nasspökeln",
+      "ablauf": "Das Fleisch liegt vollständig in einer Pökellake. Es sollte beschwert werden, damit nichts aufschwimmt.",
+      "zeit": "In der Regel etwas länger als Trockenpökeln, ebenfalls abhängig von der Dicke.",
+      "temperatur": "Kühl bei etwa 2–7 °C, Lake regelmäßig kontrollieren.",
+      "vorteil": "Gleichmäßigere Durchsalzung, saftigeres Ergebnis.",
+      "hinweis": "Trübe, schaumige oder unangenehm riechende Lake ist ein Abbruchgrund."
+    },
+    "durchbrennen": {
+      "name": "Durchbrennen",
+      "was": "Nach dem Pökeln wird das Fleisch aus der Mischung genommen, kurz abgespült und ohne Salz kühl gelagert.",
+      "warum": "In dieser Phase gleicht sich das Salz im Inneren aus. Ohne Durchbrennen ist der Rand zu salzig und der Kern zu wenig gewürzt.",
+      "dauer": "Üblich ist etwa die Hälfte bis ein Drittel der Pökelzeit, mindestens aber mehrere Tage bei größeren Stücken."
+    },
+    "nps": {
+      "name": "Nitritpökelsalz (NPS)",
+      "was": "Speisesalz mit einem geringen Anteil Natriumnitrit. In Deutschland liegt der Nitritanteil üblicherweise bei 0,4–0,5 %.",
+      "warum": "Wirkt gegen bestimmte gefährliche Keime, stabilisiert Farbe und Aroma. Für Rohschinken, Rohwurst und alles Kaltgeräucherte ist es die sichere Wahl.",
+      "dosierung": "Verbindlich ist immer die Angabe auf der Packung des verwendeten Produkts. Sie unterscheidet sich je nach Hersteller und Mischung. Bitte nicht überdosieren und nicht schätzen.",
+      "regeln": [
+        "NPS niemals zum Nachsalzen bei Tisch oder zum normalen Kochen verwenden.",
+        "Kühl, trocken und für Kinder unzugänglich lagern.",
+        "Nicht mit gewöhnlichem Speisesalz verwechseln – beides sieht ähnlich aus.",
+        "Kein Ersatz für saubere Kühlung und Hygiene."
+      ],
+      "ohne_nps": "Nur Speisesalz reicht für heißgeräucherte Ware, die kurzfristig verzehrt wird. Für Rohschinken und Kaltgeräuchertes ist es die deutlich riskantere Variante."
+    }
+  },
+
+  "lake": {
+    "name": "Salzlake für Fisch",
+    "konzentration": "Für heißgeräucherten Fisch sind Laken von etwa 6–8 % gebräuchlich, also rund 60–80 g Salz je Liter Wasser. Schwächere Laken brauchen längere Einlegezeiten, stärkere kürzere.",
+    "zeit": "Ganze Forellen von etwa 250–400 g liegen üblicherweise 8–12 Stunden in der Lake, häufig über Nacht. Größere oder dickere Fische brauchen länger, Filets deutlich kürzer.",
+    "temperatur": "Immer kühl einlegen, idealerweise im Kühlschrank.",
+    "menge": "Der Fisch muss vollständig bedeckt sein. Aufschwimmende Stücke werden ungleichmäßig gesalzen.",
+    "abspuelen": "Nach der Lake gründlich mit klarem Wasser abspülen. Salzreste auf der Haut führen zu weißen Rändern und salzigen Stellen.",
+    "fertigmischung": "Bei fertigen Räucherlaugen gilt die Dosierungs- und Zeitangabe auf der Packung. Sie ist auf die jeweilige Mischung abgestimmt.",
+    "zu_salzig": "Zu salzig geratener Fisch lässt sich vor dem Räuchern durch Wässern in klarem, kaltem Wasser abmildern – je nach Größe für ein bis mehrere Stunden mit Wasserwechsel."
+  },
+
+  "trocknen": {
+    "warum": "Rauch haftet nicht auf nasser Oberfläche. Feuchtigkeit führt zu blasser Farbe, wenig Aroma und schwarzen Stellen durch Kondensat.",
+    "wie": "Nach dem Abspülen aufhängen und an der Luft trocknen lassen, bis die Oberfläche griffig und matt ist. Ein Ventilator oder Luftzug beschleunigt das deutlich.",
+    "dauer": "Bei Fisch üblicherweise ein bis zwei Stunden, je nach Luftfeuchte auch länger. Bei Schinken vor dem Kalträuchern eher ein bis mehrere Tage.",
+    "test": "Die Haut soll sich trocken anfühlen, fast wie dünnes Pergament. Feuchte Stellen bleiben später hell."
+  },
+
+  "fisch": {
+    "forelle": {
+      "name": "Forelle",
+      "typ": "mittelfetter Süßwasserfisch",
+      "gewicht": "meist 250–400 g pro Stück",
+      "methode": "Heißräuchern ist der Klassiker.",
+      "lake": "6–8 % Salzlake, üblicherweise 8–12 Stunden, oft über Nacht.",
+      "trocknen": "1–2 Stunden bis die Haut trocken ist.",
+      "ablauf": "Garphase bei rund 90–110 °C, bis der Fisch durch ist; anschließend Räucherphase bei etwa 70–80 °C.",
+      "fertig": "Die Rückenflosse lässt sich leicht herausziehen, das Fleisch löst sich von der Gräte. Kerntemperatur mindestens 63 °C.",
+      "holz": "Buche klassisch, Erle milder und besonders fischtypisch, Kirsche für ein mild-fruchtiges Profil.",
+      "haken": "std",
+      "hinweis": "Der Bauchraum sollte sauber ausgenommen und die dunkle Niere entlang der Wirbelsäule entfernt sein – sie schmeckt sonst bitter."
+    },
+    "lachs": {
+      "name": "Lachs",
+      "typ": "fetter Fisch, meist als Filet",
+      "methode": "Klassisch kaltgeräuchert, heißgeräuchert ebenfalls sehr gut.",
+      "vorbereitung": "Für kalt geräucherten Lachs wird das Filet meist trocken gebeizt und danach gründlich trockengetupft.",
+      "zeit": "Beizzeit richtet sich nach der Dicke des Filets; dünne Schwanzstücke sind deutlich schneller durch als das dicke Rückenstück.",
+      "kalt": "Kalträuchern unter 25 °C in mehreren Durchgängen. Der Fisch bleibt roh – nur einwandfreie Rohware verwenden und die Kühlkette lückenlos halten.",
+      "holz": "Erle und Buche sind klassisch, Kirsche gibt eine mild-fruchtige Note.",
+      "haken": "filet",
+      "hinweis": "Gräten vorher mit einer Grätenzange entfernen. Filets hängen am besten flach und gleichmäßig."
+    },
+    "aal": {
+      "name": "Aal",
+      "typ": "sehr fettreicher Fisch",
+      "methode": "Heißräuchern.",
+      "vorbereitung": "Aal wird gründlich gesäubert; die Schleimschicht wird üblicherweise mit Salz abgerieben und abgewaschen.",
+      "lake": "Salzlake oder spezielle Aal-Lauge nach Packungsangabe.",
+      "besonderheit": "Durch den hohen Fettgehalt braucht Aal mehr Zeit und verträgt eine kräftigere Garphase als magere Fische. Der Bauch soll sich beim Garen öffnen und straffen.",
+      "holz": "Buche und Erle.",
+      "haken": "aal",
+      "hinweis": "Wegen des schlanken Körpers ist ein kleinerer Hakenbogen sinnvoll, damit der Fisch sicher hängt."
+    },
+    "makrele": {
+      "name": "Makrele",
+      "typ": "fetter Meeresfisch",
+      "methode": "Heißräuchern.",
+      "lake": "6–8 % Salzlake, wegen des Fettgehalts eher am kürzeren Ende der üblichen Zeiten.",
+      "besonderheit": "Makrele ist kräftig im Eigengeschmack und verträgt auch etwas mehr Rauch.",
+      "holz": "Buche, Erle.",
+      "haken": "doppel"
+    },
+    "hering": {
+      "name": "Hering",
+      "typ": "kleiner, fetter Meeresfisch",
+      "methode": "Heißräuchern; traditionell als Bückling.",
+      "lake": "Kurze Lakenzeiten, da die Fische klein sind.",
+      "besonderheit": "Wegen der geringen Größe schnell fertig – engmaschig kontrollieren.",
+      "holz": "Buche, Erle.",
+      "haken": "std"
+    },
+    "saibling": {
+      "name": "Saibling",
+      "typ": "mittelfetter Süßwasserfisch, der Forelle ähnlich",
+      "methode": "Heißräuchern.",
+      "lake": "Wie bei der Forelle, 6–8 %.",
+      "besonderheit": "Etwas feineres, zarteres Fleisch als die Forelle – lieber etwas kürzer und schonender räuchern.",
+      "holz": "Erle, Kirsche, Buche.",
+      "haken": "std"
+    },
+    "karpfen": {
+      "name": "Karpfen",
+      "typ": "kräftiger, oft großer Süßwasserfisch",
+      "methode": "Heißräuchern, häufig als Hälfte oder Filet.",
+      "lake": "Wegen der Fleischdicke eher längere Lakenzeiten.",
+      "besonderheit": "Kräftiger Eigengeschmack, verträgt intensivere Würzung. Große Tiere werden oft geteilt.",
+      "holz": "Buche, Eiche für ein kräftigeres Profil.",
+      "haken": "kralle"
+    },
+    "zander": {
+      "name": "Zander",
+      "typ": "magerer Raubfisch",
+      "methode": "Heißräuchern, eher schonend.",
+      "besonderheit": "Sehr mageres Fleisch – trocknet schnell aus. Kürzere Räucherzeiten und niedrigere Temperaturen wählen und früh die Kerntemperatur prüfen.",
+      "holz": "Erle, Birke – mild, damit der feine Eigengeschmack bleibt.",
+      "haken": "std"
+    },
+    "barsch": {
+      "name": "Barsch",
+      "typ": "magerer Fisch, meist klein",
+      "methode": "Heißräuchern.",
+      "besonderheit": "Mager und klein: kurze Lake, kurze Räucherzeit, gut im Blick behalten.",
+      "holz": "Erle, Birke.",
+      "haken": "std"
+    },
+    "heilbutt": {
+      "name": "Heilbutt",
+      "typ": "fester Meeresfisch, meist als dickes Filet oder Kotelett",
+      "methode": "Heiß- oder Kalträuchern.",
+      "besonderheit": "Sehr feste Struktur und große Stückdicke – die Zeit richtet sich klar nach der Dicke.",
+      "holz": "Buche, Erle.",
+      "haken": "filet"
+    },
+    "wels": {
+      "name": "Wels",
+      "typ": "fettreicher, großer Süßwasserfisch",
+      "methode": "Heißräuchern, meist als Filet oder Portionsstück.",
+      "besonderheit": "Fett und großstückig – braucht Zeit, bleibt dafür saftig.",
+      "holz": "Buche, Eiche.",
+      "haken": "filet"
+    }
+  },
+
+  "fleisch": {
+    "schinken": {
+      "name": "Rohschinken",
+      "teil": "Keule, Nuss, Oberschale",
+      "methode": "Pökeln, durchbrennen, trocknen, kalträuchern, reifen.",
+      "poekeln": "Trocken oder nass mit Nitritpökelsalz. Dauer nach Dicke – bei großen Stücken mehrere Wochen.",
+      "raeuchern": "Kalträuchern unter 25 °C in mehreren Durchgängen von etwa 8–12 Stunden, dazwischen Ruhephasen.",
+      "reifen": "Nach dem Räuchern kühl, luftig und dunkel reifen lassen. Der Schinken verliert weiter Wasser und wird fester.",
+      "holz": "Buche, Eiche für kräftige Note.",
+      "haken": "fleisch",
+      "sicherheit": "Rohschinken wird nicht gegart. Ohne sauberes Pökeln mit NPS, konsequente Kühlung und Hygiene ist das Verfahren riskant."
+    },
+    "speck": {
+      "name": "Speck / Bauch",
+      "teil": "Schweinebauch",
+      "methode": "Pökeln, durchbrennen, trocknen, kalträuchern.",
+      "besonderheit": "Durch den flacheren Zuschnitt deutlich schneller durchgepökelt als eine Keule.",
+      "holz": "Buche, Eiche, Kirsche.",
+      "haken": "fleisch"
+    },
+    "lachsschinken": {
+      "name": "Lachsschinken / Nacken- und Rückenstücke",
+      "teil": "Schweinerücken oder Nacken",
+      "methode": "Pökeln, durchbrennen, trocknen, kalträuchern.",
+      "besonderheit": "Schlanke, gleichmäßige Stücke – kürzere Pökelzeit als Keulenstücke, sehr gleichmäßiges Ergebnis.",
+      "holz": "Buche, Kirsche.",
+      "haken": "fleisch"
+    },
+    "rippchen": {
+      "name": "Rippchen",
+      "methode": "Heißräuchern bzw. Smoken.",
+      "temperatur": "Übliche Garraumtemperaturen liegen bei etwa 110–130 °C.",
+      "fertig": "Nicht über die Kerntemperatur, sondern über den Biegetest: Das Fleisch soll sich beim Anheben deutlich beugen und leicht einreißen.",
+      "holz": "Buche, Kirsche, Apfel, Hickory für kräftigen Rauch.",
+      "haken": "fleisch"
+    },
+    "pulled_pork": {
+      "name": "Pulled Pork",
+      "teil": "Schweinenacken",
+      "methode": "Heißräuchern über lange Zeit.",
+      "temperatur": "Garraum üblicherweise 110–130 °C.",
+      "kerntemperatur": "Erst bei etwa 90–95 °C Kerntemperatur lässt sich das Fleisch zupfen. Vorher ist es zäh.",
+      "besonderheit": "Zwischendurch stagniert die Kerntemperatur oft für Stunden – das ist normal und kein Fehler.",
+      "holz": "Buche, Hickory, Apfel, Kirsche.",
+      "haken": "fleisch"
+    },
+    "brisket": {
+      "name": "Brisket / Rinderbrust",
+      "methode": "Heißräuchern über lange Zeit.",
+      "temperatur": "Garraum üblicherweise 110–130 °C.",
+      "kerntemperatur": "Zielbereich etwa 90–96 °C, entscheidend ist die Konsistenz: das Thermometer soll fast widerstandslos einsinken.",
+      "holz": "Eiche, Hickory, Buche.",
+      "haken": "fleisch"
+    },
+    "gefluegel": {
+      "name": "Geflügel",
+      "methode": "Ausschließlich Heißräuchern.",
+      "kerntemperatur": "Mindestens 72 °C an der dicksten Stelle, ohne Knochenkontakt gemessen.",
+      "warnung": "Geflügel wird niemals kaltgeräuchert und nie rosa serviert. Rohes Geflügel strikt von anderen Lebensmitteln trennen, alle Flächen und Werkzeuge danach reinigen.",
+      "holz": "Kirsche, Apfel, Buche – milde Hölzer passen besser als sehr kräftige.",
+      "haken": "fleisch"
+    },
+    "wild": {
+      "name": "Wild",
+      "methode": "Heißräuchern oder – bei gepökelten Stücken – Kalträuchern.",
+      "besonderheit": "Wildfleisch ist mager und trocknet schnell aus. Kräftiger Eigengeschmack, verträgt kräftigeres Holz.",
+      "holz": "Eiche, Buche, Hickory.",
+      "haken": "fleisch"
+    },
+    "rind": {
+      "name": "Rind",
+      "methode": "Heißräuchern; gepökelte Stücke auch kalt.",
+      "besonderheit": "Je nach Teilstück sehr unterschiedlich: Brust und Schulter brauchen lange und hohe Kerntemperaturen, magere Stücke deutlich weniger.",
+      "holz": "Eiche, Hickory, Buche.",
+      "haken": "fleisch"
+    },
+    "wurst": {
+      "name": "Würste",
+      "rohwurst": "Rohwurst wird gepökelt, gereift und kaltgeräuchert. Sie wird nicht erhitzt und stellt hohe Anforderungen an Hygiene und Rezeptur.",
+      "bruehwurst": "Brühwurst wird meist warmgeräuchert und anschließend gebrüht.",
+      "warnung": "Bei Rohwurst mit Hackfleischanteil ist saubere, kalte Verarbeitung entscheidend. Für Einsteiger ist heißgeräucherte oder gebrühte Wurst der sicherere Einstieg.",
+      "holz": "Buche.",
+      "haken": "fleisch"
+    },
+    "filet": {
+      "name": "Filet",
+      "besonderheit": "Sehr mager und schlank. Kurze Pökel- und Räucherzeiten, sonst wird es trocken und salzig.",
+      "holz": "Buche, Kirsche.",
+      "haken": "fleisch"
+    }
+  },
+
+  "holz": {
+    "buche": {
+      "name": "Buche",
+      "aroma": "klassisch, ausgewogen, leicht herzhaft",
+      "intensitaet": "mittel",
+      "passt": "Fisch, Fleisch, Schinken, Wurst – der Allrounder",
+      "farbe": "goldgelb bis bernsteinfarben",
+      "hinweis": "Wer sich nicht entscheiden kann, liegt mit Buche fast nie falsch."
+    },
+    "erle": {
+      "name": "Erle",
+      "aroma": "mild, leicht süßlich, sehr fischtypisch",
+      "intensitaet": "mild",
+      "passt": "Forelle, Lachs, Saibling, Zander – die klassische Fischwahl",
+      "farbe": "hell, warm",
+      "hinweis": "Gute Wahl, wenn der Eigengeschmack des Fisches im Vordergrund bleiben soll."
+    },
+    "birke": {
+      "name": "Birke",
+      "aroma": "fein und zurückhaltend",
+      "intensitaet": "mild",
+      "passt": "feines Räuchergut, magere Fische",
+      "farbe": "hell",
+      "hinweis": "Die Rinde sollte entfernt sein – sie enthält reichlich Harz und Teerstoffe."
+    },
+    "eiche": {
+      "name": "Eiche",
+      "aroma": "kräftig, würzig, leicht herb durch die Gerbstoffe",
+      "intensitaet": "kräftig",
+      "passt": "Schinken, Speck, Wild, Rind",
+      "farbe": "dunkler, kräftig",
+      "hinweis": "Für zarte Fische meist zu dominant. Gerne mit Buche gemischt."
+    },
+    "kirsche": {
+      "name": "Kirsche",
+      "aroma": "mild-fruchtig, leicht süßlich",
+      "intensitaet": "mild bis mittel",
+      "passt": "Lachs, Geflügel, Schwein, Schinken",
+      "farbe": "rötlich-warm",
+      "hinweis": "Sorgt für eine besonders ansprechende Färbung."
+    },
+    "apfel": {
+      "name": "Apfel",
+      "aroma": "mild, fruchtig-süßlich",
+      "intensitaet": "mild",
+      "passt": "Geflügel, Schwein, Fisch",
+      "farbe": "hell-golden",
+      "hinweis": "Sehr gut kombinierbar mit Buche."
+    },
+    "hickory": {
+      "name": "Hickory",
+      "aroma": "sehr kräftig, würzig, typisch für amerikanisches Barbecue",
+      "intensitaet": "sehr kräftig",
+      "passt": "Rippchen, Pulled Pork, Brisket, Speck",
+      "hinweis": "Schnell zu viel des Guten. Sparsam einsetzen oder mit Buche mischen."
+    },
+    "ahorn": {
+      "name": "Ahorn",
+      "aroma": "mild, leicht süßlich",
+      "intensitaet": "mild",
+      "passt": "Geflügel, Schwein, Fisch",
+      "hinweis": "Angenehm zurückhaltend, gerne in Mischungen."
+    },
+    "warnung": {
+      "nadelholz": "Nadelhölzer wie Fichte, Kiefer oder Tanne sind zum Räuchern nicht geeignet. Ihr Harz erzeugt bitteren, rußigen Rauch und unerwünschte Stoffe.",
+      "behandelt": "Niemals behandeltes, lackiertes, geleimtes, imprägniertes oder gebeiztes Holz verwenden – auch keine Spanplatten, Paletten oder Möbelreste. Dabei können giftige Stoffe entstehen.",
+      "schimmel": "Verschimmeltes oder muffig riechendes Räuchermehl gehört in den Abfall, nicht in den Ofen.",
+      "feuchte": "Räuchermehl muss trocken gelagert werden. Feuchtes Mehl glimmt schlecht, qualmt weiß und schmeckt bitter."
+    },
+    "koernung": {
+      "mehl": "Räuchermehl ist fein und glimmt gleichmäßig. Es ist die übliche Wahl für Sparbrand und Kalträuchern.",
+      "spaene": "Räucherspäne sind gröber, entwickeln schneller Rauch und passen gut zu kurzen Heißräuchergängen.",
+      "chips": "Räucherchips sind noch gröber und werden meist auf Glut oder in einer Räucherbox eingesetzt.",
+      "chunks": "Chunks sind Holzstücke für lange Garzeiten im Smoker. Sie geben über Stunden gleichmäßig Rauch ab."
+    }
+  },
+
+  "haken": {
+    "auswahl_kriterien": [
+      "Was soll aufgehängt werden: ganzer Fisch, Filet oder Fleischstück?",
+      "Wie schwer und wie lang ist das Räuchergut?",
+      "Wie hoch ist der Ofen, wie viel Platz bleibt unter der Aufhängung?",
+      "Wie oft wird mit Salz und Lake gearbeitet? Das bestimmt die sinnvolle Edelstahlgüte.",
+      "Wie viele Stücke sollen gleichzeitig hängen? Abstand zwischen den Stücken ist wichtig, damit der Rauch überall hinkommt."
+    ],
+    "abstand": "Räuchergut sollte sich nicht berühren. Wo Stücke aneinanderliegen, entstehen helle, ungeräucherte Stellen.",
+    "aufhaengen_fisch": "Ganze Fische werden üblicherweise durch den Kopf bzw. die Kiemenpartie eingehängt, damit das Gewicht sicher gehalten wird und der Bauchraum ablaufen kann.",
+    "aufhaengen_filet": "Filets hängen an der festeren Schwanz- oder Randpartie und sollten möglichst gleichmäßig belastet sein.",
+    "material": {
+      "va": "VA ist die Grundausführung im Shop.",
+      "v2a": "V2A ist die solide, rostfreie Allround-Wahl für den normalen Räucherbetrieb.",
+      "v4a": "V4A ist die widerstandsfähigere Variante und lohnt sich besonders bei häufigem Kontakt mit Salz, Lake und Feuchtigkeit."
+    },
+    "pflege": "Nach jedem Einsatz gründlich reinigen, Salzreste vollständig entfernen und trocken lagern. Salz greift auch Edelstahl mit der Zeit an."
+  },
+
+  "oefen": {
+    "raeucherofen": "Klassischer stehender Ofen mit Feuerung unten. Gut für Heißräuchern; die Temperatur wird über Luftzufuhr und Feuer geregelt.",
+    "raeucherschrank": "Größeres Volumen, oft mit separater Rauchquelle. Vorteil: gleichmäßigere Temperatur, gut auch für Kalträuchern.",
+    "tischraeucherofen": "Kleiner Ofen für kleine Mengen, meist mit Spiritus oder Gas beheizt. Praktisch, aber begrenzt in Kapazität und Temperaturkontrolle.",
+    "sparbrand": "Ein Sparbrand ist ein Behälter, in dem Räuchermehl langsam abglimmt. Er liefert über viele Stunden Rauch ohne nennenswerte Wärme – das Standardwerkzeug fürs Kalträuchern.",
+    "luftzufuhr": "Die Luftzufuhr steuert zwei Dinge: die Temperatur und die Rauchqualität. Zu wenig Luft erzeugt schwelenden, bitteren Rauch; zu viel Luft kühlt aus und verbrennt das Mehl zu schnell.",
+    "rauchqualitaet": "Guter Rauch ist dünn und bläulich. Dichter, weißer Qualm ist ein Warnzeichen und macht das Räuchergut bitter.",
+    "luftfeuchte": "Hohe Luftfeuchtigkeit verlängert das Trocknen und begünstigt Kondensat im Ofen. Bei feuchtem Wetter mehr Zeit fürs Antrocknen einplanen.",
+    "vorheizen": "Den Ofen vor dem Einhängen auf Temperatur bringen. Kaltes Einhängen führt zu Kondenswasser auf dem Räuchergut."
+  },
+
+  "lagerung": {
+    "heissgeraeuchert": "Heißgeräucherter Fisch und heißgeräuchertes Fleisch sind gegart, aber nicht dauerhaft haltbar. Gut abgekühlt, abgedeckt und im Kühlschrank aufbewahren und zügig verbrauchen.",
+    "kaltgeraeuchert": "Kaltgeräuchertes hält länger, weil es gepökelt und getrocknet ist. Kühl, dunkel und luftig lagern; vakuumiert im Kühlschrank deutlich länger.",
+    "abkuehlen": "Räuchergut immer offen abkühlen lassen, bevor es abgedeckt wird. Warm verpackt entsteht Kondenswasser – das ist der schnellste Weg zu Schimmel.",
+    "einfrieren": "Geräucherter Fisch lässt sich einfrieren, verliert dabei aber an Aroma und Struktur. Portionsweise und gut verpackt einfrieren.",
+    "warnzeichen": "Schmieriger Belag, säuerlicher oder stechender Geruch, ungewohnte Verfärbungen oder Schimmel bedeuten: nicht mehr verwenden."
+  },
+
+  "probleme": {
+    "fisch_trocken": {
+      "titel": "Fisch ist trocken geworden",
+      "ursachen": ["Zu hohe Temperatur oder zu lange Garphase", "Sehr magerer Fisch wie Zander oder Barsch", "Zu lange in der Lake und danach zu lange getrocknet", "Kerntemperatur deutlich überschritten"],
+      "loesungen": ["Mit Einstichthermometer arbeiten und bei etwa 63 °C Kerntemperatur beenden", "Bei mageren Fischen niedrigere Temperatur und kürzere Zeiten wählen", "Garphase kürzer halten und die Räucherphase bei 70–80 °C fahren", "Fische ähnlicher Größe zusammen räuchern, damit alle gleichzeitig fertig werden"]
+    },
+    "fleisch_trocken": {
+      "titel": "Fleisch ist trocken geworden",
+      "ursachen": ["Zu magere Teilstücke", "Zu hohe Garraumtemperatur", "Zu weit über die Zielkerntemperatur hinaus", "Beim Kalträuchern zu stark vorgetrocknet"],
+      "loesungen": ["Teilstücke mit etwas Fettanteil wählen", "Garraumtemperatur senken und mehr Zeit einplanen", "Kerntemperatur überwachen statt nach Uhrzeit zu arbeiten", "Beim Trocknen vor dem Kalträuchern die Oberfläche nur antrocknen, nicht durchtrocknen"]
+    },
+    "rauch_bitter": {
+      "titel": "Der Rauch schmeckt bitter",
+      "ursachen": ["Zu wenig Luftzufuhr, das Mehl schwelt statt zu glimmen", "Feuchtes oder verschimmeltes Räuchermehl", "Nadelholz oder behandeltes Holz verwendet", "Zu dichter, weißer Qualm über lange Zeit", "Räuchergut war beim Einhängen noch nass"],
+      "loesungen": ["Luftzufuhr erhöhen, bis der Rauch dünn und bläulich abzieht", "Nur trockenes, sauberes Räuchermehl verwenden", "Ausschließlich unbehandeltes Laubholz einsetzen", "Räuchergut vor dem Einhängen gründlich antrocknen", "Weniger Mehl auf einmal auflegen"]
+    },
+    "oberflaeche_schwarz": {
+      "titel": "Schwarze oder rußige Oberfläche",
+      "ursachen": ["Kondenswasser auf kaltem Räuchergut, an dem sich Ruß festsetzt", "Zu heiße Feuerung mit offener Flamme", "Fett tropft in die Glut und rußt", "Ofen war innen stark verschmutzt"],
+      "loesungen": ["Ofen vorheizen und Räuchergut angetrocknet einhängen", "Keine offene Flamme, nur Glut bzw. glimmendes Mehl", "Auffangblech unter fettes Räuchergut legen", "Ofen und Roste regelmäßig reinigen"]
+    },
+    "zu_wenig_aroma": {
+      "titel": "Zu wenig Raucharoma",
+      "ursachen": ["Oberfläche war noch feucht, der Rauch konnte nicht haften", "Zu kurze Räucherphase", "Zu wenig Rauchentwicklung", "Sehr mildes Holz bei kräftigem Räuchergut"],
+      "loesungen": ["Länger und gründlicher antrocknen, bis die Oberfläche matt und griffig ist", "Räucherphase verlängern oder beim Kalträuchern weitere Durchgänge anhängen", "Rauchentwicklung prüfen: dünner, bläulicher Rauch soll dauerhaft abziehen", "Kräftigeres Holz wie Buche oder Eiche wählen"]
+    },
+    "mehl_geht_aus": {
+      "titel": "Das Räuchermehl geht immer wieder aus",
+      "ursachen": ["Mehl zu feucht", "Zu wenig Luftzufuhr", "Sparbrand zu fest oder zu locker gefüllt", "Mehl zu grob für den Sparbrand"],
+      "loesungen": ["Mehl trocken lagern, gegebenenfalls vorher offen trocknen lassen", "Luftzufuhr etwas öffnen", "Sparbrand gleichmäßig und mittelfest füllen, nicht pressen", "Feine Körnung für den Sparbrand verwenden, gröbere Späne für Glut"]
+    },
+    "kondenswasser": {
+      "titel": "Kondenswasser im Ofen",
+      "ursachen": ["Räuchergut zu nass eingehängt", "Ofen nicht vorgeheizt", "Zu wenig Abzug", "Hohe Außenluftfeuchte"],
+      "loesungen": ["Räuchergut vorher gründlich antrocknen", "Ofen vorheizen, bevor eingehängt wird", "Abzug etwas weiter öffnen", "Bei feuchtem Wetter mehr Trocknungszeit einplanen"]
+    },
+    "fisch_faellt": {
+      "titel": "Der Fisch fällt vom Haken",
+      "ursachen": ["Haken passt nicht zu Größe und Gewicht", "Nur ein Haltepunkt bei schwerem Fisch", "Fisch wurde zu weich gegart", "Einhängepunkt zu weit außen im weichen Gewebe"],
+      "loesungen": ["Haken passend zum Gewicht wählen – bei schweren Fischen Mehrpunkt-Halt oder die stabilere Ausführung", "Durch die feste Kopf- bzw. Kiemenpartie einhängen, nicht durch weiches Bauchgewebe", "Garphase nicht überziehen", "Bei sehr großen Fischen zusätzlich abstützen oder liegend auf dem Rost räuchern"]
+    },
+    "temperatur_schwankt": {
+      "titel": "Die Temperatur schwankt stark",
+      "ursachen": ["Wind und Wetter", "Zu häufiges Öffnen der Tür", "Ofen mit wenig Masse reagiert schnell", "Luftzufuhr wird zu stark nachgeregelt"],
+      "loesungen": ["Ofen windgeschützt aufstellen", "Tür so selten wie möglich öffnen", "In kleinen Schritten regeln und der Änderung Zeit geben", "Ein Ofenthermometer auf Höhe des Räucherguts verwenden, nicht nur an der Tür"]
+    },
+    "zu_salzig": {
+      "titel": "Zu salzig geworden",
+      "ursachen": ["Lake zu stark angesetzt", "Zu lange eingelegt", "Nach der Lake nicht gründlich abgespült", "Bei Fertigmischung die Packungsangabe überschritten"],
+      "loesungen": ["Vor dem Räuchern in klarem, kaltem Wasser wässern und das Wasser mehrfach wechseln", "Beim nächsten Mal Konzentration oder Zeit reduzieren", "Nach der Lake immer gründlich abspülen", "Bei Fertigmischungen exakt nach Packungsangabe dosieren"]
+    },
+    "zu_wenig_salz": {
+      "titel": "Zu wenig Salz",
+      "ursachen": ["Lake zu schwach oder zu kurz", "Fisch schwamm auf und war nicht bedeckt", "Bei Fleisch zu kurz gepökelt oder zu kurz durchgebrannt"],
+      "loesungen": ["Konzentration oder Einlegezeit erhöhen", "Räuchergut beschweren, damit es vollständig bedeckt bleibt", "Bei Fleisch Pökel- und Durchbrennzeit nach Dicke bemessen"]
+    },
+    "konsistenz": {
+      "titel": "Die Konsistenz stimmt nicht",
+      "ursachen": ["Zu schnell und zu heiß gegart – außen fest, innen roh", "Zu lange getrocknet, Oberfläche verhärtet", "Beim Kalträuchern zu warm gearbeitet", "Beim Pökeln zu kurz durchgebrannt"],
+      "loesungen": ["Langsamer arbeiten und die Kerntemperatur begleiten", "Trocknungsphase kürzen, bis die Oberfläche nur matt ist", "Beim Kalträuchern konsequent unter 25 °C bleiben", "Durchbrennzeit einhalten, damit sich das Salz ausgleicht"]
+    },
+    "schimmel": {
+      "titel": "Schimmel oder schmieriger Belag",
+      "ursachen": ["Warm verpackt oder zu früh abgedeckt", "Zu feucht gelagert", "Zu wenig Salz beziehungsweise nicht gepökelt", "Kühlkette unterbrochen"],
+      "loesungen": ["Immer offen abkühlen lassen, bevor abgedeckt wird", "Kühl, trocken und luftig lagern", "Beim Kalträuchern konsequent mit Pökelsalz arbeiten"],
+      "warnung": "Betroffene Ware nicht mehr verzehren. Bei Schimmel oder schmierigem Belag ist Wegwerfen die richtige Entscheidung."
+    }
+  },
+
+  "sicherheit": {
+    "grundregeln": [
+      "Nur einwandfreie, frische Rohware verwenden.",
+      "Kühlkette lückenlos einhalten – auch beim Einlegen und Pökeln.",
+      "Rohes und fertiges Räuchergut strikt trennen, ebenso Bretter und Messer.",
+      "Haken, Roste und Ofen vor und nach jedem Einsatz reinigen.",
+      "Im Zweifel wegwerfen statt probieren."
+    ],
+    "kalt_risiko": "Kaltgeräuchertes bleibt roh. Ohne korrektes Pökeln, konsequente Kühlung und saubere Arbeitsweise ist das Verfahren mit Risiken verbunden – besonders bei Fisch und bei Hackfleischprodukten.",
+    "gefluegel": "Geflügel wird immer heiß geräuchert und vollständig durchgegart, üblicherweise auf mindestens 72 °C Kerntemperatur.",
+    "hack": "Hackfleisch und daraus hergestellte Produkte müssen durchgegart werden – üblich sind mindestens 70 °C Kerntemperatur.",
+    "risikogruppen": "Schwangere, Kleinkinder, ältere und immungeschwächte Menschen sollten auf rohe, kaltgeräucherte Fischerzeugnisse verzichten.",
+    "gefrierware": "Tiefgekühlte Ware langsam im Kühlschrank auftauen, nie bei Raumtemperatur, und das Tauwasser wegschütten.",
+    "brand": "Räucheröfen nie unbeaufsichtigt betreiben, auf feuerfestem Untergrund und mit Abstand zu brennbaren Materialien aufstellen. Fettbrände niemals mit Wasser löschen."
+  },
+
+  "faq": [
+    { "frage": "Wie lange muss Fisch räuchern?", "antwort": "Das hängt von Fischart, Gewicht, Dicke und Ofentemperatur ab. Eine ganze Forelle ist beim Heißräuchern in der Regel nach der Garphase plus einer Räucherphase von etwa 30–60 Minuten fertig. Verlässlich ist nicht die Uhr, sondern die Kerntemperatur von mindestens 63 °C und der Test, ob sich die Rückenflosse leicht löst." },
+    { "frage": "Muss ich Fisch vor dem Räuchern salzen?", "antwort": "Ja. Salz würzt, festigt das Fleisch und entzieht Wasser – ohne diesen Schritt bleibt der Fisch fade und weich. Üblich ist eine Salzlake von etwa 6–8 % oder eine fertige Räucherlauge nach Packungsangabe." },
+    { "frage": "Warum ist mein Räucherfisch hell geblieben?", "antwort": "Fast immer war die Oberfläche beim Einhängen noch feucht. Rauch haftet nur auf trockener Haut. Nach dem Abspülen so lange antrocknen lassen, bis sich die Haut matt und griffig anfühlt." },
+    { "frage": "Kann ich im Winter räuchern?", "antwort": "Ja. Für das Kalträuchern ist die kalte Jahreszeit sogar ideal, weil die Temperaturgrenze von 25 °C leicht einzuhalten ist. Beim Heißräuchern braucht der Ofen bei Kälte länger zum Vorheizen und mehr Brennmaterial." },
+    { "frage": "Welches Holz ist das beste für den Anfang?", "antwort": "Buche. Sie passt zu Fisch, Fleisch und Schinken, ist gut verfügbar und verzeiht Fehler. Wer besonders milden Fischrauch möchte, nimmt Erle." },
+    { "frage": "Kann ich Räuchermehl aus dem Garten verwenden?", "antwort": "Nur unbehandeltes Laubholz und nur trocken und sauber. Nadelhölzer, lackiertes, geleimtes oder imprägniertes Holz und Spanplatten sind tabu – sie erzeugen bitteren Rauch und unerwünschte Stoffe." },
+    { "frage": "Wie erkenne ich guten Rauch?", "antwort": "Guter Rauch ist dünn und leicht bläulich und zieht gleichmäßig ab. Dichter, weißer Qualm bedeutet Schwelen und macht das Räuchergut bitter – dann Luftzufuhr erhöhen." },
+    { "frage": "Wie lange ist geräucherter Fisch haltbar?", "antwort": "Heißgeräucherter Fisch ist gegart, aber nicht konserviert: gut gekühlt und abgedeckt hält er nur wenige Tage. Kaltgeräucherter, gepökelter Fisch hält deutlich länger, vor allem vakuumiert und durchgehend gekühlt." },
+    { "frage": "Brauche ich Nitritpökelsalz?", "antwort": "Für heißgeräucherte Ware, die zügig verzehrt wird, reicht Speisesalz. Für Rohschinken, Rohwurst und alles Kaltgeräucherte ist Nitritpökelsalz die sichere Wahl. Die Dosierung steht auf der Packung und ist verbindlich." },
+    { "frage": "Wie viele Fische passen in den Ofen?", "antwort": "So viele, dass sie sich nicht berühren. Wo Stücke aneinanderliegen, bleiben helle, ungeräucherte Stellen. Lieber zwei Durchgänge als ein überfüllter Ofen." },
+    { "frage": "Warum verwendet man Räucherhaken statt Roste?", "antwort": "Hängend gart und räuchert Fisch gleichmäßiger, weil Rauch und Wärme von allen Seiten herankommen und Flüssigkeit ablaufen kann. Auf dem Rost entstehen Auflageflächen ohne Rauchkontakt." },
+    { "frage": "Welche Edelstahlgüte soll ich wählen?", "antwort": "VA ist die Grundausführung. V2A ist die solide Allround-Wahl für den normalen Räucherbetrieb. V4A ist widerstandsfähiger und lohnt sich, wenn oft mit Salz und Lake gearbeitet wird." }
+  ]
+}

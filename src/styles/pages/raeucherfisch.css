@@ -1,0 +1,9 @@
+/* Aus raeucherfisch.html ausgelagerte Seitenstile. */
+
+.rh701HdBand{box-sizing:border-box;width:100%;border-top:1px solid rgba(255,255,255,.10);background:#10171b;padding:16px 12px;color:#eef5f7}.rh701HdInner{max-width:1180px;margin:0 auto;text-align:center}.rh701HdLink{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:7px 12px;border:1px solid rgba(118,231,239,.24);border-radius:14px;color:#eef5f7!important;text-decoration:none!important;background:rgba(255,255,255,.025);font-family:Arial,Helvetica,sans-serif}.rh701HdPowered{font-size:9px;letter-spacing:.17em;font-weight:800;color:#93a3aa}.rh701HdMark{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid #76e6ee;border-radius:10px;font-weight:900;color:#fff}.rh701HdMark i{font-style:normal;color:#76e6ee}.rh701HdName{font-size:12px;font-weight:900;letter-spacing:.16em;white-space:nowrap}.rh701HdName i{font-style:normal;color:#76e6ee;margin-left:7px}@media(max-width:520px){.rh701HdPowered{display:none}.rh701HdName{font-size:10px;letter-spacing:.10em}}
+
+/* Ehemalige style-Attribute; !important bewahrt deren ursprüngliche Priorität. */
+
+.rh-inline-raeucherfisch-001 { border:0 !important; background:none !important; width:100% !important; }
+
+.rh-inline-raeucherfisch-002 { width:100% !important; }

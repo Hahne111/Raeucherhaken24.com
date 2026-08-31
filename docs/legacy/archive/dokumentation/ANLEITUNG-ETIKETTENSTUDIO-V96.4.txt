@@ -1,0 +1,26 @@
+ETIKETTENSTUDIO V96.4 · KURZANLEITUNG
+
+SCHRITT 1 — Vorlage
+Vorlagen öffnen. Suche nutzen. Vorlage „Im Studio öffnen“.
+
+SCHRITT 2 — Daten
+Links Datenquelle auswählen. Produkt/Kunde/Auftrag anklicken oder freie Eingabe verwenden.
+
+SCHRITT 3 — Gestaltung
+Rechts Barcode-Art, Datenfeld, Schriftgröße und sichtbare Elemente einstellen.
+
+SCHRITT 4 — Drucker
+Oben Drucker auswählen. Für Änderungen „Drucker & Papier“ öffnen.
+
+SCHRITT 5 — Papier
+Brother/Rollendrucker: Rollenmaß passend zur Vorlage.
+Normaldrucker: A4/A5/A6/Letter/Custom, Rand und Abstand einstellen.
+
+SCHRITT 6 — Testdruck
+„Testdruck“ drücken. Im Druckdialog 100 % Skalierung wählen. Keine Browser-Kopf-/Fußzeilen.
+
+SCHRITT 7 — Druck
+„Etikett drucken“ für Einzelauftrag oder „Seriendruck“ für viele Artikel/CSV.
+
+HILFE
+Der permanente Hilfe-Button rechts unten erklärt jeden Schritt und typische Fehler.

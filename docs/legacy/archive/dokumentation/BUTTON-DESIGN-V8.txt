@@ -1,0 +1,6 @@
+Kaufbutton V8
+- Text geändert auf „In den Warenkorb legen“
+- Farbe von Braun auf Rot
+- animierter Lichtlauf wie beim hochwertigen Beratungsbereich
+- Warenkorb-Icon ergänzt
+- Hover-, Klick- und Tiefeneffekt

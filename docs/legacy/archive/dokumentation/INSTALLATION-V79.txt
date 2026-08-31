@@ -1,0 +1,22 @@
+V79 – Modernes Orgaboard / neue Arbeitsstruktur
+
+Installation des kleinen Updates:
+1. Backup des aktuellen Webspace bzw. mindestens /orgaboard/ erstellen.
+2. ZIP im Hauptordner /raeucherhaken24/ hochladen.
+3. ZIP entpacken und vorhandene Dateien überschreiben.
+4. Browser hart neu laden / Cache aktualisieren.
+5. /orgaboard/version.php öffnen. Dort muss V79 stehen.
+
+Neue Sortierung:
+- Kunden & Termine: Kunden → Termine → Gebietsbuch → Produktberatung → Vertriebskalender → Fahrtenbuch → Nachrichten
+- Verkauf & Aufträge: Bestellungen → Produktion → Prototypen → Versand → Rechnungen/Lieferscheine
+- Sortiment & Lager: Produkte → Naturgewürze → Lager → Produkt-Analyse (Admin)
+- Vertrieb & Erfolg: Provision/Verdienst/Rangliste; Admin zusätzlich Kundenberater, Festgebiete, Händler
+- Shop & Inhalte / System & Team als getrennte Admin-Bereiche
+
+Neue Oberfläche:
+- modernere gruppierte Seitennavigation
+- Schnellzugriffsleiste für Kunden, Termine, Gebietsbuch, Beratung und Fahrtenbuch
+- dynamische Hervorhebung des aktiven Arbeitsbereichs
+- modernisierte Karten, Tabellen und Bewegungsanimationen
+- mobile Navigation neu sortiert

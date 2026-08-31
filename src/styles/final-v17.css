@@ -1,0 +1,56 @@
+
+/* V17 FINAL FIXES */
+.revokeFab{display:none!important}
+.footerPlainBrand{
+  color:#fff!important;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:31px;
+  font-weight:800;
+  letter-spacing:-1px;
+  line-height:1.1;
+  margin-bottom:10px
+}
+.v17CartButton{
+  position:relative!important;overflow:hidden!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;
+  min-height:43px!important;padding:10px 16px!important;
+  border:1px solid #8f0d0d!important;border-radius:9px!important;
+  background:linear-gradient(145deg,#d72020 0%,#b20f0f 58%,#900a0a 100%)!important;
+  color:#fff!important;font-weight:900!important;text-decoration:none!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 9px 20px rgba(164,16,16,.22)!important;
+}
+.v17CartButton:before{
+  content:"";position:absolute;top:-30%;left:-52%;width:34%;height:160%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.58),transparent);
+  transform:skewX(-18deg);animation:v17CartSweep 4.9s ease-in-out infinite;pointer-events:none
+}
+.v17CartButton>*{position:relative;z-index:2}
+.v17CartSvg{width:24px;height:24px;fill:none!important;stroke:#fff!important;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+@keyframes v17CartSweep{0%,62%{left:-52%;opacity:0}68%{opacity:.82}82%{left:124%;opacity:.3}100%{left:124%;opacity:0}}
+.v17CartButton:hover{transform:translateY(-2px)!important;filter:brightness(1.05)}
+.cfgUnitPrice{font-size:11px;color:#78685b;margin-top:4px}
+.productSmokyAvatar{width:58px;height:58px;border-radius:12px;object-fit:cover;object-position:center 18%;border:2px solid rgba(255,255,255,.35)}
+.smokyVisual{position:relative;overflow:hidden}
+.smokyVisual:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(110deg,transparent 15%,rgba(255,255,255,.035) 50%,transparent 80%);
+  animation:smokyLight 7s ease-in-out infinite
+}
+.smokyVisual img{
+  animation:smokyBreath 7s ease-in-out infinite alternate!important;
+  transform-origin:50% 55%;will-change:transform,filter
+}
+@keyframes smokyBreath{0%{transform:scale(1.002) translateY(0);filter:saturate(1)}100%{transform:scale(1.025) translateY(-4px);filter:saturate(1.04)}}
+@keyframes smokyLight{0%,55%{transform:translateX(-110%);opacity:0}65%{opacity:.8}85%{transform:translateX(110%);opacity:.15}100%{transform:translateX(110%);opacity:0}}
+.smokyThinking{font-style:italic;color:#9a5729}
+.v17Socials{display:flex!important;gap:9px!important;flex-wrap:wrap!important}
+.v17Socials button{
+  display:inline-flex!important;align-items:center!important;gap:7px!important;
+  min-height:41px!important;padding:8px 13px!important;border:1px solid rgba(255,255,255,.28)!important;
+  border-radius:999px!important;background:rgba(255,255,255,.035)!important;color:#fff!important;font-size:15px!important
+}
+.v17Socials button b{font-size:11px}
+.v17Socials button:hover{border-color:#ef7b2b!important;background:rgba(239,123,43,.09)!important}
+@media(prefers-reduced-motion:reduce){.smokyVisual img,.smokyVisual:after,.v17CartButton:before{animation:none!important}}
+
+.laugeAdd{width:100%;margin-top:12px}.laugeCard{display:flex;flex-direction:column}.laugeCard .laugePrice{margin-top:auto}.laugeCard .laugeVisual img{object-fit:contain;background:#fff}

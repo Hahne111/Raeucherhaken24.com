@@ -1,0 +1,149 @@
+================================================================================
+RÄUCHERHAKEN24 · V2026.5 – VOLLSTÄNDIGE PRÜFUNG UND REPARATUR
+================================================================================
+
+Vollständige Durchsicht des gesamten Projekts (Shop, Orgaboard, alle Seiten,
+Skripte, Stylesheets, PHP-Endpunkte) mit Live-Tests im Browser bei
+320 / 375 / 390 / 430 / 768 / 1024 / 1280 / 1440 / 1920 px.
+
+PRODUKTINTEGRITÄT (vor und nach der Arbeit geprüft)
+--------------------------------------------------------------------------------
+· SHA-256 über alle 44 Bilddateien: 0 Abweichungen. Kein Produktbild wurde
+  ersetzt, gelöscht, beschnitten oder neu erzeugt.
+· Alle 26 Katalogeinträge (app-v12.js und checkout-v77.js): Artikelnummern,
+  Namen und Preise byte-identisch zum Ausgangsstand.
+· Längen-/Material-/Spitzen-Aufpreise: unverändert.
+· Kategorien, Produkttexte, Bestell- und Geschäftslogik: unverändert.
+
+BEHOBENE FEHLER
+--------------------------------------------------------------------------------
+1) FALSCHE VERSANDKOSTEN IM WARENKORB. Der Warenkorb-Einschub und die
+   Paket-Empfehlung rechneten mit 9,50 € Versand, während AGB, „Zahlung &
+   Versand" und die Kasse 7,00 € nennen. Kunden sahen im Warenkorb einen
+   anderen Endbetrag als an der Kasse. Jetzt gilt überall eine gemeinsame
+   Konstante (7,00 € / frei ab 39 €), die zusätzlich – wie in der Kasse –
+   die im Orgaboard gepflegten Werte übernimmt, sobald die Datenbank
+   erreichbar ist. (app-v12.js; ungenutzte 9,50-€-Konstante aus v19.js
+   entfernt)
+
+2) MOBILE STARTSEITE WAR BESCHÄDIGT. Die spät in rh-atelier-2026.css
+   stehenden Referenz-Regeln der V2026.4b überschrieben die früheren
+   Mobil-Media-Queries (gleiche Spezifität, späterer Quelltext gewinnt).
+   Folgen unter 900 px: Hero blieb zweispaltig (Text auf ~150 px gequetscht,
+   Bild als Miniatur), die Qualitätskarte schwebte über dem Fließtext, die
+   Benefit-Zeile lief ineinander. Ein neuer Korrekturblock am DATEIENDE
+   (V2026.5) stellt die einspaltige Mobil-Reihenfolge Text → Bild → Karte
+   wieder her; die Desktop-Vermessung bleibt unangetastet.
+
+3) WORTMARKE LIEF UNTER DIE KOPFZEILEN-SYMBOLE. Auf schmalen Ansichten
+   (≤ 430 px) überlagerten Suche/Konto/Warenkorb den Schriftzug
+   „RÄUCHERHAKEN24" (Textbreite 236 px in einer ~150-px-Rasterzelle).
+   Jetzt skaliert die Wortmarke gestuft (14 / 12 / 10 px) mit
+   Überlauf-Schutz, die Symbole werden ab 430 px kompakter und sitzen
+   mittig auf einer Linie. Nachgemessen von 320–900 px: kein Beschnitt,
+   keine Überlappung mehr.
+
+4) JAVASCRIPT-FEHLER AUF KASSE UND ARTIKELSEITE. rh-atelier-2026.js griff
+   auf Seiten ohne Kopfzeile (checkout.html, artikel.php) auf ein nicht
+   vorhandenes Element zu → TypeError in der Konsole bei „Suche" und
+   „Mobile Navigation". Die Hilfsfunktionen sind jetzt null-sicher, die
+   Module beenden sich sauber, wenn keine Kopfzeile existiert.
+
+5) ARTIKELSEITE OHNE NAVIGATION. artikel.php hatte keinen Anker (<div
+   class="top">) für die zentral erzeugte Kopfzeile – Besucher aus
+   Suchmaschinen landeten auf einer Seite ohne Menü, Suche und
+   Warenkorb-Kopfzeile (nur „Zurück zum Shop"). Der Anker wurde ergänzt;
+   die Artikelseite trägt jetzt dieselbe Kopf- und Fußzeile wie alle
+   anderen Seiten (der dokumentierte Zweck der V2026.4).
+
+6) SCHWEBENDES „+" IN DER SEITENLEISTE. Der Auf-/Zuklapp-Indikator der
+   Kategorien hing wegen eines fehlenden position:relative (die
+   zugehörige Regel war an eine nie gesetzte body-Klasse gebunden) am
+   sticky-Container und schwebte mitten in der Seitenleiste. Er sitzt
+   jetzt rechts in seiner Gruppenzeile; Auf-/Zuklappen geprüft.
+
+7) SEITENLEISTEN-EINTRAG „NATURGEWÜRZE" ZERRISSEN. space-between drückte
+   Blatt-Symbol und Text an die Gegenränder der Zeile. Jetzt stehen
+   Symbol und Text zusammen linksbündig.
+
+8) EWIGES „AKTUELLE ARTIKEL WERDEN GELADEN …". Schlug das Laden der
+   Produktdatenbank fehl, blieb der Ladetext im Bereich „Neue & weitere
+   Artikel" dauerhaft stehen. Jetzt erscheint eine ehrliche Meldung, dass
+   die Zusatzartikel gerade nicht erreichbar sind (das statische Sortiment
+   ist nicht betroffen).
+
+9) ZWEI VERALTETE CHAT-MODULE WAREN NOCH AKTIV. artikel.php lud noch
+   smoky-pro-v106 (mit dem bekannten Nudge-Link ohne Ziel, href="#") und
+   ankauf-verkauf.php noch smoky-help-v28 – beide Vorgänger des aktuellen
+   Räucherberaters. Beide Seiten nutzen jetzt smoky-berater (wie die
+   übrigen 35 Seiten); damit ist die in V2026.1 begonnene Chat-Ablösung
+   abgeschlossen und der letzte Button ohne Funktion beseitigt.
+
+10) VORSCHAUSCHUTZ WAR LÜCKENHAFT. access.js (Passwort-Overlay) fehlte auf
+    9 Seiten (u. a. Kasse, Rezepte, Thermometer, Prototyp, Artikelseite,
+    404). Der Schutz ist jetzt auf allen Seiten eingebunden.
+
+11) VERALTETE ORGABOARD-PRÜFWERKZEUGE MELDETEN FEHLER. diagnose.php,
+    label-/pos-/termin-diagnose.php, produkt-baukasten-check.php und
+    version.php prüften auf längst abgelöste Dateien (admin-v86/92/95/966,
+    labels-v965.css, smoky-help-v28) bzw. auf exakte Cache-Query-Strings
+    („?v=99.1.1"), die sich mit jedem Release ändern. Alle Prüfungen
+    zeigen jetzt auf die tatsächlich geladenen Dateien (admin-v9911.js,
+    labels-v966.css, smoky-berater.js) und sind gegen reine
+    Versionsnummern-Wechsel unempfindlich. Die geprüften Funktions-Marker
+    wurden vor der Umstellung einzeln in admin-v9911.js nachgewiesen.
+
+ENTFERNTER TOTER CODE (nach Einzelnachweis der Nichtverwendung)
+--------------------------------------------------------------------------------
+Nach _archiv/abgeloeste-dateien verschoben (nichts gelöscht):
+  · smoky.js, smoky-pro-v106.js/.css, smoky-help-v28.js/.css (alte Chats)
+  · orgaboard/admin-v86.js, -v92.js, -v95.js, -v966.js (~2,9 MB
+    Altversionen; geladen wird ausschliesslich admin-v9911.js)
+  · orgaboard/assets/labels-v965.css (Nachfolger v966/v967/v1053 aktiv)
+  · cleanup-v104.php (Einmal-Werkzeug; alle Zielpfade existieren nicht mehr)
+  · recipe-api.php (von keiner Seite aufgerufen; Rezepte laufen über
+    recipes-v29.json), smoky-status.php (Diagnose des alten Chats),
+    hook-config-v25.json (Daten seit v51 im Skript)
+In v19.js wurden die nie greifende progress()-Funktion (suchte nicht
+existierende Container und veraltete Speicher-Schlüssel), das wirkungslose
+homeBanner() und die ungenutzte SHIPPING-Konstante entfernt; der
+DOM-Beobachter arbeitet jetzt gedrosselt (max. 1 Lauf pro Bild).
+
+BEWUSST NICHT ANGEFASST
+--------------------------------------------------------------------------------
+· Alle Bilddateien, auch die derzeit nirgends eingebundenen unter assets/
+  (können vom Orgaboard-Produktstamm referenziert werden).
+· Die inaktiven „body.rh24DynamicSite"-Regeln in site-base-v104.css:
+  nachweislich wirkungslos (Klasse wird nirgends gesetzt), aber mit
+  lebenden Regeln verzahnt – Entfernen brächte Risiko ohne Nutzen.
+· Der ausgeblendete Marktplatz-Zugang (display:none auf
+  „An- & Verkaufen") – erkennbar gewollte Betreiber-Entscheidung.
+· Vorschau-Passwort und Zugangslogik (access.js).
+
+BILD- UND GRAFIKDARSTELLUNG
+--------------------------------------------------------------------------------
+· Dynamisch erzeugte Produktkarten (Katalog-Synchronisierung) laden ihre
+  Bilder jetzt mit loading="lazy" und decoding="async" – wie die
+  statischen Karten, die bereits vollständig mit Maßangaben, Lazy Loading
+  und fetchpriority versorgt waren.
+· Hover-Zoom, object-fit:contain-Container, Freisteller-Chips und die
+  einheitlichen Bildflächen der V2026.4 wurden geprüft und beibehalten;
+  keine Verzerrungen gefunden.
+
+ZWEITE VOLLPRÜFUNG (nach allen Reparaturen)
+--------------------------------------------------------------------------------
+· php -l über alle 61 PHP-Dateien: 0 Fehler.
+· node --check über alle Skripte: 0 Fehler.
+· Browser-Lauf über 41 Seiten: 0 JavaScript-Fehler, 0 kaputte Verweise.
+  (Ohne eingerichtete Datenbank antworten die Datenbank-Endpunkte
+  planmäßig mit 503/404/405 samt sauberer Oberflächen-Meldung.)
+· 10 Seiten × 9 Breiten (320–1920 px): 0 px horizontaler Überlauf.
+· Funktionsproben bestanden: Navigation samt Mega-Menü, Suche
+  (Kopfzeile und Shop-Suche), Mobile-Menü mit Scrim/ESC, Warenkorb
+  (Hinzufügen, Menge, Entfernen, Badge, Einschub), „Zur Kasse" samt
+  Pflichtfeld- und Fehleranzeige, Merkliste, Vergleich, Konfiguratoren,
+  Paket-Assistent („Empfehlung anzeigen" und „Mein Paket"),
+  Rezept-Modal, Prototyp-Formular samt Ausweichdialog, Räucherberater
+  (öffnen, Chips, Antwort), Teilen-Knöpfe, Cookie-Einstellungen,
+  Kundenlogin-Reiter inkl. Bestellfortschritt-Formular.
+================================================================================

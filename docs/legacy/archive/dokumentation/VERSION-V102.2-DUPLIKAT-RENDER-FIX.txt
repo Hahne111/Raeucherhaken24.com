@@ -1,0 +1,8 @@
+RÄUCHERHAKEN24 V102.2 – DUPLIKAT-RENDER-FIX
+
+Behoben:
+- V65 Header/Home-Runtime mit globalem Einmal-Guard versehen.
+- modules-v12 vor Mehrfachinitialisierung geschützt.
+- runtime-v1022 entfernt ausschließlich doppelte Singleton-Seitenelemente.
+- site-v82 und light-pro-v102 werden mit Cache-Version 102.2 geladen.
+- Design und bestehende Shopfunktionen bleiben erhalten.

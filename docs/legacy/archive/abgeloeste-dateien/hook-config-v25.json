@@ -1,0 +1,142 @@
+{
+  "raeucherhaken-standard.html": {
+    "id": "std",
+    "name": "Räucherhaken Standard",
+    "lengths": [
+      [
+        "12 cm",
+        12.9
+      ],
+      [
+        "14 cm",
+        14.8
+      ],
+      [
+        "18 cm",
+        15.8
+      ],
+      [
+        "20 cm",
+        16.8
+      ],
+      [
+        "24 cm",
+        18.8
+      ]
+    ]
+  },
+  "raeucherhaken-standard-aal.html": {
+    "id": "aal",
+    "name": "Räucherhaken Standard Aal",
+    "lengths": [
+      [
+        "12 cm",
+        12.9
+      ],
+      [
+        "14 cm",
+        14.8
+      ],
+      [
+        "18 cm",
+        15.8
+      ],
+      [
+        "20 cm",
+        16.8
+      ],
+      [
+        "24 cm",
+        18.8
+      ]
+    ]
+  },
+  "raeucherhaken-kralle.html": {
+    "id": "kralle",
+    "name": "Räucherhaken Kralle",
+    "lengths": [
+      [
+        "18 cm",
+        18.9
+      ],
+      [
+        "20 cm",
+        19.9
+      ],
+      [
+        "24 cm",
+        21.9
+      ]
+    ]
+  },
+  "raeucherhaken-filet.html": {
+    "id": "filet",
+    "name": "Räucherhaken Filet",
+    "lengths": [
+      [
+        "12 cm",
+        15.9
+      ],
+      [
+        "14 cm",
+        17.8
+      ],
+      [
+        "18 cm",
+        18.8
+      ],
+      [
+        "20 cm",
+        19.8
+      ],
+      [
+        "24 cm",
+        21.8
+      ]
+    ]
+  },
+  "raeucherhaken-doppeldorn.html": {
+    "id": "doppel",
+    "name": "Räucherhaken Doppeldorn",
+    "lengths": [
+      [
+        "12 cm",
+        15.9
+      ],
+      [
+        "14 cm",
+        17.8
+      ],
+      [
+        "18 cm",
+        18.8
+      ],
+      [
+        "20 cm",
+        19.8
+      ],
+      [
+        "24 cm",
+        21.8
+      ]
+    ]
+  },
+  "raeucherhaken-ultra.html": {
+    "id": "ultra",
+    "name": "Räucherhaken Ultra",
+    "lengths": [
+      [
+        "20 cm",
+        19.9
+      ],
+      [
+        "22 cm",
+        23.9
+      ],
+      [
+        "24 cm",
+        24.9
+      ]
+    ]
+  }
+}

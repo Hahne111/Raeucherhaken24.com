@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <script vite-ignore src="/src/scripts/core/boot.js"></script><script vite-ignore src="/src/scripts/access.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f6"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/smoky-logo-v1041.jpg">
+<title>Sonderanfertigung & Prototyp | Räucherhaken24</title>
+<meta name="description" content="Individuellen Räucherhaken als Prototyp konfigurieren, Skizzen hochladen und Prototypenauftrag erstellen.">
+<link rel="stylesheet" href="/src/styles/style-v12.css">
+<link rel="stylesheet" href="/src/styles/final-v17.css">
+<link rel="stylesheet" href="/src/styles/v23.css">
+<link rel="stylesheet" href="/src/styles/prototype-v30.css">
+<link rel="stylesheet" href="/src/styles/carrier-badges-v50.css?v=50"><link rel="stylesheet" href="/src/styles/theme-v55.css?v=55"><link rel="stylesheet" href="/src/styles/site-base-v104.css?v=104.0"><link rel="stylesheet" href="/src/styles/light-base-v104.css?v=104.0"><link rel="stylesheet" href="/src/styles/premium-v104.css?v=107.1"><script vite-ignore src="/src/scripts/shop-data-v1061.js?v=107.0"></script><link rel="stylesheet" href="/src/styles/ui-icons-v1076.css?v=107.6"><link rel="stylesheet" href="/src/styles/smoky-berater.css?v=2026.1"><link rel="stylesheet" href="/src/styles/rh-premium-2026.css?v=2026.1"><link rel="stylesheet" href="/src/styles/rh-design-system.css?v=2026.3"><link rel="stylesheet" href="/src/styles/rh-atelier-2026.css?v=2026.4">  <link rel="stylesheet" href="/src/styles/pages/sonderanfertigung-prototyp.css">
+</head>
+<body><div class="top"></div><nav class="protoNav"><a href="index.html">Startseite</a><a href="shop.html">Shop</a><a href="ankauf-verkauf.php"><b>An- & Verkaufen</b></a><a href="ankauf-verkauf.php"><b>An- & Verkaufen</b></a><a href="raeucherhaken-standard.html">Räucherhaken</a><a href="raeuchermehl-buche.html">Räuchermehl</a><a href="raeucherlaugen.html">Räucherlaugen</a><a href="schinken.html">Pökelmischungen</a><a href="rezepte-anleitungen.html">Rezepte & Anleitungen</a><a class="active" href="sonderanfertigung-prototyp.html">Sonderanfertigung & Prototyp</a></nav>
+<header class="protoHero">
+  <div>
+    <span class="protoKicker">RÄUCHERHAKEN24 SONDERANFERTIGUNG</span>
+    <h1>Ihr Räucherhaken. Ihre Idee. Unser Prototyp.</h1>
+    <p>Konfigurieren Sie eine individuelle Hakenidee, laden Sie Skizzen oder Fotos hoch und lassen Sie daraus einen Prototyp fertigen.</p>
+    <div class="protoPriceHero"><b>149,00 €</b><span>inkl. 19 % MwSt. · einmalige Prototypenentwicklung</span></div>
+  </div>
+</header>
+
+<main class="protoPage">
+<section class="protoBenefits">
+  <div><b>1. Idee beschreiben</b><span>Einsatz, Fischart und gewünschte Funktion</span></div>
+  <div><b>2. Maße konfigurieren</b><span>Länge, Drahtstärke, Dornen und Material</span></div>
+  <div><b>3. Unterlagen hochladen</b><span>Foto, PDF, Skizze oder technische Zeichnung</span></div>
+  <div><b>4. Auftrag prüfen</b><span>Zusammenfassung und Vertragsentwurf erzeugen</span></div>
+</section>
+
+<section class="protoNotice">
+  <h2>Was ist im Preis enthalten?</h2>
+  <p><strong>149,00 € inkl. 19 % MwSt.</strong> umfasst die Prüfung der eingereichten Idee, technische Abstimmung, Erstellung der vereinbarten Spezifikation, Fertigung <strong>eines</strong> Prototyps, Qualitätskontrolle und Dokumentation der freigegebenen Ausführung.</p>
+  <p><strong>Nicht enthalten:</strong> Serienfertigung, weitere Prototypen, zusätzliche Änderungsrunden nach Freigabe sowie besondere Werkzeuge oder Prüfungen, sofern diese vorher nicht ausdrücklich vereinbart wurden.</p>
+</section>
+
+<form id="prototypeForm" class="protoForm">
+<section class="protoPanel">
+  <div class="protoPanelHead"><span>01</span><div><h2>Projekt & Einsatzbereich</h2><p>Beschreiben Sie, was der neue Räucherhaken leisten soll.</p></div></div>
+  <div class="protoGrid">
+    <label>Projektname<input name="project_name" required maxlength="80" placeholder="z. B. Spezialhaken für schwere Forellen"></label>
+    <label>Räuchergut<select name="use_food" required><option>Fisch</option><option>Fleisch</option><option>Fisch & Fleisch</option><option>Sonstiges</option></select></label>
+    <label>Typischer Einsatz<input name="use_case" required maxlength="100" placeholder="z. B. Heißräuchern großer Fische"></label>
+    <label>Gewünschte Belastbarkeit<input name="target_load" maxlength="50" placeholder="z. B. ca. 5 kg"></label>
+    <label class="full">Was soll der Haken besser können?<textarea name="goal" required maxlength="1200" placeholder="Beschreiben Sie das Problem und Ihre gewünschte Lösung."></textarea></label>
+  </div>
+</section>
+
+<section class="protoPanel">
+  <div class="protoPanelHead"><span>02</span><div><h2>Abmessungen & Konstruktion</h2><p>Geben Sie bekannte Maße ein. Unbekannte Werte können offenbleiben.</p></div></div>
+  <div class="protoGrid">
+    <label>Gesamtlänge<input name="length" type="number" min="5" max="80" step="0.1" placeholder="cm"></label>
+    <label>Drahtstärke Ø<input name="diameter" type="number" min="1" max="10" step="0.1" placeholder="mm"></label>
+    <label>Anzahl Dornen<input name="prongs" type="number" min="0" max="12" step="1" placeholder="z. B. 2"></label>
+    <label>Dornlänge<input name="prong_length" type="number" min="0" max="30" step="0.1" placeholder="cm"></label>
+    <label>Öffnungsweite<input name="opening" type="number" min="0" max="40" step="0.1" placeholder="cm"></label>
+    <label>Hakenform<select name="shape"><option>Bitte auswählen</option><option>Standardbogen</option><option>Kleiner Aal-Bogen</option><option>V-Spreizer</option><option>Doppeldorn</option><option>Mehrfachdorn</option><option>Sonderform</option></select></label>
+    <label class="full">Weitere Maße / Sonderwünsche<textarea name="dimensions_note" maxlength="900" placeholder="z. B. Winkel, Biegeradius, Position eines zusätzlichen Dorns …"></textarea></label>
+  </div>
+</section>
+
+<section class="protoPanel">
+  <div class="protoPanelHead"><span>03</span><div><h2>Material & Spitzenausführung</h2><p>Wählen Sie Ihre bevorzugte Ausführung oder lassen Sie sich beraten.</p></div></div>
+  <div class="protoChoiceGrid">
+    <label class="protoChoice"><input type="radio" name="material" value="VA" checked><span><b>VA</b><small>preisbewusste Basisausführung</small></span></label>
+    <label class="protoChoice"><input type="radio" name="material" value="V2A"><span><b>V2A</b><small>robuste Allround-Ausführung</small></span></label>
+    <label class="protoChoice"><input type="radio" name="material" value="V4A"><span><b>V4A</b><small>Premium-Ausführung für anspruchsvolle Bedingungen</small></span></label>
+    <label class="protoChoice"><input type="radio" name="material" value="Beratung"><span><b>Materialberatung</b><small>Smoky und unser Team helfen bei der Auswahl</small></span></label>
+  </div>
+  <div class="protoGrid topGap">
+    <label>Spitzenausführung<select name="tip"><option>Standard geschärft</option><option>Extra scharf geschliffen</option><option>Sonderausführung</option></select></label>
+    <label>Oberflächenwunsch<input name="surface" maxlength="60" placeholder="z. B. blank, gebürstet"></label>
+  </div>
+</section>
+
+<section class="protoPanel">
+  <div class="protoPanelHead"><span>04</span><div><h2>Skizzen, Fotos & technische Unterlagen</h2><p>Eine einfache Handskizze mit Maßen reicht für die erste Prüfung völlig aus.</p></div></div>
+  <label class="uploadBox" for="prototypeFiles">
+    <strong>Dateien auswählen oder hier ablegen</strong>
+    <span>JPG, PNG, PDF – mehrere Dateien möglich</span>
+    <input id="prototypeFiles" name="files[]" type="file" accept=".jpg,.jpeg,.png,.pdf" multiple>
+  </label>
+  <div id="fileList" class="fileList"></div>
+  <label class="fullBlock">Hinweise zu den Dateien<textarea name="file_note" maxlength="900" placeholder="Was sollen wir auf Ihrer Skizze besonders beachten?"></textarea></label>
+</section>
+
+<section class="protoPanel">
+  <div class="protoPanelHead"><span>05</span><div><h2>Ihre Kontaktdaten</h2><p>Diese Daten werden für die Projektabstimmung und den Prototypenauftrag verwendet.</p></div></div>
+  <div class="protoGrid">
+    <label>Vor- und Nachname<input name="customer_name" required maxlength="90"></label>
+    <label>E-Mail<input name="email" type="email" required maxlength="120"></label>
+    <label>Telefon<input name="phone" maxlength="50"></label>
+    <label>Straße / Hausnummer<input name="street" required maxlength="120"></label>
+    <label>PLZ<input name="zip" required maxlength="10"></label>
+    <label>Ort<input name="city" required maxlength="80"></label>
+  </div>
+</section>
+
+<section class="protoPanel protoSummaryPanel">
+  <div class="protoPanelHead"><span>06</span><div><h2>Projektzusammenfassung</h2><p>Die Zusammenfassung wird automatisch aus Ihren Angaben erstellt.</p></div></div>
+  <div id="prototypeSummary" class="prototypeSummary"></div>
+  <div class="protoSummaryActions">
+    <button type="button" id="previewContract">Vertragsentwurf anzeigen</button>
+    <button type="button" id="printContract">Vertragsentwurf als PDF drucken</button>
+    <button type="button" id="emailSummary">Zusammenfassung per E-Mail vorbereiten</button>
+  </div>
+</section>
+
+<section class="protoPanel legalPanel">
+  <div class="protoPanelHead"><span>07</span><div><h2>Zustimmungen & Vertragsgrundlage</h2><p>Bitte prüfen Sie jeden Punkt separat.</p></div></div>
+  <label class="checkLine"><input type="checkbox" name="accept_price" required><span>Ich beauftrage die Prototypenentwicklung zum Preis von <b>149,00 € inkl. 19 % MwSt.</b>.</span></label>
+  <label class="checkLine"><input type="checkbox" name="confirm_specs" required><span>Ich habe die von mir eingegebenen Maße, Anforderungen und technischen Angaben geprüft.</span></label>
+  <label class="checkLine"><input type="checkbox" name="rights_files" required><span>Ich bestätige, dass ich die erforderlichen Rechte an den hochgeladenen Bildern, Zeichnungen und Unterlagen besitze.</span></label>
+  <label class="checkLine"><input type="checkbox" name="accept_terms" required><span>Ich habe die Bedingungen für Sonderanfertigungen und Prototypen gelesen und akzeptiere sie.</span></label>
+  <div class="rightsBox">
+    <h3>Optionale Rechte zur späteren Sortimentsaufnahme</h3>
+    <p>Diese Zustimmung ist bewusst getrennt vom Prototypenauftrag. Sie ist nicht Voraussetzung für die Fertigung.</p>
+    <label class="checkLine optional"><input type="checkbox" name="commercial_rights"><span>Ich räume Räucherhaken24 – vorbehaltlich einer gesonderten schriftlichen Vereinbarung über den konkreten Umfang – das Recht ein, die aus meinem Projekt entwickelte Hakenkonstruktion weiterzuentwickeln und bei beiderseitigem Einvernehmen in das Sortiment aufzunehmen.</span></label>
+  </div>
+  <p class="legalNote"><strong>Hinweis:</strong> Dieser Vertragsentwurf ist eine technische Vorlage für den Shop und ersetzt keine individuelle Rechtsberatung. Die Klauseln zu Nutzungs-, Entwicklungs- und Vermarktungsrechten sollten vor dem Livebetrieb anwaltlich geprüft werden.</p>
+</section>
+
+
+<div class="protoOrderNote"><b>Wichtig:</b> Nach Zahlungseingang starten wir das Projekt. Die Fertigungszeit beträgt ca. 4–6 Wochen.</div><section class="protoCheckout protoCheckoutV31">
+  <div class="protoCheckoutInfo">
+    <span>Prototypenentwicklung</span>
+    <strong>149,00 €</strong>
+    <small>inkl. 19 % MwSt.</small>
+    <p>Projektstart nach Zahlungseingang · Fertigungszeit ca. 4–6 Wochen.</p>
+  </div>
+  <div class="protoCheckoutActions">
+    <button type="button" id="buyPrototypeProject">Projekt kaufen und fertigen – 149,00 € zahlungspflichtig bestellen</button>
+    <small>Mit Klick auf den Button geben Sie eine zahlungspflichtige Bestellung über 149,00 € ab.</small>
+  </div>
+</section>
+
+</form>
+</main>
+
+<div class="contractModal" id="contractModal"><div class="contractBox"><button class="contractClose">×</button><div id="contractContent"></div></div></div>
+
+<script vite-ignore src="/src/scripts/prototype-v30.js"></script>
+<script vite-ignore src="/src/scripts/carrier-badges-v50.js?v=50"></script><script vite-ignore src="/src/scripts/theme-v55.js?v=55"></script><footer><div class="wrap"><div class="footerGrid rh1072FooterGrid"><div class="rh1072FooterBrand"><div class="footerPlainBrand">Räucherhaken24</div><p>Räucherbedarf für Fisch und Fleisch – hochwertig, verständlich und professionell.</p></div><nav class="rh1072Legal" aria-label="Rechtliche Informationen"><h4>Rechtliches</h4><div class="rh1072LegalLinks"><a href="impressum.html">Impressum</a><a href="agb.html">AGB</a><a href="datenschutz.html">Datenschutz</a><a href="widerruf.html">Widerruf</a></div></nav></div><div class="socialBar rh1072SocialBar" aria-label="Soziale Medien"><span>Folge uns auf &amp; teile Räucherhaken24</span><div class="socials v17Socials" data-rh1072-socials></div></div></div></footer><div class="rh701HdBand" data-rh701-hd-credit><div class="rh701HdInner"><a class="rh701HdLink" href="powered-by-click.php?go=1&amp;page=sonderanfertigung-prototyp.html" target="_blank" rel="noopener noreferrer" aria-label="Powered by HD Hahne Digital – Webseite öffnen"><span class="rh701HdPowered">POWERED BY</span><span class="rh701HdMark" aria-hidden="true">H<i>D</i></span><span class="rh701HdName">HAHNE <i>DIGITAL</i></span><span aria-hidden="true">↗</span></a></div></div><script vite-ignore src="/src/scripts/site-v104.js?v=107.1"></script><script vite-ignore src="/src/scripts/runtime-v104.js?v=105.1"></script><script vite-ignore src="/src/scripts/product-sync-v1061.js?v=2026.4"></script><script vite-ignore src="/src/scripts/ui-icons-v1076.js?v=107.6"></script><button class="cartBtn" type="button" data-rh-onclick="sonderanfertigung-prototyp-click-001"><span aria-hidden="true">🛒</span><span>Warenkorb (<span data-cart-count>0</span>)</span></button><div class="overlay" id="overlay" data-rh-onclick="sonderanfertigung-prototyp-click-002"></div><aside class="drawer" id="cartDrawer" aria-label="Warenkorb"><button class="drawerClose" type="button" data-rh-onclick="sonderanfertigung-prototyp-click-003" aria-label="Warenkorb schließen">×</button><h2>Warenkorb</h2><div id="cartItems"></div><div class="buy"><b>Gesamt</b><b id="cartTotal">0,00 €</b></div><div class="buy rh-inline-sonderanfertigung-prototyp-001"><span></span><button class="btn primary rh-inline-sonderanfertigung-prototyp-002" type="button" data-rh-onclick="sonderanfertigung-prototyp-click-004">Zur Kasse</button></div></aside><div class="zoomModal" id="zoomModal"><div class="zoomCard"><button class="close" type="button" data-rh-onclick="sonderanfertigung-prototyp-click-005" aria-label="Schließen">×</button><img id="zoomImg" alt=""></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div><script vite-ignore src="/src/scripts/app-v12.js"></script><script vite-ignore src="/src/scripts/rh-premium-2026.js?v=2026.1" defer></script><script vite-ignore src="/src/scripts/rh-realtime-2026.js?v=2026.4" defer></script><script vite-ignore src="/src/scripts/rh-atelier-2026.js?v=2026.4" defer></script><script vite-ignore src="/src/scripts/smoky-berater.js?v=2026.1" defer></script>  <script vite-ignore src="/src/scripts/pages/sonderanfertigung-prototyp.events.js"></script>
+  <script vite-ignore src="/src/scripts/core/events.js"></script>
+</body></html>

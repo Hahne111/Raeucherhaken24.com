@@ -1,0 +1,23 @@
+{
+  "name": "raeucherhaken24-web",
+  "version": "2026.5.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others --names PHP,VITE --prefix-colors yellow,cyan \"npm:dev:php\" \"npm:dev:vite\"",
+    "dev:vite": "vite --host 0.0.0.0",
+    "dev:php": "php -S 127.0.0.1:8000 -t server/public",
+    "build": "vite build && node scripts/copy-backend.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "check": "node scripts/check-project.mjs",
+    "check:php": "find server/public -name '*.php' -print0 | xargs -0 -n1 php -l",
+    "test": "npm run check && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "vite": "^8.2.2"
+  }
+}

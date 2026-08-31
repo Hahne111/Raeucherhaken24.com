@@ -1,0 +1,23 @@
+RÄUCHERHAKEN24 / ORGABOARD – V102.1 KONTRAST-FIX
+
+INSTALLATION
+1. Aktuelles Webverzeichnis sichern.
+2. Inhalt der Direktupdate-ZIP in das Hauptverzeichnis der Website hochladen.
+3. Vorhandene Dateien ersetzen.
+4. Browser hart neu laden / Cache leeren.
+5. Website und Orgaboard öffnen.
+
+WAS BEHOBEN WURDE
+- helle Schrift auf hellen Buttons
+- uneinheitliche alte Button-Farben aus früheren Stylesheets
+- dunkle V82-Navigation, die noch in V102 durchschlug
+- uneinheitliche Hero-/Tab-Flächen in Orgaboard-Modulen
+- schwache Kontraste in Tabellen und Formularbeschriftungen
+
+BUTTON-SYSTEM
+Primär: kräftiges Orange + weiße Schrift
+Sekundär: Weiß + dunkle Schrift
+Aktiv: heller Kupferhintergrund + dunkle Akzentschrift oder Orange + Weiß
+Gefahr: Weiß + Rot
+
+Die Funktionalität bleibt auf dem V99.1.1-Kern erhalten.

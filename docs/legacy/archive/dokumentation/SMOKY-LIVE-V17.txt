@@ -1,0 +1,22 @@
+SMOKY LIVE-KI – V17
+
+Die Website ist für Live-KI vorbereitet.
+
+WICHTIG:
+- Der OpenAI API-Schlüssel darf NICHT in HTML oder JavaScript stehen.
+- smoky-api.php liest den Schlüssel ausschließlich serverseitig aus OPENAI_API_KEY.
+- Der Endpunkt nutzt die OpenAI Responses API und Websuche.
+- Smoky soll recherchierte Informationen NICHT kopieren, sondern vollständig neu und auf Räucherhaken24 zugeschnitten formulieren.
+- Falls die API auf dem Server noch nicht konfiguriert ist, nutzt die Oberfläche eine lokale Fallback-Beratung.
+
+Umgesetzte Änderungen:
+1. Exaktes Smoky-Bild des Nutzers, geschärft.
+2. Dezente Smoky-Animation.
+3. Fisch-Räucherhaken starten bei 12 cm / VA / 10 Stück.
+4. Stückpreis wird aus dem 10er-Set berechnet und Gesamtpreis für die Stückzahl angezeigt.
+5. Roter animierter Warenkorb-Button bleibt; Warenkorb-Icon ist weiß.
+6. Button wird automatisch bei allen Artikeln vereinheitlicht.
+7. Floating-Button "Vertrag widerrufen" entfernt. Normaler Widerruf-Link im Footer bleibt.
+8. Footer-Marke "Räucherhaken24" als normale weiße Schrift.
+9. Social Buttons: Facebook, TikTok, Instagram, X, WhatsApp.
+10. Smoky Live-KI mit Webrecherche vorbereitet; sichtbarer Kundentext wird eigenständig formuliert.

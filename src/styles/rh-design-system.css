@@ -1,0 +1,281 @@
+/* =====================================================================
+   RÄUCHERHAKEN24 · DESIGN SYSTEM 2026.3      (rh-design-system.css)
+   ---------------------------------------------------------------------
+   Eine einzige Quelle für Farben, Typografie, Abstände, Radien, Schatten
+   und Bewegungskurven. Wird von BEIDEN Oberflächen verwendet:
+
+     · öffentlicher Shop  → rh-atelier-2026.css
+     · internes OrgaBoard → orgaboard/assets/orgaboard-atelier-2026.css
+
+   Diese Datei enthält bewusst KEINE Layoutregeln und überschreibt nichts.
+   Sie definiert ausschliesslich Variablen und wenige Basis-Utilities.
+   Dadurch kann sie gefahrlos vor allen anderen Stylesheets stehen.
+
+   Kontraste: alle Textfarben wurden gegen #FFFFFF, --rh-bg und
+   --rh-surface-secondary gerechnet und erfüllen mindestens WCAG AA
+   (4.5:1). Die Werte stehen als Kommentar an der jeweiligen Variable.
+   ===================================================================== */
+
+:root{
+  /* ---------------------------------------------------------------
+     FLÄCHEN
+     Warmes Off-White statt kaltem Grau. Der Shop steht auf reinem
+     Weiss, das OrgaBoard auf --rh-bg. Dadurch wirken beide verwandt,
+     ohne identisch zu sein.
+  ----------------------------------------------------------------*/
+  --rh-bg:                #fbfaf8;
+  --rh-bg-deep:           #f4f1ec;
+  --rh-surface:           #ffffff;
+  --rh-surface-secondary: #f6f4f1;
+  --rh-surface-tertiary:  #efece7;
+  --rh-surface-ink:       #17161a;   /* dunkle Editorial-Flächen */
+  --rh-surface-glass:     rgba(255,255,255,.82);
+
+  /* ---------------------------------------------------------------
+     TEXT
+  ----------------------------------------------------------------*/
+  --rh-text:              #16151a;   /* 18.2:1 auf Weiss */
+  --rh-text-secondary:    #2c2a2e;   /* 14.2:1 */
+  --rh-text-soft:         #46423f;   /*  9.9:1 */
+  --rh-text-muted:        #6b655f;   /*  5.8:1 auf Weiss · 5.2:1 auf --rh-surface-secondary */
+  --rh-text-inverse:      #fdfcfa;
+  --rh-text-on-accent:    #ffffff;   /* 5.3:1 auf --rh-accent */
+
+  /* ---------------------------------------------------------------
+     LINIEN
+  ----------------------------------------------------------------*/
+  --rh-border:            #e9e4dd;
+  --rh-border-soft:       #f1ede7;
+  --rh-border-strong:     #d8d1c7;
+  --rh-border-ink:        rgba(22,21,26,.10);
+
+  /* ---------------------------------------------------------------
+     MARKE · KUPFER
+     Nur als Signal, niemals als Fläche. --rh-accent erfüllt in beide
+     Richtungen AA: als Text auf Weiss (5.3:1) und mit weisser Schrift
+     darauf (5.3:1). --rh-accent-bright ist rein dekorativ (Icons,
+     Diagrammflächen) und wird nie für Text verwendet.
+  ----------------------------------------------------------------*/
+  --rh-accent:            #a9530f;
+  --rh-accent-hover:      #8f4413;
+  --rh-accent-active:     #78390f;
+  --rh-accent-bright:     #c2611f;   /* dekorativ */
+  --rh-accent-tint:       #fdf4ec;
+  --rh-accent-tint-2:     #f8e8d9;
+  --rh-accent-line:       #eedcc9;
+
+  /* ---------------------------------------------------------------
+     STATUS
+  ----------------------------------------------------------------*/
+  --rh-success:           #1f6b45;   /* 6.5:1 */
+  --rh-success-tint:      #edf6f1;
+  --rh-success-line:      #cfe6da;
+  --rh-warning:           #8a5510;   /* 6.2:1 */
+  --rh-warning-tint:      #fdf3e4;
+  --rh-warning-line:      #f0dcbc;
+  --rh-danger:            #a32b22;   /* 7.2:1 */
+  --rh-danger-tint:       #fdf0ee;
+  --rh-danger-line:       #f0d2cd;
+  --rh-info:              #24557f;
+  --rh-info-tint:         #eef4fa;
+  --rh-info-line:         #cddef0;
+
+  /* ---------------------------------------------------------------
+     TYPOGRAFIE
+     Bewusst ein System-Font-Stack. Keine proprietäre Schrift wird
+     eingebunden oder mitgeliefert.
+  ----------------------------------------------------------------*/
+  --rh-font: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+             "Helvetica Neue", Roboto, Arial, sans-serif;
+  --rh-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+                  Consolas, "Liberation Mono", monospace;
+
+  /* Schriftgrade – modulare Skala 1.2 / optisch nachjustiert */
+  --rh-fs-2xs:  11px;
+  --rh-fs-xs:   12px;
+  --rh-fs-sm:   13px;
+  --rh-fs-base: 15px;
+  --rh-fs-md:   17px;
+  --rh-fs-lg:   20px;
+  --rh-fs-xl:   24px;
+  --rh-fs-2xl:  30px;
+  --rh-fs-3xl:  38px;
+  --rh-fs-4xl:  48px;
+  --rh-fs-5xl:  62px;
+
+  --rh-lh-tight:  1.08;
+  --rh-lh-snug:   1.22;
+  --rh-lh-normal: 1.5;
+  --rh-lh-relaxed:1.65;
+
+  --rh-fw-regular: 400;
+  --rh-fw-medium:  500;
+  --rh-fw-semi:    600;
+  --rh-fw-bold:    700;
+
+  /* Optischer Ausgleich für grosse Überschriften */
+  --rh-tracking-display: -0.022em;
+  --rh-tracking-tight:   -0.012em;
+  --rh-tracking-normal:   0;
+  --rh-tracking-wide:     0.06em;
+  --rh-tracking-caps:     0.14em;
+
+  /* ---------------------------------------------------------------
+     ABSTÄNDE · 4px-Raster
+  ----------------------------------------------------------------*/
+  --rh-space-0:   0;
+  --rh-space-1:   4px;
+  --rh-space-2:   8px;
+  --rh-space-3:   12px;
+  --rh-space-4:   16px;
+  --rh-space-5:   20px;
+  --rh-space-6:   24px;
+  --rh-space-7:   32px;
+  --rh-space-8:   40px;
+  --rh-space-9:   48px;
+  --rh-space-10:  64px;
+  --rh-space-11:  80px;
+  --rh-space-12:  104px;
+  --rh-space-13:  136px;
+
+  /* Section-Rhythmus (responsiv) */
+  --rh-section-y: clamp(56px, 7vw, 128px);
+  --rh-gutter:    clamp(18px, 4vw, 40px);
+  --rh-maxw:      1240px;
+  --rh-maxw-wide: 1440px;
+  --rh-maxw-text: 68ch;
+
+  /* ---------------------------------------------------------------
+     RADIEN
+  ----------------------------------------------------------------*/
+  --rh-radius-xs:   6px;
+  --rh-radius-sm:   10px;
+  --rh-radius-md:   14px;
+  --rh-radius-lg:   20px;
+  --rh-radius-xl:   28px;
+  --rh-radius-2xl:  36px;
+  --rh-radius-pill: 999px;
+
+  /* ---------------------------------------------------------------
+     SCHATTEN
+     Sehr zurückhaltend. Tiefe entsteht über Fläche und Linie, nicht
+     über Weichzeichnung.
+  ----------------------------------------------------------------*/
+  --rh-shadow-xs: 0 1px 2px rgba(28,20,12,.045);
+  --rh-shadow-sm: 0 1px 2px rgba(28,20,12,.05), 0 4px 12px -6px rgba(38,28,18,.10);
+  --rh-shadow-md: 0 2px 4px rgba(28,20,12,.04), 0 12px 28px -12px rgba(38,28,18,.16);
+  --rh-shadow-lg: 0 4px 8px rgba(28,20,12,.05), 0 26px 56px -22px rgba(38,28,18,.24);
+  --rh-shadow-xl: 0 8px 16px rgba(28,20,12,.06), 0 48px 96px -36px rgba(38,28,18,.30);
+  --rh-shadow-ring:  0 0 0 1px var(--rh-border);
+  --rh-shadow-focus: 0 0 0 2px var(--rh-surface), 0 0 0 4.5px var(--rh-accent);
+
+  /* ---------------------------------------------------------------
+     BEWEGUNG
+     --rh-ease-premium ist die Leitkurve: ruhiger Start, weiches
+     Ausschwingen, kein Überschwingen.
+  ----------------------------------------------------------------*/
+  --rh-ease-premium: cubic-bezier(.22,.61,.30,1);
+  --rh-ease-out:     cubic-bezier(.16,1,.30,1);
+  --rh-ease-in-out:  cubic-bezier(.62,.05,.30,1);
+  --rh-ease-spring:  cubic-bezier(.34,1.30,.48,1);
+
+  --rh-dur-instant: 90ms;
+  --rh-dur-fast:    160ms;
+  --rh-dur-base:    260ms;
+  --rh-dur-slow:    420ms;
+  --rh-dur-slower:  680ms;
+  --rh-dur-reveal:  760ms;
+
+  /* Ebenen */
+  --rh-z-base:    1;
+  --rh-z-sticky:  60;
+  --rh-z-header:  80;
+  --rh-z-drawer:  120;
+  --rh-z-overlay: 140;
+  --rh-z-modal:   160;
+  --rh-z-toast:   180;
+}
+
+/* =====================================================================
+   BASIS-UTILITIES
+   Nur Dinge, die beide Oberflächen wirklich gemeinsam brauchen.
+   ===================================================================== */
+
+/* Tastaturfokus – überall identisch, immer sichtbar */
+.rh-focusable:focus-visible,
+:root .rh-ds :focus-visible{
+  outline: none;
+  box-shadow: var(--rh-shadow-focus);
+  border-radius: var(--rh-radius-xs);
+}
+
+/* Nur für Screenreader */
+.rh-sr-only{
+  position:absolute !important;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  clip-path:inset(50%);
+  white-space:nowrap;border:0;
+}
+
+/* ---------------------------------------------------------------------
+   SCROLL-REVEAL · Basiszustände
+   Die Runtime (rh-atelier-2026.js / orgaboard-atelier-2026.js) setzt
+   nur .is-in. Die Bewegung selbst liegt hier, damit sie ohne JS
+   niemals Inhalte verstecken kann: ohne .rh-reveal ist alles sichtbar.
+--------------------------------------------------------------------- */
+.rh-reveal{
+  opacity:0;
+  transform: translate3d(0, 24px, 0) scale(.985);
+  transition:
+    opacity   var(--rh-dur-reveal) var(--rh-ease-premium),
+    transform var(--rh-dur-reveal) var(--rh-ease-premium);
+  transition-delay: var(--rh-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.rh-reveal.is-in{
+  opacity:1;
+  transform: translate3d(0,0,0) scale(1);
+}
+/* Nach der Bewegung die GPU-Ebene wieder freigeben */
+.rh-reveal.is-settled{ will-change:auto; transform:none; }
+
+/* Skeleton-Ladezustand */
+.rh-skeleton{
+  position:relative;
+  overflow:hidden;
+  background: var(--rh-surface-secondary);
+  border-radius: var(--rh-radius-sm);
+  color:transparent !important;
+}
+.rh-skeleton::after{
+  content:"";
+  position:absolute; inset:0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.72) 50%,
+    rgba(255,255,255,0) 100%);
+  animation: rh-shimmer 1.5s var(--rh-ease-in-out) infinite;
+}
+@keyframes rh-shimmer{ to{ transform: translateX(100%); } }
+
+/* =====================================================================
+   PREFERS-REDUCED-MOTION
+   Bewegung wird abgeschaltet, Funktion und Sichtbarkeit bleiben
+   vollständig erhalten. Das ist bewusst die letzte Regel dieser Datei.
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --rh-dur-instant:1ms; --rh-dur-fast:1ms; --rh-dur-base:1ms;
+    --rh-dur-slow:1ms;    --rh-dur-slower:1ms; --rh-dur-reveal:1ms;
+  }
+  .rh-reveal{
+    opacity:1 !important;
+    transform:none !important;
+    transition:none !important;
+  }
+  .rh-skeleton::after{ animation:none; }
+}

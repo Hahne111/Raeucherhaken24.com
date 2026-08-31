@@ -1,0 +1,7 @@
+Header-Veredelung V7
+- Räucherhaken24-Logo und Beratung/Bestellung als zusammengehöriges Premium-Kartensystem.
+- Logo bleibt in der bekannten Braun/Orange-Welt.
+- '24' kompakter, hochwertiger, ohne verspielte Animation.
+- Beratung zeigt Telefon, Servicezeit, E-Mail.
+- Funktionierende tel:- und mailto:-Buttons.
+- Bestehendes Seiten-/Shopdesign bleibt unverändert.

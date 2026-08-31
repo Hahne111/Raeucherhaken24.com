@@ -1,0 +1,20 @@
+ARCHIV – RÄUCHERHAKEN24
+=======================
+
+Dieser Ordner enthält Dateien, die für den Betrieb der Website nicht
+mehr benötigt werden. Sie wurden nicht gelöscht, damit die Historie
+nachvollziehbar bleibt.
+
+dokumentation/
+  Alle bisherigen Versionshinweise, Prüfberichte und Anleitungen
+  (README-V*, PRUEFBERICHT-*, START-HIER-*, ÄNDERUNGEN-* und weitere).
+  Sie lagen bisher im Web-Stammverzeichnis und waren damit öffentlich
+  abrufbar. Inhaltlich unverändert.
+
+abgeloeste-dateien/
+  passwort-test.html    Testseite ohne Verlinkung im Shop.
+  product-runtime-v82.js  Von product-sync-v1061.js abgelöst, nirgends eingebunden.
+  shop-data-v82.js      Von shop-data-v1061.js abgelöst, nirgends eingebunden.
+
+Der Ordner kann bedenkenlos vom Server entfernt werden. Für den Betrieb
+der Website wird er nicht gebraucht.

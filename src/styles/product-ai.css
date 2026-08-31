@@ -1,0 +1,9 @@
+
+.productAiAdvisor{margin:18px 0;border:1px solid #d9c1a9;border-radius:14px;overflow:hidden;background:linear-gradient(145deg,#fffdf9,#fff7ee);box-shadow:0 12px 32px rgba(58,33,18,.08)}
+.productAiHead{display:flex;align-items:center;gap:13px;padding:16px 18px;background:linear-gradient(135deg,#3a2112,#5b341a);color:#fff}
+.productAiOrb{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ef852f,#bd571b);font-weight:950;font-size:12px}
+.productAiHead b{display:block;font-size:16px}.productAiHead span{display:block;font-size:11px;color:#ead9ca;margin-top:3px}
+.productAiBody{padding:16px}.productAiAnswer{min-height:72px;padding:13px 14px;border:1px solid #eadbcd;border-radius:10px;background:#fff;line-height:1.55;font-size:13px;color:#4e4035}
+.productAiQuick{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}.productAiQuick button{border:1px solid #ddc8b4;background:#fff9f3;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:850;color:#5a351d;cursor:pointer}
+.productAiAsk{display:grid;grid-template-columns:1fr auto auto;gap:7px}.productAiAsk input{min-width:0;padding:11px 12px;border:1px solid #d9c6b4;border-radius:8px;background:#fff}.productAiAsk button{border:0;border-radius:8px;padding:0 14px;font-weight:900;cursor:pointer}
+.productAiSend{background:#b10f10;color:#fff}.productAiSpeak{background:#3a2112;color:#fff}.productAiFoot{margin-top:8px;font-size:9px;color:#8a796b}

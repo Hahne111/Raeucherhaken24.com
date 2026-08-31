@@ -1,0 +1,19 @@
+{
+  "id": "/orgaboard/",
+  "name": "Räucherhaken24 Orgaboard",
+  "short_name": "RH24 OrgaBoard",
+  "description": "Mobile Verwaltungs-, Kunden-, Vertriebs- und Auftragszentrale von Räucherhaken24.",
+  "lang": "de-DE",
+  "start_url": "./index.php",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f4f1ec",
+  "theme_color": "#3d2a1b",
+  "icons": [
+    {"src":"assets/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"assets/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"assets/icons/icon-maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}

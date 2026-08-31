@@ -1,0 +1,49 @@
+RÄUCHERHAKEN24 – V33 MARIADB / ORGABOARD
+=========================================
+
+STRATO-Datenbank (vorbereitet):
+- Typ: MariaDB 11.8
+- Server: database-5021257243.webspace-host.com
+- Datenbank: dbs16044993
+- Benutzer: dbu4769168
+- Datenbank-Passwort: NICHT in diesem Paket gespeichert.
+
+INSTALLATION
+1. Den kompletten Inhalt dieses Pakets auf den Webspace von www.raeucherhaken24.com hochladen.
+2. Danach im Browser öffnen:
+   https://www.raeucherhaken24.com/orgaboard/setup.php
+3. Die STRATO-Daten sind bereits eingetragen.
+4. Nur das eigene STRATO-Datenbankpasswort eintragen.
+5. Ein neues Orgaboard-Admin-Passwort festlegen (mindestens 12 Zeichen).
+6. Auf "Datenbank verbinden & Orgaboard einrichten" klicken.
+7. Das Setup erstellt die Tabellen automatisch. phpMyAdmin muss nicht manuell benutzt werden.
+8. Danach ist das Orgaboard erreichbar unter:
+   https://www.raeucherhaken24.com/orgaboard/
+
+SICHERHEIT
+- Das Datenbank-Passwort wird erst auf dem STRATO-Webspace eingegeben.
+- Es muss nicht an ChatGPT übermittelt werden.
+- Es wird in orgaboard/private/db-config.php gespeichert.
+- Der private-Ordner wird zusätzlich per .htaccess gegen Webzugriff gesperrt.
+- Admin-Passwörter werden nur als Passwort-Hash in MariaDB gespeichert.
+- Admin-Aktionen verwenden Sessions und CSRF-Schutz.
+
+DATENBANKTABELLEN
+- settings
+- customers
+- orders
+- prototypes
+- dealers
+- inventory
+- reviews
+- content
+- ai_stats
+- activity_log
+
+LIVE-DATENFLUSS
+Shop -> Kunde -> Bestellung -> Lagerreservierung -> Orgaboard
+Prototypformular -> Kundenakte -> Prototyp-Projekt -> Orgaboard
+Prototyp-Kauf -> Bestellung -> Projektverknüpfung -> Zahlung/Fertigung/Versand
+
+HINWEIS
+Die bisherigen statischen Rezeptdaten und die Demo-/Browserbewertungen der Shop-Vorschau bleiben unverändert bestehen. Die operativen Orgaboard-Daten (Bestellungen, Kunden, Prototypen, Händler, Lager, Einstellungen und Admin-Protokoll) laufen in V33 über MariaDB.

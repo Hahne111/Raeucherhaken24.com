@@ -1,0 +1,135 @@
+/* Räucherhaken24 Orgaboard · Etikettenstudio V105.3
+   Freigegebene Zwei-Spalten-Ansicht: lesbarer Produktbrowser + sichtbare Designsteuerung. */
+
+.labelEditorHeroV1053{
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
+  margin:0 0 12px;padding:18px 22px;border:1px solid #e7dfd8;border-radius:22px;
+  background:#fff;color:#211c18;box-shadow:0 10px 30px rgba(45,34,27,.05)
+}
+.labelEditorHeroV1053 small{display:block;color:#8f2e1d;font-size:9px;font-weight:950;letter-spacing:.18em}
+.labelEditorHeroV1053 h2{margin:3px 0 5px;font-size:25px;letter-spacing:-.025em;color:#171411}
+.labelEditorHeroV1053 p{margin:0;color:#71675f;font-size:11px;line-height:1.45}
+.labelEditorHeroV1053>div:last-child{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.labelEditorHeroV1053>div:last-child span{padding:7px 10px;border:1px solid #e8e0da;border-radius:999px;background:#faf8f6;color:#5e534c;font-size:9px;font-weight:850}
+
+.labelStudioShellV1053{display:grid;grid-template-columns:minmax(310px,370px) minmax(0,1fr);gap:16px;align-items:start}
+.labelStudioShellV1053 .labelSourceDockV966{
+  position:sticky!important;top:198px!important;max-height:calc(100vh - 218px)!important;
+  padding:16px!important;border:1px solid #e5ddd6!important;border-radius:23px!important;
+  background:#fff!important;box-shadow:0 14px 40px rgba(50,37,29,.06)!important
+}
+.labelStudioShellV1053 .sourceDockHeadV966 h3{font-size:21px!important;color:#181411!important}
+.labelStudioShellV1053 .sourceDockHeadV966 small{font-size:9px!important;color:#8f2e1d!important}
+.labelStudioShellV1053 .sourceTypeV966{font-size:10px!important;color:#4e4640!important}
+.labelStudioShellV1053 .sourceTypeV966 select{
+  min-height:44px!important;border-color:#d9d1ca!important;border-radius:11px!important;
+  color:#201b17!important;font-size:12px!important;font-weight:800!important;background:#fff!important
+}
+.labelStudioShellV1053 .labelSourceSearchV966{min-height:52px!important;border-radius:16px!important;background:#fff!important;border-color:#ddd5ce!important}
+.labelStudioShellV1053 .labelSourceSearchV966 input{font-size:12px!important;color:#211c18!important;background:#fff!important}
+.labelStudioShellV1053 .sourceResultLineV966{padding:10px 2px 8px!important;font-size:10px!important}
+.labelStudioShellV1053 .sourceResultLineV966 b{font-size:18px!important;color:#181411!important}
+.labelStudioShellV1053 .labelSourceListV966{gap:8px!important;background:transparent!important;padding:1px 4px 8px 1px!important}
+.labelStudioShellV1053 .labelSourceRowV966{
+  min-height:72px!important;grid-template-columns:7px minmax(0,1fr) minmax(74px,auto)!important;
+  gap:12px!important;padding:11px 12px!important;border:1px solid #e5dfda!important;border-radius:16px!important;
+  background:#fff!important;color:#1b1714!important;box-shadow:none!important;opacity:1!important
+}
+.labelStudioShellV1053 .labelSourceRowV966:hover{background:#fffaf7!important;border-color:#cda894!important;box-shadow:0 7px 18px rgba(50,35,26,.06)!important}
+.labelStudioShellV1053 .labelSourceRowV966.active{background:#fff!important;border-color:#9d2b19!important;box-shadow:inset 3px 0 0 #9d2b19!important}
+.labelStudioShellV1053 .sourceDotV966{width:6px!important;height:42px!important;background:#9e2f1b!important}
+.labelStudioShellV1053 .sourceMainV966 b{display:block!important;color:#171411!important;font-size:14px!important;line-height:1.18!important;font-weight:900!important;opacity:1!important}
+.labelStudioShellV1053 .sourceMainV966 small{margin-top:5px!important;color:#6f665f!important;font-size:10px!important;font-weight:650!important;opacity:1!important}
+.labelStudioShellV1053 .sourceFactsV966{min-width:74px!important;text-align:right!important}
+.labelStudioShellV1053 .sourceFactsV966 strong{color:#8f2e1d!important;font-size:14px!important;font-weight:950!important;opacity:1!important}
+.labelStudioShellV1053 .sourceFactsV966 em{margin-top:5px!important;color:#554c46!important;font-size:10px!important;font-weight:800!important;opacity:1!important}
+.labelStudioShellV1053 .sourceDockFootV966 span{font-size:8px!important}
+
+.labelLivePanelV1053{min-width:0;padding:16px;border:1px solid #e5ddd6;border-radius:23px;background:#fff;box-shadow:0 14px 40px rgba(50,37,29,.06)}
+.labelLiveHeadV1053{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:3px 2px 14px;border-bottom:1px solid #eee8e3}
+.labelLiveHeadV1053 small{display:block;color:#8f2e1d;font-size:9px;font-weight:950;letter-spacing:.16em}
+.labelLiveHeadV1053 h2{margin:3px 0 2px;font-size:24px;line-height:1.1;color:#171411}
+.labelLiveHeadV1053 p{margin:0;color:#766c64;font-size:10px}
+.previewZoomV1053{display:flex;align-items:center;gap:5px;padding:4px;border:1px solid #e0d9d3;border-radius:13px;background:#faf8f6}
+.previewZoomV1053 button{width:36px;height:34px;border:0;border-radius:9px;background:#fff;color:#352b25;font-weight:950;font-size:16px;cursor:pointer}
+.previewZoomV1053 b{min-width:45px;text-align:center;color:#8f2e1d;font-size:10px}
+
+.labelPrinterSummaryV1053{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;margin-top:14px;padding:13px;border:1px solid #e8e1da;border-radius:17px;background:#fff}
+.printerIconV1053{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:#171310;color:#fff;font-size:23px}
+.labelPrinterSummaryV1053 small{display:block;color:#8f2e1d;font-size:8px;font-weight:950;letter-spacing:.16em}
+.labelPrinterSummaryV1053 h3{margin:2px 0;font-size:16px;color:#1a1613}
+.labelPrinterSummaryV1053 p{margin:0;color:#71675f;font-size:9px}
+.labelPrinterSummaryV1053 button,.labelFormatSummaryV1053 button{min-height:38px;padding:0 12px;border:1px solid #ddd5ce;border-radius:10px;background:#fff;color:#352c27;font-size:9px;font-weight:900;cursor:pointer}
+.labelFormatSummaryV1053{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:11px 13px;border:1px solid #eee7e1;border-radius:15px;background:#faf8f6}
+.labelFormatSummaryV1053 small,.labelFormatSummaryV1053 b,.labelFormatSummaryV1053 span{display:block}
+.labelFormatSummaryV1053 small{color:#8f2e1d;font-size:7px;font-weight:950;letter-spacing:.14em}
+.labelFormatSummaryV1053 b{margin:2px 0;color:#211c18;font-size:11px}
+.labelFormatSummaryV1053 span{color:#766b63;font-size:9px}
+
+.labelDesignControlV1053{margin-top:12px;padding:14px;border:1px solid #e7dfd8;border-radius:18px;background:#fbfaf8}
+.labelDesignHeadV1053{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:11px}
+.labelDesignHeadV1053 small{display:block;color:#8f2e1d;font-size:8px;font-weight:950;letter-spacing:.16em}
+.labelDesignHeadV1053 h3{margin:2px 0 3px;font-size:17px;color:#1c1714}
+.labelDesignHeadV1053 p{margin:0;color:#786e66;font-size:9px}
+.labelDesignHeadV1053>button{width:34px;height:34px;border:1px solid #ded6cf;border-radius:10px;background:#fff;color:#5c4f47;font-size:17px;cursor:pointer}
+.labelScaleGridV1053{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.labelScaleRowV1053{display:grid!important;grid-template-columns:38px minmax(0,1fr)!important;gap:10px!important;align-items:center!important;margin:0!important;padding:10px!important;border:1px solid #e5ded8!important;border-radius:14px!important;background:#fff!important}
+.labelScaleRowV1053.focus{border-color:#d6b09e!important;background:#fffaf7!important}
+.scaleIconV1053{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:#f5f1ee;color:#382d27;font-size:16px;font-weight:900}
+.scaleBodyV1053{min-width:0}
+.scaleHeadV1053{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.scaleHeadV1053 b{font-size:10px;color:#2a231f}
+.scaleHeadV1053 output{min-width:42px;text-align:right;color:#8f2e1d;font-size:10px;font-weight:950}
+.scaleBodyV1053 input[type=range],.labelScaleFooterV1053 input[type=range]{width:100%!important;margin:0!important;accent-color:#9d2b19}
+.labelScaleFooterV1053{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;margin-top:10px;padding-top:10px;border-top:1px solid #ebe4de}
+.labelScaleFooterV1053>label{display:block;margin:0;color:#635851;font-size:9px;font-weight:850}
+.labelScaleFooterV1053>label span{display:block;margin-bottom:5px}
+.labelScalePresetsV1053{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.labelScalePresetsV1053 button{min-height:34px;padding:0 9px;border:1px solid #ded6cf;border-radius:9px;background:#fff;color:#433832;font-size:8px;font-weight:850;cursor:pointer}
+.labelScalePresetsV1053 button:hover{border-color:#ba8067;background:#fff7f2;color:#8f2e1d}
+
+.labelPrintPreviewV1053{--studio-zoom:1;position:relative;margin-top:12px;padding:20px;border:1px solid #e4ddd6;border-radius:18px;background:#f3f0ed;overflow:auto}
+.labelPrintPreviewV1053 .labelPreviewStage{min-height:420px!important;padding:34px 24px!important;border:0!important;border-radius:14px!important;background:#f0ece8!important}
+.labelPrintPreviewV1053 .labelPreviewPaper{width:min(calc(88% * var(--studio-zoom)),860px)!important;min-width:280px!important;max-height:none!important;background:#fff!important;box-shadow:0 20px 44px rgba(42,29,22,.15)!important;color:#111!important}
+.labelPrintPreviewV1053 .labelPreviewPaper .labelName{color:#111!important;font-weight:950!important}
+.labelPrintPreviewV1053 .labelPreviewPaper .labelPrice{color:#9d2b19!important;font-weight:950!important}
+.labelPrintPreviewV1053 .labelPreviewPaper .labelMeta{color:#4b443f!important}
+.labelPrintFooterV1053{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 2px 1px}
+.labelPrintFooterV1053 small,.labelPrintFooterV1053 b{display:block}
+.labelPrintFooterV1053 small{color:#8f2e1d;font-size:8px;font-weight:950;letter-spacing:.14em}
+.labelPrintFooterV1053 b{margin-top:2px;color:#554c46;font-size:10px}
+.labelPrintFooterV1053>div:last-child{display:flex;gap:7px;flex-wrap:wrap}
+
+/* Im V105.3-Studio keine alten Inspector-Spalten anzeigen. */
+.labelStudioShellV1053 + .labelInspectorDockV966{display:none!important}
+
+@media(max-width:1280px){
+  .labelStudioShellV1053{grid-template-columns:minmax(280px,330px) minmax(0,1fr)}
+  .labelScaleGridV1053{grid-template-columns:1fr 1fr}
+}
+@media(max-width:980px){
+  .labelStudioShellV1053{grid-template-columns:1fr}
+  .labelStudioShellV1053 .labelSourceDockV966{position:static!important;max-height:none!important}
+  .labelStudioShellV1053 .labelSourceListV966{max-height:360px!important}
+  .labelLivePanelV1053{padding:14px}
+}
+@media(max-width:680px){
+  .labelEditorHeroV1053{align-items:flex-start;flex-direction:column;padding:16px}
+  .labelEditorHeroV1053>div:last-child{justify-content:flex-start}
+  .labelLiveHeadV1053{align-items:flex-start;flex-direction:column}
+  .labelPrinterSummaryV1053{grid-template-columns:46px minmax(0,1fr)}
+  .labelPrinterSummaryV1053 button{grid-column:1/-1;width:100%}
+  .labelFormatSummaryV1053{align-items:flex-start;flex-direction:column}
+  .labelFormatSummaryV1053 button{width:100%}
+  .labelScaleGridV1053{grid-template-columns:1fr}
+  .labelScaleFooterV1053{grid-template-columns:1fr}
+  .labelScalePresetsV1053{justify-content:flex-start}
+  .labelPrintPreviewV1053{padding:10px}
+  .labelPrintPreviewV1053 .labelPreviewStage{min-height:320px!important;padding:24px 10px!important}
+  .labelPrintPreviewV1053 .labelPreviewPaper{min-width:245px!important;width:min(calc(96% * var(--studio-zoom)),700px)!important}
+  .labelPrintFooterV1053{align-items:flex-start;flex-direction:column}
+}
+
+/* V105.4 data binding hardening */
+.labelStudioShellV1053 .labelSourceRowV966:empty{display:none!important}
+.labelStudioShellV1053 .sourceMainV966,.labelStudioShellV1053 .sourceFactsV966{visibility:visible!important;opacity:1!important}

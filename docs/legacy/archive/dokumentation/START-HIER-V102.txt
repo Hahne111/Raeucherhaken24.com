@@ -1,0 +1,17 @@
+RÄUCHERHAKEN24 / ORGABOARD – V102 LIGHT PROFESSIONAL
+
+ZIEL
+V102 entfernt die dunkle Black-Steel-Optik vollständig aus der aktiven Oberfläche und stellt Website + Orgaboard wieder hell, freundlich, ruhig und gut lesbar dar.
+
+INSTALLATION
+1. Backup der aktuellen Website anlegen.
+2. Die Direktupdate-ZIP entpacken.
+3. Den gesamten Inhalt direkt in das Hauptverzeichnis der Website hochladen.
+4. Vorhandene Dateien überschreiben.
+5. Browser hart neu laden / Cache für raeucherhaken24.com leeren.
+6. Website und Orgaboard neu öffnen.
+
+WICHTIG
+- V102 basiert funktional auf V99.1.1 und behält alle aufgebauten Module.
+- V101 Black-Steel-Dateien können auf dem Server liegen bleiben; sie werden nach dem Update nicht mehr eingebunden.
+- private/db-config.php ist nicht Bestandteil des Updates.

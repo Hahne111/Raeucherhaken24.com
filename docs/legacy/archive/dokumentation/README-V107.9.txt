@@ -1,0 +1,1 @@
+V107.9: Produktkarten weiter vereinheitlicht. Neu: Merken/Vergleichen jetzt auch bei dynamisch geladenen Karten, Warenkorb-Button passt vollständig in die Kartenbreite, doppelte Stück-Preiszeile bei Einzelartikeln bereinigt.

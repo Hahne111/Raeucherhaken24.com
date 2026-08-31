@@ -1,0 +1,22 @@
+/* Aus 404.html ausgelagerte Seitenstile. */
+
+.rh404{padding:clamp(56px,9vw,120px) 0;text-align:center}
+    .rh404 .code{display:inline-block;font-family:var(--p-serif);font-size:clamp(72px,14vw,140px);
+      line-height:1;color:var(--p-copper);letter-spacing:-.05em;margin-bottom:12px}
+    .rh404 h1{margin:0 0 14px}
+    .rh404 p{max-width:52ch;margin:0 auto 36px;color:var(--p-text);font-size:16.5px}
+    .rh404Grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
+      gap:14px;max-width:960px;margin:0 auto;text-align:left}
+    .rh404Card{display:block;background:var(--p-surface);border:1px solid var(--p-line);
+      border-radius:var(--p-r-lg);padding:22px;box-shadow:var(--p-sh-1);
+      transition:transform .32s var(--p-ease),box-shadow .32s var(--p-ease),border-color .32s var(--p-ease)}
+    .rh404Card:hover{transform:translateY(-4px);box-shadow:var(--p-sh-3);border-color:var(--p-line-strong)}
+    .rh404Card b{display:block;font-family:var(--p-serif);font-size:19px;color:var(--p-ink);margin-bottom:5px}
+    .rh404Card span{display:block;color:var(--p-muted);font-size:14px;line-height:1.5}
+    .rh404Actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+
+/* Ehemalige style-Attribute; !important bewahrt deren ursprüngliche Priorität. */
+
+.rh-inline-404-001 { border:0 !important; background:none !important; width:100% !important; }
+
+.rh-inline-404-002 { width:100% !important; }

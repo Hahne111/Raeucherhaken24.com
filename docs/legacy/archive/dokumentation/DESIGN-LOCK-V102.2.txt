@@ -1,0 +1,13 @@
+RÄUCHERHAKEN24 – DESIGN-LOCK V102.2
+
+Referenzdesign: raeucherhaken24-v102.2-DUPLIKAT-RENDER-FIX-DIREKTUPDATE.zip
+
+VERBINDLICH:
+- Das visuelle Design dieses Projektstands bleibt unverändert.
+- Keine Änderungen an Farben, Schriften, Größen, Abständen, Buttons, Karten, Schatten, Header, Footer, Navigation oder Seitenlayout.
+- Technische Fehlerbehebungen dürfen das Erscheinungsbild nicht verändern.
+- light-pro-v102.css und die zugehörigen Seiten-/Runtime-Dateien aus dem Referenzstand sind die Designbasis.
+
+PRÜFUNG:
+- Alle 46 Dateien des Referenz-Direktupdates wurden mit dem vollständigen Projekt verglichen.
+- Ergebnis: 46 von 46 Dateien sind byte-identisch.

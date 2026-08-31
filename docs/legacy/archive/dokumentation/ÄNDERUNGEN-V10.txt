@@ -1,0 +1,6 @@
+V10
+- Fleischerhaken-Seite und Preislogik wieder auf den vorherigen Zustand zurückgesetzt.
+- Nur das Fleischerhaken-Foto wurde optimiert: weißer Hintergrund, bessere Zentrierung, klarere Darstellung.
+- Räucherlaugen erhalten eigene Zutatenbilder: Salz als sichtbare Basis plus Gewürzoptik passend zur jeweiligen Geschmacksrichtung.
+- Die Bilder stellen die sichtbare Geschmacksrichtung dar. Für eine 1:1-Abbildung einer geheimen/exakten Rezeptur müssen die tatsächlichen Zutatenlisten final hinterlegt werden.
+- Räucherlauge bleibt: 500 g = 4,95 € = 0,99 € / 100 g.

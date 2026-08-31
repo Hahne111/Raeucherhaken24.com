@@ -1,0 +1,19 @@
+
+/* V19 unified commerce information */
+.v19CommerceInfo{margin:9px 0 12px;padding:10px 12px;border:1px solid #e4d8cc;border-radius:9px;background:#fffdfa;font-size:11px;line-height:1.65;color:#55483e}
+.v19CommerceInfo .stock{font-weight:850;color:#25753a}.v19CommerceInfo .ship{font-weight:800;color:#68401f}.v19CommerceInfo .vat{font-weight:750}
+.v19FreeShipHero{margin:0;background:linear-gradient(90deg,#a70e0e,#d02222,#a70e0e);color:#fff;text-align:center;padding:11px 15px;font-weight:900;font-size:13px;letter-spacing:.2px;box-shadow:0 5px 18px rgba(140,10,10,.15)}
+.v19FreeShipHero small{font-weight:600;opacity:.9;margin-left:7px}
+.v19ShipProgress{margin:10px 0;padding:10px 12px;border-radius:9px;background:#fff5e8;border:1px solid #efd5b6;font-size:11px;font-weight:800;color:#6b421f}
+.v19ShipProgress.free{background:#edf8ef;border-color:#b9dfc0;color:#237038}
+.v19TipWrap{margin-top:10px}.v19TipWrap label{display:block;font-size:11px;font-weight:850;margin-bottom:5px}.v19TipWrap select{width:100%;padding:10px;border:1px solid #d8c4b0;border-radius:8px;background:#fff}
+
+/* V20 navigation cleanup */
+.sidebar nav a,.sideNav a,.sidebar a{box-sizing:border-box}
+.sidebar .navGroup>a,.sideNav .navGroup>a{font-weight:850}
+.sidebar a[href*="raeucherhaken-"],.sideNav a[href*="raeucherhaken-"]{
+  display:block;padding-left:34px!important;font-weight:650!important;
+}
+.sidebar a[href="raeucherhaken-ultra.html"],.sideNav a[href="raeucherhaken-ultra.html"]{
+  font-weight:750!important;
+}

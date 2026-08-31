@@ -1,0 +1,35 @@
+PRÜFBERICHT V103 SAFE CLEANUP
+
+Festgestellte Hauptprobleme:
+1. Orgaboard-Service-Worker verwendete noch Cache-Key rh24-orgaboard-static-v102-1.
+2. Service Worker cachete light-pro-v102.css noch als ?v=102.1.
+3. Orgaboard index.php lud light-pro-v102.css ebenfalls noch als ?v=102.1.
+4. Im Projekt lagen zahlreiche alte, nicht mehr von ausführbarem Code referenzierte JS/CSS-Versionen.
+5. Die öffentliche Seite besteht weiterhin aus historisch gewachsenen aktiven Modulen. Diese wurden NICHT blind gelöscht, weil darin noch Fachlogik steckt.
+
+V103 Maßnahmen:
+- unreferenzierte JS/CSS-Altdateien entfernt
+- historische reine Textberichte aus Produktionspaket entfernt
+- öffentliche light-pro-v102.css Cache-Version auf 103.0 gesetzt
+- Orgaboard light-pro-v102.css Cache-Version auf 103.0 gesetzt
+- Orgaboard Cache-Key auf rh24-orgaboard-static-v103-clean gesetzt
+- einmaliges token-geschütztes cleanup-v103.php für bestehende Serverinstallationen beigefügt
+- aktive Geschäftslogik nicht absichtlich verändert
+
+ABSCHLUSSPRÜFUNG
+- 34 JavaScript-Dateien: Syntax OK
+- 53 PHP-Dateien: Syntax OK
+- Lokale direkte Asset-Referenzen: keine real fehlenden statischen Dateien; 2 Template-Ausdrücke im Thermometer wurden korrekt als dynamisch erkannt
+- HTTP-Smoke-Test:
+  200 /index.html
+  200 /shop.html
+  200 /kundenlogin.html
+  200 /haendlerlogin.html
+  200 /checkout.html
+  200 /ankauf-verkauf.php
+  200 /orgaboard/version.php
+  200 /orgaboard/diagnose.php
+
+WICHTIG
+Das neue Premium-Referenzdesign ist mit dieser V103 noch NICHT vollständig visuell implementiert.
+V103 schafft zuerst eine saubere technische Basis, damit die anschließende Designumsetzung nicht weiter auf toten Altversionen und stale Caches aufsetzt.

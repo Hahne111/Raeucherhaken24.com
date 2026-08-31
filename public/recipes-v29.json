@@ -1,0 +1,3242 @@
+[
+  {
+    "id": "f001",
+    "type": "Fisch",
+    "title": "Forelle – klassisch geräuchert",
+    "food": "Forelle",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für forelle mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Forelle – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Forelle sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f002",
+    "type": "Fisch",
+    "title": "Forelle – Kräuter geräuchert",
+    "food": "Forelle",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für forelle mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Forelle – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Forelle sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f003",
+    "type": "Fisch",
+    "title": "Forelle – Knoblauch geräuchert",
+    "food": "Forelle",
+    "flavor": "Knoblauch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für forelle mit knoblauchem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Forelle – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Forelle sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f004",
+    "type": "Fisch",
+    "title": "Forelle – Zitronenpfeffer geräuchert",
+    "food": "Forelle",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für forelle mit zitronenpfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Forelle – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Forelle sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f005",
+    "type": "Fisch",
+    "title": "Forelle – Chili geräuchert",
+    "food": "Forelle",
+    "flavor": "Chili",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für forelle mit chiliem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Forelle – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Forelle sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f006",
+    "type": "Fisch",
+    "title": "Forelle – Honig-Senf geräuchert",
+    "food": "Forelle",
+    "flavor": "Honig-Senf",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für forelle mit honig-senfem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Forelle – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Forelle sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f007",
+    "type": "Fisch",
+    "title": "Lachs – klassisch geräuchert",
+    "food": "Lachs",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für lachs mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Lachs – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Lachs sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f008",
+    "type": "Fisch",
+    "title": "Lachs – Kräuter geräuchert",
+    "food": "Lachs",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für lachs mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Lachs – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Lachs sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f009",
+    "type": "Fisch",
+    "title": "Lachs – Knoblauch geräuchert",
+    "food": "Lachs",
+    "flavor": "Knoblauch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für lachs mit knoblauchem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Lachs – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Lachs sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f010",
+    "type": "Fisch",
+    "title": "Lachs – Zitronenpfeffer geräuchert",
+    "food": "Lachs",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für lachs mit zitronenpfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Lachs – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Lachs sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f011",
+    "type": "Fisch",
+    "title": "Lachs – Chili geräuchert",
+    "food": "Lachs",
+    "flavor": "Chili",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für lachs mit chiliem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Lachs – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Lachs sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f012",
+    "type": "Fisch",
+    "title": "Lachs – Honig-Senf geräuchert",
+    "food": "Lachs",
+    "flavor": "Honig-Senf",
+    "wood": "Eiche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für lachs mit honig-senfem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Lachs – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Lachs sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f013",
+    "type": "Fisch",
+    "title": "Makrele – klassisch geräuchert",
+    "food": "Makrele",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für makrele mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Makrele – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Makrele sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f014",
+    "type": "Fisch",
+    "title": "Makrele – Kräuter geräuchert",
+    "food": "Makrele",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für makrele mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Makrele – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Makrele sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f015",
+    "type": "Fisch",
+    "title": "Makrele – Knoblauch geräuchert",
+    "food": "Makrele",
+    "flavor": "Knoblauch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für makrele mit knoblauchem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Makrele – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Makrele sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f016",
+    "type": "Fisch",
+    "title": "Makrele – Zitronenpfeffer geräuchert",
+    "food": "Makrele",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für makrele mit zitronenpfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Makrele – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Makrele sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f017",
+    "type": "Fisch",
+    "title": "Makrele – Chili geräuchert",
+    "food": "Makrele",
+    "flavor": "Chili",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für makrele mit chiliem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Makrele – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Makrele sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f018",
+    "type": "Fisch",
+    "title": "Makrele – Honig-Senf geräuchert",
+    "food": "Makrele",
+    "flavor": "Honig-Senf",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für makrele mit honig-senfem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Makrele – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Makrele sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f019",
+    "type": "Fisch",
+    "title": "Aal – klassisch geräuchert",
+    "food": "Aal",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für aal mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Aal – küchenfertig",
+      "Räucherlauge Aal – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Aal sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Aal exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f020",
+    "type": "Fisch",
+    "title": "Aal – Kräuter geräuchert",
+    "food": "Aal",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für aal mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Aal – küchenfertig",
+      "Räucherlauge Aal – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Aal sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Aal exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f021",
+    "type": "Fisch",
+    "title": "Aal – Knoblauch geräuchert",
+    "food": "Aal",
+    "flavor": "Knoblauch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für aal mit knoblauchem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Aal – küchenfertig",
+      "Räucherlauge Aal – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Aal sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Aal exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f022",
+    "type": "Fisch",
+    "title": "Aal – Zitronenpfeffer geräuchert",
+    "food": "Aal",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für aal mit zitronenpfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Aal – küchenfertig",
+      "Räucherlauge Aal – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Aal sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Aal exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f023",
+    "type": "Fisch",
+    "title": "Aal – Chili geräuchert",
+    "food": "Aal",
+    "flavor": "Chili",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für aal mit chiliem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Aal – küchenfertig",
+      "Räucherlauge Aal – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Aal sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Aal exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f024",
+    "type": "Fisch",
+    "title": "Aal – Honig-Senf geräuchert",
+    "food": "Aal",
+    "flavor": "Honig-Senf",
+    "wood": "Eiche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für aal mit honig-senfem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Aal – küchenfertig",
+      "Räucherlauge Aal – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Aal sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Aal exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f025",
+    "type": "Fisch",
+    "title": "Saibling – klassisch geräuchert",
+    "food": "Saibling",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für saibling mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Saibling – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Saibling sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f026",
+    "type": "Fisch",
+    "title": "Saibling – Kräuter geräuchert",
+    "food": "Saibling",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für saibling mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Saibling – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Saibling sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f027",
+    "type": "Fisch",
+    "title": "Saibling – Knoblauch geräuchert",
+    "food": "Saibling",
+    "flavor": "Knoblauch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für saibling mit knoblauchem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Saibling – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Saibling sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f028",
+    "type": "Fisch",
+    "title": "Saibling – Zitronenpfeffer geräuchert",
+    "food": "Saibling",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für saibling mit zitronenpfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Saibling – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Saibling sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f029",
+    "type": "Fisch",
+    "title": "Saibling – Chili geräuchert",
+    "food": "Saibling",
+    "flavor": "Chili",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für saibling mit chiliem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Saibling – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Saibling sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f030",
+    "type": "Fisch",
+    "title": "Saibling – Honig-Senf geräuchert",
+    "food": "Saibling",
+    "flavor": "Honig-Senf",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für saibling mit honig-senfem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Saibling – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Saibling sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f031",
+    "type": "Fisch",
+    "title": "Zander – klassisch geräuchert",
+    "food": "Zander",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für zander mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Zander – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Zander sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f032",
+    "type": "Fisch",
+    "title": "Zander – Kräuter geräuchert",
+    "food": "Zander",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für zander mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Zander – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Zander sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f033",
+    "type": "Fisch",
+    "title": "Zander – Knoblauch geräuchert",
+    "food": "Zander",
+    "flavor": "Knoblauch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für zander mit knoblauchem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Zander – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Zander sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f034",
+    "type": "Fisch",
+    "title": "Zander – Zitronenpfeffer geräuchert",
+    "food": "Zander",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für zander mit zitronenpfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Zander – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Zander sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f035",
+    "type": "Fisch",
+    "title": "Zander – Chili geräuchert",
+    "food": "Zander",
+    "flavor": "Chili",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für zander mit chiliem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Zander – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Zander sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f036",
+    "type": "Fisch",
+    "title": "Zander – Honig-Senf geräuchert",
+    "food": "Zander",
+    "flavor": "Honig-Senf",
+    "wood": "Eiche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für zander mit honig-senfem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Zander – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Zander sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f037",
+    "type": "Fisch",
+    "title": "Heilbutt – klassisch geräuchert",
+    "food": "Heilbutt",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für heilbutt mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Heilbutt – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Heilbutt sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f038",
+    "type": "Fisch",
+    "title": "Heilbutt – Kräuter geräuchert",
+    "food": "Heilbutt",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für heilbutt mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Heilbutt – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Heilbutt sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f039",
+    "type": "Fisch",
+    "title": "Heilbutt – Knoblauch geräuchert",
+    "food": "Heilbutt",
+    "flavor": "Knoblauch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für heilbutt mit knoblauchem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Heilbutt – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Heilbutt sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f040",
+    "type": "Fisch",
+    "title": "Heilbutt – Zitronenpfeffer geräuchert",
+    "food": "Heilbutt",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für heilbutt mit zitronenpfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Heilbutt – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Heilbutt sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f041",
+    "type": "Fisch",
+    "title": "Heilbutt – Chili geräuchert",
+    "food": "Heilbutt",
+    "flavor": "Chili",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für heilbutt mit chiliem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Heilbutt – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Heilbutt sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f042",
+    "type": "Fisch",
+    "title": "Heilbutt – Honig-Senf geräuchert",
+    "food": "Heilbutt",
+    "flavor": "Honig-Senf",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für heilbutt mit honig-senfem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Heilbutt – küchenfertig",
+      "milde Fisch-Räucherlauge – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Heilbutt sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "milde Fisch-Räucherlauge exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f043",
+    "type": "Fisch",
+    "title": "Karpfen – klassisch geräuchert",
+    "food": "Karpfen",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für karpfen mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Karpfen – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Karpfen sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f044",
+    "type": "Fisch",
+    "title": "Karpfen – Kräuter geräuchert",
+    "food": "Karpfen",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für karpfen mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Karpfen – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Karpfen sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f045",
+    "type": "Fisch",
+    "title": "Karpfen – Knoblauch geräuchert",
+    "food": "Karpfen",
+    "flavor": "Knoblauch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für karpfen mit knoblauchem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Karpfen – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Karpfen sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f046",
+    "type": "Fisch",
+    "title": "Karpfen – Zitronenpfeffer geräuchert",
+    "food": "Karpfen",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für karpfen mit zitronenpfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Karpfen – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Karpfen sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f047",
+    "type": "Fisch",
+    "title": "Karpfen – Chili geräuchert",
+    "food": "Karpfen",
+    "flavor": "Chili",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für karpfen mit chiliem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Karpfen – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Karpfen sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f048",
+    "type": "Fisch",
+    "title": "Karpfen – Honig-Senf geräuchert",
+    "food": "Karpfen",
+    "flavor": "Honig-Senf",
+    "wood": "Eiche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für karpfen mit honig-senfem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Karpfen – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Karpfen sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f049",
+    "type": "Fisch",
+    "title": "Hornhecht – klassisch geräuchert",
+    "food": "Hornhecht",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hornhecht mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Hornhecht – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hornhecht sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f050",
+    "type": "Fisch",
+    "title": "Hornhecht – Kräuter geräuchert",
+    "food": "Hornhecht",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hornhecht mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Hornhecht – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hornhecht sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f051",
+    "type": "Fisch",
+    "title": "Hornhecht – Knoblauch geräuchert",
+    "food": "Hornhecht",
+    "flavor": "Knoblauch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hornhecht mit knoblauchem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Hornhecht – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hornhecht sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f052",
+    "type": "Fisch",
+    "title": "Hornhecht – Zitronenpfeffer geräuchert",
+    "food": "Hornhecht",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hornhecht mit zitronenpfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Hornhecht – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hornhecht sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f053",
+    "type": "Fisch",
+    "title": "Hornhecht – Chili geräuchert",
+    "food": "Hornhecht",
+    "flavor": "Chili",
+    "wood": "Buche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hornhecht mit chiliem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Hornhecht – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hornhecht sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f054",
+    "type": "Fisch",
+    "title": "Hornhecht – Honig-Senf geräuchert",
+    "food": "Hornhecht",
+    "flavor": "Honig-Senf",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hornhecht mit honig-senfem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Hornhecht – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hornhecht sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f055",
+    "type": "Fisch",
+    "title": "Hering – klassisch geräuchert",
+    "food": "Hering",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hering mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Hering – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hering sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f056",
+    "type": "Fisch",
+    "title": "Hering – Kräuter geräuchert",
+    "food": "Hering",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hering mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Hering – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hering sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f057",
+    "type": "Fisch",
+    "title": "Hering – Knoblauch geräuchert",
+    "food": "Hering",
+    "flavor": "Knoblauch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hering mit knoblauchem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Hering – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Buche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hering sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Buche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Buche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f058",
+    "type": "Fisch",
+    "title": "Hering – Zitronenpfeffer geräuchert",
+    "food": "Hering",
+    "flavor": "Zitronenpfeffer",
+    "wood": "Erle",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hering mit zitronenpfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Hering – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Erle-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hering sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Erle-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Erle eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f059",
+    "type": "Fisch",
+    "title": "Hering – Chili geräuchert",
+    "food": "Hering",
+    "flavor": "Chili",
+    "wood": "Kirsche",
+    "difficulty": "Einfach",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hering mit chiliem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Hering – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Kirsche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hering sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Kirsche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Kirsche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "f060",
+    "type": "Fisch",
+    "title": "Hering – Honig-Senf geräuchert",
+    "food": "Hering",
+    "flavor": "Honig-Senf",
+    "wood": "Eiche",
+    "difficulty": "Mittel",
+    "method": "Heißräuchern",
+    "intro": "Ein ausgewogenes Räucherhaken24-Rezept für hering mit honig-senfem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Hering – küchenfertig",
+      "Räucherlauge Forelle – Dosierung nach Etikett",
+      "Eiche-Räuchermehl",
+      "optional Kräuter, Pfeffer oder Zitrusabrieb passend zum Aroma"
+    ],
+    "steps": [
+      "Hering sauber vorbereiten, ausnehmen bzw. portionieren und durchgehend kühl halten.",
+      "Räucherlauge Forelle exakt nach Packungsangabe ansetzen. Fisch vollständig bedecken und gekühlt einlegen.",
+      "Nach dem Einlegen gemäß Produktanleitung abspülen, trocken tupfen und an einem kühlen, luftigen Ort antrocknen lassen.",
+      "Räucherofen vorbereiten und Eiche-Räuchermehl passend zur Geräteart und gewünschten Rauchintensität einsetzen.",
+      "Fisch kontrolliert räuchern. Garzustand immer anhand Fischgröße, Gerät und sicherer Kerntemperatur beurteilen.",
+      "Nach dem Räuchern kurz ruhen lassen; warm servieren oder vollständig abkühlen und gekühlt lagern."
+    ],
+    "tip": "Eiche eher gleichmäßig als zu stark rauchen lassen – das hält das Aroma sauber und ausgewogen.",
+    "warning": "Räucherlauge immer exakt nach Produktetikett dosieren. Fisch durchgehend kühl halten und hygienisch verarbeiten."
+  },
+  {
+    "id": "m001",
+    "type": "Fleisch",
+    "title": "Schweinenacken – klassisch",
+    "food": "Schweinenacken",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schweinenacken mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Schweinenacken – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schweinenacken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schweinenacken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m002",
+    "type": "Fleisch",
+    "title": "Schweinenacken – Pfeffer",
+    "food": "Schweinenacken",
+    "flavor": "Pfeffer",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schweinenacken mit pfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Schweinenacken – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schweinenacken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schweinenacken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m003",
+    "type": "Fleisch",
+    "title": "Schweinenacken – Kräuter",
+    "food": "Schweinenacken",
+    "flavor": "Kräuter",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schweinenacken mit kräuterem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Schweinenacken – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schweinenacken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schweinenacken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m004",
+    "type": "Fleisch",
+    "title": "Schweinefilet – klassisch",
+    "food": "Schweinefilet",
+    "flavor": "klassisch",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schweinefilet mit klassischem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Schweinefilet – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schweinefilet sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schweinefilet bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m005",
+    "type": "Fleisch",
+    "title": "Schweinefilet – Pfeffer",
+    "food": "Schweinefilet",
+    "flavor": "Pfeffer",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schweinefilet mit pfefferem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Schweinefilet – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schweinefilet sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schweinefilet bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m006",
+    "type": "Fleisch",
+    "title": "Schweinefilet – Kräuter",
+    "food": "Schweinefilet",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schweinefilet mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Schweinefilet – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schweinefilet sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schweinefilet bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m007",
+    "type": "Fleisch",
+    "title": "Bauchfleisch – klassisch",
+    "food": "Bauchfleisch",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für bauchfleisch mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Bauchfleisch – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Bauchfleisch sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei bauchfleisch bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m008",
+    "type": "Fleisch",
+    "title": "Bauchfleisch – Pfeffer",
+    "food": "Bauchfleisch",
+    "flavor": "Pfeffer",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für bauchfleisch mit pfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Bauchfleisch – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Bauchfleisch sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei bauchfleisch bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m009",
+    "type": "Fleisch",
+    "title": "Bauchfleisch – Kräuter",
+    "food": "Bauchfleisch",
+    "flavor": "Kräuter",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für bauchfleisch mit kräuterem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Bauchfleisch – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Bauchfleisch sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei bauchfleisch bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m010",
+    "type": "Fleisch",
+    "title": "Kasseler Art – klassisch",
+    "food": "Kasseler Art",
+    "flavor": "klassisch",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für kasseler art mit klassischem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Kasseler Art – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Kasseler Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei kasseler art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m011",
+    "type": "Fleisch",
+    "title": "Kasseler Art – Pfeffer",
+    "food": "Kasseler Art",
+    "flavor": "Pfeffer",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für kasseler art mit pfefferem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Kasseler Art – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Kasseler Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei kasseler art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m012",
+    "type": "Fleisch",
+    "title": "Kasseler Art – Kräuter",
+    "food": "Kasseler Art",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für kasseler art mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Kasseler Art – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Kasseler Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei kasseler art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m013",
+    "type": "Fleisch",
+    "title": "Hähnchenbrust – klassisch",
+    "food": "Hähnchenbrust",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für hähnchenbrust mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Hähnchenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Hähnchenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei hähnchenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m014",
+    "type": "Fleisch",
+    "title": "Hähnchenbrust – Pfeffer",
+    "food": "Hähnchenbrust",
+    "flavor": "Pfeffer",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für hähnchenbrust mit pfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Hähnchenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Hähnchenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei hähnchenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m015",
+    "type": "Fleisch",
+    "title": "Hähnchenbrust – Kräuter",
+    "food": "Hähnchenbrust",
+    "flavor": "Kräuter",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für hähnchenbrust mit kräuterem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Hähnchenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Hähnchenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei hähnchenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m016",
+    "type": "Fleisch",
+    "title": "Putenbrust – klassisch",
+    "food": "Putenbrust",
+    "flavor": "klassisch",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für putenbrust mit klassischem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Putenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Putenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei putenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m017",
+    "type": "Fleisch",
+    "title": "Putenbrust – Pfeffer",
+    "food": "Putenbrust",
+    "flavor": "Pfeffer",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für putenbrust mit pfefferem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Putenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Putenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei putenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m018",
+    "type": "Fleisch",
+    "title": "Putenbrust – Kräuter",
+    "food": "Putenbrust",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für putenbrust mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Putenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Putenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei putenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m019",
+    "type": "Fleisch",
+    "title": "Rinderbrust – klassisch",
+    "food": "Rinderbrust",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rinderbrust mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Rinderbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rinderbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rinderbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m020",
+    "type": "Fleisch",
+    "title": "Rinderbrust – Pfeffer",
+    "food": "Rinderbrust",
+    "flavor": "Pfeffer",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rinderbrust mit pfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Rinderbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rinderbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rinderbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m021",
+    "type": "Fleisch",
+    "title": "Rinderbrust – Kräuter",
+    "food": "Rinderbrust",
+    "flavor": "Kräuter",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rinderbrust mit kräuterem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Rinderbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rinderbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rinderbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m022",
+    "type": "Fleisch",
+    "title": "Rinderhüfte – klassisch",
+    "food": "Rinderhüfte",
+    "flavor": "klassisch",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rinderhüfte mit klassischem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Rinderhüfte – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rinderhüfte sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rinderhüfte bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m023",
+    "type": "Fleisch",
+    "title": "Rinderhüfte – Pfeffer",
+    "food": "Rinderhüfte",
+    "flavor": "Pfeffer",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rinderhüfte mit pfefferem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Rinderhüfte – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rinderhüfte sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rinderhüfte bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m024",
+    "type": "Fleisch",
+    "title": "Rinderhüfte – Kräuter",
+    "food": "Rinderhüfte",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rinderhüfte mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Rinderhüfte – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rinderhüfte sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rinderhüfte bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m025",
+    "type": "Fleisch",
+    "title": "Rindersaftschinken – klassisch",
+    "food": "Rindersaftschinken",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rindersaftschinken mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Rindersaftschinken – frisch und küchenfertig",
+      "Rindersaftschinken-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rindersaftschinken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Rindersaftschinken-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rindersaftschinken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m026",
+    "type": "Fleisch",
+    "title": "Rindersaftschinken – Pfeffer",
+    "food": "Rindersaftschinken",
+    "flavor": "Pfeffer",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rindersaftschinken mit pfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Rindersaftschinken – frisch und küchenfertig",
+      "Rindersaftschinken-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rindersaftschinken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Rindersaftschinken-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rindersaftschinken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m027",
+    "type": "Fleisch",
+    "title": "Rindersaftschinken – Kräuter",
+    "food": "Rindersaftschinken",
+    "flavor": "Kräuter",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rindersaftschinken mit kräuterem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Rindersaftschinken – frisch und küchenfertig",
+      "Rindersaftschinken-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rindersaftschinken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Rindersaftschinken-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rindersaftschinken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m028",
+    "type": "Fleisch",
+    "title": "Lachsschinken – klassisch",
+    "food": "Lachsschinken",
+    "flavor": "klassisch",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für lachsschinken mit klassischem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Lachsschinken – frisch und küchenfertig",
+      "Lachsschinken-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Lachsschinken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Lachsschinken-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei lachsschinken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m029",
+    "type": "Fleisch",
+    "title": "Lachsschinken – Pfeffer",
+    "food": "Lachsschinken",
+    "flavor": "Pfeffer",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für lachsschinken mit pfefferem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Lachsschinken – frisch und küchenfertig",
+      "Lachsschinken-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Lachsschinken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Lachsschinken-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei lachsschinken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m030",
+    "type": "Fleisch",
+    "title": "Lachsschinken – Kräuter",
+    "food": "Lachsschinken",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für lachsschinken mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Lachsschinken – frisch und küchenfertig",
+      "Lachsschinken-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Lachsschinken sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Lachsschinken-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei lachsschinken bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m031",
+    "type": "Fleisch",
+    "title": "Schwarzwälder Art – klassisch",
+    "food": "Schwarzwälder Art",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schwarzwälder art mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Schwarzwälder Art – frisch und küchenfertig",
+      "Schwarzwälder-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schwarzwälder Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Schwarzwälder-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schwarzwälder art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m032",
+    "type": "Fleisch",
+    "title": "Schwarzwälder Art – Pfeffer",
+    "food": "Schwarzwälder Art",
+    "flavor": "Pfeffer",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schwarzwälder art mit pfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Schwarzwälder Art – frisch und küchenfertig",
+      "Schwarzwälder-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schwarzwälder Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Schwarzwälder-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schwarzwälder art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m033",
+    "type": "Fleisch",
+    "title": "Schwarzwälder Art – Kräuter",
+    "food": "Schwarzwälder Art",
+    "flavor": "Kräuter",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für schwarzwälder art mit kräuterem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Schwarzwälder Art – frisch und küchenfertig",
+      "Schwarzwälder-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Schwarzwälder Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Schwarzwälder-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei schwarzwälder art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m034",
+    "type": "Fleisch",
+    "title": "Parma Art – klassisch",
+    "food": "Parma Art",
+    "flavor": "klassisch",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für parma art mit klassischem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Parma Art – frisch und küchenfertig",
+      "Parma-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Parma Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Parma-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei parma art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m035",
+    "type": "Fleisch",
+    "title": "Parma Art – Pfeffer",
+    "food": "Parma Art",
+    "flavor": "Pfeffer",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für parma art mit pfefferem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Parma Art – frisch und küchenfertig",
+      "Parma-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Parma Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Parma-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei parma art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m036",
+    "type": "Fleisch",
+    "title": "Parma Art – Kräuter",
+    "food": "Parma Art",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für parma art mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Parma Art – frisch und küchenfertig",
+      "Parma-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Parma Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Parma-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei parma art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m037",
+    "type": "Fleisch",
+    "title": "Serrano Art – klassisch",
+    "food": "Serrano Art",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für serrano art mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Serrano Art – frisch und küchenfertig",
+      "Serrano-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Serrano Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Serrano-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei serrano art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m038",
+    "type": "Fleisch",
+    "title": "Serrano Art – Pfeffer",
+    "food": "Serrano Art",
+    "flavor": "Pfeffer",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für serrano art mit pfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Serrano Art – frisch und küchenfertig",
+      "Serrano-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Serrano Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Serrano-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei serrano art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m039",
+    "type": "Fleisch",
+    "title": "Serrano Art – Kräuter",
+    "food": "Serrano Art",
+    "flavor": "Kräuter",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für serrano art mit kräuterem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Serrano Art – frisch und küchenfertig",
+      "Serrano-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Serrano Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "Serrano-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei serrano art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m040",
+    "type": "Fleisch",
+    "title": "Wildschwein – klassisch",
+    "food": "Wildschwein",
+    "flavor": "klassisch",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für wildschwein mit klassischem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Wildschwein – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Wildschwein sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei wildschwein bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m041",
+    "type": "Fleisch",
+    "title": "Wildschwein – Pfeffer",
+    "food": "Wildschwein",
+    "flavor": "Pfeffer",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für wildschwein mit pfefferem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Wildschwein – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Wildschwein sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei wildschwein bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m042",
+    "type": "Fleisch",
+    "title": "Wildschwein – Kräuter",
+    "food": "Wildschwein",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für wildschwein mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Wildschwein – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Wildschwein sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei wildschwein bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m043",
+    "type": "Fleisch",
+    "title": "Rehkeule – klassisch",
+    "food": "Rehkeule",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rehkeule mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Rehkeule – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rehkeule sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rehkeule bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m044",
+    "type": "Fleisch",
+    "title": "Rehkeule – Pfeffer",
+    "food": "Rehkeule",
+    "flavor": "Pfeffer",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rehkeule mit pfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Rehkeule – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rehkeule sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rehkeule bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m045",
+    "type": "Fleisch",
+    "title": "Rehkeule – Kräuter",
+    "food": "Rehkeule",
+    "flavor": "Kräuter",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rehkeule mit kräuterem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Rehkeule – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rehkeule sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rehkeule bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m046",
+    "type": "Fleisch",
+    "title": "Entenbrust – klassisch",
+    "food": "Entenbrust",
+    "flavor": "klassisch",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für entenbrust mit klassischem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Entenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Entenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei entenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m047",
+    "type": "Fleisch",
+    "title": "Entenbrust – Pfeffer",
+    "food": "Entenbrust",
+    "flavor": "Pfeffer",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für entenbrust mit pfefferem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Entenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Entenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei entenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m048",
+    "type": "Fleisch",
+    "title": "Entenbrust – Kräuter",
+    "food": "Entenbrust",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für entenbrust mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Entenbrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Entenbrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei entenbrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m049",
+    "type": "Fleisch",
+    "title": "Gänsebrust – klassisch",
+    "food": "Gänsebrust",
+    "flavor": "klassisch",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für gänsebrust mit klassischem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Gänsebrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Gänsebrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei gänsebrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m050",
+    "type": "Fleisch",
+    "title": "Gänsebrust – Pfeffer",
+    "food": "Gänsebrust",
+    "flavor": "Pfeffer",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für gänsebrust mit pfefferem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Gänsebrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Gänsebrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei gänsebrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m051",
+    "type": "Fleisch",
+    "title": "Gänsebrust – Kräuter",
+    "food": "Gänsebrust",
+    "flavor": "Kräuter",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für gänsebrust mit kräuterem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Gänsebrust – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Gänsebrust sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei gänsebrust bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m052",
+    "type": "Fleisch",
+    "title": "Lammkeule – klassisch",
+    "food": "Lammkeule",
+    "flavor": "klassisch",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für lammkeule mit klassischem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Lammkeule – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Lammkeule sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei lammkeule bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m053",
+    "type": "Fleisch",
+    "title": "Lammkeule – Pfeffer",
+    "food": "Lammkeule",
+    "flavor": "Pfeffer",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für lammkeule mit pfefferem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Lammkeule – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Lammkeule sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei lammkeule bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m054",
+    "type": "Fleisch",
+    "title": "Lammkeule – Kräuter",
+    "food": "Lammkeule",
+    "flavor": "Kräuter",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für lammkeule mit kräuterem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Lammkeule – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Lammkeule sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei lammkeule bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m055",
+    "type": "Fleisch",
+    "title": "Rippchen – klassisch",
+    "food": "Rippchen",
+    "flavor": "klassisch",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rippchen mit klassischem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Rippchen – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rippchen sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rippchen bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m056",
+    "type": "Fleisch",
+    "title": "Rippchen – Pfeffer",
+    "food": "Rippchen",
+    "flavor": "Pfeffer",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rippchen mit pfefferem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Rippchen – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rippchen sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rippchen bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m057",
+    "type": "Fleisch",
+    "title": "Rippchen – Kräuter",
+    "food": "Rippchen",
+    "flavor": "Kräuter",
+    "wood": "Buche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für rippchen mit kräuterem Profil und buche als Raucharoma.",
+    "ingredients": [
+      "Rippchen – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Buche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Rippchen sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Buche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei rippchen bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m058",
+    "type": "Fleisch",
+    "title": "Pastrami Art – klassisch",
+    "food": "Pastrami Art",
+    "flavor": "klassisch",
+    "wood": "Erle",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für pastrami art mit klassischem Profil und erle als Raucharoma.",
+    "ingredients": [
+      "Pastrami Art – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Erle-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Pastrami Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Erle-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei pastrami art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m059",
+    "type": "Fleisch",
+    "title": "Pastrami Art – Pfeffer",
+    "food": "Pastrami Art",
+    "flavor": "Pfeffer",
+    "wood": "Kirsche",
+    "difficulty": "Mittel",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für pastrami art mit pfefferem Profil und kirsche als Raucharoma.",
+    "ingredients": [
+      "Pastrami Art – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Kirsche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Pastrami Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Kirsche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei pastrami art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  },
+  {
+    "id": "m060",
+    "type": "Fleisch",
+    "title": "Pastrami Art – Kräuter",
+    "food": "Pastrami Art",
+    "flavor": "Kräuter",
+    "wood": "Eiche",
+    "difficulty": "Fortgeschritten",
+    "method": "Pökeln & Räuchern",
+    "intro": "Ein eigenständig formuliertes Räucherhaken24-Rezept für pastrami art mit kräuterem Profil und eiche als Raucharoma.",
+    "ingredients": [
+      "Pastrami Art – frisch und küchenfertig",
+      "passende Räucherhaken24-Pökelmischung – ausschließlich nach Packungsangabe",
+      "Eiche-Räuchermehl",
+      "optional Gewürze passend zum gewünschten Profil"
+    ],
+    "steps": [
+      "Pastrami Art sauber parieren, trocken tupfen und hygienisch vorbereiten.",
+      "passende Räucherhaken24-Pökelmischung ausschließlich nach Dosier- und Anwendungsvorgabe des Produktetiketts verwenden.",
+      "Fleisch in einem geeigneten lebensmittelechten Behälter oder Vakuumbeutel durchgehend gekühlt pökeln.",
+      "Nach Abschluss des Pökelns nach Produktanleitung weiterverarbeiten; falls vorgesehen abspülen, trocknen und ausreichend durchbrennen bzw. antrocknen lassen.",
+      "Mit Eiche-Räuchermehl räuchern. Methode und Temperatur müssen zur Fleischart und zum gewünschten Endprodukt passen.",
+      "Vor dem Verzehr sichere Kerntemperatur bzw. vorgesehenen Reifegrad erreichen, anschließend hygienisch abkühlen und gekühlt lagern."
+    ],
+    "tip": "Bei pastrami art bringt ein gleichmäßiges Stück meist mehr als ein zu intensives Raucharoma.",
+    "warning": "Bei Pökelmischungen – insbesondere nitritpökelsalzhaltigen Produkten – niemals eine frei erfundene Dosierung verwenden. Immer Produktetikett und lebensmittelhygienische Vorgaben beachten."
+  }
+]

@@ -1,0 +1,18 @@
+
+/* V25 – einheitlicher Räucherhaken-Konfigurator */
+#uConfigurator,.configurator,#ultraConfiguratorV22{display:none!important}
+.rhHookConfig{margin:22px 0;padding:20px;border:1px solid #dfcdbb;border-radius:15px;background:linear-gradient(180deg,#fffefc,#fff8f1);box-shadow:0 12px 30px rgba(58,33,18,.07)}
+.rhHookConfig h3{margin:0 0 5px;font-size:24px;color:#342014}.rhHookConfigIntro{margin:0 0 16px;font-size:11px;color:#77665a}
+.rhHookConfigGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.rhHookGroup{padding:13px;border:1px solid #e5d7ca;border-radius:11px;background:#fff}
+.rhHookGroup>label{display:block;margin-bottom:8px;font-size:12px;font-weight:900;color:#3e291a}
+.rhHookChoices{display:flex;flex-wrap:wrap;gap:8px}
+.rhHookChoices button{flex:1 1 100px;min-height:48px;padding:9px 10px;border:1px solid #d9c8b8;border-radius:9px;background:#fffaf5;color:#4a2d1b;font-weight:850;cursor:pointer;line-height:1.25}
+.rhHookChoices button small{display:block;margin-top:3px;font-size:9px;font-weight:700;color:#7e6c5d}
+.rhHookChoices button.active{border-color:#3a2112;background:#3a2112;color:#fff;box-shadow:0 6px 15px rgba(58,33,18,.18)}
+.rhHookChoices button.active small{color:#ead9ca}
+.rhHookSummary{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin:14px 0 11px;padding:14px 16px;border:1px solid #e6cfb5;border-radius:11px;background:#fff2e2}
+.rhHookSummary small{display:block;color:#955727;font-weight:850}.rhHookSummary strong{display:block;margin:3px 0;font-size:18px;color:#321e11}.rhHookUnit{font-size:11px;color:#716052}.rhHookPrice{font-size:28px;font-weight:950;color:#b10f10;white-space:nowrap}
+.rhHookMeta{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}.rhHookMeta span{padding:5px 8px;border-radius:999px;background:#f4f8f3;color:#2a703a;font-size:9px;font-weight:800;border:1px solid #cce2d0}.rhHookMeta span:last-child{background:#fff3e5;color:#74431d;border-color:#efd7bd}
+.rhHookCart{width:100%!important;min-height:48px!important}
+@media(max-width:720px){.rhHookConfigGrid{grid-template-columns:1fr}.rhHookSummary{grid-template-columns:1fr}.rhHookPrice{font-size:24px}}

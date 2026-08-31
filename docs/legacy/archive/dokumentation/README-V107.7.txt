@@ -1,0 +1,1 @@
+V107.7: Produktkarten im Shop vereinheitlicht. Neue und bestehende Produkte nutzen jetzt dieselbe Kartenlogik mit gleicher Struktur, einheitlichen Badges, festen Infozeilen und konsistenter Button-/Preisposition.

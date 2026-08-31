@@ -1,0 +1,99 @@
+================================================================================
+RÄUCHERHAKEN24 · V2026.3 „ATELIER"
+Gemeinsame Designsprache für Shop und OrgaBoard + Near-Realtime-Kopplung
+================================================================================
+
+WAS NEU IST (7 Dateien)
+--------------------------------------------------------------------------------
+  rh-design-system.css                       Gemeinsame Marken-Variablen (--rh-*)
+                                             für BEIDE Oberflächen.
+  rh-atelier-2026.css                        Gestaltungsschicht öffentlicher Shop
+  rh-atelier-2026.js                         Bewegung, Kopfzeile, Bilddarstellung,
+                                             Barrierefreiheit, Warenkorbanzeige
+  rh-realtime-2026.js                        Near-Realtime-Kopplung (beide Seiten)
+  shop-catalog-version.php                   Winziger Revisions-Endpunkt (~120 B)
+  orgaboard/assets/orgaboard-atelier-2026.css  Gestaltungsschicht OrgaBoard
+  orgaboard/assets/orgaboard-atelier-2026.js   Bewegung, Diagramme, Speicherzustände
+
+WAS GEÄNDERT WURDE (5 Code-Dateien + 36 Seiten nur Einbindung)
+--------------------------------------------------------------------------------
+  site-v104.js                Kopfzeile + Hauptnavigation neu strukturiert
+  product-sync-v1061.js       FEHLERBEHEBUNG actionButtonsHtml + Realtime-Anbindung
+  orgaboard/admin-v9911.js    1 Zeile: Änderungsmeldung an geöffnete Shop-Tabs
+  orgaboard/cockpit.php       Zusätzlicher Schlüssel finance.channels (rein additiv)
+  orgaboard/index.php         Einbindung der neuen Dateien
+  35 HTML-Seiten + artikel.php  ausschliesslich Einbindung der neuen Dateien
+
+BEHOBENE FEHLER (bestanden bereits vor diesem Update)
+--------------------------------------------------------------------------------
+1) product-sync-v1061.js rief `actionButtonsHtml()` auf – eine Funktion, die es
+   im gesamten Projekt nicht gab. Der ReferenceError brach die komplette
+   Katalogsynchronisierung ab. Folge: NEU im OrgaBoard angelegte und
+   veröffentlichte Räucherhaken erschienen NIE im Shop.
+2) Die Zahl neben dem Warenkorb in der Kopfzeile blieb dauerhaft auf 0, weil das
+   einzige Ziel-Element [data-cart-count] von einer späteren Schicht entfernt wurde.
+3) Wurde ein Artikel bei offener Warenkorb-Schublade hinzugefügt, zeigte die
+   Schublade weiter den alten Stand.
+4) Im „Powered by"-Band stand helle Schrift auf weisser Fläche (1,05:1).
+
+NEAR-REALTIME · WIE ES FUNKTIONIERT
+--------------------------------------------------------------------------------
+  1. BroadcastChannel("rh24-shop-sync")   gleicher Browser, sofort
+  2. localStorage "rh24-shop-catalog-refresh"  Rückfallebene
+  3. shop-catalog-version.php             andere Geräte, alle 1,5 s
+  4. Fokus / Sichtbarkeitswechsel         sofortige Prüfung
+
+  Die Revision setzt sich zusammen aus
+      MAX(products.updated_at) . COUNT(*) . veröffentlichte . Bestandssumme . Bestandszeilen
+  COUNT und Bestand sind nötig, weil ein endgültiges Löschen bzw. eine reine
+  Lageränderung MAX(updated_at) unverändert lassen würden.
+
+  Die vollständigen Produktdaten werden NUR geladen, wenn sich die Revision
+  wirklich geändert hat. Es gibt keinen Seitenreload.
+
+  Lastschutz: Die Revision liegt 1 Sekunde in einer Cachedatei – höchstens eine
+  Datenbankabfrage pro Sekunde, unabhängig von der Besucherzahl.
+  Der Endpunkt bindet bewusst NICHT bootstrap.php ein (keine Session-Sperre,
+  keine Schemaprüfung) und ist damit STRATO-tauglich.
+
+PRODUKTBILDER
+--------------------------------------------------------------------------------
+  SHA-256 über alle 43 Bilddateien vor und nach der Arbeit: 0 Abweichungen.
+  Es wird ausschliesslich die DARSTELLUNG gesteuert (object-fit: contain,
+  Containergrösse, object-position). Keine Filter, keine Farbveränderung,
+  kein Beschnitt der Dateien.
+
+ZURÜCKROLLEN
+--------------------------------------------------------------------------------
+  Die Gestaltungsschichten hängen an einer einzigen Klasse. Wird im <head>
+  `document.documentElement.classList.add('rh-atelier')` (Shop) bzw.
+  `...add('ob-atelier')` (OrgaBoard) entfernt, ist sofort wieder der
+  vorherige Stand aktiv – ohne eine Datei zu löschen.
+
+================================================================================
+NACHTRAG V2026.4 · REFERENZ-REKONSTRUKTION DER STARTSEITE
+================================================================================
+Die Startseite wurde anhand des Referenzbilds VERMESSEN (Inhalt 1280 px,
+Kopfzeile 74 px, Hero-Split 47/53 mit Randanschnitt rechts, Headline ~56 px,
+Schaltflächen-Radius 12 px, Kategorieleiste als verbundene 5er-Zeile,
+Service-Leiste, Editorial-4er, Ratgeber-Split 58/42, helle 5-Spalten-Fusszeile)
+und entsprechend neu aufgebaut.
+
+Neue Bilddateien (NUR Kopien – Originale unangetastet):
+  assets/generated/hero-raeucherfisch.jpg        (2×-Vergrösserung des
+                                                  vorhandenen Motivs)
+  assets/generated/hero-raeucherfisch-bild.jpg   (Zuschnitt 1,31:1 ohne die
+                                                  im Foto eingebrannte Karte)
+
+Kopfzeile und Fusszeile entstehen weiterhin ZENTRAL in site-v104.js und
+gelten damit automatisch auf allen Seiten (artikel.php erhält so erstmals
+eine vollständige Fusszeile).
+
+Bewusste Abweichungen von der Vorlage (Ehrlichkeitsgründe):
+  · 39 € Versandschwelle statt 69 € · 14 Tage Widerruf statt 30 Tage
+  · keine Sternebewertung/Kundenzahl (keine echten Daten vorhanden)
+  · keine Zahlungslogos (keine externen Zahlarten angebunden) – stattdessen
+    die echten Merkmale: Kauf auf Rechnung · DHL · DPD
+  · Partnerlogos-Zeile → neutrale Merkmalszeile (keine erfundenen Partner)
+  · Editorial-Karten „Fleisch/Räucherholz/Zubehör": echte Produktfotos auf
+    hellem Chip statt nicht vorhandener Stimmungsfotos

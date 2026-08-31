@@ -1,0 +1,18 @@
+Räucherhaken24 V61 – Orgaboard Fehlerbehebung
+Datum: 24.08.2026
+
+Behobener Fehler:
+ReferenceError: Can't find variable: closeModal
+Datei: orgaboard/admin-v61.js
+
+Ursache:
+Beim Zusammenführen der V61-Datei fehlten die beiden zentralen Dialogfunktionen openModal() und closeModal().
+Dadurch brach das JavaScript bereits beim Initialisieren des Schließen-Buttons in Zeile 258 ab.
+
+Korrektur:
+- openModal() wieder ergänzt
+- closeModal() wieder ergänzt
+- Schutz eingebaut, falls Modal-DOM-Elemente unerwartet fehlen
+- JavaScript-Syntaxprüfung mit Node erfolgreich
+
+Das bestehende Design und die übrigen V61-Funktionen wurden nicht verändert.

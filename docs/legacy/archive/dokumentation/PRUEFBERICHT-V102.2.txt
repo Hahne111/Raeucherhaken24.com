@@ -1,0 +1,31 @@
+PRÜFBERICHT V102.2 – DUPLIKAT-RENDER-FIX
+
+ERGEBNIS: BESTANDEN
+
+URSACHE / RISIKO
+- Die öffentliche Website verwendet mehrere historisch gewachsene JavaScript-Laufzeiten.
+- V65 Header/Home und V64 Navigation werden über site-v82.js dynamisch initialisiert.
+- modules-v12 erzeugt zusätzliche globale Oberflächen wie Suche, Merkliste, Vergleich, Cookie-Panel und Mobile-Dock.
+- Ohne durchgängige Einmal-Sicherung konnten bei erneuter Script-Ausführung oder späterer Doppel-Injektion Seitenelemente mehrfach im DOM vorhanden sein.
+
+BEHOBEN
+PASS · V65 Header/Home: globaler Initialisierungs-Guard
+PASS · V64 Navigation: vorhandener Guard bleibt aktiv
+PASS · modules-v12: UI-Binding und UI-Erzeugung gegen Mehrfachstart abgesichert
+PASS · runtime-v1022: Deduplizierung für Header, Navigation, Hero, MainLayout, Footer, Warenkorb-/KI-Overlays und Zusatzmodule
+PASS · 39 öffentliche Seiten laden runtime-v1022 genau einmal
+PASS · keine doppelten Script-src-Referenzen in öffentlichen Seiten
+PASS · Cache-Busting auf 102.2
+
+TESTS
+PASS · 61 JavaScript-Dateien: Syntax ohne Fehler
+PASS · 52 PHP-Dateien: Syntax ohne Fehler
+PASS · 39 Seiten: site-v82.js?v=102.2 genau eingebunden
+PASS · 39 Seiten: runtime-v1022.js?v=102.2 genau eingebunden
+PASS · 0 alte site-v82.js?v=82 Referenzen
+PASS · 0 doppelte Script-src-Referenzen
+
+DESIGN / FUNKTIONEN
+- V102.1 Light Professional bleibt bestehen.
+- Keine Produkt-, Warenkorb-, Smoky-, Login-, Marktplatz- oder Orgaboard-Funktion wurde absichtlich entfernt.
+- private/db-config.php bleibt unberührt.

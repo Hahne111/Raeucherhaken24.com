@@ -1,0 +1,7 @@
+Bewertungsportal V24
+- Auf allen Produktseiten automatisch eingeblendet.
+- Durchschnitt, Sterne-Verteilung, einzelne Bewertungen und Bewertungsformular.
+- Neue Bewertungen werden in dieser Testversion per localStorage im Browser gespeichert.
+- Drei bereits sichtbare Einträge pro Produkttyp sind ausdrücklich als DEMO / PLATZHALTER gekennzeichnet.
+- Sie dürfen nicht als echte Kundenbewertungen dargestellt werden.
+- Für Livebetrieb empfohlen: serverseitige Datenbank, Moderationsstatus, Spam-Schutz, DSGVO-konforme Einwilligung und optional Bestellabgleich für 'Verifizierter Kauf'.

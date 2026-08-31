@@ -1,0 +1,6 @@
+V12 – sichtbar umgesetzt
+1. Shop zeigt jetzt fünf Räuchermehl-Produkte mit echten Produktbildern/Farbunterschieden.
+2. Preise sichtbar: Buche/Erle/Birke/Eiche 4,95 € / 500 g = 0,99 €/100 g; Kirsche 6,95 € / 500 g = 1,39 €/100 g.
+3. Körnung-1-Hinweis für Räucherschnecken direkt im Shop.
+4. Schinkenseite zeigt die angebotenen Pökelmischungen als sichtbaren Rezeptbereich mit Sprungnavigation.
+5. Neue CSS-/JS-Dateinamen verhindern, dass eine alte Browser-Cache-Version angezeigt wird.

@@ -1,0 +1,7 @@
+V16:
+- V13 layout and all previous shop modules preserved.
+- Approved mascot renamed Smoky and used as central AI advisor.
+- Smoky hero inserted only on homepage; lower content remains V13.
+- Product pages include Smoky-specific product advice.
+- Female German speech voice is preferred where the browser provides one.
+- Cart, comparison, wishlist, product config, customer/dealer login, legal pages, shipping and product content remain in place.

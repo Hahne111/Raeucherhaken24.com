@@ -1,0 +1,283 @@
+/* =========================================================
+   V102 · ORGABOARD LIGHT PROFESSIONAL
+   Ruhig, lesbar, konsistent und ohne überladene Effekte
+   ========================================================= */
+:root{
+  --ob102-bg:#f4f1ed;
+  --ob102-panel:#ffffff;
+  --ob102-panel-soft:#f9f7f4;
+  --ob102-ink:#282c31;
+  --ob102-text:#4b5158;
+  --ob102-muted:#78808a;
+  --ob102-line:#e2dcd5;
+  --ob102-line-strong:#d5cdc4;
+  --ob102-accent:#c96f2c;
+  --ob102-accent-action:#a9561e;
+  --ob102-accent-hover:#8e4715;
+  --ob102-accent-soft:#fff1e5;
+  --ob102-success:#34795a;
+  --ob102-danger:#b84c45;
+  --ob102-shadow:0 7px 22px rgba(48,39,31,.065);
+  --ob102-shadow-hover:0 12px 28px rgba(48,39,31,.10);
+  --radius:16px;
+}
+html,body,body.ob-app{background:var(--ob102-bg)!important;color:var(--ob102-ink)!important}
+body.ob-app::before,body.ob-app::after{display:none!important}
+
+/* Navigation */
+.appFrame{grid-template-columns:264px 1fr!important}
+.sideNav{
+  width:264px!important;
+  background:#fff!important;
+  color:var(--ob102-ink)!important;
+  border-right:1px solid var(--ob102-line)!important;
+  box-shadow:4px 0 18px rgba(44,36,29,.055)!important;
+}
+.sideNav::before{display:none!important}
+.sideBrand{border-bottom:1px solid var(--ob102-line)!important;padding:24px 20px 18px!important}
+.sideLogo span{color:#31353a!important}.sideLogo strong{color:var(--ob102-accent)!important}.sideBrand small{color:#8a6d56!important}
+.sideNav nav{padding:12px 10px 18px!important}
+.navSectionLabel{margin-top:10px!important}.navSectionLabel span{color:#9a8f85!important;font-size:9px!important;letter-spacing:.13em!important}
+.navItem{
+  min-height:42px!important;
+  grid-template-columns:28px minmax(0,1fr) auto!important;
+  gap:8px!important;
+  margin:3px 0!important;
+  padding:10px 12px!important;
+  border:1px solid transparent!important;
+  border-radius:11px!important;
+  background:transparent!important;
+  color:#4a5057!important;
+  box-shadow:none!important;
+  transition:background .16s ease,color .16s ease,border-color .16s ease,transform .16s ease!important;
+}
+.navItem span{font-size:16px!important;color:#7b7169!important}.navItem b{font-size:12.5px!important;font-weight:780!important;white-space:normal!important;line-height:1.2!important}
+.navItem em{background:#f3eee8!important;color:#8b5c35!important}
+.navItem:hover{background:#faf7f3!important;border-color:#eee5dc!important;color:#31363c!important;transform:translateX(1px)!important}
+.navItem.active{background:var(--ob102-accent-soft)!important;border-color:#efcfb5!important;color:#8a461a!important;box-shadow:inset 3px 0 0 var(--ob102-accent)!important}
+.navItem.active span{color:var(--ob102-accent-hover)!important}.navItem.active em{background:#fff!important;color:#95501f!important}
+.sideFoot{border-top:1px solid var(--ob102-line)!important;background:#fbf9f7!important}
+.sideFoot a,.sideFoot button{color:#655b53!important;border-radius:9px!important;padding:8px 10px!important}.sideFoot a:hover,.sideFoot button:hover{background:#f3ede7!important;color:#2f3338!important}
+
+/* Kopfzeile */
+.mainArea{grid-column:2!important}
+.topBar{
+  height:78px!important;
+  background:rgba(255,255,255,.96)!important;
+  border-bottom:1px solid var(--ob102-line)!important;
+  box-shadow:0 3px 15px rgba(46,37,30,.045)!important;
+  backdrop-filter:blur(12px)!important;
+}
+.topBar h1{color:var(--ob102-ink)!important;font-size:23px!important}
+.topBar>div:first-of-type small{color:#a05d2d!important}
+.globalSearch,.adminChip,.iconBtn,.mobileMenu{
+  background:#fff!important;border:1px solid var(--ob102-line)!important;box-shadow:none!important;color:#454b52!important
+}
+.globalSearch{background:#f8f6f3!important}.globalSearch input{background:transparent!important;border:0!important;box-shadow:none!important;color:#383e45!important}
+.serverBuildBadge{background:#fff5ec!important;color:#9a511f!important;border:1px solid #efd0b7!important}
+.adminChip i{background:#4d9a70!important}
+
+/* Schnellnavigation */
+.coreQuickBar{
+  background:#fff!important;
+  border:1px solid var(--ob102-line)!important;
+  box-shadow:var(--ob102-shadow)!important;
+  border-radius:15px!important;
+  padding:10px 12px!important;
+}
+.coreQuickIntro small{color:#a05d2d!important}.coreQuickIntro b{color:#34393f!important}
+.quickViewBtn{
+  min-height:40px!important;background:#fff!important;color:#4b5158!important;border:1px solid #e8e1da!important;border-radius:11px!important;
+  box-shadow:none!important;padding:8px 11px!important
+}
+.quickViewBtn span{background:#f4efe9!important;color:#8d5c34!important;border-radius:7px!important}
+.quickViewBtn:hover{background:#fff9f4!important;border-color:#e7c7ae!important;box-shadow:0 5px 13px rgba(55,43,33,.065)!important;transform:translateY(-1px)!important}
+.quickViewBtn.active{background:var(--ob102-accent-action)!important;color:#fff!important;border-color:var(--ob102-accent-action)!important;box-shadow:0 5px 13px rgba(184,94,32,.15)!important}
+.quickViewBtn.active span{background:rgba(255,255,255,.17)!important;color:#fff!important}
+
+/* Arbeitsfläche */
+.workspace{padding:22px 26px 48px!important;max-width:1700px!important}
+.panel,.metric,.infoCard,.customerContactPanel,.customerAddressAssistant,.customerMapPanel,.customerExtraPanel,.customerIdentityCard,.customerDetailMap,
+.attentionBox,.customerModuleHint,.addressWizardGrid label,.appointmentCard,.financeCard,.posCard,.labelCard,.tripCard,.receiptCard,.earningsCard,.warehouseCard,
+.productionCard,.settingCard,.integrationCard,.sectionCard,.summaryCard,.statCard,.helpCard{
+  background:#fff!important;
+  color:var(--ob102-text)!important;
+  border:1px solid var(--ob102-line)!important;
+  box-shadow:var(--ob102-shadow)!important;
+  border-radius:15px!important;
+}
+.metric{padding:17px!important}.metric:after{background:#fff5ec!important}.metric small{color:var(--ob102-muted)!important}.metric strong{color:var(--ob102-ink)!important}
+.panelTitle{background:#fbf9f7!important;border-bottom:1px solid var(--ob102-line)!important}.panelTitle h3,.sectionHead h2{color:var(--ob102-ink)!important}.panelTitle span,.sectionHead p,.muted{color:var(--ob102-muted)!important}
+.quickItem,.orderMini{border-bottom-color:#eee9e3!important}.quickItem:hover{background:#fbf8f5!important}
+.attentionBox{background:#fff8f0!important;border-color:#efd9bf!important}.attentionBox h3{color:#73431f!important}
+
+/* Tabellen */
+.tableWrap{border-radius:12px!important}
+.dataTable{background:#fff!important}
+.dataTable th{
+  background:#f7f4f1!important;color:#646c75!important;border-bottom:1px solid var(--ob102-line)!important;font-size:10px!important
+}
+.dataTable td{background:#fff!important;color:#444b52!important;border-bottom:1px solid #eee9e4!important}
+.dataTable tbody tr:hover td{background:#fcfaf8!important}
+
+/* Formulare */
+input:not([type="checkbox"]):not([type="radio"]),select,textarea,.filterInput,.filterSelect{
+  background:#fff!important;
+  color:#3d444b!important;
+  border:1px solid #dcd5cd!important;
+  border-radius:9px!important;
+  box-shadow:none!important;
+}
+input:focus,select:focus,textarea:focus,.filterInput:focus,.filterSelect:focus{
+  outline:none!important;border-color:#d8a57d!important;box-shadow:0 0 0 3px rgba(201,111,44,.10)!important
+}
+label{color:#555d65!important}
+
+/* Buttons – zentral abgestimmt */
+.btn,.iconBtn,.mobileMenu,.mapMiniBtn,.mapExternalBtn,.modalClose,.scanBtn,.clearSearchBtn{
+  min-height:38px!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;
+  border:1px solid var(--ob102-line-strong)!important;
+  border-radius:9px!important;
+  background:#fff!important;
+  color:#454c53!important;
+  font-weight:820!important;
+  box-shadow:none!important;
+  transition:background .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease!important;
+}
+.btn:hover,.iconBtn:hover,.mobileMenu:hover,.mapMiniBtn:hover,.mapExternalBtn:hover,.scanBtn:hover,.clearSearchBtn:hover{
+  background:#fff9f4!important;border-color:#dfb895!important;box-shadow:0 5px 13px rgba(52,42,33,.07)!important;transform:translateY(-1px)!important
+}
+.btn.primary,.btn.orange{
+  background:var(--ob102-accent-action)!important;border-color:var(--ob102-accent-action)!important;color:#fff!important;box-shadow:0 5px 13px rgba(179,91,31,.14)!important
+}
+.btn.primary:hover,.btn.orange:hover{background:var(--ob102-accent-hover)!important;border-color:var(--ob102-accent-hover)!important}
+.btn.danger{color:var(--ob102-danger)!important;border-color:#e7c3bf!important;background:#fff!important}.btn.danger:hover{background:#fff6f5!important}
+
+/* Status */
+.status,.payTag{box-shadow:none!important;border:1px solid transparent!important}
+.status.s-paid,.status.s-complete,.payTag.paid{background:#edf7f1!important;color:#347052!important}
+.status.s-new,.status.s-payment_pending,.payTag.pending{background:#fff7e8!important;color:#91611c!important}
+.status.s-cancelled,.payTag.cancelled,.payTag.refunded{background:#fff1ef!important;color:#a24d46!important}
+
+/* Modal */
+.modalBackdrop{background:rgba(45,42,39,.34)!important;backdrop-filter:blur(3px)!important}
+.modalCard{background:#fff!important;border:1px solid var(--ob102-line)!important;box-shadow:0 22px 54px rgba(41,34,28,.18)!important;color:var(--ob102-text)!important}
+
+/* Module mit Spezialhintergründen auf hell zwingen, aber Drucketiketten nicht verändern */
+.financeHero,.earningsHero,.tripHero,.vehicleHero,.labelHero,.posHero,.appointmentHero,.inventoryHero,.crmHero{
+  background:linear-gradient(135deg,#fff 0%,#fbf6f1 100%)!important;color:var(--ob102-ink)!important;border:1px solid var(--ob102-line)!important;box-shadow:var(--ob102-shadow)!important
+}
+.labelPreview,.labelPrintSheet,.labelPaperPreview,.receiptPaper,.posReceiptPreview{background:#fff!important;color:#111!important}
+
+/* Login */
+.ob-auth{background:linear-gradient(135deg,#f7f4f0,#eee9e3)!important}
+.authCard{background:#fff!important;border:1px solid var(--ob102-line)!important;box-shadow:0 22px 55px rgba(44,36,29,.12)!important}
+.authBrand{color:#34383d!important}.authBrand strong{color:var(--ob102-accent)!important}.authKicker{color:#a35c2a!important}.authCard h1{color:#2d3136!important}.authCard p{color:#6c737b!important}
+.authForm button{background:var(--ob102-accent-action)!important;color:#fff!important;box-shadow:0 6px 15px rgba(179,91,31,.15)!important}
+
+/* Mobile */
+.mobileBottomNav{background:rgba(255,255,255,.98)!important;border:1px solid var(--ob102-line)!important;box-shadow:0 10px 28px rgba(42,34,28,.12)!important}
+.mobileBottomNav button{background:transparent!important;color:#5d646b!important}.mobileBottomNav button.active{background:var(--ob102-accent-soft)!important;color:#8a461a!important}
+@media(max-width:1180px){.appFrame{grid-template-columns:250px 1fr!important}.sideNav{width:250px!important}}
+@media(max-width:940px){.appFrame{grid-template-columns:1fr!important}.mainArea{grid-column:1!important}.sideNav{width:min(286px,86vw)!important}}
+@media(max-width:760px){.workspace{padding:12px 9px 88px!important}.topBar{height:auto!important;min-height:70px!important}.coreQuickBar{box-shadow:none!important}}
+
+/* =========================================================
+   V102.1 · ORGABOARD KONTRAST- UND KONSISTENZ-FIX
+   ========================================================= */
+
+/* Einheitliche Modul-Helden statt alter dunkler Inseln */
+.mobileAppHero,.earningsHero,.earnHeroV97,.advisorPlatformHero,.tripHero,.executiveHero,
+.warehouseCommandHero,.labelHero,.labelPrinterHero,.labelJobsHero,.labelHelpHero,.labelHeroV964,
+.labelHelpHeroV964,.mediaHeroV965,.printerHeroV965,.labelEditorHeroV966,.builderHubHero,
+.financeHero,.vehicleHero,.posHero,.appointmentHero,.inventoryHero,.crmHero{
+  background:linear-gradient(135deg,#fff 0%,#fbf7f3 100%)!important;
+  color:#2f353b!important;
+  border:1px solid var(--ob102-line)!important;
+  box-shadow:var(--ob102-shadow)!important;
+}
+.mobileAppHero h1,.mobileAppHero h2,.mobileAppHero h3,.earningsHero h1,.earningsHero h2,.earningsHero h3,
+.earnHeroV97 h1,.earnHeroV97 h2,.earnHeroV97 h3,.advisorPlatformHero h1,.advisorPlatformHero h2,.advisorPlatformHero h3,
+.tripHero h1,.tripHero h2,.tripHero h3,.executiveHero h1,.executiveHero h2,.executiveHero h3,
+.warehouseCommandHero h1,.warehouseCommandHero h2,.warehouseCommandHero h3,.labelHero h1,.labelHero h2,.labelHero h3,
+.labelPrinterHero h1,.labelPrinterHero h2,.labelPrinterHero h3,.labelJobsHero h1,.labelJobsHero h2,.labelJobsHero h3,
+.labelHelpHero h1,.labelHelpHero h2,.labelHelpHero h3,.labelHeroV964 h1,.labelHeroV964 h2,.labelHeroV964 h3,
+.labelHelpHeroV964 h1,.labelHelpHeroV964 h2,.labelHelpHeroV964 h3,.mediaHeroV965 h1,.mediaHeroV965 h2,.mediaHeroV965 h3,
+.printerHeroV965 h1,.printerHeroV965 h2,.printerHeroV965 h3,.labelEditorHeroV966 h1,.labelEditorHeroV966 h2,.labelEditorHeroV966 h3,
+.builderHubHero h1,.builderHubHero h2,.builderHubHero h3{
+  color:#2b3036!important;
+}
+.mobileAppHero p,.earningsHero p,.earnHeroV97 p,.advisorPlatformHero p,.tripHero p,.executiveHero p,
+.warehouseCommandHero p,.labelHero p,.labelPrinterHero p,.labelJobsHero p,.labelHelpHero p,.labelHeroV964 p,
+.labelHelpHeroV964 p,.mediaHeroV965 p,.printerHeroV965 p,.labelEditorHeroV966 p,.builderHubHero p{
+  color:#687079!important;
+}
+.mobileAppHero small,.earningsHero small,.earnHeroV97 small,.advisorPlatformHero small,.tripHero small,.executiveHero small,
+.warehouseCommandHero small,.labelHero small,.labelPrinterHero small,.labelJobsHero small,.labelHelpHero small,.labelHeroV964 small,
+.labelHelpHeroV964 small,.mediaHeroV965 small,.printerHeroV965 small,.labelEditorHeroV966 small,.builderHubHero small{
+  color:#9a5b2e!important;
+}
+.labelHeroStatus b,.mediaHeroStats b,.printerHeroStatsV965 b,.editorHeroStatsV966 span b{color:#2f353b!important}
+
+/* Sekundärbutton: immer dunkle Schrift auf heller Fläche */
+.btn:not(.primary):not(.orange):not(.danger),
+.iconBtn,.mobileMenu,.mapMiniBtn,.mapExternalBtn,.scanBtn,.clearSearchBtn,
+.moduleTab:not(.active),.labelTabsV963 button:not(.active),.labelTabsV965 button:not(.active),
+.mediaFilterChipsV965 button:not(.active),.printerTypeChipsV965 button:not(.active),
+.customerMasterTabs button:not(.active),.productionPhaseTabs button:not(.active),
+.executiveHeroActions .btn:not(.primary),.labelPrinterHeroActions .btn:not(.primary){
+  background:#fff!important;
+  color:#343b42!important;
+  border-color:var(--ob102-line-strong)!important;
+  box-shadow:none!important;
+}
+.btn:not(.primary):not(.orange):not(.danger) *,
+.moduleTab:not(.active) *,.labelTabsV963 button:not(.active) *,.labelTabsV965 button:not(.active) *,
+.mediaFilterChipsV965 button:not(.active) *,.printerTypeChipsV965 button:not(.active) *,
+.customerMasterTabs button:not(.active) *,.productionPhaseTabs button:not(.active) *{color:#343b42!important}
+
+/* Aktive / primäre Aktionen: immer weiß auf kräftigem Orange */
+.btn.primary,.btn.orange,.moduleTab.active,.labelTabsV963 button.active,.labelTabsV965 button.active,
+.mediaFilterChipsV965 button.active,.printerTypeChipsV965 button.active,.customerMasterTabs button.active,
+.productionPhaseTabs button.active,.startWorkBtn{
+  background:var(--ob102-accent-action)!important;
+  color:#fff!important;
+  border-color:var(--ob102-accent-action)!important;
+  box-shadow:0 5px 14px rgba(169,86,30,.16)!important;
+}
+.btn.primary *,.btn.orange *,.moduleTab.active *,.labelTabsV963 button.active *,.labelTabsV965 button.active *,
+.mediaFilterChipsV965 button.active *,.printerTypeChipsV965 button.active *,.customerMasterTabs button.active *,
+.productionPhaseTabs button.active *,.startWorkBtn *{color:#fff!important}
+
+/* Spezielle Hilfe-Buttons dürfen kräftig sein, aber mit sicherem Kontrast */
+.labelFloatingHelpV964 button,.labelHeroHelpBtn{
+  background:var(--ob102-accent-action)!important;
+  color:#fff!important;
+  border-color:var(--ob102-accent-action)!important;
+}
+.labelFloatingHelpV964 button *,.labelHeroHelpBtn *{color:#fff!important}
+
+/* Navigation: aktive Fläche klar, inaktive Fläche immer lesbar */
+.navItem{color:#444b52!important}
+.navItem b,.navItem span{color:inherit!important}
+.navItem.active{background:var(--ob102-accent-soft)!important;color:#7f4016!important}
+.navItem.active b,.navItem.active span{color:#7f4016!important}
+.quickViewBtn{color:#444b52!important}
+.quickViewBtn b,.quickViewBtn span{color:inherit!important}
+.quickViewBtn.active{background:var(--ob102-accent-action)!important;color:#fff!important}
+.quickViewBtn.active b,.quickViewBtn.active span{color:#fff!important}
+
+/* Tabellen-/Formtext darf nie in hellgrau verschwinden */
+.dataTable td,.dataTable td b,.dataTable td strong,.formGrid label,.formGrid b,.panel label,.panel b,
+.customerContactPanel label,.customerAddressAssistant label,.financeCard label,.posCard label,.tripCard label,
+.receiptCard label,.earningsCard label,.warehouseCard label,.productionCard label,.settingCard label{
+  color:#3f464d!important;
+}
+.dataTable th{color:#59626c!important}
+
+/* Druck-/Bonvorschauen bleiben absichtlich schwarz auf weiß */
+.labelPreview,.labelPrintSheet,.labelPaperPreview,.receiptPaper,.posReceiptPreview,
+.labelPreview *,.labelPrintSheet *,.labelPaperPreview *,.receiptPaper *,.posReceiptPreview *{
+  color:#111!important;
+}

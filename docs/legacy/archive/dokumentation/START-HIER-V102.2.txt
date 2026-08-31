@@ -1,0 +1,23 @@
+RÄUCHERHAKEN24 – V102.2 DUPLIKAT-RENDER-FIX
+
+ZIEL
+V102.2 behebt den Fehler, bei dem Seitenelemente durch parallele/erneute Runtime-Initialisierung doppelt erscheinen konnten.
+Das bestehende helle V102.1-Design bleibt erhalten.
+
+INSTALLATION DIREKTUPDATE
+1. Aktuelles Webverzeichnis sichern.
+2. Inhalt von raeucherhaken24-v102.2-DUPLIKAT-RENDER-FIX-DIREKTUPDATE.zip direkt in das Hauptverzeichnis der Website hochladen.
+3. Vorhandene Dateien ersetzen.
+4. Browser-Cache für die Website leeren bzw. hart neu laden.
+5. Startseite, Shop und Produktseiten erneut öffnen.
+
+TECHNISCHE ÄNDERUNGEN
+- V65 Header/Home-Laufzeit besitzt jetzt einen globalen Einmal-Guard.
+- modules-v12 verhindert erneutes Erzeugen seiner Zusatzoberflächen.
+- runtime-v1022.js überwacht die Startphase und entfernt ausschließlich doppelte Singleton-Hauptelemente.
+- site-v82.js und light-pro-v102.css werden mit Cache-Version 102.2 geladen.
+- Keine Design-Neugestaltung.
+- Keine Shopfunktion entfernt.
+
+WICHTIG
+private/db-config.php wird nicht verändert.

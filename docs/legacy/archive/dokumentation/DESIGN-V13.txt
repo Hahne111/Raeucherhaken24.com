@@ -1,0 +1,8 @@
+V13 – komplette Farbveredelung nach der freigegebenen Vorschau
+- Gesamte Website auf warmes Elfenbein/Creme umgestellt
+- Navigation, Header, Footer und Sidebar in Espresso-/Dunkelbraun
+- Orange/Kupfer als Markenakzent
+- Rote animierte Warenkorb-Buttons bleiben als klare Kauf-CTA
+- Logo und Beratung/Bestellung visuell aufeinander abgestimmt
+- Produktkarten, Räuchermehl, Räucherlaugen, Rezepte und Rechtstexte im gleichen Premium-System
+- Keine Änderung an Kategorien, Inhalten oder Seitenstruktur

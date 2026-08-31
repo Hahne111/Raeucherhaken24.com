@@ -1,0 +1,19 @@
+RÄUCHERHAKEN24 / ORGABOARD – V103 SAFE CLEANUP
+
+ZIEL
+- tote alte ausführbare Versionen entfernen
+- stale Orgaboard-Service-Worker-Caches sicher ablösen
+- aktuellen V102.2-Funktionskern beibehalten
+- Design-CSS mit neuem Cache-Busting 103.0 ausliefern
+
+INSTALLATION
+1. Vorhandenes Webverzeichnis sichern.
+2. Inhalt dieser ZIP über den bestehenden Webstand laden und vorhandene Dateien ersetzen.
+3. CLEANUP-TOKEN-V103.txt öffnen.
+4. Den dort angegebenen cleanup-v103.php-Link einmal im Browser aufrufen.
+5. Browserdaten/Website-Cache für die Domain löschen oder Hard Reload durchführen.
+6. Orgaboard einmal schließen und neu öffnen, damit der neue Service Worker aktiviert wird.
+
+WICHTIG
+Nicht alle Dateien mit alten Versionsnummern sind Altlasten. Einige enthalten weiterhin aktive Fachlogik.
+Diese V103-Bereinigung löscht deshalb nur Dateien, die in der aktiven Codebasis nicht mehr referenziert werden.

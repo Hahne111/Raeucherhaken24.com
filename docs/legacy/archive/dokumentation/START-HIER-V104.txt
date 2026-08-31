@@ -1,0 +1,31 @@
+RÄUCHERHAKEN24 V104 · PREMIUM LIGHT SHOP-REDESIGN
+=================================================
+
+ZIEL
+- Freigegebenes helles Premiumdesign direkt im bestehenden Shop umgesetzt.
+- Bestehende Shop-/Warenkorb-/Checkout-/Produktlogik bleibt erhalten.
+- Smoky auf der Startseite deutlich verkleinert und als Assistenz statt Hauptmotiv eingesetzt.
+
+INSTALLATION – KOMPLETTVERSION
+1. Bestehendes Webverzeichnis sichern.
+2. Inhalt der ZIP in das Hauptverzeichnis hochladen.
+3. Vorhandene Dateien ersetzen.
+4. Browsercache leeren / Hard Reload.
+5. Startseite, Shop und Produktseite prüfen.
+
+INSTALLATION – DIREKTUPDATE
+1. Bestehendes Webverzeichnis sichern.
+2. Inhalt der Direktupdate-ZIP in das Hauptverzeichnis hochladen und ersetzen.
+3. CLEANUP-TOKEN-V104.txt öffnen.
+4. Den dort angegebenen cleanup-v104.php-Link einmal aufrufen.
+5. Browsercache leeren / Hard Reload.
+
+DESIGN
+- neue gemeinsame Header-/Navigation: site-v104.js
+- neue Premium-Designschicht: premium-v104.css
+- bereinigte Basisdateien: site-base-v104.css, light-base-v104.css
+- Duplicate Guard: runtime-v104.js
+- Hero-Visual: assets/hero-premium-v104.jpg
+
+WICHTIG
+Das Orgaboard wurde in diesem Schritt funktional und optisch nicht umgebaut. Dieser Stand betrifft das öffentliche Shop-Frontend.

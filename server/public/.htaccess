@@ -1,0 +1,112 @@
+# =====================================================================
+# RÄUCHERHAKEN24 · Server-Konfiguration für STRATO (Apache)
+# ---------------------------------------------------------------------
+# Diese Datei ist bewusst vorsichtig aufgebaut: Jeder Block ist in
+# <IfModule> gekapselt. Ist ein Modul beim Hoster nicht aktiv, wird der
+# Block einfach übersprungen – die Website läuft trotzdem.
+#
+# Die beiden Blöcke ganz unten (HTTPS-Erzwingung und Wunschdomain) sind
+# absichtlich deaktiviert. Sie werden erst eingeschaltet, wenn die
+# Domain endgültig feststeht.
+# =====================================================================
+
+# ---------------------------------------------------------- Zeichensatz
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .html .css .js .json .svg .xml .txt
+  AddType image/svg+xml .svg
+  AddType application/json .json
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# ------------------------------------------------- Verzeichnisschutz
+Options -Indexes
+<IfModule mod_authz_core.c>
+  <FilesMatch "^\.">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------ Startdokument
+DirectoryIndex index.html index.php
+
+# ------------------------------------------------------ Fehlerseiten
+ErrorDocument 404 /404.html
+
+# --------------------------------------------------------- Komprimierung
+<IfModule mod_deflate.c>
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
+    AddOutputFilterByType DEFLATE application/json application/manifest+json
+    AddOutputFilterByType DEFLATE image/svg+xml application/xml application/rss+xml
+  </IfModule>
+</IfModule>
+
+# ------------------------------------------------------------- Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                              "access plus 1 week"
+  # HTML immer frisch ausliefern, damit Änderungen sofort sichtbar sind.
+  ExpiresByType text/html                     "access plus 0 seconds"
+  ExpiresByType application/json              "access plus 0 seconds"
+  ExpiresByType text/css                      "access plus 1 month"
+  ExpiresByType application/javascript        "access plus 1 month"
+  ExpiresByType text/javascript               "access plus 1 month"
+  ExpiresByType image/jpeg                    "access plus 6 months"
+  ExpiresByType image/png                     "access plus 6 months"
+  ExpiresByType image/webp                    "access plus 6 months"
+  ExpiresByType image/svg+xml                 "access plus 6 months"
+  ExpiresByType font/woff2                    "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Produktdaten und Beraterantworten nie zwischenspeichern.
+  <FilesMatch "\.(php)$">
+    Header set Cache-Control "no-store, max-age=0"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=15552000"
+  </FilesMatch>
+
+  # ------------------------------------------------ Sicherheits-Header
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  # Serverkennung reduzieren
+  Header unset X-Powered-By
+</IfModule>
+
+<IfModule mod_php.c>
+  php_flag display_errors Off
+  php_flag log_errors On
+</IfModule>
+<IfModule mod_php7.c>
+  php_flag display_errors Off
+</IfModule>
+<IfModule mod_php8.c>
+  php_flag display_errors Off
+</IfModule>
+
+# =====================================================================
+# OPTIONAL – erst aktivieren, wenn die endgültige Domain feststeht.
+# Zum Aktivieren jeweils das Rautezeichen am Zeilenanfang entfernen und
+# beispiel-domain durch die tatsächliche Domain ersetzen.
+# =====================================================================
+#<IfModule mod_rewrite.c>
+#  RewriteEngine On
+#
+#  # 1) Alles über HTTPS ausliefern
+#  RewriteCond %{HTTPS} !=on
+#  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+#
+#  # 2) Auf eine einzige Wunschdomain vereinheitlichen.
+#  #    Damit gibt es genau eine Adresse pro Seite – gut für die Suche.
+#  RewriteCond %{HTTP_HOST} !^www\.raeucherhaken24\.de$ [NC]
+#  RewriteRule ^(.*)$ https://www.raeucherhaken24.de/$1 [R=301,L]
+#</IfModule>

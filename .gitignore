@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.*
+!.env.example
+server/public/orgaboard/private/*
+!server/public/orgaboard/private/.htaccess
+server/public/orgaboard/finance-uploads/*
+!server/public/orgaboard/finance-uploads/.htaccess
+server/public/orgaboard/trip-receipt-uploads/*
+!server/public/orgaboard/trip-receipt-uploads/.htaccess
+server/public/prototype-uploads/*
+!server/public/prototype-uploads/.htaccess
+server/public/uploads/products/*
+!server/public/uploads/products/.htaccess
+!server/public/uploads/products/index.html

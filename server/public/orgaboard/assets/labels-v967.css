@@ -1,0 +1,167 @@
+/* Räucherhaken24 Orgaboard V96.7 · Etikettenstudio Lesbarkeit + Live-Skalierung */
+
+/* Nach dem globalen Light-Theme geladen: Produktbrowser muss immer lesbar bleiben. */
+.labelSourceDockV966,
+.labelSourceListV966,
+.labelSourceRowV966{
+  color:#28231f!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.labelSourceListV966{
+  background:#fff!important;
+  border-radius:14px;
+}
+.labelSourceRowV966{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  width:100%!important;
+  min-height:58px!important;
+  display:grid!important;
+  grid-template-columns:7px minmax(0,1fr) minmax(58px,auto)!important;
+  align-items:center!important;
+  gap:9px!important;
+  padding:9px 10px!important;
+  margin:0!important;
+  border:1px solid #ded8d2!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  background-image:none!important;
+  color:#28231f!important;
+  text-align:left!important;
+  box-shadow:none!important;
+}
+.labelSourceRowV966:hover{
+  border-color:#c99b80!important;
+  background:#fffaf6!important;
+  box-shadow:0 6px 14px rgba(52,36,27,.065)!important;
+}
+.labelSourceRowV966.active{
+  border-color:#ad4d25!important;
+  background:#fff7f1!important;
+  box-shadow:inset 3px 0 0 #ad4d25!important;
+}
+.labelSourceRowV966 .sourceMainV966,
+.labelSourceRowV966 .sourceFactsV966,
+.labelSourceRowV966 .sourceMainV966 b,
+.labelSourceRowV966 .sourceMainV966 small,
+.labelSourceRowV966 .sourceFactsV966 strong,
+.labelSourceRowV966 .sourceFactsV966 em{
+  opacity:1!important;
+  visibility:visible!important;
+  text-shadow:none!important;
+}
+.labelSourceRowV966 .sourceMainV966 b{
+  color:#201c19!important;
+  font-size:11px!important;
+  font-weight:850!important;
+  line-height:1.25!important;
+}
+.labelSourceRowV966 .sourceMainV966 small{
+  color:#6c625b!important;
+  font-size:8px!important;
+  font-weight:650!important;
+}
+.labelSourceRowV966 .sourceFactsV966 strong{
+  color:#8f3517!important;
+  font-size:10px!important;
+  font-weight:900!important;
+}
+.labelSourceRowV966 .sourceFactsV966 em{
+  color:#625951!important;
+  font-size:8px!important;
+  font-weight:750!important;
+}
+.labelSourceRowV966 .sourceFactsV966 em.warn{color:#a25c12!important}
+
+/* Preview scales: separate controls for title, price, meta and barcode. */
+.labelPreviewPaper{
+  --name-scale:1;
+  --price-scale:1;
+  --meta-scale:1;
+  --barcode-scale:1;
+}
+.labelPreviewPaper .labelName{
+  font-size:calc(1.45em * var(--name-scale,1))!important;
+  line-height:1.02!important;
+}
+.labelPreviewPaper .labelPrice{
+  font-size:calc(1.75em * var(--price-scale,1))!important;
+  line-height:.95!important;
+}
+.labelPreviewPaper .labelMeta,
+.labelPreviewPaper .labelExtra{
+  font-size:calc(.67em * var(--meta-scale,1))!important;
+}
+.labelPreviewPaper .labelBarcode{
+  transform:scale(var(--barcode-scale,1));
+  transform-origin:left bottom;
+  max-width:calc(100% / var(--barcode-scale,1));
+}
+.labelPreviewPaper .labelBarcode canvas{
+  max-height:calc(55px * var(--barcode-scale,1))!important;
+}
+
+/* Inspector scale controls */
+.labelScaleGroupV967{display:grid;gap:10px}
+.labelScaleGroupV967 .fontScaleV966{
+  display:block!important;
+  margin:0!important;
+  padding:11px 12px!important;
+  border:1px solid #e4ddd7!important;
+  border-radius:12px!important;
+  background:#fff!important;
+}
+.labelScaleGroupV967 .emphasisScaleV967{
+  border-color:#d9b9a8!important;
+  background:#fffaf6!important;
+}
+.scaleLabelV967{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  margin:0 0 7px!important;
+}
+.scaleLabelV967 b{font-size:10px!important;color:#332a25!important}
+.scaleLabelV967 output{
+  min-width:48px;
+  text-align:right;
+  color:#9b3e1c!important;
+  font-size:10px!important;
+  font-weight:950!important;
+}
+.labelScaleGroupV967 input[type=range]{
+  width:100%!important;
+  margin:0!important;
+  accent-color:#ad4d25;
+}
+.labelScalePresetsV967{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin:12px 0;
+}
+.labelScalePresetsV967 button{
+  min-height:36px;
+  border:1px solid #ddd5ce;
+  border-radius:9px;
+  background:#fff;
+  color:#433832;
+  font-size:9px;
+  font-weight:850;
+  cursor:pointer;
+}
+.labelScalePresetsV967 button:hover{background:#fff7f1;border-color:#c99980;color:#8f3517}
+
+/* Canvas should favor readability while editing. */
+.labelCanvasZoomV966 .labelPreviewPaper{
+  color:#151210!important;
+  background:#fff!important;
+}
+.labelCanvasZoomV966 .labelPreviewPaper *{text-rendering:geometricPrecision}
+
+@media(max-width:760px){
+  .labelSourceRowV966{grid-template-columns:6px minmax(0,1fr) minmax(54px,auto)!important}
+  .labelScalePresetsV967{grid-template-columns:1fr 1fr}
+}

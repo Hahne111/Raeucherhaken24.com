@@ -1,0 +1,1 @@
+V107.6: Einheitliches SVG-Icon-System für den öffentlichen Shop. Header, Suche, Konten, Warenkorb, Produkt-Zoom, Beratung, Versand, Marketplace, Mobile-Dock und Smoky wurden auf einen gemeinsamen Stil gebracht. Orgaboard bleibt unverändert.

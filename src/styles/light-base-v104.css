@@ -1,0 +1,364 @@
+/* =========================================================
+   V102 · LIGHT PROFESSIONAL
+   Helle, ruhige und konsequent abgestimmte Shop-Oberfläche
+   ========================================================= */
+:root{
+  --rh102-bg:#f6f3ef;
+  --rh102-bg-soft:#fbfaf8;
+  --rh102-panel:#ffffff;
+  --rh102-panel-soft:#f8f5f1;
+  --rh102-ink:#25282c;
+  --rh102-text:#40464d;
+  --rh102-muted:#747b83;
+  --rh102-line:#e4ded6;
+  --rh102-line-strong:#d8cfc4;
+  --rh102-accent:#c96f2c;
+  --rh102-accent-action:#a9561e;
+  --rh102-accent-hover:#8e4715;
+  --rh102-accent-soft:#fff1e5;
+  --rh102-success:#34795a;
+  --rh102-radius:16px;
+  --rh102-shadow:0 8px 24px rgba(53,44,35,.07);
+  --rh102-shadow-hover:0 14px 30px rgba(53,44,35,.11);
+}
+html,body{
+  background:var(--rh102-bg)!important;
+  color:var(--rh102-ink)!important;
+}
+body{line-height:1.5}
+a{transition:color .16s ease,background .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease}
+
+/* Kopfbereich */
+.top{
+  background:rgba(255,255,255,.97)!important;
+  border-bottom:1px solid var(--rh102-line)!important;
+  box-shadow:0 4px 18px rgba(50,42,34,.055)!important;
+}
+.top::after{display:none!important}
+.wrap.head{gap:18px!important;align-items:center!important}
+.brandSignatureLink{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+.logo.classicLogo span,.logo span,.brandSignature .logo span{color:#2d3034!important}
+.logo.classicLogo strong,.logo strong,.brandSignature .logo strong{color:var(--rh102-accent)!important}
+.brandMeta b{color:#474c52!important}.brandMeta small{color:var(--rh102-muted)!important}
+.usp,.consultationCard{
+  background:var(--rh102-panel)!important;
+  border:1px solid var(--rh102-line)!important;
+  border-radius:14px!important;
+  box-shadow:none!important;
+  color:var(--rh102-ink)!important;
+}
+.usp strong,.consultationHead b{color:#30343a!important}.usp span,.consultationHead span,.consultationMeta{color:var(--rh102-muted)!important}
+.consultationNumber{color:var(--rh102-accent-hover)!important}
+
+/* Hero / Startseite */
+.smokyHero,.hero,.marketHero,.thermoHero,.recipeHero,.protoHero{
+  background:linear-gradient(135deg,#fff 0%,#fbf7f2 58%,#f2e9df 100%)!important;
+  color:var(--rh102-ink)!important;
+  border-bottom:1px solid var(--rh102-line)!important;
+  box-shadow:none!important;
+}
+.smokyHeroGrid{gap:28px!important}
+.smokyVisual,.smokyChat,.smokyIntro{
+  border-radius:18px!important;
+}
+.smokyVisual{background:#f4eee7!important;overflow:hidden}
+.smokyChat{
+  background:#fff!important;
+  border:1px solid var(--rh102-line)!important;
+  box-shadow:var(--rh102-shadow)!important;
+  color:var(--rh102-ink)!important;
+}
+.smokyIntro h1,.smokyIntro h2,.hero h1,.marketHero h1,.thermoHero h1,.recipeHero h1,.protoHero h1{color:#292d32!important}
+.smokyIntro p,.hero p,.marketHero p,.thermoHero p,.recipeHero p,.protoHero p{color:var(--rh102-text)!important}
+.smokyScript,.kicker{color:var(--rh102-accent-hover)!important}
+.smokyQuestions button{
+  background:#fff!important;color:#33383e!important;border:1px solid var(--rh102-line)!important;box-shadow:none!important
+}
+.smokyQuestions button:hover{background:var(--rh102-accent-soft)!important;border-color:#ecc7a7!important;transform:translateY(-1px)}
+.smokyAnswer{background:#f8f5f1!important;color:#353b41!important;border:1px solid var(--rh102-line)!important}
+
+/* Seitenlayout / Navigation */
+.mainLayout{gap:22px!important}
+.sidebar{min-width:230px}
+.sideBox{
+  background:#fff!important;
+  border:1px solid var(--rh102-line)!important;
+  border-radius:16px!important;
+  box-shadow:var(--rh102-shadow)!important;
+  overflow:hidden!important;
+}
+.sideTitle{
+  background:#f0ebe5!important;
+  color:#34383d!important;
+  border-bottom:1px solid var(--rh102-line)!important;
+  padding:14px 16px!important;
+  letter-spacing:.08em!important;
+}
+.sideMain{
+  background:#f8f5f1!important;
+  color:#393d42!important;
+  border-left:3px solid var(--rh102-accent)!important;
+  border-bottom:1px solid #eee8e1!important;
+}
+.sideTop,.sideLink{
+  min-height:40px!important;
+  display:flex!important;
+  align-items:center!important;
+  padding:10px 14px!important;
+  background:#fff!important;
+  color:#4b5056!important;
+  border:0!important;
+  border-bottom:1px solid #f0ebe5!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.sideTop:hover,.sideLink:hover{background:#fff5ec!important;color:#8f491a!important;padding-left:18px!important}
+.sideTop.active,.sideLink.active{background:var(--rh102-accent-soft)!important;color:#8c471a!important;font-weight:800}
+
+/* Karten und Inhaltsflächen */
+.content,.recipePage,.dynDetail,.marketPage{color:var(--rh102-text)!important}
+.knowledgeCard,.wizard,.featurePanel,.feature,.moduleCard,.trustModule,.ctaBand,.card,.productPage,.dynCard,.loginCard,.authCard,.marketCard,
+.marketRuleCard,.marketMembershipCard,.marketListingCard,.recipeIntro,.guideGrid article,.recipeTools,.thermoCard,.checkoutCard,.sectionBox,.productBox,.communityForm,
+.shopCategoryStrip a,.orderStatusCard,.customerStatusCard,.protoCard,.detailCard,.detailSidebar{
+  background:#fff!important;
+  color:var(--rh102-text)!important;
+  border:1px solid var(--rh102-line)!important;
+  border-radius:var(--rh102-radius)!important;
+  box-shadow:var(--rh102-shadow)!important;
+}
+.knowledgeCard:hover,.moduleCard:hover,.trustModule:hover,.card:hover,.marketListingCard:hover,.shopCategoryStrip a:hover,.thermoCard:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:var(--rh102-shadow-hover)!important;
+  border-color:#d9cbbb!important;
+}
+.sectionHead h2,.wizard h3,.featurePanel h3,.moduleBand h3,.knowledgeCard h3,.moduleCard b,.trustModule b,.ctaBand b,.dynInfo h1,.productPage h1,.detailTitle,
+.recipePage h2,.guideGrid h3,.marketCard h2,.protoCard h2{color:var(--rh102-ink)!important}
+.sectionHead p,.wizardIntro,.featurePanel p,.feature p,.moduleCard p,.trustModule span,.ctaBand span,.knowledgeCard p,.dynDesc,.dynLead,.marketCard p,.guideGrid p{color:var(--rh102-text)!important}
+
+/* Einheitliche Buttons */
+button,.btn,.homeAction,.cartBtn,.consultationActions a,.moduleCard button,.moduleCard a,.ctaBand a,.buy button,.socials button,.recipeActions button,.recipeActions a,
+.communityForm button,.checkoutBtn,.marketPrimaryBtn,.marketSecondaryBtn,.protoAction,.detailActions a,.detailActions button,.productActions button,.productActions a,
+.dynBuy button,.wizardRow button{
+  min-height:42px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  padding:10px 16px!important;
+  border-radius:11px!important;
+  border:1px solid var(--rh102-line-strong)!important;
+  background:#fff!important;
+  color:#383d43!important;
+  font-weight:800!important;
+  box-shadow:0 3px 10px rgba(52,43,34,.055)!important;
+  text-decoration:none!important;
+  line-height:1.15!important;
+}
+button:hover,.btn:hover,.homeAction:hover,.consultationActions a:hover,.moduleCard button:hover,.moduleCard a:hover,.ctaBand a:hover,.buy button:hover,.socials button:hover,
+.recipeActions button:hover,.recipeActions a:hover,.communityForm button:hover,.checkoutBtn:hover,.marketPrimaryBtn:hover,.marketSecondaryBtn:hover,.protoAction:hover,
+.detailActions a:hover,.detailActions button:hover,.productActions button:hover,.productActions a:hover,.dynBuy button:hover,.wizardRow button:hover{
+  transform:translateY(-1px)!important;
+  border-color:#d5b89e!important;
+  background:#fffaf6!important;
+  box-shadow:0 7px 16px rgba(52,43,34,.09)!important;
+}
+.btn.primary,.homeAction,.cartBtn,.buy button,.communityForm button,.checkoutBtn,.marketPrimaryBtn,.protoAction,.productActions button.primary,.dynBuy button:first-child,.wizardRow button{
+  background:var(--rh102-accent-action)!important;
+  border-color:var(--rh102-accent-action)!important;
+  color:#fff!important;
+  box-shadow:0 6px 16px rgba(179,91,32,.18)!important;
+}
+.btn.primary:hover,.homeAction:hover,.cartBtn:hover,.buy button:hover,.communityForm button:hover,.checkoutBtn:hover,.marketPrimaryBtn:hover,.protoAction:hover,.productActions button.primary:hover,.dynBuy button:first-child:hover,.wizardRow button:hover{
+  background:var(--rh102-accent-hover)!important;
+  border-color:var(--rh102-accent-hover)!important;
+}
+.ai{background:#44372d!important;color:#fff!important;border-color:#44372d!important;border-radius:50%!important;box-shadow:0 8px 22px rgba(49,38,29,.18)!important}
+
+/* Formulare */
+input,select,textarea{
+  background:#fff!important;
+  color:#343a40!important;
+  border:1px solid #dcd5cd!important;
+  border-radius:10px!important;
+  box-shadow:none!important;
+}
+input:focus,select:focus,textarea:focus{outline:none!important;border-color:#d4a47d!important;box-shadow:0 0 0 3px rgba(201,111,44,.10)!important}
+label{color:#4f555c}
+
+/* Produkte */
+.productPromoBadge,.newSortimentBadge{box-shadow:none!important}
+.newSortimentBadge{background:#e9f4ed!important;border-color:#b8d9c3!important;color:#33704c!important}
+.productPromoBadge.offer{background:#fff0e7!important;color:#9f4b1f!important;border-color:#efc7ad!important}
+.productPromoBadge.popular{background:#fff8df!important;color:#7d6116!important;border-color:#e8d38c!important}
+.dynCat,.detailLink,.knowledgeCard b,.moduleCard>a{color:var(--rh102-accent-hover)!important}
+.dynPrice,.detailPrice,.price{color:#a55220!important}
+.dynStock{color:var(--rh102-success)!important}
+
+/* Warenkorb / KI */
+.drawer,.aiPanel{background:#fff!important;color:#30353b!important;border-left:1px solid var(--rh102-line)!important;box-shadow:-14px 0 34px rgba(42,34,27,.12)!important}
+.aiHead{background:#4a3b31!important;color:#fff!important}
+.overlay{background:rgba(28,28,28,.34)!important}
+
+/* Footer */
+footer{background:#312b27!important;color:#f6f2ee!important;border-top:1px solid #4b423b!important}
+footer h4,.footerPlainBrand{color:#fff!important}
+footer a,footer p,footer span{color:#ded7d1!important}
+footer a:hover{color:#fff!important}
+.socialBar{border-top-color:#514841!important}
+
+/* Mobile */
+@media(max-width:900px){
+  .wrap.head{gap:10px!important}
+  .usp{display:none!important}
+  .sidebar{min-width:0}
+  .mainLayout{gap:14px!important}
+}
+@media(max-width:680px){
+  .top{position:relative!important}
+  .consultationCard{width:100%!important}
+  .knowledgeCard,.wizard,.featurePanel,.moduleCard,.trustModule,.ctaBand,.card,.productPage,.dynCard{border-radius:13px!important}
+  button,.btn,.homeAction,.cartBtn,.consultationActions a,.moduleCard button,.moduleCard a,.ctaBand a,.buy button{min-height:44px!important}
+}
+
+/* =========================================================
+   V102.1 · KONTRAST- UND KONSISTENZ-FIX
+   Behebt helle Schrift auf hellen Buttons und vereinheitlicht
+   Navigation, Aktionen und Altmodule.
+   ========================================================= */
+
+/* 1) Harte Kontrastregeln für sichtbare Aktionsflächen */
+.consultationActions a:first-child,
+.smokyForm button,
+.smartSearch button,
+.newsletterForm button,
+.passwordCard button,
+.accountBox .btn.primary,
+.rhHookChoices button.active,
+.ultraChoices button.active,
+.miniAction.active,
+.marketPrimaryBtn,
+.checkoutBtn,
+.communityForm button,
+.homeAction,
+.cartBtn,
+.buy button,
+.dynBuy button:first-child,
+.wizardRow button,
+.btn.primary{
+  background:var(--rh102-accent-action)!important;
+  border-color:var(--rh102-accent-action)!important;
+  color:#fff!important;
+}
+.consultationActions a:first-child *,
+.smokyForm button *,
+.smartSearch button *,
+.newsletterForm button *,
+.passwordCard button *,
+.accountBox .btn.primary *,
+.rhHookChoices button.active *,
+.ultraChoices button.active *,
+.miniAction.active *,
+.marketPrimaryBtn *,
+.checkoutBtn *,
+.communityForm button *,
+.homeAction *,
+.cartBtn *,
+.buy button *,
+.dynBuy button:first-child *,
+.wizardRow button *,
+.btn.primary *{color:#fff!important}
+
+.consultationActions a:last-child,
+.smokyTools button,
+.miniAction:not(.active),
+.rhHookChoices button:not(.active),
+.ultraChoices button:not(.active),
+.marketSecondaryBtn,
+.recipeActions button,
+.recipeActions a,
+.socials button{
+  background:#fff!important;
+  color:#30363c!important;
+  border-color:var(--rh102-line-strong)!important;
+}
+.consultationActions a:last-child *,
+.smokyTools button *,
+.miniAction:not(.active) *,
+.rhHookChoices button:not(.active) *,
+.ultraChoices button:not(.active) *,
+.marketSecondaryBtn *,
+.recipeActions button *,
+.recipeActions a *,
+.socials button *{color:#30363c!important}
+
+/* 2) Dynamische Hauptnavigation komplett auf hell abstimmen */
+.rh24NavShell,
+.rh24NavShell.isScrolled{
+  background:rgba(255,255,255,.98)!important;
+  border-top:1px solid var(--rh102-line)!important;
+  border-bottom:1px solid var(--rh102-line)!important;
+  box-shadow:0 6px 18px rgba(45,38,31,.07)!important;
+}
+.rh24NavLink,.rh24DropBtn{
+  background:transparent!important;
+  color:#394047!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+.rh24NavLink:hover,.rh24DropBtn:hover,.rh24NavDrop.open>.rh24DropBtn,.rh24NavLink.active{
+  background:var(--rh102-accent-soft)!important;
+  color:#864316!important;
+}
+.rh24NavLink.active{box-shadow:inset 0 -2px 0 var(--rh102-accent)!important}
+.rh24MarketLink{
+  background:var(--rh102-accent-action)!important;
+  color:#fff!important;
+  border-color:var(--rh102-accent-action)!important;
+  box-shadow:0 5px 14px rgba(169,86,30,.17)!important;
+}
+.rh24MarketLink *{color:#fff!important}
+.rh24NavTool,.rh24MobileMenuBtn{
+  background:#fff!important;
+  color:#343a40!important;
+  border:1px solid var(--rh102-line)!important;
+  box-shadow:none!important;
+}
+.rh24NavTool:hover,.rh24MobileMenuBtn:hover{background:#fff8f2!important;color:#864316!important;border-color:#e6c3a8!important}
+.rh24Mega{
+  background:#fff!important;
+  border-color:var(--rh102-line)!important;
+  box-shadow:0 18px 42px rgba(44,36,29,.12)!important;
+}
+.rh24MegaHead{border-bottom-color:var(--rh102-line)!important}
+.rh24MegaHead b{color:#343a40!important}.rh24MegaHead span{color:var(--rh102-muted)!important}
+.rh24Mega a{color:#383e44!important;border-color:transparent!important}
+.rh24Mega a small{color:#747b83!important}
+.rh24Mega a:hover{background:#fff6ee!important;border-color:#efd5bf!important}
+.rh24NavSearchPanel{background:#fbf8f5!important;border-color:var(--rh102-line)!important}
+.rh24NavSearchInput{background:#fff!important;color:#30363c!important;border-color:#dcd5cd!important}
+.rh24SearchResults{background:#fff!important;color:#30363c!important}
+
+/* 3) Sonderbuttons mit eigenem dunklen Altstil kontrolliert zurückführen */
+.aiHead button{
+  background:transparent!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+  min-height:auto!important;
+  padding:4px 8px!important;
+}
+.aiHead button *{color:#fff!important}
+
+/* Lesbarkeit in hellen Karten */
+.knowledgeCard,.featurePanel,.moduleCard,.trustModule,.wizard,.sideBox,.smokyChat,
+.marketCard,.recipeIntro,.guideGrid article,.thermoCard,.dynCard,.productPage,.loginCard,.authCard{
+  color:#3e454c!important;
+}
+.knowledgeCard strong,.featurePanel strong,.moduleCard strong,.trustModule strong,.wizard strong,
+.marketCard strong,.recipeIntro strong,.guideGrid article strong,.thermoCard strong,.dynCard strong{color:#272c31!important}
+
+@media(max-width:900px){
+  .rh24NavShell{background:#fff!important}
+  .rh24NavLinks{background:#fff!important}
+  .rh24Mega{background:#fffaf6!important}
+}

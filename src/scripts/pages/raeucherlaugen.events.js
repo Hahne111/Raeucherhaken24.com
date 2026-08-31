@@ -1,0 +1,21 @@
+(() => {
+  const handlers = window.RH24EventHandlers = window.RH24EventHandlers || {};
+  handlers["raeucherlaugen-click-001"] = function (event) { addLaugeToCart('lauge-forelle-0','Räucherlauge Forelle',4.95,'assets/lauge-standard.png') };
+  handlers["raeucherlaugen-click-002"] = function (event) { addLaugeToCart('lauge-forelle-1','Räucherlauge Forelle Classic',4.95,'assets/lauge-delikat.png') };
+  handlers["raeucherlaugen-click-003"] = function (event) { addLaugeToCart('lauge-forelle-2','Räucherlauge Forelle Chili',4.95,'assets/lauge-chili.png') };
+  handlers["raeucherlaugen-click-004"] = function (event) { addLaugeToCart('lauge-forelle-3','Räucherlauge Forelle RED',6.95,'assets/lauge-red.png') };
+  handlers["raeucherlaugen-click-005"] = function (event) { addLaugeToCart('lauge-forelle-4','Räucherlauge Forelle Kräuter',4.95,'assets/lauge-kraeuter.png') };
+  handlers["raeucherlaugen-click-006"] = function (event) { addLaugeToCart('lauge-forelle-5','Räucherlauge Forelle Knoblauch',4.95,'assets/lauge-knoblauch.png') };
+  handlers["raeucherlaugen-click-007"] = function (event) { addLaugeToCart('lauge-forelle-6','Räucherlauge Forelle Zitronenpfeffer',4.95,'assets/lauge-zitronenpfeffer.png') };
+  handlers["raeucherlaugen-click-008"] = function (event) { addLaugeToCart('lauge-forelle-7','Räucherlauge Forelle Delikat',4.95,'assets/lauge-gartenkraeuter.png') };
+  handlers["raeucherlaugen-click-009"] = function (event) { addLaugeToCart('lauge-forelle-8','Räucherlauge Forelle EL PASO',4.95,'assets/lauge-elpaso.png') };
+  handlers["raeucherlaugen-click-010"] = function (event) { addLaugeToCart('lauge-forelle-9','Räucherlauge Forelle Kansas',4.95,'assets/lauge-kansas.png') };
+  handlers["raeucherlaugen-click-011"] = function (event) { addLaugeToCart('lauge-aal-0','Räucherlauge Aal',4.95,'assets/lauge-aal_standard.png') };
+  handlers["raeucherlaugen-click-012"] = function (event) { addLaugeToCart('lauge-aal-1','Räucherlauge Aal Pfeffer',4.95,'assets/lauge-aal_pfeffer.png') };
+  handlers["raeucherlaugen-click-013"] = function (event) { addLaugeToCart('lauge-aal-2','Räucherlauge Aal Delikat',4.95,'assets/lauge-aal_delikat.png') };
+  handlers["raeucherlaugen-click-014"] = function (event) { openCart() };
+  handlers["raeucherlaugen-click-015"] = function (event) { closeCart() };
+  handlers["raeucherlaugen-click-016"] = function (event) { closeCart() };
+  handlers["raeucherlaugen-click-017"] = function (event) { checkout() };
+  handlers["raeucherlaugen-click-018"] = function (event) { closeZoom() };
+})();

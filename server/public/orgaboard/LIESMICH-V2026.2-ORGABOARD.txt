@@ -1,0 +1,250 @@
+===========================================================================
+RÄUCHERHAKEN24 · ORGABOARD V2026.2
+Erweiterung zum Unternehmens-Cockpit
+===========================================================================
+
+Diese Fassung baut auf V2026.1 auf. Sie ersetzt nichts und entfernt nichts.
+Alle bisherigen Bereiche, Masken, Rechte, Daten und Abläufe bleiben
+unverändert erhalten.
+
+---------------------------------------------------------------------------
+1 · WAS SICH GEÄNDERT HAT — IN KÜRZE
+---------------------------------------------------------------------------
+
+NEU HINZUGEKOMMEN (7 Dateien)
+  orgaboard/api-guard.php                    zentrale Rechteprüfung
+  orgaboard/login-throttle.php               Bremse gegen Passwort-Raten
+  orgaboard/cockpit.php                      Datenmotor des Cockpits
+  orgaboard/cockpit-api.php                  Endpunkt dafür
+  orgaboard/assistant.php                    Smoky als Geschäftsassistent
+  orgaboard/assets/orgaboard-premium-2026.css   Designschicht
+  orgaboard/assets/orgaboard-premium-2026.js    Oberfläche
+
+GEÄNDERT (4 Dateien, jeweils sehr wenige Zeilen)
+  orgaboard/api.php        3 Zeilen: ruft die zentrale Rechteprüfung auf
+  orgaboard/index.php      Anmeldebremse + zwei Einbindungen
+  orgaboard/bootstrap.php  1 Zeile: Recht 'edit_inventory' für die Produktion
+  orgaboard/admin-v9911.js 2 Ergänzungen + 1 Fehlerbehebung
+
+AM SHOP WURDE NICHTS GEÄNDERT.
+Alle 42 Produktbilder sind nach Prüfsumme unverändert. Preise, Produkt-
+namen, Warenkorb-Kennungen, Kategorien, Links und Rechtstexte sind
+identisch mit dem Original.
+
+---------------------------------------------------------------------------
+2 · SICHERHEIT — DIE WICHTIGSTE ÄNDERUNG
+---------------------------------------------------------------------------
+
+BEFUND
+  Von 92 Aktionen in api.php haben 24 ausschliesslich eine Anmeldung
+  vorausgesetzt, aber keine Berechtigung geprüft. Die Schaltflächen waren
+  im Browser ausgeblendet — der Endpunkt selbst liess sich jedoch von
+  jedem angemeldeten Konto direkt aufrufen.
+
+  Betroffen waren unter anderem:
+     product_save, product_quick_update  Produktpreise ändern
+     inventory_update, warehouse_save    Lagerbestände buchen
+     order_update                        Bestellstatus ändern
+     customer_save, customer_note        Kundendaten ändern
+     settings_save                       Systemeinstellungen ändern
+     content_save, review_update         Shop-Inhalte und Bewertungen
+     dealer_save                         Händlerkonditionen
+     manual_order_create                 Bestellungen anlegen
+
+  Ein Konto der Kasse oder des Aussendienstes konnte damit Preise und
+  Bestände verändern.
+
+BEHOBEN
+  api-guard.php prüft jetzt zentral, bevor eine Aktion ausgeführt wird.
+  Jede Aktion verlangt genau das Recht, das der vorhandene Rechtekatalog
+  dafür ohnehin vorsieht. Es wurden keine neuen Rechte erfunden und keine
+  bestehenden entfernt. Die Prüfungen in den einzelnen Handlern bleiben
+  zusätzlich bestehen.
+
+  Nachgeprüft: 92 Aktionen, davon 0 ohne jede Prüfung.
+
+  Eine Anpassung war nötig: Die Produktion hat 'edit_inventory' bekommen.
+  Sie konnte Bestände vorher ohnehin buchen (weil nichts geprüft wurde);
+  ohne dieses Recht wäre ein eingespielter Arbeitsablauf zerbrochen.
+  Kasse und Aussendienst haben dieses Recht bewusst nicht.
+
+ANMELDEBREMSE
+  Das Anmeldeformular liess sich beliebig oft abschicken. Jetzt gilt:
+  8 Fehlversuche innerhalb von 15 Minuten sperren für 10 Minuten,
+  gezählt je Benutzername und je IP-Adresse.
+  Die Zählung liegt als Datei in orgaboard/private/ (dort schützt eine
+  vorhandene .htaccess vor Zugriff von aussen). Es werden weder Benutzer-
+  namen noch IP-Adressen im Klartext gespeichert, sondern nur Prüfsummen.
+  Auch das Fehlversuchsprotokoll enthält nur eine Prüfsumme, nie ein
+  Passwort.
+
+---------------------------------------------------------------------------
+3 · BEHOBENER FEHLER IM BESTAND
+---------------------------------------------------------------------------
+
+  Bereich „Rechnungen & Lieferscheine“ (renderDocuments)
+
+  Die Funktion existingDocument() wurde an sechs Stellen aufgerufen, war
+  aber nirgends im Programm definiert. Der Bereich brach deshalb beim
+  Öffnen mit einem ReferenceError ab und blieb leer.
+
+  Die Funktion wurde ergänzt. Sie liefert das jeweils neueste, nicht
+  stornierte Dokument einer Bestellung in der gesuchten Art — genau das,
+  was die aufrufenden Stellen erwarten.
+
+  Nachgeprüft: Der Bereich öffnet und zeigt die Belege.
+
+---------------------------------------------------------------------------
+4 · DAS CHEF-COCKPIT
+---------------------------------------------------------------------------
+
+Die Startseite zeigt jetzt ein Cockpit. Es beantwortet die Frage
+„Was ist heute wichtig?“, bevor irgendwo geklickt werden muss.
+
+  TAGESBRIEF     die zwei bis vier Punkte, auf die es heute ankommt
+  KENNZAHLEN     Umsatz heute / 7 Tage / 30 Tage / Jahr, jeweils mit
+                 Vergleich zur Vorperiode und Verlaufslinie der letzten
+                 14 Tage; dazu offene Aufträge, offene Zahlungen,
+                 Versandbereit, In Fertigung, Lagerwert, neue Kunden
+  AUFMERKSAMKEIT alles, was liegen geblieben ist — nach Dringend / Bald /
+                 Hinweis filterbar, jeder Punkt führt per Klick an die
+                 Stelle, an der er sich erledigen lässt
+  MEISTVERKAUFT  echte Rangfolge nach Umsatz im gewählten Zeitraum
+  LAGER          Artikel unter Mindestbestand mit Reichweite in Tagen und
+                 einem Bestellvorschlag (der nichts auslöst)
+  ZAHLUNGSLAGE   offene Forderungen, Ausgaben, Zahlungsarten
+  SYSTEMZUSTAND  nur für Administratoren
+  WAS AUFFÄLLT   Beobachtungen aus den eigenen Zahlen, jede mit Angabe
+                 der Grundlage
+
+GRUNDSATZ: ES WIRD NICHTS ERFUNDEN.
+  Jede Zahl wird im Moment des Aufrufs aus der Datenbank berechnet. Wo
+  keine Daten vorliegen, steht das dort — kein geschätzter Wert, keine
+  Beispieldaten, kein leerer Balken, der Umsatz vortäuscht. Lässt sich zu
+  einer Bestellposition kein Betrag ermitteln (sehr alte Datensätze), wird
+  die Menge gezeigt und darauf hingewiesen, statt 0,00 € zu behaupten.
+
+RECHTE: Das Cockpit zeigt nur, was das angemeldete Konto sehen darf.
+  Ohne view_finance keine Zahlungslage, ohne view_inventory keine
+  Lagerwarnungen, der Systemzustand nur für Administratoren. Geprüft wird
+  auf dem Server, nicht durch Ausblenden im Browser.
+
+---------------------------------------------------------------------------
+5 · BEDIENUNG
+---------------------------------------------------------------------------
+
+  BEFEHLSPALETTE      Strg + K  (oder Cmd + K, oder einfach „/“)
+                      Bereiche wechseln und in einem Zug nach Bestellungen,
+                      Kunden, Produkten und Lagerartikeln suchen. Jeder
+                      Treffer führt an die richtige Stelle.
+
+  NAVIGATIONSSUCHE    Feld oben in der Seitenleiste; filtert die Bereiche.
+  GRUPPEN             Überschriften in der Seitenleiste klappen die Gruppe
+                      zu und auf; die Einstellung bleibt erhalten.
+  FAVORITEN           Stern neben einem Eintrag (erscheint beim Darüber-
+                      fahren). Favoriten stehen als eigene Gruppe oben.
+
+  Diese Einstellungen liegen im Browser des jeweiligen Benutzers und
+  werden nicht auf dem Server gespeichert.
+
+---------------------------------------------------------------------------
+6 · SMOKY ALS GESCHÄFTSASSISTENT
+---------------------------------------------------------------------------
+
+  Schaltfläche unten rechts. Beantwortet Fragen zum laufenden Betrieb:
+
+     „Was muss heute erledigt werden?“
+     „Was muss nachbestellt werden?“
+     „Welche Zahlungen sind überfällig?“
+     „Was verkauft sich am besten?“
+     „Wie ist der Umsatz?“
+     „Zeig mir RH24-WEB-…“        (Bestellung oder Vorgang direkt öffnen)
+     „Kunde Räucherei Ostsee“
+
+  SMOKY LIEST NUR.
+  Er ändert nichts, löscht nichts und verschickt nichts. Jede Änderung
+  bleibt eine bewusste Handlung in der zuständigen Maske. Bestellvorschläge
+  sind Vorschläge — es wird nie selbständig bestellt.
+
+  Er nutzt keinen externen Dienst. Es werden keine Daten übertragen, es
+  gibt keinen Schlüssel im Browser, und es wird kein Gesprächsverlauf
+  gespeichert. Alle Antworten werden im Moment der Frage aus der eigenen
+  Datenbank berechnet und zeigen nur, was das Konto sehen darf.
+
+---------------------------------------------------------------------------
+7 · GESTALTUNG
+---------------------------------------------------------------------------
+
+  Shop und Orgaboard verwenden jetzt dieselbe Formensprache: warmes
+  Papierweiss, Kupfer als einzige Signalfarbe, ruhige Flächen, wenig
+  Schatten.
+
+  Umgesetzt als zusätzliche Schicht (orgaboard-premium-2026.css), die als
+  letztes Stylesheet geladen wird. Sie zieht die über viele Versionen
+  gewachsenen Farbvariablen auf ein gemeinsames Set — dadurch übernehmen
+  alle vorhandenen Masken, Tabellen und Formulare die neue Anmutung, ohne
+  dass eine einzige alte Regel angefasst werden musste.
+
+  Nachgeprüft: 322 Textelemente, alle erfüllen WCAG AA beim Kontrast.
+  Dabei wurden auch drei vorhandene Stellen korrigiert, die den Mindest-
+  kontrast verfehlten (Gruppenüberschriften der Navigation mit 3,16:1,
+  Kassen-Kennzeichnung mit 4,39:1).
+
+---------------------------------------------------------------------------
+8 · GEPRÜFT
+---------------------------------------------------------------------------
+
+  Datenmotor (SQLite-Nachbau der Struktur)          184 Prüfungen   0 Fehler
+  Endpunkt (Anmeldung, CSRF, Rechte, Fehler)         24 Prüfungen   0 Fehler
+  Oberfläche (Cockpit, Palette, Assistent, Navi)     36 Prüfungen   0 Fehler
+  Bestehende Bereiche (10 Masken)                    30 Prüfungen   0 Fehler
+  Breakpoints 320/375/390/430/768/1024/1280/1440/1920 54 Prüfungen  0 Fehler
+  Rechte eines eingeschränkten Kontos                 7 Prüfungen   0 Fehler
+  Kontrast                                          322 Elemente    0 Fehler
+                                                    -------------------------
+                                                    657 Prüfungen   0 Fehler
+
+  Ausserdem:
+  · Alle 60 PHP-Dateien ohne Syntaxfehler.
+  · Keine Schaltfläche ohne Funktion.
+  · Keine JavaScript-Fehler in der Konsole.
+  · Shop-Regression über 35 Seiten × 4 Breiten: kein Überlauf, keine toten
+    Links, keine Konsolenfehler, keine unbeschrifteten Bedienelemente.
+  · Chatbot beantwortet Fachfragen weiterhin mit echten Katalogprodukten.
+  · Produktintegrität: 42 Bilder nach Prüfsumme unverändert, keine
+    Abweichung bei Preisen, Produktnamen, Warenkorb-Kennungen oder
+    Katalogdaten.
+
+---------------------------------------------------------------------------
+9 · STRATO
+---------------------------------------------------------------------------
+
+  · Höchste Anforderung: PHP 8.1 — dieselbe wie bisher (api.php und
+    finance-api.php verwenden bereits ': never').
+  · Die neuen Dateien brauchen nur Standardfunktionen: json, hash, PDO.
+    mbstring wird verwendet, wenn vorhanden, ist aber nicht Voraussetzung.
+  · Keine externen Aufrufe, keine Schlüssel, keine absoluten Serverpfade.
+  · Keine Datenbankänderung nötig. Es wurde keine Tabelle angelegt,
+    geändert oder gelöscht. Fehlende Zusatztabellen älterer Installationen
+    werden erkannt und übersprungen.
+  · Reines Hochladen der Dateien genügt.
+
+---------------------------------------------------------------------------
+10 · HOCHLADEN
+---------------------------------------------------------------------------
+
+  1. Vorher eine Sicherung des Ordners /orgaboard/ anlegen.
+  2. Den Inhalt des Pakets in den Webordner hochladen und vorhandene
+     Dateien überschreiben.
+  3. Im Browser einmal mit Strg + F5 neu laden, damit die neuen
+     Stylesheets und Programmdateien wirklich geholt werden.
+  4. Anmelden. Die Startseite zeigt nun das Cockpit.
+
+  Falls etwas nicht wie erwartet aussieht:
+     orgaboard/diagnose.php   zeigt den Zustand der Installation.
+
+  Sollte die neue Oberfläche einmal nicht laden, läuft das Orgaboard
+  unverändert weiter — die Ergänzung ist bewusst so gebaut, dass ihr
+  Ausfall nichts blockiert.
+
+===========================================================================

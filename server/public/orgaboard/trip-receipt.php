@@ -1,0 +1,46 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/bootstrap.php';
+rh24_require_login();
+
+define('RH24_TRIP_RECEIPT_MAX',15*1024*1024);
+function trj(array $d,int $status=200): never {http_response_code($status);header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');echo json_encode($d,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);exit;}
+function trs(mixed $v,int $max=500): string {$s=trim((string)$v);return function_exists('mb_substr')?mb_substr($s,0,$max):substr($s,0,$max);}
+function trmoney(mixed $v): float {return round((float)str_replace(',','.',trim((string)$v)),2);}
+function trdate(mixed $v): string {$s=trim((string)$v);if(!preg_match('/^\d{4}-\d{2}-\d{2}$/',$s)||strtotime($s)===false)throw new InvalidArgumentException('Belegdatum ist ungültig.');return $s;}
+function tr_owned_receipt(PDO $db,string $id): array {$q=$db->prepare('SELECT * FROM trip_receipts WHERE id=?');$q->execute([$id]);$r=$q->fetch();if(!$r)throw new RuntimeException('Beleg nicht gefunden.');rh24_triplog_assert_owned_rep((string)$r['sales_rep_id']);return $r;}
+$db=rh24_db();rh24_ensure_v99_trip_receipt_schema($db);
+
+if($_SERVER['REQUEST_METHOD']==='GET'){
+  if(!rh24_can('view_triplog')){http_response_code(403);exit('Keine Berechtigung.');}
+  $id=trs($_GET['id']??'',60);if($id===''){http_response_code(400);exit('Beleg-ID fehlt.');}
+  try{$r=tr_owned_receipt($db,$id);}catch(Throwable $e){http_response_code(404);exit($e->getMessage());}
+  $rel=trim((string)$r['receipt_path']);$base=realpath(__DIR__.'/trip-receipt-uploads');$path=realpath(__DIR__.'/'.$rel);if(!$base||!$path||!str_starts_with($path,$base.DIRECTORY_SEPARATOR)||!is_file($path)){http_response_code(404);exit('Belegdatei nicht gefunden.');}
+  $mime=(string)($r['receipt_mime']?:'application/octet-stream');header('Content-Type: '.$mime);header('Content-Length: '.filesize($path));header('Content-Disposition: inline; filename="'.preg_replace('/[\r\n"]+/','',(string)$r['receipt_name']).'"');header('Cache-Control: private, no-store');readfile($path);exit;
+}
+if($_SERVER['REQUEST_METHOD']!=='POST')trj(['ok'=>false,'error'=>'Methode nicht erlaubt.'],405);
+if(!rh24_can('edit_triplog'))trj(['ok'=>false,'error'=>'Keine Berechtigung zum Hochladen von Fahrzeugbelegen.'],403);
+$action=trs($_POST['action']??'upload',30);rh24_verify_csrf($_SERVER['HTTP_X_CSRF_TOKEN']??($_POST['csrf']??null));
+try{
+  if($action==='sync'){
+    $id=trs($_POST['id']??'',60);tr_owned_receipt($db,$id);$sync=rh24_trip_receipt_sync_finance($id,true);$period=trs($_POST['period']??date('Y-m'),7);$rep=trs($_POST['sales_rep_id']??'',40);trj(['ok'=>true,'sync'=>$sync,'triplog'=>rh24_triplog_data($period,$rep)]);
+  }
+  if($action==='cancel'){
+    $id=trs($_POST['id']??'',60);$reason=trs($_POST['reason']??'',500);if((function_exists('mb_strlen')?mb_strlen($reason):strlen($reason))<5)throw new InvalidArgumentException('Bitte einen nachvollziehbaren Stornogrund angeben.');$r=tr_owned_receipt($db,$id);if((string)$r['record_status']!=='active')throw new RuntimeException('Beleg ist bereits storniert.');
+    $db->beginTransaction();try{$db->prepare("UPDATE trip_receipts SET record_status='cancelled',cancelled_at=NOW(),cancelled_by=?,cancel_reason=?,finance_status=CASE WHEN finance_status='synced' THEN 'cancel_pending' ELSE finance_status END,updated_at=NOW() WHERE id=?")->execute([rh24_user_id(),$reason,$id]);if(!empty($r['finance_expense_id'])){$e=$db->prepare("SELECT invoice_date,record_status FROM finance_expenses WHERE id=?");$e->execute([$r['finance_expense_id']]);$fr=$e->fetch();if($fr&&$fr['record_status']==='active'){rh24_finance_assert_period_open((string)$fr['invoice_date']);$db->prepare("UPDATE finance_expenses SET record_status='cancelled',cancelled_at=NOW(),cancelled_by=?,cancel_reason=?,updated_at=NOW() WHERE id=?")->execute([rh24_user_id(),'Storno aus Fahrtenbuch: '.$reason,$r['finance_expense_id']]);$db->prepare("UPDATE trip_receipts SET finance_status='cancelled' WHERE id=?")->execute([$id]);}}$db->commit();}catch(Throwable $e){if($db->inTransaction())$db->rollBack();throw $e;}
+    rh24_audit('trip_receipt_cancel','trip_receipt',$id,['reason'=>$reason,'finance_expense_id'=>$r['finance_expense_id']]);$period=trs($_POST['period']??date('Y-m'),7);$rep=trs($_POST['sales_rep_id']??'',40);trj(['ok'=>true,'triplog'=>rh24_triplog_data($period,$rep)]);
+  }
+  if($action!=='upload')throw new InvalidArgumentException('Unbekannte Belegaktion.');
+  if(!isset($_FILES['receipt'])||!is_uploaded_file($_FILES['receipt']['tmp_name']))throw new InvalidArgumentException('Bitte einen Beleg als Foto oder PDF auswählen.');
+  $f=$_FILES['receipt'];if((int)$f['size']<=0||(int)$f['size']>RH24_TRIP_RECEIPT_MAX)throw new InvalidArgumentException('Belegdatei muss zwischen 1 Byte und 15 MB groß sein.');
+  $orig=basename((string)$f['name']);$ext=strtolower(pathinfo($orig,PATHINFO_EXTENSION));$mime=(new finfo(FILEINFO_MIME_TYPE))->file($f['tmp_name'])?:'';$allowed=['application/pdf'=>'pdf','image/jpeg'=>'jpg','image/png'=>'png','image/webp'=>'webp','image/heic'=>'heic','image/heif'=>'heif'];if(!isset($allowed[$mime]))throw new InvalidArgumentException('Erlaubt sind PDF, JPG, PNG, WEBP, HEIC oder HEIF.');$ext=$allowed[$mime];
+  $sha=hash_file('sha256',$f['tmp_name']);$dup=$db->prepare("SELECT id,receipt_name,receipt_date FROM trip_receipts WHERE receipt_sha256=? AND record_status='active' LIMIT 1");$dup->execute([$sha]);if($x=$dup->fetch())throw new RuntimeException('Dieser Beleg wurde bereits hochgeladen ('.($x['receipt_name']?:$x['id']).' vom '.date('d.m.Y',strtotime((string)$x['receipt_date'])).').');
+  $scope=rh24_triplog_rep_scope(trs($_POST['sales_rep_id']??'',40));$repId=(string)($scope['id']??'');if($repId==='')throw new InvalidArgumentException('Kein Mitarbeiter ausgewählt.');rh24_triplog_assert_owned_rep($repId);
+  $vehicleId=trs($_POST['vehicle_id']??'',40);$vq=$db->prepare('SELECT * FROM trip_vehicles WHERE id=? AND sales_rep_id=?');$vq->execute([$vehicleId,$repId]);$vehicle=$vq->fetch();if(!$vehicle)throw new InvalidArgumentException('Bitte ein gültiges Fahrzeug auswählen.');
+  $tripId=trs($_POST['trip_id']??'',40);if($tripId!==''){$tq=$db->prepare('SELECT id FROM trip_log WHERE id=? AND sales_rep_id=? AND vehicle_id=?');$tq->execute([$tripId,$repId,$vehicleId]);if(!$tq->fetchColumn())throw new InvalidArgumentException('Die ausgewählte Fahrt passt nicht zu Fahrzeug/Mitarbeiter.');}
+  $types=rh24_trip_receipt_types();$type=trs($_POST['receipt_type']??'other',32);if(!isset($types[$type]))$type='other';$date=trdate($_POST['receipt_date']??'');$gross=trmoney($_POST['gross_amount']??0);if($gross<=0)throw new InvalidArgumentException('Bruttobetrag muss größer als 0 sein.');$rate=max(0,min(100,(float)str_replace(',','.',(string)($_POST['tax_rate']??$types[$type]['tax_rate']))));$net=round($gross/(1+$rate/100),2);$tax=round($gross-$net,2);
+  $paid=filter_var($_POST['paid']??'1',FILTER_VALIDATE_BOOL);$paymentStatus=$paid?'paid':'open';$paymentMethod=trs($_POST['payment_method']??($paid?'Karte':''),60);$odometer=trim((string)($_POST['odometer_km']??''))===''?null:max(0,(float)str_replace(',','.',(string)$_POST['odometer_km']));$liters=trim((string)($_POST['fuel_liters']??''))===''?null:max(0,(float)str_replace(',','.',(string)$_POST['fuel_liters']));$unitPrice=$liters&&$liters>0?round($gross/$liters,4):null;
+  $id=rh24_random_id('TRR-');$ym=substr($date,0,7);$dir=__DIR__.'/trip-receipt-uploads/'.str_replace('-','/',$ym);if(!is_dir($dir)&&!mkdir($dir,0700,true)&&!is_dir($dir))throw new RuntimeException('Belegordner konnte nicht angelegt werden.');$name=$id.'-'.bin2hex(random_bytes(6)).'.'.$ext;$path=$dir.'/'.$name;if(!move_uploaded_file($f['tmp_name'],$path))throw new RuntimeException('Beleg konnte nicht gespeichert werden.');$rel='trip-receipt-uploads/'.str_replace('-','/',$ym).'/'.$name;
+  try{$db->prepare("INSERT INTO trip_receipts(id,sales_rep_id,vehicle_id,trip_id,receipt_type,receipt_date,supplier_name,invoice_no,description,gross_amount,net_amount,tax_amount,tax_rate,payment_status,payment_method,paid_at,odometer_km,fuel_liters,fuel_unit_price,notes,receipt_path,receipt_name,receipt_mime,receipt_sha256,finance_status,created_by,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, 'pending',?,NOW(),NOW())")->execute([$id,$repId,$vehicleId,$tripId!==''?$tripId:null,$type,$date,trs($_POST['supplier_name']??'',220),trs($_POST['invoice_no']??'',100),trs($_POST['description']??'',500),$gross,$net,$tax,$rate,$paymentStatus,$paymentMethod,$paid?$date:null,$odometer,$liters,$unitPrice,trs($_POST['notes']??'',2000),$rel,$orig,$mime,$sha,rh24_user_id()]);}catch(Throwable $e){@unlink($path);throw $e;}
+  rh24_audit('trip_receipt_upload','trip_receipt',$id,['sales_rep_id'=>$repId,'vehicle_id'=>$vehicleId,'type'=>$type,'gross'=>$gross,'sha256'=>$sha]);$sync=rh24_trip_receipt_sync_finance($id,false);$period=trs($_POST['period']??substr($date,0,7),7);trj(['ok'=>true,'receipt_id'=>$id,'sync'=>$sync,'triplog'=>rh24_triplog_data($period,$repId)]);
+}catch(InvalidArgumentException $e){trj(['ok'=>false,'error'=>$e->getMessage()],422);}catch(RuntimeException $e){trj(['ok'=>false,'error'=>$e->getMessage()],409);}catch(Throwable $e){error_log('RH24 Trip Receipt V99: '.$e->getMessage());trj(['ok'=>false,'error'=>$e->getMessage()],500);}

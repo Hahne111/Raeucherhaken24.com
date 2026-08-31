@@ -1,0 +1,1 @@
+V107.8: Neue Produktkarten im Räucherhaken-Bereich verwenden jetzt dauerhaft dieselbe Kartenstruktur wie die bestehenden Karten links. Damit sehen auch neu veröffentlichte Produkte im Shop einheitlich aus.

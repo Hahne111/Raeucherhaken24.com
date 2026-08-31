@@ -1,0 +1,2020 @@
+/* =====================================================================
+   RÄUCHERHAKEN24 · ATELIER 2026.3  ·  ORGABOARD
+   (orgaboard/assets/orgaboard-atelier-2026.css)
+   ---------------------------------------------------------------------
+   Wird als ALLERLETZTES Stylesheet geladen, nach
+   orgaboard-premium-2026.css. Es wird keine Datei ersetzt, kein Modul
+   entfernt und keine Funktion abgeschaltet.
+
+   Alle Regeln sind mit `html.ob-atelier` qualifiziert. Diese Klasse wird
+   im <head> gesetzt. Fehlt sie (etwa weil JavaScript blockiert ist),
+   bleibt die bisherige Gestaltung vollständig erhalten.
+
+   Dieselbe Markensprache wie im Shop: warmes Papierweiss, Kupfer als
+   einzige Signalfarbe, ruhige Flächen, feine Linien, viel Luft.
+   Die gemeinsamen Werte kommen aus ../../rh-design-system.css.
+
+   Gliederung
+     00 Rückgriff auf das Designsystem   06 Tabellen
+     01 Rahmen & Grundlagen              07 Chef-Cockpit
+     02 Seitennavigation                 08 Formulare & Schaltflächen
+     03 Kopfleiste                       09 Modal, Toast, Ladezustände
+     04 Begrüssung & Kennzahlen          10 Bewegung
+     05 Panels & Listen                  11 Responsive  12 A11y
+   ===================================================================== */
+
+/* =====================================================================
+   00 · RÜCKGRIFF AUF DAS DESIGNSYSTEM
+   Falls rh-design-system.css nicht geladen werden konnte, greifen hier
+   identische Ersatzwerte. Das OrgaBoard bleibt dadurch immer benutzbar.
+   ===================================================================== */
+html.ob-atelier{
+  --rh-bg:#fbfaf8;                --rh-bg-deep:#f4f1ec;
+  --rh-surface:#ffffff;           --rh-surface-secondary:#f6f4f1;
+  --rh-surface-tertiary:#efece7;
+  --rh-text:#16151a;              --rh-text-secondary:#2c2a2e;
+  --rh-text-soft:#46423f;         --rh-text-muted:#6b655f;
+  --rh-text-inverse:#fdfcfa;      --rh-text-on-accent:#ffffff;
+  --rh-border:#e9e4dd;            --rh-border-soft:#f1ede7;
+  --rh-border-strong:#d8d1c7;
+  --rh-accent:#a9530f;            --rh-accent-hover:#8f4413;
+  --rh-accent-bright:#c2611f;     --rh-accent-tint:#fdf4ec;
+  --rh-accent-tint-2:#f8e8d9;     --rh-accent-line:#eedcc9;
+  --rh-success:#1f6b45;           --rh-success-tint:#edf6f1;  --rh-success-line:#cfe6da;
+  --rh-warning:#8a5510;           --rh-warning-tint:#fdf3e4;  --rh-warning-line:#f0dcbc;
+  --rh-danger:#a32b22;            --rh-danger-tint:#fdf0ee;   --rh-danger-line:#f0d2cd;
+  --rh-info:#24557f;              --rh-info-tint:#eef4fa;     --rh-info-line:#cddef0;
+
+  --rh-font:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI","Helvetica Neue",Roboto,Arial,sans-serif;
+  --rh-radius-xs:6px;  --rh-radius-sm:10px; --rh-radius-md:14px;
+  --rh-radius-lg:20px; --rh-radius-xl:28px; --rh-radius-pill:999px;
+  --rh-shadow-xs:0 1px 2px rgba(28,20,12,.045);
+  --rh-shadow-sm:0 1px 2px rgba(28,20,12,.05),0 4px 12px -6px rgba(38,28,18,.10);
+  --rh-shadow-md:0 2px 4px rgba(28,20,12,.04),0 12px 28px -12px rgba(38,28,18,.16);
+  --rh-shadow-lg:0 4px 8px rgba(28,20,12,.05),0 26px 56px -22px rgba(38,28,18,.24);
+  --rh-shadow-xl:0 8px 16px rgba(28,20,12,.06),0 48px 96px -36px rgba(38,28,18,.30);
+  --rh-shadow-focus:0 0 0 2px var(--rh-surface),0 0 0 4.5px var(--rh-accent);
+  --rh-ease-premium:cubic-bezier(.22,.61,.30,1);
+  --rh-ease-out:cubic-bezier(.16,1,.30,1);
+  --rh-ease-spring:cubic-bezier(.34,1.30,.48,1);
+  --rh-dur-fast:160ms; --rh-dur-base:260ms; --rh-dur-slow:420ms;
+
+  /* OrgaboardWEIGENE Masse */
+  --ob-side-w: 268px;
+  --ob-side-w-compact: 76px;
+  --ob-top-h: 74px;
+  --ob-pad: clamp(18px, 2.4vw, 34px);
+}
+
+/* Die gewachsenen Variablen der Vorversionen auf dasselbe Set ziehen,
+   damit auch unangetastete Bausteine sofort die neue Anmutung haben. */
+html.ob-atelier{
+  --ob-bg: var(--rh-bg);
+  --ob-bg-deep: var(--rh-bg-deep);
+  --ob-surface: var(--rh-surface);
+  --ob-surface-2: var(--rh-surface-secondary);
+  --ob-surface-3: var(--rh-surface-tertiary);
+  --ob-line: var(--rh-border);
+  --ob-line-soft: var(--rh-border-soft);
+  --ob-line-strong: var(--rh-border-strong);
+  --ob-ink: var(--rh-text);
+  --ob-ink-2: var(--rh-text-secondary);
+  --ob-text: var(--rh-text-soft);
+  --ob-muted: var(--rh-text-muted);
+  --ob-faint: var(--rh-text-muted);
+  --ob-copper: var(--rh-accent);
+  --ob-copper-2: var(--rh-accent-hover);
+  --ob-copper-tint: var(--rh-accent-tint);
+  --ob-copper-line: var(--rh-accent-line);
+}
+
+/* =====================================================================
+   01 · RAHMEN & GRUNDLAGEN
+   ===================================================================== */
+html.ob-atelier body{
+  font-family: var(--rh-font) !important;
+  background: var(--rh-bg) !important;
+  color: var(--rh-text-soft) !important;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+html.ob-atelier h1,
+html.ob-atelier h2,
+html.ob-atelier h3,
+html.ob-atelier h4{
+  font-family: var(--rh-font) !important;
+  color: var(--rh-text) !important;
+  letter-spacing: -.012em !important;
+  font-weight: 600 !important;
+  line-height: 1.24 !important;
+}
+html.ob-atelier .appFrame{
+  display: grid !important;
+  grid-template-columns: var(--ob-side-w) minmax(0, 1fr) !important;
+  gap: 0 !important;                 /* die Spalten stossen direkt aneinander */
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--rh-bg) !important;
+}
+
+/* =====================================================================
+   02 · SEITENNAVIGATION
+   ===================================================================== */
+html.ob-atelier .sideNav{
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh; height: 100dvh;
+  display: flex !important;
+  flex-direction: column !important;
+  width: var(--ob-side-w) !important;
+  background: var(--rh-surface) !important;
+  border-right: 1px solid var(--rh-border) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+html.ob-atelier .sideNav > nav{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 14px 14px !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rh-border-strong) transparent;
+}
+html.ob-atelier .sideNav > nav::-webkit-scrollbar{ width: 8px; }
+html.ob-atelier .sideNav > nav::-webkit-scrollbar-thumb{
+  background: var(--rh-border); border-radius: 8px; border: 2px solid var(--rh-surface);
+}
+
+/* Wortmarke */
+html.ob-atelier .sideBrand{
+  flex: 0 0 auto;
+  display: grid !important;
+  gap: 3px !important;
+  padding: 22px 20px 18px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .sideLogo{
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  letter-spacing: .13em !important;
+  text-transform: uppercase;
+  color: var(--rh-text) !important;
+}
+html.ob-atelier .sideLogo strong{ color: var(--rh-accent) !important; }
+html.ob-atelier .sideBrand small{
+  font-size: 10px !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase;
+  color: var(--rh-text-muted) !important;
+}
+
+/* Abschnitte */
+html.ob-atelier .navSection{
+  margin: 0 !important;
+  padding: 14px 0 0 !important;
+  border: 0 !important;
+}
+html.ob-atelier .navSectionStart{ padding-top: 16px !important; }
+html.ob-atelier .navSectionLabel{
+  padding: 0 12px 8px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: none !important;
+}
+html.ob-atelier .navSectionLabel span{
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase;
+  color: var(--rh-text-muted) !important;
+  opacity: .85;
+}
+
+/* Einträge */
+html.ob-atelier .navItem{
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 22px minmax(0,1fr) auto !important;
+  align-items: center !important;
+  gap: 11px !important;
+  width: 100% !important;
+  padding: 10px 12px !important;
+  margin: 1px 0 !important;
+  border: 0 !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: transparent !important;
+  color: var(--rh-text-soft) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 13.5px !important;
+  text-align: left !important;
+  cursor: pointer;
+  transition:
+    background-color var(--rh-dur-fast) var(--rh-ease-premium),
+    color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .navItem > span:first-child{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  font-size: 14px; line-height: 1;
+  color: var(--rh-text-muted) !important;
+  transition: color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .navItem b{
+  font-weight: 500 !important;
+  color: inherit !important;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+html.ob-atelier .navItem em{
+  justify-self: end;
+  font-style: normal;
+  min-width: 20px; padding: 2px 7px;
+  border-radius: var(--rh-radius-pill);
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text-muted) !important;
+  font-size: 10px; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .navItem:hover{
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text) !important;
+}
+html.ob-atelier .navItem:hover > span:first-child{ color: var(--rh-text-soft) !important; }
+
+/* Aktiver Punkt: kupferne Tönung – wie in der Vorlage */
+html.ob-atelier .navItem.active{
+  background: var(--rh-accent-tint) !important;
+  color: var(--rh-accent) !important;
+  font-weight: 600 !important;
+}
+html.ob-atelier .navItem.active b{ font-weight: 600 !important; }
+html.ob-atelier .navItem.active > span:first-child{ color: var(--rh-accent) !important; }
+html.ob-atelier .navItem.active em{
+  background: var(--rh-accent) !important;
+  color: var(--rh-text-on-accent) !important;
+}
+/* Der weiche Balken links wandert mit – die Bewegung macht die
+   Runtime über eine gemeinsame Markierung (.obNavGlide). */
+html.ob-atelier .sideNav .obNavGlide{
+  position: absolute;
+  left: 14px; width: 3px;
+  border-radius: 3px;
+  background: var(--rh-accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--rh-dur-slow) var(--rh-ease-out),
+              height    var(--rh-dur-slow) var(--rh-ease-out),
+              opacity   var(--rh-dur-base) var(--rh-ease-premium);
+  will-change: transform, height;
+}
+html.ob-atelier .sideNav .obNavGlide.is-on{ opacity: 1; }
+
+/* Vertriebskanäle – von der Runtime ergänzt, verlinkt nur echte Ziele */
+html.ob-atelier .obChannelLink{
+  display: grid !important;
+  grid-template-columns: 22px minmax(0,1fr) auto;
+  align-items: center; gap: 11px;
+  padding: 10px 12px;
+  margin: 1px 0;
+  border-radius: var(--rh-radius-sm);
+  color: var(--rh-text-soft) !important;
+  font-size: 13.5px;
+  text-decoration: none !important;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .obChannelLink:hover{ background: var(--rh-surface-secondary) !important; }
+html.ob-atelier .obChannelLink > span:first-child{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; font-size: 14px;
+  color: var(--rh-text-muted);
+}
+html.ob-atelier .obChannelLink i{
+  font-style: normal; font-size: 12px; color: var(--rh-text-muted); opacity: .7;
+}
+
+/* Fuss – bewusst ruhig. KEINE Tarif-, Upgrade- oder Werbefläche. */
+html.ob-atelier .sideFoot{
+  flex: 0 0 auto;
+  display: grid !important;
+  gap: 8px !important;
+  padding: 14px !important;
+  margin: 0 !important;
+  border-top: 1px solid var(--rh-border-soft) !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .sideFoot a,
+html.ob-atelier .sideFoot button{
+  display: flex !important;
+  align-items: center; justify-content: center; gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 14px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .sideFoot a:hover{
+  background: var(--rh-surface-secondary) !important;
+  border-color: var(--rh-border-strong) !important;
+  color: var(--rh-text) !important;
+}
+html.ob-atelier .sideFoot button:hover{
+  border-color: var(--rh-danger-line) !important;
+  color: var(--rh-danger) !important;
+  background: var(--rh-danger-tint) !important;
+}
+
+/* =====================================================================
+   03 · KOPFLEISTE
+   ===================================================================== */
+/* Die Vorversionen arbeiteten mit einer fest positionierten Seiten-
+   leiste und schoben den Hauptbereich per `margin-left` daran vorbei.
+   Der Rahmen ist jetzt ein Raster – die Seitenleiste belegt bereits
+   eine eigene Spalte. Der alte Aussenabstand würde den Inhalt ein
+   zweites Mal verschieben und rechts aus dem Bild laufen. */
+html.ob-atelier .mainArea{
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0;
+  width: auto !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  background: var(--rh-bg) !important;
+}
+/* Kopf- und Schnellzugriffsleiste sind durchgehende Bänder, keine
+   schwebenden Karten. Die Vorversionen setzen hier Radius und
+   Aussenabstand – beides wird aufgehoben. */
+html.ob-atelier .topBar,
+html.ob-atelier .coreQuickBar,
+html.ob-atelier .workspace{
+  margin: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  border-radius: 0 !important;
+}
+
+/* Der Menüknopf gehört nur auf schmale Geräte. */
+html.ob-atelier .mobileMenu{ display: none !important; }
+@media (max-width: 860px){
+  html.ob-atelier .mobileMenu{ display: inline-flex !important; }
+}
+html.ob-atelier .topBar{
+  position: sticky !important;
+  top: 0; z-index: 40;
+  display: grid !important;
+  grid-template-columns: auto minmax(0,1fr) auto !important;
+  align-items: center !important;
+  gap: var(--rh-radius-lg) !important;
+  min-height: var(--ob-top-h);
+  padding: 0 var(--ob-pad) !important;
+  background: rgba(255,255,255,.86) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  box-shadow: none !important;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  html.ob-atelier .topBar{ background: var(--rh-surface) !important; }
+}
+html.ob-atelier .topBar > div:first-of-type{ min-width: 0; }
+html.ob-atelier #viewKicker{
+  display: block;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase;
+  color: var(--rh-text-muted) !important;
+  margin-bottom: 2px;
+}
+html.ob-atelier #viewTitle{
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: var(--rh-text) !important;
+  margin: 0 !important;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+html.ob-atelier .topActions{
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Suchfeld – ruhige Pille wie in der Vorlage */
+html.ob-atelier .globalSearch{
+  display: flex !important;
+  align-items: center; gap: 9px;
+  min-width: clamp(200px, 26vw, 380px);
+  padding: 0 6px 0 14px !important;
+  height: 40px;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-secondary) !important;
+  box-shadow: none !important;
+  transition: border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .globalSearch:focus-within{
+  border-color: var(--rh-border-strong) !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .globalSearch > span{ color: var(--rh-text-muted) !important; font-size: 14px; }
+html.ob-atelier .globalSearch input{
+  flex: 1 1 auto; min-width: 0;
+  border: 0 !important; background: transparent !important;
+  font-family: var(--rh-font) !important;
+  font-size: 13.5px !important;
+  color: var(--rh-text) !important;
+  outline: none !important;
+  padding: 0 !important;
+}
+html.ob-atelier .globalSearch input::placeholder{ color: var(--rh-text-muted) !important; }
+html.ob-atelier .obKbdHint{
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: 2px;
+  padding: 3px 7px;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-xs);
+  background: var(--rh-surface);
+  color: var(--rh-text-muted);
+  font-size: 10.5px; font-weight: 600;
+}
+@media (max-width: 1100px){ html.ob-atelier .obKbdHint{ display: none; } }
+
+html.ob-atelier .iconBtn{
+  width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  font-size: 15px; cursor: pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              transform var(--rh-dur-slow) var(--rh-ease-premium);
+}
+html.ob-atelier .iconBtn:hover{
+  background: var(--rh-surface-secondary) !important;
+  border-color: var(--rh-border-strong) !important;
+}
+html.ob-atelier .iconBtn.is-spinning{ animation: ob-spin 700ms var(--rh-ease-in-out); }
+@keyframes ob-spin{ to{ transform: rotate(360deg); } }
+
+html.ob-atelier .serverBuildBadge,
+html.ob-atelier .orgaboardVersionPill{
+  padding: 5px 10px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-muted) !important;
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: .06em;
+}
+/* Das Benutzerfeld war in den Vorversionen eine Spalte mit einem
+   überstehenden Kreis. Hier wird daraus eine ruhige Zeile:
+   Kreis · Name · Rolle. Die Angaben selbst bleiben unverändert. */
+html.ob-atelier .topActions .adminChip,
+html.ob-atelier .adminChip{
+  display: grid !important;
+  grid-template-columns: 30px auto !important;
+  grid-template-rows: auto auto !important;
+  align-items: center !important;
+  justify-items: start !important;
+  column-gap: 10px !important;
+  row-gap: 0 !important;
+  padding: 5px 14px 5px 6px !important;
+  margin: 0 !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: none !important;
+  overflow: visible;
+}
+html.ob-atelier .topActions .adminChip i,
+html.ob-atelier .adminChip i{
+  grid-row: 1 / 3 !important;
+  grid-column: 1 !important;
+  position: static !important;
+  width: 30px !important; height: 30px !important;
+  min-width: 30px !important; min-height: 30px !important;
+  margin: 0 !important; inset: auto !important;
+  transform: none !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-accent-tint) !important;
+  border: 1px solid var(--rh-accent-line) !important;
+  display: block !important;
+}
+html.ob-atelier .adminChip span{
+  grid-column: 2 !important; grid-row: 1 !important;
+  display: block !important;
+  margin: 0 !important;
+  font-size: 12.5px !important; font-weight: 600 !important;
+  color: var(--rh-text) !important; line-height: 1.25 !important;
+  white-space: nowrap;
+}
+html.ob-atelier .adminChip small{
+  grid-column: 2 !important; grid-row: 2 !important;
+  display: block !important;
+  margin: 0 !important;
+  font-size: 10.5px !important;
+  color: var(--rh-text-muted) !important;
+  line-height: 1.25 !important;
+  white-space: nowrap;
+}
+@media (max-width: 900px){
+  html.ob-atelier .adminChip span,
+  html.ob-atelier .adminChip small{ display: none; }
+  html.ob-atelier .adminChip{ padding: 5px !important; }
+}
+
+/* Schnellzugriffsleiste */
+html.ob-atelier .coreQuickBar{
+  display: flex !important;
+  align-items: center; flex-wrap: wrap;
+  gap: 14px !important;
+  padding: 14px var(--ob-pad) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  border-radius: 0 !important;
+  background: var(--rh-surface) !important;
+  box-shadow: none !important;
+}
+html.ob-atelier .coreQuickIntro small{
+  display: block;
+  font-size: 9.5px !important; font-weight: 700 !important;
+  letter-spacing: .16em !important; text-transform: uppercase;
+  color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .coreQuickIntro b{
+  font-size: 13px !important; color: var(--rh-text) !important; font-weight: 600 !important;
+}
+html.ob-atelier .coreQuickActions{
+  display: flex !important; flex-wrap: wrap; gap: 6px !important;
+}
+html.ob-atelier .quickViewBtn{
+  display: inline-flex !important; align-items: center; gap: 7px;
+  min-height: 34px; padding: 0 13px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 12.5px !important; font-weight: 500 !important;
+  cursor: pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              transform var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .quickViewBtn:hover{
+  background: var(--rh-surface-secondary) !important;
+  border-color: var(--rh-border-strong) !important;
+  transform: translateY(-1px);
+}
+html.ob-atelier .quickViewBtn > span{ color: var(--rh-text-muted); font-size: 13px; }
+
+/* Arbeitsfläche */
+html.ob-atelier .workspace{
+  flex: 1 1 auto;
+  padding: var(--ob-pad) !important;
+  background: var(--rh-bg) !important;
+  min-width: 0;
+}
+
+/* =====================================================================
+   04 · BEGRÜSSUNG & KENNZAHLEN
+   ===================================================================== */
+html.ob-atelier .obGreeting{
+  display: flex; flex-wrap: wrap;
+  align-items: flex-end; justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+html.ob-atelier .obGreeting h2{
+  font-size: clamp(24px, 2.6vw, 32px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.02em !important;
+  color: var(--rh-text) !important;
+  margin: 0 0 6px !important;
+}
+html.ob-atelier .obGreeting p{
+  margin: 0 !important;
+  color: var(--rh-text-muted) !important;
+  font-size: 14px !important;
+}
+html.ob-atelier .obGreetingMeta{
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 15px;
+  border: 1px solid var(--rh-border);
+  border-radius: var(--rh-radius-pill);
+  background: var(--rh-surface);
+  color: var(--rh-text-soft);
+  font-size: 12.5px; font-weight: 500;
+}
+html.ob-atelier .obGreetingMeta::before{
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--rh-success);
+}
+
+/* Kennzahlkarten */
+html.ob-atelier .metricGrid,
+html.ob-atelier .executiveKpiGrid,
+html.ob-atelier .productionKpis,
+html.ob-atelier .warehouseCommandKpis,
+html.ob-atelier .salesExecKpis,
+html.ob-atelier .compactMetrics{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)) !important;
+  gap: 14px !important;
+  margin: 0 0 20px !important;
+}
+html.ob-atelier .metric,
+html.ob-atelier .executiveKpiGrid > article,
+html.ob-atelier .productionMetric{
+  position: relative;
+  display: grid !important;
+  gap: 7px !important;
+  padding: 20px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  transition: border-color var(--rh-dur-base) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium),
+              transform var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.ob-atelier .metric:hover,
+html.ob-atelier .executiveKpiGrid > article:hover{
+  border-color: var(--rh-border-strong) !important;
+  box-shadow: var(--rh-shadow-sm) !important;
+  transform: translateY(-2px);
+}
+html.ob-atelier .metric small,
+html.ob-atelier .executiveKpiGrid > article small{
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--rh-text-muted) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  padding-right: 44px;     /* Platz für das Symbol oben rechts */
+}
+html.ob-atelier .metric strong,
+html.ob-atelier .executiveKpiGrid > article strong{
+  font-size: clamp(24px, 2.2vw, 30px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.024em !important;
+  color: var(--rh-text) !important;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1 !important;
+}
+html.ob-atelier .metric span,
+html.ob-atelier .executiveKpiGrid > article span{
+  font-size: 12px !important;
+  color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .executiveKpiGrid > article span.positive{
+  color: var(--rh-success) !important; font-weight: 600 !important;
+}
+html.ob-atelier .executiveKpiGrid > article span.negative{
+  color: var(--rh-danger) !important; font-weight: 600 !important;
+}
+/* Warnzustand: nur eine feine kupferne Kante, keine Signalfläche */
+html.ob-atelier .metric.attn{
+  border-color: var(--rh-accent-line) !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .metric.attn::before{
+  content: "";
+  position: absolute; inset: 0 auto 0 0; width: 3px;
+  background: var(--rh-accent);
+}
+/* Symbol oben rechts – von der Runtime ergänzt */
+html.ob-atelier .obMetricIcon{
+  position: absolute; top: 16px; right: 16px;
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border-radius: var(--rh-radius-pill);
+  background: var(--rh-surface-secondary);
+  color: var(--rh-text-muted);
+  font-size: 14px;
+  pointer-events: none;
+}
+html.ob-atelier .obMetricIcon.accent{ background: var(--rh-accent-tint); color: var(--rh-accent); }
+html.ob-atelier .obMetricIcon.good{   background: var(--rh-success-tint); color: var(--rh-success); }
+
+/* =====================================================================
+   05 · PANELS & LISTEN
+   ===================================================================== */
+html.ob-atelier .panel,
+html.ob-atelier .softPanel,
+html.ob-atelier .infoCard,
+html.ob-atelier .detailBox,
+html.ob-atelier .attentionBox,
+html.ob-atelier .warehouseCard,
+html.ob-atelier .performancePanel{
+  background: var(--rh-surface) !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+html.ob-atelier .panelPad{ padding: 22px !important; }
+html.ob-atelier .panelTitle{
+  display: flex !important;
+  align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 12px !important;
+  padding: 17px 20px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .panelTitle h3{
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--rh-text) !important;
+  margin: 0 !important;
+}
+html.ob-atelier .panelTitle > span{
+  font-size: 12px !important;
+  color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .dashGrid,
+html.ob-atelier .executiveGrid,
+html.ob-atelier .cardGrid,
+html.ob-atelier .warehouseCockpitGrid{
+  display: grid !important;
+  gap: 16px !important;
+  margin-bottom: 16px !important;
+}
+html.ob-atelier .dashGrid{ grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) !important; }
+html.ob-atelier .executiveGrid{ grid-template-columns: repeat(auto-fit, minmax(340px,1fr)) !important; }
+
+/* Bestellzeilen */
+html.ob-atelier .orderMini{
+  display: grid !important;
+  grid-template-columns: minmax(78px,auto) minmax(0,1fr) auto auto !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 14px 20px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  background: var(--rh-surface) !important;
+  font-family: var(--rh-font) !important;
+  cursor: pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .orderMini:hover{ background: var(--rh-surface-secondary) !important; }
+html.ob-atelier .orderMini:last-child{ border-bottom: 0 !important; }
+html.ob-atelier .orderMini > b{
+  font-size: 13px !important; font-weight: 600 !important;
+  color: var(--rh-text) !important; font-variant-numeric: tabular-nums;
+}
+html.ob-atelier .orderMini .customer strong{
+  display: block;
+  font-size: 13px !important; font-weight: 500 !important;
+  color: var(--rh-text) !important;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+html.ob-atelier .orderMini .customer small{
+  display: block;
+  font-size: 11.5px !important; color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .orderMini .amount{
+  font-size: 14px !important; font-weight: 600 !important;
+  color: var(--rh-text) !important; font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Schnellliste */
+html.ob-atelier .quickList{ padding: 6px 0 !important; }
+html.ob-atelier .quickItem{
+  display: flex !important;
+  align-items: center; justify-content: space-between;
+  gap: 14px !important;
+  padding: 12px 20px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  background: none !important;
+}
+html.ob-atelier .quickItem:last-child{ border-bottom: 0 !important; }
+html.ob-atelier .quickItem b{
+  display: block; font-size: 13px !important; font-weight: 500 !important;
+  color: var(--rh-text) !important;
+}
+html.ob-atelier .quickItem small{
+  display: block; font-size: 11.5px !important; color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .quickItem strong{
+  font-size: 15px !important; font-weight: 600 !important;
+  color: var(--rh-text) !important; font-variant-numeric: tabular-nums;
+}
+
+/* Leerzustände – ehrlich statt erfundener Zahlen */
+html.ob-atelier .empty{
+  display: grid !important;
+  place-items: center;
+  gap: 5px !important;
+  padding: 40px 22px !important;
+  border: 1px dashed var(--rh-border) !important;
+  border-radius: var(--rh-radius-md) !important;
+  margin: 16px 20px !important;
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text-muted) !important;
+  font-size: 12.5px !important;
+  text-align: center;
+}
+html.ob-atelier .empty b{
+  display: block;
+  font-size: 14px !important; font-weight: 600 !important;
+  color: var(--rh-text-soft) !important;
+}
+
+/* Rollenband & Schnellanlage */
+html.ob-atelier .roleBanner,
+html.ob-atelier .quickCreateBar,
+html.ob-atelier .executiveHero,
+html.ob-atelier .productionHero,
+html.ob-atelier .warehouseCommandHero,
+html.ob-atelier .crmHero,
+html.ob-atelier .tripHero,
+html.ob-atelier .productManagerHero{
+  display: flex !important;
+  align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 16px !important;
+  padding: 20px 22px !important;
+  margin: 0 0 16px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: none !important;
+  color: var(--rh-text-soft) !important;
+}
+html.ob-atelier .roleBanner b,
+html.ob-atelier .quickCreateBar b{
+  display: block;
+  font-size: 14px !important; font-weight: 600 !important;
+  color: var(--rh-text) !important;
+  margin-bottom: 3px;
+}
+html.ob-atelier .roleBanner span,
+html.ob-atelier .quickCreateBar span{
+  font-size: 12.5px !important; color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .roleBanner strong{
+  font-size: 13px !important; color: var(--rh-text) !important;
+  padding: 7px 14px; border-radius: var(--rh-radius-pill);
+  background: var(--rh-surface-secondary);
+  border: 1px solid var(--rh-border);
+}
+html.ob-atelier .quickCreateActions,
+html.ob-atelier .executiveHeroActions,
+html.ob-atelier .formActions{
+  display: flex !important; flex-wrap: wrap; gap: 8px !important;
+}
+html.ob-atelier .executiveHero small{
+  display: block;
+  font-size: 9.5px !important; font-weight: 700 !important;
+  letter-spacing: .16em !important; text-transform: uppercase;
+  color: var(--rh-accent) !important; margin-bottom: 8px;
+}
+html.ob-atelier .executiveHero h2{ font-size: 22px !important; margin: 0 0 6px !important; }
+html.ob-atelier .executiveHero p{
+  margin: 0 0 16px !important; color: var(--rh-text-muted) !important; font-size: 13px !important;
+}
+html.ob-atelier .executivePulse{
+  display: grid; gap: 3px; text-align: right;
+  padding: 14px 18px;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-md) !important;
+  background: var(--rh-surface-secondary) !important;
+}
+html.ob-atelier .executivePulse > span{
+  font-size: 9.5px !important; font-weight: 700 !important;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--rh-success) !important;
+}
+html.ob-atelier .executivePulse b{ font-size: 13px !important; color: var(--rh-text) !important; }
+html.ob-atelier .executivePulse small{ font-size: 11.5px !important; color: var(--rh-text-muted) !important; }
+
+/* =====================================================================
+   06 · TABELLEN
+   ===================================================================== */
+html.ob-atelier .tableWrap{
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+html.ob-atelier .dataTable{
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  font-size: 13px !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .dataTable thead th{
+  position: sticky; top: 0; z-index: 2;
+  padding: 12px 16px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--rh-border) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-muted) !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  text-align: left;
+  white-space: nowrap;
+}
+html.ob-atelier .dataTable tbody td{
+  padding: 13px 16px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  color: var(--rh-text-soft) !important;
+  vertical-align: middle;
+}
+html.ob-atelier .dataTable tbody tr{
+  background: var(--rh-surface) !important;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .dataTable tbody tr:hover{ background: var(--rh-surface-secondary) !important; }
+html.ob-atelier .dataTable tbody tr:last-child td{ border-bottom: 0 !important; }
+html.ob-atelier .tableSub{
+  display: block;
+  font-size: 11.5px !important;
+  color: var(--rh-text-muted) !important;
+}
+/* Produktminiatur in Tabellen: Bild immer vollständig, nie beschnitten */
+html.ob-atelier .productThumb{
+  width: 40px !important; height: 40px !important;
+  display: grid !important; place-items: center !important;
+  padding: 4px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface-secondary) !important;
+  overflow: hidden;
+}
+html.ob-atelier .productThumb img{
+  width: 100% !important; height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+}
+
+/* Statusmerkmale */
+html.ob-atelier .status,
+html.ob-atelier .payTag,
+html.ob-atelier .warehouseTag,
+html.ob-atelier .salesOriginTag,
+html.ob-atelier .commissionCreditTag{
+  display: inline-flex !important;
+  align-items: center; gap: 6px;
+  padding: 4px 10px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text-soft) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  box-shadow: none !important;
+  text-transform: none !important;
+}
+html.ob-atelier .status::before,
+html.ob-atelier .payTag::before{
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor; flex: 0 0 6px;
+}
+html.ob-atelier .payTag.paid,
+html.ob-atelier .status.s-complete,
+html.ob-atelier .status.s-ready{
+  background: var(--rh-success-tint) !important;
+  border-color: var(--rh-success-line) !important;
+  color: var(--rh-success) !important;
+}
+html.ob-atelier .payTag.pending,
+html.ob-atelier .status.s-new,
+html.ob-atelier .status.s-production,
+html.ob-atelier .status.s-quality,
+html.ob-atelier .status.s-packing{
+  background: var(--rh-warning-tint) !important;
+  border-color: var(--rh-warning-line) !important;
+  color: var(--rh-warning) !important;
+}
+html.ob-atelier .payTag.cancelled,
+html.ob-atelier .payTag.refunded,
+html.ob-atelier .status.s-cancelled{
+  background: var(--rh-danger-tint) !important;
+  border-color: var(--rh-danger-line) !important;
+  color: var(--rh-danger) !important;
+}
+html.ob-atelier .status.s-shipped{
+  background: var(--rh-info-tint) !important;
+  border-color: var(--rh-info-line) !important;
+  color: var(--rh-info) !important;
+}
+html.ob-atelier .carrierMark{
+  padding: 3px 8px !important;
+  border-radius: var(--rh-radius-xs) !important;
+  border: 1px solid var(--rh-border) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  font-size: 10px !important; font-weight: 700 !important;
+  letter-spacing: .05em;
+}
+
+/* =====================================================================
+   07 · CHEF-COCKPIT · DIAGRAMME
+   ===================================================================== */
+html.ob-atelier .execDonutGrid{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr)) !important;
+  gap: 16px !important;
+  padding: 20px !important;
+}
+html.ob-atelier .execDonut{
+  display: grid; justify-items: center; gap: 8px; text-align: center;
+}
+html.ob-atelier .execBars{ display: grid; gap: 12px; padding: 18px 20px !important; }
+html.ob-atelier .execBarRow{
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) auto !important;
+  gap: 5px 12px !important;
+  align-items: center;
+  font-size: 12.5px !important;
+  color: var(--rh-text-soft) !important;
+}
+/* Balken zeichnen sich beim Erscheinen ein */
+html.ob-atelier .execBarRow > i,
+html.ob-atelier .obBarTrack{
+  grid-column: 1 / -1;
+  display: block; height: 7px;
+  border-radius: var(--rh-radius-pill);
+  background: var(--rh-surface-tertiary) !important;
+  overflow: hidden;
+}
+html.ob-atelier .obBarFill{
+  display: block; height: 100%;
+  border-radius: var(--rh-radius-pill);
+  background: linear-gradient(90deg, var(--rh-accent), var(--rh-accent-bright));
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 900ms var(--rh-ease-out);
+  transition-delay: var(--rh-bar-delay, 0ms);
+}
+html.ob-atelier .obBarFill.is-in{ transform: scaleX(var(--rh-bar-value, 0)); }
+
+html.ob-atelier .execPriorityList{ display: grid; gap: 2px; padding: 8px 0 !important; }
+html.ob-atelier .execPriorityItem{
+  display: grid !important;
+  grid-template-columns: 28px minmax(0,1fr) auto !important;
+  align-items: center; gap: 13px !important;
+  width: 100%;
+  padding: 13px 20px !important;
+  border: 0 !important;
+  background: none !important;
+  text-align: left; cursor: pointer;
+  font-family: var(--rh-font) !important;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .execPriorityItem:hover{ background: var(--rh-surface-secondary) !important; }
+html.ob-atelier .execPriorityItem i{
+  display: grid; place-items: center;
+  width: 26px; height: 26px;
+  border-radius: var(--rh-radius-pill);
+  background: var(--rh-surface-secondary);
+  color: var(--rh-text-muted);
+  font-style: normal; font-size: 11.5px; font-weight: 700;
+}
+html.ob-atelier .execPriorityItem.high i{
+  background: var(--rh-danger-tint); color: var(--rh-danger);
+}
+html.ob-atelier .execPriorityItem.mid i{
+  background: var(--rh-warning-tint); color: var(--rh-warning);
+}
+html.ob-atelier .execPriorityItem b{
+  display: block; font-size: 13px !important; font-weight: 600 !important;
+  color: var(--rh-text) !important;
+}
+html.ob-atelier .execPriorityItem small{
+  display: block; font-size: 11.5px !important; color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .execPriorityItem strong{
+  color: var(--rh-text-muted) !important; font-size: 14px !important;
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .execPriorityItem:hover strong{
+  transform: translateX(4px); color: var(--rh-accent) !important;
+}
+
+/* Linien-/Flächendiagramm der Runtime */
+html.ob-atelier .obChart{ display: block; width: 100%; height: auto; }
+html.ob-atelier .obChart .obChartLine{
+  fill: none;
+  stroke: var(--rh-accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: var(--rh-path-len, 1000);
+  stroke-dashoffset: var(--rh-path-len, 1000);
+  transition: stroke-dashoffset 1200ms var(--rh-ease-out);
+}
+html.ob-atelier .obChart.is-in .obChartLine{ stroke-dashoffset: 0; }
+html.ob-atelier .obChart .obChartArea{
+  fill: url(#obChartFade);
+  opacity: 0;
+  transition: opacity 900ms var(--rh-ease-premium) 320ms;
+}
+html.ob-atelier .obChart.is-in .obChartArea{ opacity: 1; }
+html.ob-atelier .obChart .obChartGrid{ stroke: var(--rh-border-soft); stroke-width: 1; }
+html.ob-atelier .obChart .obChartDot{
+  fill: var(--rh-surface);
+  stroke: var(--rh-accent);
+  stroke-width: 2;
+  opacity: 0;
+  transition: opacity var(--rh-dur-base) var(--rh-ease-premium);
+  transition-delay: calc(var(--rh-dot-i, 0) * 60ms + 700ms);
+}
+html.ob-atelier .obChart.is-in .obChartDot{ opacity: 1; }
+html.ob-atelier .obChartLabel{
+  font-size: 10px; fill: var(--rh-text-muted); font-family: var(--rh-font);
+}
+
+/* =====================================================================
+   08 · FORMULARE & SCHALTFLÄCHEN
+   ===================================================================== */
+html.ob-atelier .btn{
+  display: inline-flex !important;
+  align-items: center; justify-content: center; gap: 8px;
+  min-height: 40px;
+  padding: 0 17px !important;
+  border: 1px solid var(--rh-border-strong) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium),
+              transform var(--rh-dur-fast) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.ob-atelier .btn:hover{
+  background: var(--rh-surface-secondary) !important;
+  border-color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .btn:active{ transform: scale(.985); }
+html.ob-atelier .btn.primary,
+html.ob-atelier .btn.orange{
+  background: var(--rh-accent) !important;
+  border-color: var(--rh-accent) !important;
+  color: var(--rh-text-on-accent) !important;
+  box-shadow: var(--rh-shadow-xs) !important;
+}
+html.ob-atelier .btn.primary:hover,
+html.ob-atelier .btn.orange:hover{
+  background: var(--rh-accent-hover) !important;
+  border-color: var(--rh-accent-hover) !important;
+  box-shadow: var(--rh-shadow-sm) !important;
+}
+html.ob-atelier .btn.danger,
+html.ob-atelier .dangerMini{
+  background: var(--rh-danger-tint) !important;
+  border-color: var(--rh-danger-line) !important;
+  color: var(--rh-danger) !important;
+}
+html.ob-atelier .btn[disabled]{ opacity: .5; cursor: not-allowed; transform: none !important; }
+html.ob-atelier .textBtn{
+  border: 0 !important; background: none !important;
+  color: var(--rh-accent) !important;
+  font-weight: 600 !important; font-size: 12.5px !important;
+  cursor: pointer; padding: 4px 2px !important;
+}
+
+/* Zustände beim Speichern – Optimistic UI */
+html.ob-atelier .btn.is-busy{
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+html.ob-atelier .btn.is-busy::after{
+  content: "";
+  position: absolute; inset: 0; margin: auto;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  color: var(--rh-text-on-accent);
+  animation: ob-spin 640ms linear infinite;
+}
+html.ob-atelier .btn:not(.primary):not(.orange).is-busy::after{ color: var(--rh-text-soft); }
+html.ob-atelier body .btn.is-done,
+html.ob-atelier .btn.is-done{
+  background: var(--rh-success) !important;
+  border-color: var(--rh-success) !important;
+  color: #fff !important;
+  pointer-events: none;
+}
+html.ob-atelier body .btn.is-failed,
+html.ob-atelier .btn.is-failed{
+  background: var(--rh-danger-tint) !important;
+  border-color: var(--rh-danger) !important;
+  color: var(--rh-danger) !important;
+  animation: ob-shake 360ms var(--rh-ease-premium);
+}
+@keyframes ob-shake{
+  0%,100%{ transform: translateX(0); }
+  25%{ transform: translateX(-4px); }
+  75%{ transform: translateX(4px); }
+}
+
+html.ob-atelier .formGrid{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(230px,1fr)) !important;
+  gap: 14px !important;
+}
+html.ob-atelier .formGrid .full{ grid-column: 1 / -1; }
+html.ob-atelier label{
+  display: grid; gap: 6px;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: var(--rh-text-soft) !important;
+}
+html.ob-atelier input[type=text],
+html.ob-atelier input[type=email],
+html.ob-atelier input[type=tel],
+html.ob-atelier input[type=number],
+html.ob-atelier input[type=search],
+html.ob-atelier input[type=password],
+html.ob-atelier input[type=date],
+html.ob-atelier input[type=datetime-local],
+html.ob-atelier select,
+html.ob-atelier textarea{
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 12px !important;
+  border: 1px solid var(--rh-border-strong) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 13.5px !important;
+  transition: border-color var(--rh-dur-fast) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier input:focus,
+html.ob-atelier select:focus,
+html.ob-atelier textarea:focus{
+  outline: none !important;
+  border-color: var(--rh-accent) !important;
+  box-shadow: 0 0 0 3px var(--rh-accent-tint) !important;
+}
+html.ob-atelier input[aria-invalid="true"],
+html.ob-atelier .fieldError input{
+  border-color: var(--rh-danger) !important;
+  box-shadow: 0 0 0 3px var(--rh-danger-tint) !important;
+}
+html.ob-atelier .moduleTabs,
+html.ob-atelier .salesRoleTabs,
+html.ob-atelier .territoryBookTabs,
+html.ob-atelier .productionModeTabs{
+  display: flex !important; flex-wrap: wrap; gap: 4px !important;
+  padding: 5px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-secondary) !important;
+  width: fit-content;
+  max-width: 100%;
+}
+html.ob-atelier .moduleTab{
+  padding: 8px 16px !important;
+  border: 0 !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: transparent !important;
+  color: var(--rh-text-muted) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 12.5px !important; font-weight: 600 !important;
+  cursor: pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium),
+              color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .moduleTab.active{
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+  box-shadow: var(--rh-shadow-xs) !important;
+}
+
+/* =====================================================================
+   09 · MODAL, TOAST, LADEZUSTÄNDE
+   ===================================================================== */
+html.ob-atelier .modalBackdrop{
+  background: rgba(22,21,26,.34) !important;
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+}
+html.ob-atelier .modalCard{
+  background: var(--rh-surface) !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-xl) !important;
+  box-shadow: var(--rh-shadow-xl) !important;
+  animation: ob-modal-in var(--rh-dur-slow) var(--rh-ease-out);
+}
+@keyframes ob-modal-in{
+  from{ opacity: 0; transform: scale(.98) translateY(10px); }
+  to  { opacity: 1; transform: scale(1) translateY(0); }
+}
+html.ob-atelier .modalHead{
+  padding: 24px 26px 18px !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+}
+html.ob-atelier .modalHead small{
+  display: block;
+  font-size: 9.5px !important; font-weight: 700 !important;
+  letter-spacing: .16em !important; text-transform: uppercase;
+  color: var(--rh-accent) !important; margin-bottom: 7px;
+}
+html.ob-atelier .modalHead h2{ font-size: 20px !important; margin: 0 0 5px !important; }
+html.ob-atelier .modalHead p{
+  margin: 0 !important; font-size: 13px !important; color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .modalBody{ padding: 22px 26px 26px !important; }
+html.ob-atelier .modalClose{
+  width: 34px; height: 34px;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  cursor: pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .modalClose:hover{ background: var(--rh-surface-secondary) !important; }
+
+html.ob-atelier .toast{
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 20px !important;
+  border: 0 !important;
+  border-radius: var(--rh-radius-md) !important;
+  background: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  box-shadow: var(--rh-shadow-lg) !important;
+  transition: opacity var(--rh-dur-base) var(--rh-ease-premium),
+              transform var(--rh-dur-base) var(--rh-ease-premium) !important;
+}
+html.ob-atelier .toast.error{
+  background: var(--rh-danger) !important; color: #fff !important;
+}
+html.ob-atelier .toast.success{
+  background: var(--rh-success) !important; color: #fff !important;
+}
+
+/* Ladezustand & Skelette */
+html.ob-atelier .loadingState{
+  display: grid !important; place-items: center; gap: 16px;
+  padding: 80px 20px !important;
+  color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .spinner{
+  width: 26px; height: 26px;
+  border: 2px solid var(--rh-border-strong) !important;
+  border-top-color: var(--rh-accent) !important;
+  border-radius: 50%;
+  animation: ob-spin 700ms linear infinite;
+}
+html.ob-atelier .obSkeletonGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(232px,1fr));
+  gap: 14px; margin-bottom: 20px;
+}
+html.ob-atelier .obSkeleton{
+  position: relative; overflow: hidden;
+  border: 1px solid var(--rh-border);
+  border-radius: var(--rh-radius-lg);
+  background: var(--rh-surface);
+  height: 108px;
+}
+html.ob-atelier .obSkeleton::after{
+  content: ""; position: absolute; inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg,
+    rgba(246,244,241,0) 0%, rgba(246,244,241,.9) 50%, rgba(246,244,241,0) 100%);
+  animation: ob-shimmer 1.5s ease-in-out infinite;
+}
+@keyframes ob-shimmer{ to{ transform: translateX(100%); } }
+
+/* =====================================================================
+   09b · CHEF-COCKPIT DER PREMIUM-SCHICHT
+   Die Startseite wird von orgaboard-premium-2026.js aus ECHTEN
+   Cockpit-Daten aufgebaut (.obCockpit …). Hier bekommt sie dieselbe
+   Anmutung wie der übrige Bereich. Es wird nur gestaltet – kein Wert,
+   keine Kennzahl und kein Abschnitt wird verändert.
+   ===================================================================== */
+html.ob-atelier .obCockpit{
+  display: grid !important;
+  gap: 18px !important;
+  max-width: 1440px;
+}
+
+/* Begrüssung */
+html.ob-atelier .obGreet{
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: flex-end; justify-content: space-between;
+  gap: 16px !important;
+  padding: 0 !important;
+  margin: 0 0 4px !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+html.ob-atelier .obGreet h2{
+  font-size: clamp(24px, 2.6vw, 33px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.022em !important;
+  color: var(--rh-text) !important;
+  margin: 0 0 5px !important;
+}
+html.ob-atelier .obGreet p{
+  margin: 0 !important;
+  font-size: 13.5px !important;
+  color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .obGreetActions{ display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Kennzahlkarten des Cockpits */
+html.ob-atelier .obKpiGrid{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(236px, 1fr)) !important;
+  gap: 14px !important;
+}
+html.ob-atelier .obKpi{
+  position: relative;
+  display: grid !important;
+  gap: 6px !important;
+  align-content: start;
+  padding: 20px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  overflow: hidden;
+  transition: border-color var(--rh-dur-base) var(--rh-ease-premium),
+              box-shadow var(--rh-dur-base) var(--rh-ease-premium),
+              transform var(--rh-dur-base) var(--rh-ease-premium);
+}
+html.ob-atelier .obKpi.obClickable{ cursor: pointer; font-family: var(--rh-font) !important; }
+html.ob-atelier .obKpi.obClickable:hover{
+  border-color: var(--rh-border-strong) !important;
+  box-shadow: var(--rh-shadow-sm) !important;
+  transform: translateY(-2px);
+}
+html.ob-atelier .obKpiLabel{
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--rh-text-muted) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  padding-right: 44px;
+}
+html.ob-atelier .obKpiValue{
+  font-size: clamp(24px, 2.2vw, 31px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -.024em !important;
+  color: var(--rh-text) !important;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.08 !important;
+}
+html.ob-atelier .obKpiSub,
+html.ob-atelier .obKpiNote{
+  font-size: 12px !important;
+  color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .obKpiDelta{
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px !important; font-weight: 600 !important;
+  color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .obKpiDelta.obUp{ color: var(--rh-success) !important; }
+html.ob-atelier .obKpiDelta.obDown{ color: var(--rh-danger) !important; }
+html.ob-atelier .obKpiDelta.obFlat{ color: var(--rh-text-muted) !important; }
+
+/* Kleine Verlaufslinie in der Kennzahlkarte */
+html.ob-atelier .obSpark{
+  width: 100% !important; height: 42px !important;
+  margin-top: 4px;
+  overflow: visible;
+}
+html.ob-atelier .obSparkLine{
+  fill: none !important;
+  stroke: var(--rh-accent) !important;
+  stroke-width: 1.6 !important;
+  stroke-linecap: round; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+html.ob-atelier .obSparkArea{
+  fill: var(--rh-accent) !important;
+  opacity: .10 !important;
+  stroke: none !important;
+}
+html.ob-atelier .obSparkDot{
+  fill: var(--rh-accent) !important;
+  stroke: var(--rh-surface) !important;
+  stroke-width: 1.2 !important;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Karten, Hinweise, Aufmerksamkeitsliste */
+html.ob-atelier .obCard,
+html.ob-atelier .obNotice{
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-lg) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+html.ob-atelier .obCardHead{
+  display: flex !important;
+  align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 12px !important;
+  padding: 17px 20px !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .obCardHead b{
+  font-size: 15px !important; font-weight: 600 !important; color: var(--rh-text) !important;
+}
+html.ob-atelier .obCardHead small,
+html.ob-atelier .obCardHead span{
+  font-size: 12px !important; color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .obCardBody{ padding: 18px 20px !important; }
+html.ob-atelier .obCardBody.obFlush{ padding: 0 !important; }
+
+html.ob-atelier .obTwo{
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
+  gap: 18px !important;
+  align-items: start;
+}
+
+html.ob-atelier .obAttItem{
+  display: grid !important;
+  grid-template-columns: 8px minmax(0,1fr) auto !important;
+  align-items: center; gap: 13px !important;
+  padding: 14px 20px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  background: var(--rh-surface) !important;
+  text-align: left;
+  font-family: var(--rh-font) !important;
+}
+html.ob-atelier .obAttItem:last-child{ border-bottom: 0 !important; }
+html.ob-atelier .obAttItem::before{
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rh-text-muted);
+}
+html.ob-atelier .obAttItem.obCritical::before,
+html.ob-atelier .obCriticalLevel::before{ background: var(--rh-danger); }
+html.ob-atelier .obAttItem.obWarning::before,
+html.ob-atelier .obWarning::before{ background: var(--rh-warning); }
+html.ob-atelier .obAttItem.obOk::before,
+html.ob-atelier .obOkLevel::before{ background: var(--rh-success); }
+html.ob-atelier .obAttItem b{
+  display: block; font-size: 13px !important; font-weight: 600 !important;
+  color: var(--rh-text) !important;
+}
+html.ob-atelier .obAttItem small,
+html.ob-atelier .obAttItem p{
+  display: block; margin: 2px 0 0 !important;
+  font-size: 12px !important; color: var(--rh-text-muted) !important;
+}
+html.ob-atelier .obAttFilters{
+  display: flex; flex-wrap: wrap; gap: 5px;
+  padding: 5px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-secondary) !important;
+}
+html.ob-atelier .obAttFilters button{
+  padding: 6px 13px !important;
+  border: 0 !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: transparent !important;
+  color: var(--rh-text-muted) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 12px !important; font-weight: 600 !important;
+  cursor: pointer;
+}
+html.ob-atelier .obAttFilters button.obActive{
+  background: var(--rh-surface) !important;
+  color: var(--rh-text) !important;
+  box-shadow: var(--rh-shadow-xs) !important;
+}
+html.ob-atelier .obAttBadge{
+  padding: 3px 9px !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text-muted) !important;
+  font-size: 11px !important; font-weight: 700 !important;
+}
+html.ob-atelier .obAttGo{
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface) !important;
+  color: var(--rh-text-soft) !important;
+  padding: 7px 12px !important;
+  font-size: 12px !important; font-weight: 600 !important;
+  cursor: pointer;
+  transition: background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .obAttGo:hover{ background: var(--rh-surface-secondary) !important; }
+
+html.ob-atelier .obBriefList{ display: grid; gap: 9px; }
+html.ob-atelier .obBriefList > *{
+  display: grid; grid-template-columns: 8px minmax(0,1fr); align-items: start; gap: 11px;
+  font-size: 13px !important; color: var(--rh-text-soft) !important;
+}
+html.ob-atelier .obBriefDot{
+  width: 8px; height: 8px; margin-top: 6px;
+  border-radius: 50%; background: var(--rh-accent);
+}
+html.ob-atelier .obInsight{
+  display: grid; gap: 4px;
+  padding: 14px 20px !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+}
+html.ob-atelier .obInsight:last-child{ border-bottom: 0 !important; }
+html.ob-atelier .obInsightMark{
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  border-radius: var(--rh-radius-pill);
+  background: var(--rh-accent-tint) !important;
+  color: var(--rh-accent) !important;
+  font-size: 12px;
+}
+html.ob-atelier .obStockRow{
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) auto auto !important;
+  align-items: center; gap: 12px !important;
+  padding: 12px 20px !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+}
+html.ob-atelier .obStockRow:last-child{ border-bottom: 0 !important; }
+html.ob-atelier .obStockName{ font-size: 13px !important; color: var(--rh-text) !important; }
+html.ob-atelier .obStockPill{
+  padding: 3px 9px !important;
+  border-radius: var(--rh-radius-pill) !important;
+  border: 1px solid var(--rh-warning-line) !important;
+  background: var(--rh-warning-tint) !important;
+  color: var(--rh-warning) !important;
+  font-size: 11px !important; font-weight: 700 !important;
+}
+html.ob-atelier .obHealthRow{
+  display: flex; align-items: center; gap: 11px;
+  padding: 11px 20px !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  font-size: 13px !important;
+}
+html.ob-atelier .obHealthRow:last-child{ border-bottom: 0 !important; }
+html.ob-atelier .obHealthDot{
+  width: 8px; height: 8px; border-radius: 50%; flex: 0 0 8px;
+  background: var(--rh-text-muted);
+}
+html.ob-atelier .obHealthDot.obOk{ background: var(--rh-success); }
+html.ob-atelier .obHealthDot.obWarning{ background: var(--rh-warning); }
+html.ob-atelier .obHealthDot.obCritical{ background: var(--rh-danger); }
+
+html.ob-atelier .obEmptyState{
+  display: grid; place-items: center; gap: 5px;
+  padding: 36px 20px !important;
+  color: var(--rh-text-muted) !important;
+  font-size: 12.5px !important;
+  text-align: center;
+}
+html.ob-atelier .obChip{
+  padding: 4px 10px !important;
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text-soft) !important;
+  font-size: 11px !important; font-weight: 600 !important;
+}
+
+/* Befehlspalette */
+html.ob-atelier .obPaletteBox{
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-xl) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: var(--rh-shadow-xl) !important;
+}
+html.ob-atelier .obPaletteInput{
+  border: 0 !important;
+  border-bottom: 1px solid var(--rh-border-soft) !important;
+  border-radius: 0 !important;
+  font-size: 16px !important;
+  padding: 18px 22px !important;
+  background: var(--rh-surface) !important;
+}
+html.ob-atelier .obPaletteItem{
+  padding: 11px 20px !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--rh-text-soft) !important;
+  font-family: var(--rh-font) !important;
+}
+html.ob-atelier .obPaletteItem.obActive{
+  background: var(--rh-accent-tint) !important;
+  color: var(--rh-accent) !important;
+}
+html.ob-atelier .obPaletteGroup{
+  font-size: 10px !important; font-weight: 700 !important;
+  letter-spacing: .14em !important; text-transform: uppercase;
+  color: var(--rh-text-muted) !important;
+  padding: 14px 20px 6px !important;
+}
+
+/* Assistent */
+html.ob-atelier .obAssistBtn{
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-text) !important;
+  color: var(--rh-text-inverse) !important;
+  border: 0 !important;
+  box-shadow: var(--rh-shadow-lg) !important;
+  font-family: var(--rh-font) !important;
+  font-size: 13px !important; font-weight: 600 !important;
+  padding: 13px 20px !important;
+  transition: transform var(--rh-dur-base) var(--rh-ease-spring),
+              background-color var(--rh-dur-fast) var(--rh-ease-premium);
+}
+html.ob-atelier .obAssistBtn:hover{ transform: translateY(-2px); background: var(--rh-accent) !important; }
+html.ob-atelier .obAssistPanel{
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-xl) !important;
+  background: var(--rh-surface) !important;
+  box-shadow: var(--rh-shadow-xl) !important;
+}
+html.ob-atelier .obAssistChip{
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-pill) !important;
+  background: var(--rh-surface-secondary) !important;
+  color: var(--rh-text-soft) !important;
+  font-size: 12px !important;
+  padding: 7px 13px !important;
+  cursor: pointer;
+}
+html.ob-atelier .obAssistChip:hover{ background: var(--rh-surface-tertiary) !important; }
+
+/* Navigationswerkzeuge in der Seitenleiste */
+html.ob-atelier .obNavSearch{
+  border: 1px solid var(--rh-border) !important;
+  border-radius: var(--rh-radius-sm) !important;
+  background: var(--rh-surface-secondary) !important;
+  font-size: 13px !important;
+  padding: 9px 12px !important;
+}
+html.ob-atelier .obFavItem{
+  border-radius: var(--rh-radius-sm) !important;
+  font-size: 13px !important;
+}
+html.ob-atelier .obFavItem.active{
+  background: var(--rh-accent-tint) !important;
+  color: var(--rh-accent) !important;
+}
+
+/* =====================================================================
+   10 · BEWEGUNG
+   ===================================================================== */
+html.ob-atelier .obReveal{
+  opacity: 0;
+  transform: translate3d(0, 16px, 0) scale(.99);
+  transition: opacity 620ms var(--rh-ease-premium),
+              transform 620ms var(--rh-ease-premium);
+  transition-delay: var(--rh-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+html.ob-atelier .obReveal.is-in{ opacity: 1; transform: translate3d(0,0,0) scale(1); }
+html.ob-atelier .obReveal.is-settled{ will-change: auto; transform: none; }
+html.ob-atelier [data-ob-countup]{ font-variant-numeric: tabular-nums; }
+
+/* =====================================================================
+   11 · RESPONSIVE
+   ===================================================================== */
+@media (max-width: 1280px){
+  html.ob-atelier .dashGrid{ grid-template-columns: minmax(0,1fr) !important; }
+}
+
+/* Tablet: schmale Seitenleiste, nur Symbole – aufklappbar */
+@media (max-width: 1080px) and (min-width: 861px){
+  html.ob-atelier .appFrame{ grid-template-columns: var(--ob-side-w-compact) minmax(0,1fr) !important; }
+  html.ob-atelier .sideNav{ width: var(--ob-side-w-compact) !important; }
+  html.ob-atelier .sideNav > nav{ padding: 0 10px 10px !important; }
+  html.ob-atelier .navSectionLabel{ display: none !important; }
+  html.ob-atelier .navSection{ padding-top: 10px !important; border-top: 1px solid var(--rh-border-soft); }
+  html.ob-atelier .navSection:first-of-type{ border-top: 0; }
+  html.ob-atelier .navItem{
+    position: relative;
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    padding: 11px 0 !important;
+  }
+  html.ob-atelier .navItem b{ display: none !important; }
+  /* Zähler werden zu einem kleinen Punkt – die genaue Zahl steht in der
+     ausgeklappten Ansicht und im jeweiligen Bereich. */
+  html.ob-atelier .navItem em{
+    position: absolute; top: 6px; right: 12px;
+    min-width: 7px; width: 7px; height: 7px;
+    padding: 0 !important;
+    font-size: 0 !important;
+    background: var(--rh-accent) !important;
+    border-radius: 50% !important;
+  }
+  html.ob-atelier .navItem.active em{ background: var(--rh-accent) !important; }
+  html.ob-atelier .sideBrand{
+    padding: 18px 6px !important;
+    display: grid !important;
+    justify-items: center !important;
+    text-align: center;
+  }
+  html.ob-atelier .sideLogo{
+    font-size: 15px !important;
+    letter-spacing: .06em !important;
+  }
+  html.ob-atelier .sideLogo span{ display: none; }
+  html.ob-atelier .sideBrand small{ display: none; }
+  html.ob-atelier .sideFoot a span,
+  html.ob-atelier .obChannelLink > *:not(:first-child){ display: none !important; }
+  html.ob-atelier .sideNav .obNavGlide{ left: 4px; }
+}
+
+/* Smartphone: Navigation als Schublade */
+@media (max-width: 860px){
+  html.ob-atelier .appFrame{ grid-template-columns: minmax(0,1fr) !important; }
+  html.ob-atelier .sideNav{
+    position: fixed !important;
+    inset: 0 auto 0 0;
+    z-index: 120;
+    width: min(86vw, 300px) !important;
+    transform: translateX(-101%);
+    visibility: hidden;
+    transition: transform var(--rh-dur-slow) var(--rh-ease-out),
+                visibility 0s linear var(--rh-dur-slow);
+    box-shadow: var(--rh-shadow-xl) !important;
+  }
+  html.ob-atelier body.navOpen .sideNav,
+  html.ob-atelier .sideNav.open{
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform var(--rh-dur-slow) var(--rh-ease-out), visibility 0s;
+  }
+  html.ob-atelier .obNavScrim{
+    position: fixed; inset: 0; z-index: 119;
+    background: rgba(22,21,26,.36);
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+    opacity: 0; pointer-events: none;
+    transition: opacity var(--rh-dur-base) var(--rh-ease-premium);
+  }
+  html.ob-atelier .obNavScrim.is-on{ opacity: 1; pointer-events: auto; }
+  html.ob-atelier .mobileMenu{
+    display: inline-flex !important;
+    width: 40px; height: 40px;
+    align-items: center; justify-content: center;
+    border: 1px solid var(--rh-border) !important;
+    border-radius: var(--rh-radius-sm) !important;
+    background: var(--rh-surface) !important;
+    color: var(--rh-text) !important;
+    font-size: 17px; cursor: pointer;
+  }
+  html.ob-atelier .topBar{
+    grid-template-columns: auto minmax(0,1fr) auto !important;
+    gap: 12px !important;
+    padding: 0 16px !important;
+  }
+  html.ob-atelier .globalSearch{ display: none !important; }
+  html.ob-atelier .coreQuickBar{ padding: 12px 16px !important; }
+  html.ob-atelier .coreQuickActions{ flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  html.ob-atelier .workspace{ padding: 16px 16px 88px !important; }
+
+  html.ob-atelier .mobileBottomNav{
+    position: fixed; inset: auto 0 0 0; z-index: 100;
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr);
+    background: rgba(255,255,255,.94) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    backdrop-filter: saturate(180%) blur(18px);
+    border-top: 1px solid var(--rh-border) !important;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  html.ob-atelier .mobileBottomNav button{
+    display: grid; place-items: center; gap: 3px;
+    padding: 9px 4px;
+    border: 0; background: none;
+    color: var(--rh-text-muted) !important;
+    font-family: var(--rh-font) !important;
+    cursor: pointer;
+  }
+  html.ob-atelier .mobileBottomNav button span{ font-size: 16px; }
+  html.ob-atelier .mobileBottomNav button b{ font-size: 10px; font-weight: 600; }
+  html.ob-atelier .mobileBottomNav button.active{ color: var(--rh-accent) !important; }
+
+  /* Tabellen: Karten statt Quetschung, sobald Spaltenköpfe hinterlegt sind */
+  html.ob-atelier .dataTable.obCards thead{ display: none; }
+  html.ob-atelier .dataTable.obCards tbody tr{
+    display: grid;
+    gap: 6px;
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid var(--rh-border) !important;
+    border-radius: var(--rh-radius-md);
+    background: var(--rh-surface) !important;
+  }
+  html.ob-atelier .dataTable.obCards tbody td{
+    display: grid;
+    grid-template-columns: minmax(88px, 38%) minmax(0,1fr);
+    gap: 10px;
+    padding: 4px 0 !important;
+    border: 0 !important;
+  }
+  html.ob-atelier .dataTable.obCards tbody td::before{
+    content: attr(data-label);
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--rh-text-muted);
+  }
+}
+
+@media (max-width: 420px){
+  html.ob-atelier .metricGrid,
+  html.ob-atelier .executiveKpiGrid{ grid-template-columns: minmax(0,1fr) !important; }
+  html.ob-atelier .orderMini{
+    grid-template-columns: minmax(0,1fr) auto !important;
+    row-gap: 6px !important;
+  }
+  html.ob-atelier .orderMini .customer{ grid-column: 1 / -1; }
+}
+
+/* =====================================================================
+   12 · BARRIEREFREIHEIT & BEWEGUNGSREDUZIERUNG
+   ===================================================================== */
+html.ob-atelier a:focus-visible,
+html.ob-atelier button:focus-visible,
+html.ob-atelier input:focus-visible,
+html.ob-atelier select:focus-visible,
+html.ob-atelier textarea:focus-visible,
+html.ob-atelier [tabindex]:focus-visible{
+  outline: none !important;
+  box-shadow: var(--rh-shadow-focus) !important;
+  border-radius: var(--rh-radius-xs);
+}
+
+@media (prefers-reduced-motion: reduce){
+  html.ob-atelier *,
+  html.ob-atelier *::before,
+  html.ob-atelier *::after{
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  html.ob-atelier .obReveal{ opacity: 1 !important; transform: none !important; }
+  html.ob-atelier .obBarFill{ transform: scaleX(var(--rh-bar-value, 0)) !important; transition: none !important; }
+  html.ob-atelier .obChart .obChartLine{ stroke-dashoffset: 0 !important; transition: none !important; }
+  html.ob-atelier .obChart .obChartArea,
+  html.ob-atelier .obChart .obChartDot{ opacity: 1 !important; transition: none !important; }
+  html.ob-atelier .sideNav .obNavGlide{ transition: none !important; }
+  html.ob-atelier .obSkeleton::after{ animation: none !important; }
+}
+
+@media print{
+  html.ob-atelier .sideNav,
+  html.ob-atelier .topBar,
+  html.ob-atelier .coreQuickBar,
+  html.ob-atelier .mobileBottomNav{ display: none !important; }
+  html.ob-atelier .appFrame{ grid-template-columns: 1fr !important; }
+  html.ob-atelier .obReveal{ opacity: 1 !important; transform: none !important; }
+}

@@ -1,0 +1,41 @@
+/* Räucherhaken24 V51 – saisonale Designs. Standard bleibt vollständig unverändert. */
+.rh24ThemeBanner{display:none}
+body[data-rh24-theme]:not([data-rh24-theme="standard"]) .rh24ThemeBanner{display:flex;align-items:center;justify-content:center;gap:12px;min-height:36px;padding:7px 16px;text-align:center;font-size:12px;font-weight:900;letter-spacing:.06em;position:relative;z-index:60}
+body[data-rh24-theme]:not([data-rh24-theme="standard"]) .top{position:relative}
+body[data-rh24-theme="weihnachten"]{--season:#9e2430;--season2:#194d38;--seasonSoft:#f7eee9}
+body[data-rh24-theme="weihnachten"] .rh24ThemeBanner{background:linear-gradient(90deg,#163f30,#9f2632,#163f30);color:#fff}
+body[data-rh24-theme="weihnachten"] .rh24ThemeBanner:before{content:"❄"}body[data-rh24-theme="weihnachten"] .rh24ThemeBanner:after{content:"✦"}
+body[data-rh24-theme="weihnachten"] .hero{background-image:radial-gradient(circle at 10% 20%,rgba(255,255,255,.5) 0 2px,transparent 3px),radial-gradient(circle at 80% 30%,rgba(255,255,255,.45) 0 2px,transparent 3px)}
+body[data-rh24-theme="weihnachten"] .sideMain,body[data-rh24-theme="weihnachten"] .btn.primary{border-color:#9e2430!important}
+body[data-rh24-theme="weihnachten"] .shopCategoryStrip a.featured{box-shadow:inset 0 0 0 2px #194d38}
+body[data-rh24-theme="nikolaus"]{--season:#b51f2e;--season2:#f1d3a2;--seasonSoft:#fff8ed}
+body[data-rh24-theme="nikolaus"] .rh24ThemeBanner{background:repeating-linear-gradient(135deg,#aa1f2e 0 18px,#fff 18px 28px,#aa1f2e 28px 46px);color:#511018;text-shadow:0 1px #fff;background-color:#fff}
+body[data-rh24-theme="nikolaus"] .rh24ThemeBanner span{background:#fff7ea;padding:3px 14px;border-radius:999px}
+body[data-rh24-theme="ostern"]{--season:#82a74b;--season2:#e1b84a;--seasonSoft:#fbf8e9}
+body[data-rh24-theme="ostern"] .rh24ThemeBanner{background:linear-gradient(90deg,#e8f2d4,#fff0b9,#f5dfec,#dbeef5);color:#49622e}
+body[data-rh24-theme="ostern"] .rh24ThemeBanner:before{content:"✿"}body[data-rh24-theme="ostern"] .rh24ThemeBanner:after{content:"◌"}
+body[data-rh24-theme="ostern"] .card,body[data-rh24-theme="ostern"] .featurePanel{border-color:#d9e8bc!important}
+body[data-rh24-theme="advent"]{--season:#a9873b;--season2:#282140;--seasonSoft:#f7f2e8}
+body[data-rh24-theme="advent"] .rh24ThemeBanner{background:linear-gradient(90deg,#191329,#46385f,#191329);color:#f5d991}
+body[data-rh24-theme="advent"] .rh24ThemeBanner:before{content:"✦"}body[data-rh24-theme="advent"] .rh24ThemeBanner:after{content:"✦"}
+body[data-rh24-theme="advent"] .hero{box-shadow:inset 0 3px 0 #b8984d}
+body[data-rh24-theme="black_week"]{--season:#444;--season2:#111;--seasonSoft:#f3f3f3}
+body[data-rh24-theme="black_week"] .rh24ThemeBanner{background:linear-gradient(90deg,#111,#4b4b4b,#111);color:#fff}
+body[data-rh24-theme="black_week"] .rh24ThemeBanner:before{content:"BLACK WEEK";font-size:10px;border:1px solid #aaa;padding:2px 7px;border-radius:4px}
+body[data-rh24-theme="black_week"] .shopCategoryStrip a{border-color:#bdbdbd}
+body[data-rh24-theme="black_friday"]{--season:#e74b32;--season2:#050505;--seasonSoft:#f5f5f5}
+body[data-rh24-theme="black_friday"] .rh24ThemeBanner{background:#050505;color:#fff;border-bottom:3px solid #e74b32}
+body[data-rh24-theme="black_friday"] .rh24ThemeBanner:before{content:"BLACK FRIDAY";color:#ff5b42}
+body[data-rh24-theme="black_friday"] .btn.primary,body[data-rh24-theme="black_friday"] .cartBtn{background:#111!important;box-shadow:inset 0 0 0 2px #e74b32}
+body[data-rh24-theme="silvester"]{--season:#b6c6d8;--season2:#0f233e;--seasonSoft:#edf2f8}
+body[data-rh24-theme="silvester"] .rh24ThemeBanner{background:radial-gradient(circle at 20% 50%,#fff 0 1px,transparent 2px),radial-gradient(circle at 70% 30%,#ffd978 0 1px,transparent 2px),linear-gradient(90deg,#07162a,#1e3f65,#07162a);color:#fff}
+body[data-rh24-theme="silvester"] .rh24ThemeBanner:before{content:"✦"}body[data-rh24-theme="silvester"] .rh24ThemeBanner:after{content:"2026 ✦"}
+body[data-rh24-theme="neujahr"]{--season:#ba9145;--season2:#faf4e7;--seasonSoft:#fffdf8}
+body[data-rh24-theme="neujahr"] .rh24ThemeBanner{background:linear-gradient(90deg,#f6ead0,#fff,#f6ead0);color:#7a5a20;border-bottom:1px solid #d7bb7b}
+body[data-rh24-theme="neujahr"] .rh24ThemeBanner:before{content:"✦"}body[data-rh24-theme="neujahr"] .rh24ThemeBanner:after{content:"✦"}
+body[data-rh24-theme]:not([data-rh24-theme="standard"]) .sideMain{border-left-color:var(--season)!important}
+body[data-rh24-theme]:not([data-rh24-theme="standard"]) a,body[data-rh24-theme]:not([data-rh24-theme="standard"]) .detailLink{accent-color:var(--season)}
+/* Produkt-Aktionskennzeichnung */
+.productPromoBadges{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0 8px}.productPromoBadge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase}.productPromoBadge.popular{background:#fff2d6;color:#8a5b00;border:1px solid #e7c574}.productPromoBadge.offer{background:#a7202d;color:#fff;border:1px solid #8c1621}.promoPriceLine{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.promoOldPrice{text-decoration:line-through;color:#8b8279;font-size:.58em;font-weight:700}.promoCurrentPrice{color:inherit}.unitPriceLine{display:block;margin-top:4px;font-size:10px!important;font-weight:700!important;color:#756b62!important;line-height:1.35}.saleDatesHint{font-size:10px;color:#756b62;margin-top:4px}
+
+.newSortimentBadge{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:7px 12px;border-radius:999px;background:linear-gradient(135deg,#1f6d45,#48a46f);border:1px solid #17613b;color:#fff;font-size:10px;font-weight:950;letter-spacing:.07em;text-transform:uppercase;box-shadow:0 7px 18px rgba(31,109,69,.16)}

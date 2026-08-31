@@ -1,0 +1,10 @@
+RÄUCHERHAKEN24 V104.1 · RH24 + SMOKY HERO
+
+ÄNDERUNGEN
+- Logo oben links: RH24 statt Räucherhaken24.
+- Kein Haken-Symbol mehr im Logo.
+- Kleiner Smoky links neben RH24.
+- Rechter Hero-Bildbereich der Startseite zeigt das vom Nutzer freigegebene Smoky-Motiv.
+- Smoky-Empfehlung weiter unten bleibt bewusst kompakt.
+- Keine Änderung an Warenkorb-, Produkt-, Checkout- oder Orgaboard-Logik.
+- Cache-Version für premium-v104.css und site-v104.js auf 104.1 erhöht.
