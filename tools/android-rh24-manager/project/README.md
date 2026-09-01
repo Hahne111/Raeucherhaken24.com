@@ -24,3 +24,5 @@ SSH/SFTP-Zugang sowie die Shell-Programme `tar`, `unzip` und `cp` müssen verfü
 Android Gradle Plugin 8.7.3, compileSdk 35, minSdk 26, Java 17.
 
 Der Release-Build wird als unsigned APK erzeugt. Das finale Installationspaket wird außerhalb des öffentlichen GitHub-Repositories signiert.
+
+Build-Prüfung: v1.0.0 · Samsung/Android Release-Kandidat.
