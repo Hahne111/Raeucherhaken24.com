@@ -44,21 +44,22 @@ jobs:
         working-directory: tools/android-rh24-manager/project
         run: gradle --no-daemon clean :app:assembleRelease
 
-      - name: Collect APK and signing tools
+      - name: Align APK and collect signing tool
         run: |
-          cp tools/android-rh24-manager/project/app/build/outputs/apk/release/app-release-unsigned.apk RH24-STRATO-Manager-Android-v1.0-unsigned.apk
-          cp "$ANDROID_HOME/build-tools/35.0.0/zipalign" ./zipalign
+          "$ANDROID_HOME/build-tools/35.0.0/zipalign" -p -f 4 \
+            tools/android-rh24-manager/project/app/build/outputs/apk/release/app-release-unsigned.apk \
+            RH24-STRATO-Manager-Android-v1.0-aligned-unsigned.apk
+          "$ANDROID_HOME/build-tools/35.0.0/zipalign" -c -v 4 RH24-STRATO-Manager-Android-v1.0-aligned-unsigned.apk
           cp "$ANDROID_HOME/build-tools/35.0.0/lib/apksigner.jar" ./apksigner.jar
-          sha256sum RH24-STRATO-Manager-Android-v1.0-unsigned.apk > RH24-STRATO-Manager-Android-v1.0-unsigned.apk.sha256
+          sha256sum RH24-STRATO-Manager-Android-v1.0-aligned-unsigned.apk > RH24-STRATO-Manager-Android-v1.0-aligned-unsigned.apk.sha256
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: RH24-STRATO-Manager-Android-v1.0-build
+          name: RH24-STRATO-Manager-Android-v1.0-aligned-build
           path: |
-            RH24-STRATO-Manager-Android-v1.0-unsigned.apk
-            RH24-STRATO-Manager-Android-v1.0-unsigned.apk.sha256
+            RH24-STRATO-Manager-Android-v1.0-aligned-unsigned.apk
+            RH24-STRATO-Manager-Android-v1.0-aligned-unsigned.apk.sha256
             apksigner.jar
-            zipalign
           if-no-files-found: error
           retention-days: 7
