@@ -1,0 +1,61 @@
+name: Build RH24 Android Manager
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'tools/android-rh24-manager/**'
+      - '.github/workflows/build-rh24-android-manager.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android platform
+        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+
+      - name: Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Extract source
+        run: |
+          rm -rf build-android
+          mkdir build-android
+          unzip -q tools/android-rh24-manager/RH24-STRATO-Manager-Android-v1.0-SOURCE.zip -d build-android
+
+      - name: Build unsigned release APK
+        working-directory: build-android/RH24-STRATO-Manager-Android-v1.0
+        run: gradle --no-daemon clean :app:assembleRelease
+
+      - name: Collect APK
+        run: |
+          cp build-android/RH24-STRATO-Manager-Android-v1.0/app/build/outputs/apk/release/app-release-unsigned.apk RH24-STRATO-Manager-Android-v1.0-unsigned.apk
+          sha256sum RH24-STRATO-Manager-Android-v1.0-unsigned.apk > RH24-STRATO-Manager-Android-v1.0-unsigned.apk.sha256
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RH24-STRATO-Manager-Android-v1.0-unsigned
+          path: |
+            RH24-STRATO-Manager-Android-v1.0-unsigned.apk
+            RH24-STRATO-Manager-Android-v1.0-unsigned.apk.sha256
+          if-no-files-found: error
+          retention-days: 7
