@@ -1,6 +1,11 @@
 name: Build RH24 Android Manager
 
 on:
+  push:
+    branches: [ android-rh24-manager-v1 ]
+    paths:
+      - 'tools/android-rh24-manager/**'
+      - '.github/workflows/build-rh24-android-manager.yml'
   pull_request:
     branches: [ main ]
     paths:
@@ -35,27 +40,25 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Extract source
-        run: |
-          rm -rf build-android
-          mkdir build-android
-          unzip -q tools/android-rh24-manager/RH24-STRATO-Manager-Android-v1.0-SOURCE.zip -d build-android
-
       - name: Build unsigned release APK
-        working-directory: build-android/RH24-STRATO-Manager-Android-v1.0
+        working-directory: tools/android-rh24-manager/project
         run: gradle --no-daemon clean :app:assembleRelease
 
-      - name: Collect APK
+      - name: Collect APK and signing tools
         run: |
-          cp build-android/RH24-STRATO-Manager-Android-v1.0/app/build/outputs/apk/release/app-release-unsigned.apk RH24-STRATO-Manager-Android-v1.0-unsigned.apk
+          cp tools/android-rh24-manager/project/app/build/outputs/apk/release/app-release-unsigned.apk RH24-STRATO-Manager-Android-v1.0-unsigned.apk
+          cp "$ANDROID_HOME/build-tools/35.0.0/zipalign" ./zipalign
+          cp "$ANDROID_HOME/build-tools/35.0.0/lib/apksigner.jar" ./apksigner.jar
           sha256sum RH24-STRATO-Manager-Android-v1.0-unsigned.apk > RH24-STRATO-Manager-Android-v1.0-unsigned.apk.sha256
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: RH24-STRATO-Manager-Android-v1.0-unsigned
+          name: RH24-STRATO-Manager-Android-v1.0-build
           path: |
             RH24-STRATO-Manager-Android-v1.0-unsigned.apk
             RH24-STRATO-Manager-Android-v1.0-unsigned.apk.sha256
+            apksigner.jar
+            zipalign
           if-no-files-found: error
           retention-days: 7
