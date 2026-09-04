@@ -68,6 +68,17 @@ ErrorDocument 404 /404.html
   <FilesMatch "\.(css|js)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
+
+  # V2026.6: Navigation/Karteikarten immer neu validieren.
+  # Diese beiden Dateien steuern ausschließlich Kopfmenü und Mega-Menü.
+  # Dadurch bleibt der übrige Shop-Cache unverändert, während Menü-Fixes
+  # nicht einen Monat lang durch eine alte Browserkopie blockiert werden.
+  <FilesMatch "^(boot\.js|site-v104\.js)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
   <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico)$">
     Header set Cache-Control "public, max-age=15552000"
   </FilesMatch>
