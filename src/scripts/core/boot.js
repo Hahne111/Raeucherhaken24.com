@@ -36,6 +36,13 @@
         pointer-events: auto !important;
         cursor: pointer !important;
       }
+      .sidebar .sideMain[data-rh24-category-href] {
+        cursor: pointer !important;
+      }
+      .sidebar .sideMain[data-rh24-category-href]:focus-visible {
+        outline: 3px solid rgba(215,111,43,.35);
+        outline-offset: -3px;
+      }
     `;
     document.head.appendChild(style);
   }
@@ -90,10 +97,10 @@
     window.location.assign(target.href);
   }, true);
 
-  /* V2026.9 · Jede Hauptkategorie besitzt eine eigene Seite.
-     Alte Dropdown-Reiter werden nach dem Aufbau sofort in normale Links
-     umgewandelt. Damit ist der Klick auf die Kategorie selbst die einzige
-     Aktion; es gibt keine aufklappende Artikelmaske mehr. */
+  /* V2026.10 · Kategorie = vollständige Kategorieseite.
+     Alle sichtbaren Kategorie-Einstiege führen konsistent auf dieselbe
+     Übersichtsseite: Hauptnavigation, Shop-Kategoriekarten und die
+     Kategorieüberschriften in den alten Seitenleisten. */
   const navRoutes = new Map([
     ['räucherhaken', 'raeucherhaken.html'],
     ['raeucherhaken', 'raeucherhaken.html'],
@@ -110,21 +117,26 @@
     ['fischgewuerze', 'fischgewuerze.html'],
     ['naturgewürze', 'naturgewuerze.html'],
     ['naturgewuerze', 'naturgewuerze.html'],
+    ['thermometer', 'thermometer.html'],
     ['sets', 'raeucherhaken.html'],
     ['zubehör', 'shop.html'],
     ['zubehoer', 'shop.html'],
     ['wissen', 'wissen.html'],
+    ['wissen & rezepte', 'wissen.html'],
+    ['räucherwissen', 'wissen.html'],
+    ['raeucherwissen', 'wissen.html'],
     ['über uns', 'ueber-uns.html'],
     ['ueber uns', 'ueber-uns.html'],
     ['service', 'ueber-uns.html']
   ]);
 
-  const navLabel = button => String(button?.textContent || '')
+  const navLabel = node => String(node?.textContent || '')
     .replace(/[⌄▾▼]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 
   const navKey = label => label.toLocaleLowerCase('de-DE');
+  const routeFor = node => navRoutes.get(navKey(navLabel(node))) || '';
 
   function directifyMainNav() {
     const shell = document.querySelector('.rh24NavShell');
@@ -134,7 +146,7 @@
     if (!drops.length) return false;
 
     drops.forEach(drop => {
-      if (drop.classList.contains('rh24AccountDrop') || drop.dataset.rh24Direct === '2026.9') return;
+      if (drop.classList.contains('rh24AccountDrop') || drop.dataset.rh24Direct === '2026.10') return;
       const button = drop.querySelector(':scope > .rh24DropBtn');
       if (!button) return;
 
@@ -152,29 +164,79 @@
       drop.classList.remove('open');
       drop.classList.add('rh24DirectDrop');
       drop.removeAttribute('data-rh24-drop');
-      drop.dataset.rh24Direct = '2026.9';
+      drop.dataset.rh24Direct = '2026.10';
       button.replaceWith(link);
     });
 
     return true;
   }
 
+  function directifyCategoryEntrances() {
+    let changed = false;
+
+    /* Shop-Kacheln: z. B. Räucherhaken/Räuchermehl nicht mehr zu einem
+       Anker auf der Sammelseite, sondern zur vollständigen Kategorie. */
+    document.querySelectorAll('a.rh66CategoryCard').forEach(card => {
+      const labelNode = card.querySelector('b') || card;
+      const href = routeFor(labelNode);
+      if (!href || card.getAttribute('href') === href) return;
+      card.setAttribute('href', href);
+      card.dataset.rh24CategoryDirect = '2026.10';
+      changed = true;
+    });
+
+    /* Alte Seitenleisten behalten ihr Aussehen. Die Kategorieüberschrift
+       selbst wird aber zu einem eindeutigen Einstieg "Alle Artikel". */
+    document.querySelectorAll('.sidebar .sideMain').forEach(item => {
+      const href = routeFor(item);
+      if (!href) return;
+      if (item.dataset.rh24CategoryHref === href) return;
+      item.dataset.rh24CategoryHref = href;
+      item.setAttribute('role', 'link');
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('aria-label', `${navLabel(item)} – alle Artikel öffnen`);
+      changed = true;
+    });
+
+    return changed;
+  }
+
+  const openSidebarCategory = event => {
+    if (!(event.target instanceof Element)) return;
+    const item = event.target.closest('.sidebar .sideMain[data-rh24-category-href]');
+    if (!item) return;
+    if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+    if (event.type === 'click' && (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const href = item.dataset.rh24CategoryHref;
+    if (href) window.location.assign(new URL(href, document.baseURI).href);
+  };
+
+  document.addEventListener('click', openSidebarCategory, true);
+  document.addEventListener('keydown', openSidebarCategory, true);
+
   const directObserver = new MutationObserver(() => {
-    if (directifyMainNav()) {
-      const unresolved = document.querySelector('.rh24NavLinks .rh24NavDrop:not([data-rh24-direct="2026.9"])');
-      if (!unresolved) directObserver.disconnect();
-    }
+    directifyMainNav();
+    directifyCategoryEntrances();
   });
   directObserver.observe(document.documentElement, { childList: true, subtree: true });
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', directifyMainNav, { once: true });
-  } else {
+  const applyDirectRoutes = () => {
     directifyMainNav();
+    directifyCategoryEntrances();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyDirectRoutes, { once: true });
+  } else {
+    applyDirectRoutes();
   }
-  window.setTimeout(directifyMainNav, 80);
-  window.setTimeout(directifyMainNav, 250);
-  window.setTimeout(directifyMainNav, 900);
+  window.setTimeout(applyDirectRoutes, 80);
+  window.setTimeout(applyDirectRoutes, 250);
+  window.setTimeout(applyDirectRoutes, 900);
+  window.setTimeout(() => directObserver.disconnect(), 3500);
 
   window.setTimeout(() => root.classList.remove('rh82Boot'), 2500);
 })();
