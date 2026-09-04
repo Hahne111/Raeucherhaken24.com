@@ -114,5 +114,95 @@
     window.location.assign(target.href);
   }, true);
 
+  /* V2026.8 · Hauptnavigation bewusst vereinfacht
+     Auf Wunsch werden die Kategorien nicht mehr als aufklappende
+     Mega-Menüs bedient. Jeder sichtbare Hauptreiter ist jetzt ein
+     normaler Link auf die zugehörige Kategorie-/Übersichtsseite.
+
+     Vorteil: kein Flackern, kein versehentliches Schließen und keine
+     Zwischenebene mehr. Das Konto-Menü bleibt als einziges Dropdown
+     erhalten, weil dort zwei getrennte Login-Ziele liegen.
+  */
+  const navRoutes = new Map([
+    ['räucherhaken', 'shop.html#raeucherhaken'],
+    ['raeucherhaken', 'shop.html#raeucherhaken'],
+    ['räucherlauge', 'raeucherlaugen.html'],
+    ['raeucherlauge', 'raeucherlaugen.html'],
+    ['räucherlaugen', 'raeucherlaugen.html'],
+    ['raeucherlaugen', 'raeucherlaugen.html'],
+    ['räuchermehl', 'shop.html#raeuchermehl-shop'],
+    ['raeuchermehl', 'shop.html#raeuchermehl-shop'],
+    ['räucherholz', 'shop.html#raeuchermehl-shop'],
+    ['raeucherholz', 'shop.html#raeuchermehl-shop'],
+    ['fleischerhaken', 'fleischerhaken-s-form-5mm.html'],
+    ['fischgewürze', 'shop.html#dbProductSection'],
+    ['fischgewuerze', 'shop.html#dbProductSection'],
+    ['naturgewürze', 'naturgewuerze.html'],
+    ['naturgewuerze', 'naturgewuerze.html'],
+    ['sets', 'shop.html#raeucherhaken'],
+    ['zubehör', 'shop.html'],
+    ['zubehoer', 'shop.html'],
+    ['wissen', 'rezepte-anleitungen.html'],
+    ['über uns', 'kontakt.html'],
+    ['ueber uns', 'kontakt.html'],
+    ['service', 'kontakt.html']
+  ]);
+
+  const navLabel = button => String(button?.textContent || '')
+    .replace(/[⌄▾▼]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const navKey = label => label.toLocaleLowerCase('de-DE');
+
+  function directifyMainNav() {
+    const shell = document.querySelector('.rh24NavShell');
+    if (!shell) return false;
+
+    const drops = shell.querySelectorAll('.rh24NavLinks .rh24NavDrop');
+    if (!drops.length) return false;
+
+    drops.forEach(drop => {
+      if (drop.classList.contains('rh24AccountDrop') || drop.dataset.rh24Direct === '2026.8') return;
+      const button = drop.querySelector(':scope > .rh24DropBtn');
+      if (!button) return;
+
+      const label = navLabel(button);
+      const href = navRoutes.get(navKey(label));
+      if (!href) return;
+
+      const link = document.createElement('a');
+      link.className = button.className + ' rh24DirectTab';
+      link.href = href;
+      link.textContent = label;
+      if (button.getAttribute('aria-label')) link.setAttribute('aria-label', button.getAttribute('aria-label'));
+
+      drop.querySelector(':scope > .rh24Mega')?.remove();
+      drop.classList.remove('open');
+      drop.classList.add('rh24DirectDrop');
+      drop.removeAttribute('data-rh24-drop');
+      drop.dataset.rh24Direct = '2026.8';
+      button.replaceWith(link);
+    });
+
+    return true;
+  }
+
+  const directObserver = new MutationObserver(() => {
+    if (directifyMainNav()) {
+      const unresolved = document.querySelector('.rh24NavLinks .rh24NavDrop:not([data-rh24-direct="2026.8"])');
+      if (!unresolved) directObserver.disconnect();
+    }
+  });
+  directObserver.observe(document.documentElement, { childList: true, subtree: true });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', directifyMainNav, { once: true });
+  } else {
+    directifyMainNav();
+  }
+  window.setTimeout(directifyMainNav, 120);
+  window.setTimeout(directifyMainNav, 700);
+
   window.setTimeout(() => root.classList.remove('rh82Boot'), 2500);
 })();
