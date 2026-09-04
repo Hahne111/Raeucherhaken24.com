@@ -1,11 +1,16 @@
 <?php
 declare(strict_types=1);
 require __DIR__ . '/orgaboard/bootstrap.php';
+require_once __DIR__ . '/orgaboard/avo-naturgewuerze-v2026.php';
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store, max-age=0');
 function rh24_public_plain($v): string {$t=html_entity_decode(strip_tags((string)$v),ENT_QUOTES,'UTF-8');$t=preg_replace('/\s+/u',' ',(string)$t);return trim((string)$t);}
 try{
   $db=rh24_db();
+  // V2026.6: Einmaliger, artikelgenauer Abgleich der acht beauftragten
+  // AVO-BIO-Naturgewürze. Andere Produkte und spätere Bestandsbewegungen
+  // bleiben vollständig unberührt.
+  rh24_apply_avo_naturgewuerze_v2026($db);
   // V108.3: Ein einziges, dauerhaftes Veröffentlichungsmerkmal.
   // published_at ist die verbindliche Quelle. Keine zusätzliche Register-Tabelle
   // und damit keine Abhängigkeit von CREATE-TABLE-Rechten beim Webhosting.
@@ -29,5 +34,5 @@ try{
   }
 
   $catalogUpdatedAt=(string)($db->query("SELECT COALESCE(MAX(updated_at),'') FROM products")->fetchColumn()?:'');
-  echo json_encode(['ok'=>true,'data_version'=>'108.3','generated_at'=>date('c'),'catalog_updated_at'=>$catalogUpdatedAt,'theme'=>(string)rh24_setting_get('active_theme','standard'),'shop'=>['shipping_threshold'=>(float)rh24_setting_get('shipping_threshold','39'),'shipping_cost'=>(float)rh24_setting_get('shipping_cost','7'),'vat_rate'=>(float)rh24_setting_get('vat_rate','19')],'products'=>$out],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+  echo json_encode(['ok'=>true,'data_version'=>'2026.6','generated_at'=>date('c'),'catalog_updated_at'=>$catalogUpdatedAt,'theme'=>(string)rh24_setting_get('active_theme','standard'),'shop'=>['shipping_threshold'=>(float)rh24_setting_get('shipping_threshold','39'),'shipping_cost'=>(float)rh24_setting_get('shipping_cost','7'),'vat_rate'=>(float)rh24_setting_get('vat_rate','19')],'products'=>$out],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 }catch(Throwable $e){http_response_code(503);echo json_encode(['ok'=>false,'error'=>'Produktkatalog vorübergehend nicht verfügbar'],JSON_UNESCAPED_UNICODE);}
