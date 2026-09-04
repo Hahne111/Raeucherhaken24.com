@@ -2,19 +2,7 @@
   const root = document.documentElement;
   root.classList.add('rh82Boot', 'rh-atelier', 'rh-atelier-js');
 
-  /* V2026.5 · Menü-Stabilitätsfix
-     Problem: Das Mega-Menü lag im Desktop-Modus mit einem kleinen
-     Abstand unter dem Auslöser. Beim Überfahren dieses Zwischenraums
-     verließ der Mauszeiger kurz die Menügruppe; zusammen mit der alten
-     display/animation-Kombination konnte das Menü dadurch schließen
-     und sichtbar flackern.
-
-     Dieser gezielte Override betrifft ausschließlich die Hauptnavigation:
-       · kein toter Zwischenraum zwischen Button und Mega-Menü
-       · Mega-Menü bleibt im DOM; Sichtbarkeit nur über opacity/visibility
-       · keine konkurrierende Keyframe-Animation beim Öffnen
-     Mobile Darstellung und alle Shop-/Produktfunktionen bleiben unberührt.
-  */
+  /* V2026.5 · Menü-Stabilitätsfix */
   if (!document.getElementById('rh24-nav-stability-v2026-5')) {
     const style = document.createElement('style');
     style.id = 'rh24-nav-stability-v2026-5';
@@ -52,18 +40,8 @@
     document.head.appendChild(style);
   }
 
-  /* V2026.6 · Funktionsfix für ALLE Karteikarten im Mega-Menü
-     Die Karten werden teils statisch, teils dynamisch aus dem Produkt-
-     katalog aufgebaut. Damit weder ein Eltern-Handler noch ein später
-     eingehängter Runtime-Handler die Navigation verschluckt, wird der
-     Primärklick bereits in der Capture-Phase eindeutig auf das Ziel
-     der Karte geleitet.
-
-     Bewusst unverändert bleiben:
-       · Strg/Cmd-/Shift-/Alt-Klick und Mittelklick (Browser-Neuer-Tab)
-       · Links mit target=_blank
-       · Warenkorb, Produktkarten im Seiteninhalt und alle OrgaBoard-Daten
-  */
+  /* V2026.6 · Funktionsfix für Karteikarten im Mega-Menü.
+     Bleibt nur als Rückwärtskompatibilität für Konto/alte Seiten bestehen. */
   const megaCardSelector = '.rh24Mega a[href], .rh24Mega [data-href], .rh24Mega [data-url]';
   const hrefOf = card => {
     if (!card) return '';
@@ -76,8 +54,6 @@
     if (!(event.target instanceof Element)) return;
     const card = event.target.closest(megaCardSelector);
     if (!card || !card.closest('.rh24Mega')) return;
-
-    // Browser-Standard für neue Tabs/Fenster vollständig erhalten.
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     if (card.matches('a[target]') && (card.getAttribute('target') || '').toLowerCase() !== '_self') return;
 
@@ -114,38 +90,33 @@
     window.location.assign(target.href);
   }, true);
 
-  /* V2026.8 · Hauptnavigation bewusst vereinfacht
-     Auf Wunsch werden die Kategorien nicht mehr als aufklappende
-     Mega-Menüs bedient. Jeder sichtbare Hauptreiter ist jetzt ein
-     normaler Link auf die zugehörige Kategorie-/Übersichtsseite.
-
-     Vorteil: kein Flackern, kein versehentliches Schließen und keine
-     Zwischenebene mehr. Das Konto-Menü bleibt als einziges Dropdown
-     erhalten, weil dort zwei getrennte Login-Ziele liegen.
-  */
+  /* V2026.9 · Jede Hauptkategorie besitzt eine eigene Seite.
+     Alte Dropdown-Reiter werden nach dem Aufbau sofort in normale Links
+     umgewandelt. Damit ist der Klick auf die Kategorie selbst die einzige
+     Aktion; es gibt keine aufklappende Artikelmaske mehr. */
   const navRoutes = new Map([
-    ['räucherhaken', 'shop.html#raeucherhaken'],
-    ['raeucherhaken', 'shop.html#raeucherhaken'],
+    ['räucherhaken', 'raeucherhaken.html'],
+    ['raeucherhaken', 'raeucherhaken.html'],
     ['räucherlauge', 'raeucherlaugen.html'],
     ['raeucherlauge', 'raeucherlaugen.html'],
     ['räucherlaugen', 'raeucherlaugen.html'],
     ['raeucherlaugen', 'raeucherlaugen.html'],
-    ['räuchermehl', 'shop.html#raeuchermehl-shop'],
-    ['raeuchermehl', 'shop.html#raeuchermehl-shop'],
-    ['räucherholz', 'shop.html#raeuchermehl-shop'],
-    ['raeucherholz', 'shop.html#raeuchermehl-shop'],
-    ['fleischerhaken', 'fleischerhaken-s-form-5mm.html'],
-    ['fischgewürze', 'shop.html#dbProductSection'],
-    ['fischgewuerze', 'shop.html#dbProductSection'],
+    ['räuchermehl', 'raeuchermehl.html'],
+    ['raeuchermehl', 'raeuchermehl.html'],
+    ['räucherholz', 'raeuchermehl.html'],
+    ['raeucherholz', 'raeuchermehl.html'],
+    ['fleischerhaken', 'fleischerhaken.html'],
+    ['fischgewürze', 'fischgewuerze.html'],
+    ['fischgewuerze', 'fischgewuerze.html'],
     ['naturgewürze', 'naturgewuerze.html'],
     ['naturgewuerze', 'naturgewuerze.html'],
-    ['sets', 'shop.html#raeucherhaken'],
+    ['sets', 'raeucherhaken.html'],
     ['zubehör', 'shop.html'],
     ['zubehoer', 'shop.html'],
-    ['wissen', 'rezepte-anleitungen.html'],
-    ['über uns', 'kontakt.html'],
-    ['ueber uns', 'kontakt.html'],
-    ['service', 'kontakt.html']
+    ['wissen', 'wissen.html'],
+    ['über uns', 'ueber-uns.html'],
+    ['ueber uns', 'ueber-uns.html'],
+    ['service', 'ueber-uns.html']
   ]);
 
   const navLabel = button => String(button?.textContent || '')
@@ -163,7 +134,7 @@
     if (!drops.length) return false;
 
     drops.forEach(drop => {
-      if (drop.classList.contains('rh24AccountDrop') || drop.dataset.rh24Direct === '2026.8') return;
+      if (drop.classList.contains('rh24AccountDrop') || drop.dataset.rh24Direct === '2026.9') return;
       const button = drop.querySelector(':scope > .rh24DropBtn');
       if (!button) return;
 
@@ -181,7 +152,7 @@
       drop.classList.remove('open');
       drop.classList.add('rh24DirectDrop');
       drop.removeAttribute('data-rh24-drop');
-      drop.dataset.rh24Direct = '2026.8';
+      drop.dataset.rh24Direct = '2026.9';
       button.replaceWith(link);
     });
 
@@ -190,7 +161,7 @@
 
   const directObserver = new MutationObserver(() => {
     if (directifyMainNav()) {
-      const unresolved = document.querySelector('.rh24NavLinks .rh24NavDrop:not([data-rh24-direct="2026.8"])');
+      const unresolved = document.querySelector('.rh24NavLinks .rh24NavDrop:not([data-rh24-direct="2026.9"])');
       if (!unresolved) directObserver.disconnect();
     }
   });
@@ -201,8 +172,9 @@
   } else {
     directifyMainNav();
   }
-  window.setTimeout(directifyMainNav, 120);
-  window.setTimeout(directifyMainNav, 700);
+  window.setTimeout(directifyMainNav, 80);
+  window.setTimeout(directifyMainNav, 250);
+  window.setTimeout(directifyMainNav, 900);
 
   window.setTimeout(() => root.classList.remove('rh82Boot'), 2500);
 })();
