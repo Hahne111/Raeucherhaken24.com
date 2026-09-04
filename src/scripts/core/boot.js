@@ -97,10 +97,11 @@
     window.location.assign(target.href);
   }, true);
 
-  /* V2026.10 · Kategorie = vollständige Kategorieseite.
-     Alle sichtbaren Kategorie-Einstiege führen konsistent auf dieselbe
-     Übersichtsseite: Hauptnavigation, Shop-Kategoriekarten und die
-     Kategorieüberschriften in den alten Seitenleisten. */
+  /* V2026.11 · Kategorie = vollständige Kategorieseite.
+     Entscheidend: Der Klick wird jetzt DIREKT in der Capture-Phase auf
+     die Kategorieseite geleitet. Damit hängt die Funktion nicht mehr davon
+     ab, ob ein später geladenes Script den Menüpunkt vorher in einen Link
+     umwandeln konnte. Das gilt auch für die Kategoriekarten der Startseite. */
   const navRoutes = new Map([
     ['räucherhaken', 'raeucherhaken.html'],
     ['raeucherhaken', 'raeucherhaken.html'],
@@ -138,6 +139,32 @@
   const navKey = label => label.toLocaleLowerCase('de-DE');
   const routeFor = node => navRoutes.get(navKey(navLabel(node))) || '';
 
+  const categoryTargetFor = element => {
+    if (!element) return '';
+    if (element.matches('a.rhCatCard')) return routeFor(element.querySelector('.rhCatName') || element);
+    if (element.matches('a.rh66CategoryCard')) return routeFor(element.querySelector('b') || element);
+    return routeFor(element);
+  };
+
+  /* Primärer Funktionsweg: sofortiger Kategorie-Klick.
+     Erfasst die obere Navigation sowie die Kategorie-Karten auf Startseite
+     und Shopseite. Konto bleibt ausdrücklich ein Dropdown. */
+  document.addEventListener('click', event => {
+    if (!(event.target instanceof Element)) return;
+    const entrance = event.target.closest(
+      '.rh24NavLinks .rh24DropBtn, .rh24NavLinks .rh24DirectTab, a.rhCatCard, a.rh66CategoryCard'
+    );
+    if (!entrance || entrance.closest('.rh24AccountDrop')) return;
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
+    const href = categoryTargetFor(entrance);
+    if (!href) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    window.location.assign(new URL(href, document.baseURI).href);
+  }, true);
+
   function directifyMainNav() {
     const shell = document.querySelector('.rh24NavShell');
     if (!shell) return false;
@@ -146,7 +173,7 @@
     if (!drops.length) return false;
 
     drops.forEach(drop => {
-      if (drop.classList.contains('rh24AccountDrop') || drop.dataset.rh24Direct === '2026.10') return;
+      if (drop.classList.contains('rh24AccountDrop') || drop.dataset.rh24Direct === '2026.11') return;
       const button = drop.querySelector(':scope > .rh24DropBtn');
       if (!button) return;
 
@@ -164,7 +191,7 @@
       drop.classList.remove('open');
       drop.classList.add('rh24DirectDrop');
       drop.removeAttribute('data-rh24-drop');
-      drop.dataset.rh24Direct = '2026.10';
+      drop.dataset.rh24Direct = '2026.11';
       button.replaceWith(link);
     });
 
@@ -174,14 +201,13 @@
   function directifyCategoryEntrances() {
     let changed = false;
 
-    /* Shop-Kacheln: z. B. Räucherhaken/Räuchermehl nicht mehr zu einem
-       Anker auf der Sammelseite, sondern zur vollständigen Kategorie. */
-    document.querySelectorAll('a.rh66CategoryCard').forEach(card => {
-      const labelNode = card.querySelector('b') || card;
-      const href = routeFor(labelNode);
+    /* Jetzt ausdrücklich BEIDE Kategoriekarten-Systeme:
+       .rhCatCard = Startseite, .rh66CategoryCard = Shopseite. */
+    document.querySelectorAll('a.rh66CategoryCard, a.rhCatCard').forEach(card => {
+      const href = categoryTargetFor(card);
       if (!href || card.getAttribute('href') === href) return;
       card.setAttribute('href', href);
-      card.dataset.rh24CategoryDirect = '2026.10';
+      card.dataset.rh24CategoryDirect = '2026.11';
       changed = true;
     });
 
