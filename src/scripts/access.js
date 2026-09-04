@@ -112,3 +112,14 @@
     createGate();
   }
 })();
+
+/* V2026.12 · zentrale feste Kategorienavigation laden.
+   Als separates Modul, damit bestehende Shop-/Zugriffslogik unverändert bleibt. */
+(function(){
+  if(window.__RH24_NAV_ORDER_LOADER__) return;
+  window.__RH24_NAV_ORDER_LOADER__ = true;
+  var script = document.createElement('script');
+  script.src = '/src/scripts/navigation-order-v2026.js?v=2026.12';
+  script.async = false;
+  document.head.appendChild(script);
+})();
