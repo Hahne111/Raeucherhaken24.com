@@ -40,9 +40,79 @@
           animation: none !important;
         }
       }
+      html.rh-atelier .rh24Mega a[href],
+      html.rh-atelier .rh24Mega [data-href],
+      html.rh-atelier .rh24Mega [data-url] {
+        position: relative;
+        z-index: 1;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+      }
     `;
     document.head.appendChild(style);
   }
+
+  /* V2026.6 · Funktionsfix für ALLE Karteikarten im Mega-Menü
+     Die Karten werden teils statisch, teils dynamisch aus dem Produkt-
+     katalog aufgebaut. Damit weder ein Eltern-Handler noch ein später
+     eingehängter Runtime-Handler die Navigation verschluckt, wird der
+     Primärklick bereits in der Capture-Phase eindeutig auf das Ziel
+     der Karte geleitet.
+
+     Bewusst unverändert bleiben:
+       · Strg/Cmd-/Shift-/Alt-Klick und Mittelklick (Browser-Neuer-Tab)
+       · Links mit target=_blank
+       · Warenkorb, Produktkarten im Seiteninhalt und alle OrgaBoard-Daten
+  */
+  const megaCardSelector = '.rh24Mega a[href], .rh24Mega [data-href], .rh24Mega [data-url]';
+  const hrefOf = card => {
+    if (!card) return '';
+    if (card.matches('a[href]')) return (card.getAttribute('href') || '').trim();
+    return (card.getAttribute('data-href') || card.getAttribute('data-url') || '').trim();
+  };
+  const usableHref = href => href && href !== '#' && !/^javascript:/i.test(href);
+
+  document.addEventListener('click', event => {
+    if (!(event.target instanceof Element)) return;
+    const card = event.target.closest(megaCardSelector);
+    if (!card || !card.closest('.rh24Mega')) return;
+
+    // Browser-Standard für neue Tabs/Fenster vollständig erhalten.
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (card.matches('a[target]') && (card.getAttribute('target') || '').toLowerCase() !== '_self') return;
+
+    let href = hrefOf(card);
+    if (!usableHref(href)) {
+      const holder = card.closest('.rh24Mega [data-href], .rh24Mega [data-url]');
+      if (holder && holder !== card) href = hrefOf(holder);
+    }
+    if (!usableHref(href)) return;
+
+    let target;
+    try { target = new URL(href, document.baseURI); } catch (e) { return; }
+    if (!['http:', 'https:', 'file:'].includes(target.protocol)) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    const shell = card.closest('.rh24NavShell');
+    const drop = card.closest('.rh24NavDrop');
+    if (drop) {
+      drop.classList.remove('open');
+      const button = drop.querySelector('.rh24DropBtn');
+      if (button) button.setAttribute('aria-expanded', 'false');
+    }
+    if (shell) {
+      shell.classList.remove('mobileOpen');
+      const mobileButton = shell.querySelector('#rh24MobileMenu');
+      if (mobileButton) {
+        mobileButton.setAttribute('aria-expanded', 'false');
+        mobileButton.textContent = '☰';
+      }
+    }
+
+    window.location.assign(target.href);
+  }, true);
 
   window.setTimeout(() => root.classList.remove('rh82Boot'), 2500);
 })();
